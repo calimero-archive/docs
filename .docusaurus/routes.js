@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '9b4'),
+    component: ComponentCreator('/', '100'),
     routes: [
       {
         path: '/',
@@ -87,16 +87,6 @@ export default [
         component: ComponentCreator('/basics/markdown-features', '90e'),
         exact: true,
         sidebar: "tutorialSidebar"
-      },
-      {
-        path: '/tutorial-extras/manage-docs-versions',
-        component: ComponentCreator('/tutorial-extras/manage-docs-versions', '5c6'),
-        exact: true
-      },
-      {
-        path: '/tutorial-extras/translate-your-site',
-        component: ComponentCreator('/tutorial-extras/translate-your-site', 'e69'),
-        exact: true
       }
     ]
   },

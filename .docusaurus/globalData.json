@@ -44,14 +44,6 @@
               "id": "intro",
               "path": "/",
               "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/manage-docs-versions",
-              "path": "/tutorial-extras/manage-docs-versions"
-            },
-            {
-              "id": "tutorial-extras/translate-your-site",
-              "path": "/tutorial-extras/translate-your-site"
             }
           ],
           "draftIds": [],
