@@ -19,7 +19,7 @@
   },
   "sidebar": "tutorialSidebar",
   "next": {
-    "title": "Create a Page",
-    "permalink": "/basics/create-a-page"
+    "title": "Architecture",
+    "permalink": "/getting-started/architecture"
   }
 }

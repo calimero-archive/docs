@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '100'),
+    component: ComponentCreator('/', '997'),
     routes: [
       {
         path: '/',
@@ -53,38 +53,68 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/basics/congratulations',
-        component: ComponentCreator('/basics/congratulations', '465'),
+        path: '/bridge/architecture',
+        component: ComponentCreator('/bridge/architecture', '2ac'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/basics/create-a-blog-post',
-        component: ComponentCreator('/basics/create-a-blog-post', 'd86'),
+        path: '/bridge/connectors/cross_shard_contract_call_connector',
+        component: ComponentCreator('/bridge/connectors/cross_shard_contract_call_connector', 'de6'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/basics/create-a-document',
-        component: ComponentCreator('/basics/create-a-document', '37c'),
+        path: '/bridge/connectors/fungible_token_connector',
+        component: ComponentCreator('/bridge/connectors/fungible_token_connector', '9f6'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/basics/create-a-page',
-        component: ComponentCreator('/basics/create-a-page', '8f0'),
+        path: '/bridge/connectors/non_fungible_token_connector copy',
+        component: ComponentCreator('/bridge/connectors/non_fungible_token_connector copy', 'b10'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/basics/deploy-your-site',
-        component: ComponentCreator('/basics/deploy-your-site', 'b29'),
+        path: '/bridge/light_client_contract',
+        component: ComponentCreator('/bridge/light_client_contract', '8f4'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/basics/markdown-features',
-        component: ComponentCreator('/basics/markdown-features', '90e'),
+        path: '/bridge/light_client_prover',
+        component: ComponentCreator('/bridge/light_client_prover', '902'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/bridge/relayer',
+        component: ComponentCreator('/bridge/relayer', '183'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/faq',
+        component: ComponentCreator('/faq', '204'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/getting-started/architecture',
+        component: ComponentCreator('/getting-started/architecture', '55c'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/integrate/',
+        component: ComponentCreator('/integrate/', '6d9'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/interact/',
+        component: ComponentCreator('/interact/', 'c17'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

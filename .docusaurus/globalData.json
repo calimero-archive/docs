@@ -11,33 +11,58 @@
           "mainDocId": "intro",
           "docs": [
             {
-              "id": "basics/congratulations",
-              "path": "/basics/congratulations",
+              "id": "bridge/architecture",
+              "path": "/bridge/architecture",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "basics/create-a-blog-post",
-              "path": "/basics/create-a-blog-post",
+              "id": "bridge/connectors/cross_shard_contract_call_connector",
+              "path": "/bridge/connectors/cross_shard_contract_call_connector",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "basics/create-a-document",
-              "path": "/basics/create-a-document",
+              "id": "bridge/connectors/fungible_token_connector",
+              "path": "/bridge/connectors/fungible_token_connector",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "basics/create-a-page",
-              "path": "/basics/create-a-page",
+              "id": "bridge/connectors/non_fungible_token_connector copy",
+              "path": "/bridge/connectors/non_fungible_token_connector copy",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "basics/deploy-your-site",
-              "path": "/basics/deploy-your-site",
+              "id": "bridge/light_client_contract",
+              "path": "/bridge/light_client_contract",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "basics/markdown-features",
-              "path": "/basics/markdown-features",
+              "id": "bridge/light_client_prover",
+              "path": "/bridge/light_client_prover",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "bridge/relayer",
+              "path": "/bridge/relayer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "faq",
+              "path": "/faq",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "getting-started/architecture",
+              "path": "/getting-started/architecture",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "integrate/index",
+              "path": "/integrate/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "interact/index",
+              "path": "/interact/",
               "sidebar": "tutorialSidebar"
             },
             {

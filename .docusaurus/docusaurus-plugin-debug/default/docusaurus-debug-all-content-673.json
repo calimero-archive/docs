@@ -19,97 +19,239 @@
           "contentPathLocalized": "/Users/chefsale/workspace/docs/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
-              "unversionedId": "basics/congratulations",
-              "id": "basics/congratulations",
-              "title": "Congratulations!",
-              "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
-              "source": "@site/docs/basics/congratulations.md",
-              "sourceDirName": "basics",
-              "slug": "/basics/congratulations",
-              "permalink": "/basics/congratulations",
+              "unversionedId": "bridge/architecture",
+              "id": "bridge/architecture",
+              "title": "Architecture",
+              "description": "",
+              "source": "@site/docs/bridge/architecture.mdx",
+              "sourceDirName": "bridge",
+              "slug": "/bridge/architecture",
+              "permalink": "/bridge/architecture",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/basics/congratulations.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 6,
-              "frontMatter": {
-                "sidebar_position": 6
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Deploy your site",
-                "permalink": "/basics/deploy-your-site"
-              }
-            },
-            {
-              "unversionedId": "basics/create-a-blog-post",
-              "id": "basics/create-a-blog-post",
-              "title": "Create a Blog Post",
-              "description": "Docusaurus creates a page for each blog post, but also a blog index page, a tag system, an RSS feed...",
-              "source": "@site/docs/basics/create-a-blog-post.md",
-              "sourceDirName": "basics",
-              "slug": "/basics/create-a-blog-post",
-              "permalink": "/basics/create-a-blog-post",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/basics/create-a-blog-post.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 3,
-              "frontMatter": {
-                "sidebar_position": 3
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Create a Document",
-                "permalink": "/basics/create-a-document"
-              },
-              "next": {
-                "title": "Markdown Features",
-                "permalink": "/basics/markdown-features"
-              }
-            },
-            {
-              "unversionedId": "basics/create-a-document",
-              "id": "basics/create-a-document",
-              "title": "Create a Document",
-              "description": "Documents are groups of pages connected through:",
-              "source": "@site/docs/basics/create-a-document.md",
-              "sourceDirName": "basics",
-              "slug": "/basics/create-a-document",
-              "permalink": "/basics/create-a-document",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/basics/create-a-document.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Create a Page",
-                "permalink": "/basics/create-a-page"
-              },
-              "next": {
-                "title": "Create a Blog Post",
-                "permalink": "/basics/create-a-blog-post"
-              }
-            },
-            {
-              "unversionedId": "basics/create-a-page",
-              "id": "basics/create-a-page",
-              "title": "Create a Page",
-              "description": "Add Markdown or React files to src/pages to create a standalone page:",
-              "source": "@site/docs/basics/create-a-page.md",
-              "sourceDirName": "basics",
-              "slug": "/basics/create-a-page",
-              "permalink": "/basics/create-a-page",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/basics/create-a-page.md",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/architecture.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
               "frontMatter": {
+                "title": "Architecture",
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "index",
+                "permalink": "/interact/"
+              },
+              "next": {
+                "title": "Relayer",
+                "permalink": "/bridge/relayer"
+              }
+            },
+            {
+              "unversionedId": "bridge/connectors/cross_shard_contract_call_connector",
+              "id": "bridge/connectors/cross_shard_contract_call_connector",
+              "title": "Cross Shard Contract Call Connector",
+              "description": "",
+              "source": "@site/docs/bridge/connectors/cross_shard_contract_call_connector.mdx",
+              "sourceDirName": "bridge/connectors",
+              "slug": "/bridge/connectors/cross_shard_contract_call_connector",
+              "permalink": "/bridge/connectors/cross_shard_contract_call_connector",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/connectors/cross_shard_contract_call_connector.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Cross Shard Contract Call Connector",
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Fungible Token Connector",
+                "permalink": "/bridge/connectors/fungible_token_connector"
+              },
+              "next": {
+                "title": "Non-Fungible Token Connector",
+                "permalink": "/bridge/connectors/non_fungible_token_connector copy"
+              }
+            },
+            {
+              "unversionedId": "bridge/connectors/fungible_token_connector",
+              "id": "bridge/connectors/fungible_token_connector",
+              "title": "Fungible Token Connector",
+              "description": "",
+              "source": "@site/docs/bridge/connectors/fungible_token_connector.mdx",
+              "sourceDirName": "bridge/connectors",
+              "slug": "/bridge/connectors/fungible_token_connector",
+              "permalink": "/bridge/connectors/fungible_token_connector",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/connectors/fungible_token_connector.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Fungible Token Connector",
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Light Client Prover",
+                "permalink": "/bridge/light_client_prover"
+              },
+              "next": {
+                "title": "Cross Shard Contract Call Connector",
+                "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+              }
+            },
+            {
+              "unversionedId": "bridge/connectors/non_fungible_token_connector copy",
+              "id": "bridge/connectors/non_fungible_token_connector copy",
+              "title": "Non-Fungible Token Connector",
+              "description": "",
+              "source": "@site/docs/bridge/connectors/non_fungible_token_connector copy.mdx",
+              "sourceDirName": "bridge/connectors",
+              "slug": "/bridge/connectors/non_fungible_token_connector copy",
+              "permalink": "/bridge/connectors/non_fungible_token_connector copy",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/connectors/non_fungible_token_connector copy.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Non-Fungible Token Connector",
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Cross Shard Contract Call Connector",
+                "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+              },
+              "next": {
+                "title": "FAQs",
+                "permalink": "/faq"
+              }
+            },
+            {
+              "unversionedId": "bridge/light_client_contract",
+              "id": "bridge/light_client_contract",
+              "title": "Light Client Contract",
+              "description": "",
+              "source": "@site/docs/bridge/light_client_contract.mdx",
+              "sourceDirName": "bridge",
+              "slug": "/bridge/light_client_contract",
+              "permalink": "/bridge/light_client_contract",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/light_client_contract.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "title": "Light Client Contract",
+                "sidebar_position": 3
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Relayer",
+                "permalink": "/bridge/relayer"
+              },
+              "next": {
+                "title": "Light Client Prover",
+                "permalink": "/bridge/light_client_prover"
+              }
+            },
+            {
+              "unversionedId": "bridge/light_client_prover",
+              "id": "bridge/light_client_prover",
+              "title": "Light Client Prover",
+              "description": "",
+              "source": "@site/docs/bridge/light_client_prover.mdx",
+              "sourceDirName": "bridge",
+              "slug": "/bridge/light_client_prover",
+              "permalink": "/bridge/light_client_prover",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/light_client_prover.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "title": "Light Client Prover",
+                "sidebar_position": 4
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Light Client Contract",
+                "permalink": "/bridge/light_client_contract"
+              },
+              "next": {
+                "title": "Fungible Token Connector",
+                "permalink": "/bridge/connectors/fungible_token_connector"
+              }
+            },
+            {
+              "unversionedId": "bridge/relayer",
+              "id": "bridge/relayer",
+              "title": "Relayer",
+              "description": "",
+              "source": "@site/docs/bridge/relayer.mdx",
+              "sourceDirName": "bridge",
+              "slug": "/bridge/relayer",
+              "permalink": "/bridge/relayer",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/relayer.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Relayer",
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Architecture",
+                "permalink": "/bridge/architecture"
+              },
+              "next": {
+                "title": "Light Client Contract",
+                "permalink": "/bridge/light_client_contract"
+              }
+            },
+            {
+              "unversionedId": "faq",
+              "id": "faq",
+              "title": "FAQs",
+              "description": "",
+              "source": "@site/docs/faq.md",
+              "sourceDirName": ".",
+              "slug": "/faq",
+              "permalink": "/faq",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/faq.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "title": "FAQs"
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Non-Fungible Token Connector",
+                "permalink": "/bridge/connectors/non_fungible_token_connector copy"
+              }
+            },
+            {
+              "unversionedId": "getting-started/architecture",
+              "id": "getting-started/architecture",
+              "title": "Architecture",
+              "description": "",
+              "source": "@site/docs/getting-started/architecture.mdx",
+              "sourceDirName": "getting-started",
+              "slug": "/getting-started/architecture",
+              "permalink": "/getting-started/architecture",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/getting-started/architecture.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Architecture",
                 "sidebar_position": 1
               },
               "sidebar": "tutorialSidebar",
@@ -118,62 +260,56 @@
                 "permalink": "/"
               },
               "next": {
-                "title": "Create a Document",
-                "permalink": "/basics/create-a-document"
+                "title": "index",
+                "permalink": "/integrate/"
               }
             },
             {
-              "unversionedId": "basics/deploy-your-site",
-              "id": "basics/deploy-your-site",
-              "title": "Deploy your site",
-              "description": "Docusaurus is a static-site-generator (also called Jamstack).",
-              "source": "@site/docs/basics/deploy-your-site.md",
-              "sourceDirName": "basics",
-              "slug": "/basics/deploy-your-site",
-              "permalink": "/basics/deploy-your-site",
+              "unversionedId": "integrate/index",
+              "id": "integrate/index",
+              "title": "index",
+              "description": "",
+              "source": "@site/docs/integrate/index.md",
+              "sourceDirName": "integrate",
+              "slug": "/integrate/",
+              "permalink": "/integrate/",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/basics/deploy-your-site.md",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/integrate/index.md",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 5,
-              "frontMatter": {
-                "sidebar_position": 5
-              },
+              "frontMatter": {},
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Markdown Features",
-                "permalink": "/basics/markdown-features"
+                "title": "Architecture",
+                "permalink": "/getting-started/architecture"
               },
               "next": {
-                "title": "Congratulations!",
-                "permalink": "/basics/congratulations"
+                "title": "index",
+                "permalink": "/interact/"
               }
             },
             {
-              "unversionedId": "basics/markdown-features",
-              "id": "basics/markdown-features",
-              "title": "Markdown Features",
-              "description": "Docusaurus supports Markdown and a few additional features.",
-              "source": "@site/docs/basics/markdown-features.mdx",
-              "sourceDirName": "basics",
-              "slug": "/basics/markdown-features",
-              "permalink": "/basics/markdown-features",
+              "unversionedId": "interact/index",
+              "id": "interact/index",
+              "title": "index",
+              "description": "",
+              "source": "@site/docs/interact/index.md",
+              "sourceDirName": "interact",
+              "slug": "/interact/",
+              "permalink": "/interact/",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/basics/markdown-features.mdx",
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/interact/index.md",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 4,
-              "frontMatter": {
-                "sidebar_position": 4
-              },
+              "frontMatter": {},
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Create a Blog Post",
-                "permalink": "/basics/create-a-blog-post"
+                "title": "index",
+                "permalink": "/integrate/"
               },
               "next": {
-                "title": "Deploy your site",
-                "permalink": "/basics/deploy-your-site"
+                "title": "Architecture",
+                "permalink": "/bridge/architecture"
               }
             },
             {
@@ -197,8 +333,8 @@
               },
               "sidebar": "tutorialSidebar",
               "next": {
-                "title": "Create a Page",
-                "permalink": "/basics/create-a-page"
+                "title": "Architecture",
+                "permalink": "/getting-started/architecture"
               }
             }
           ],
@@ -211,35 +347,87 @@
               },
               {
                 "type": "category",
+                "label": "Getting Started",
+                "collapsible": true,
+                "collapsed": false,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "getting-started/architecture"
+                  }
+                ]
+              },
+              {
+                "type": "category",
                 "label": "Integrate",
                 "collapsible": true,
                 "collapsed": false,
                 "items": [
                   {
                     "type": "doc",
-                    "id": "basics/create-a-page"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "basics/create-a-document"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "basics/create-a-blog-post"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "basics/markdown-features"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "basics/deploy-your-site"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "basics/congratulations"
+                    "id": "integrate/index"
                   }
                 ]
+              },
+              {
+                "type": "category",
+                "label": "Interact",
+                "collapsible": true,
+                "collapsed": false,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "interact/index"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Bridge",
+                "collapsible": true,
+                "collapsed": false,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "bridge/architecture"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "bridge/relayer"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "bridge/light_client_contract"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "bridge/light_client_prover"
+                  },
+                  {
+                    "type": "category",
+                    "label": "Connectors",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "bridge/connectors/fungible_token_connector"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "bridge/connectors/cross_shard_contract_call_connector"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "bridge/connectors/non_fungible_token_connector copy"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "doc",
+                "id": "faq"
               }
             ]
           }
