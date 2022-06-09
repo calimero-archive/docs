@@ -1,0 +1,71 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "basics/congratulations",
+              "path": "/basics/congratulations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "basics/create-a-blog-post",
+              "path": "/basics/create-a-blog-post",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "basics/create-a-document",
+              "path": "/basics/create-a-document",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "basics/create-a-page",
+              "path": "/basics/create-a-page",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "basics/deploy-your-site",
+              "path": "/basics/deploy-your-site",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "basics/markdown-features",
+              "path": "/basics/markdown-features",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "tutorial-extras/manage-docs-versions",
+              "path": "/tutorial-extras/manage-docs-versions"
+            },
+            {
+              "id": "tutorial-extras/translate-your-site",
+              "path": "/tutorial-extras/translate-your-site"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/",
+                "label": "intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
