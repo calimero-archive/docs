@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# IDEA
+.idea/
+
+# Editor backup files
+*~
+
+# MkDocs build output
+public/
+
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
