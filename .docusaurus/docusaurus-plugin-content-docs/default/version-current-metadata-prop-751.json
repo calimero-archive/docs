@@ -30,29 +30,21 @@
       },
       {
         "type": "category",
-        "label": "Integrate",
+        "label": "Calimero Shard",
         "collapsible": true,
         "collapsed": false,
         "items": [
           {
             "type": "link",
-            "label": "index",
-            "href": "/integrate/",
-            "docId": "integrate/index"
-          }
-        ]
-      },
-      {
-        "type": "category",
-        "label": "Interact",
-        "collapsible": true,
-        "collapsed": false,
-        "items": [
+            "label": "Architecture",
+            "href": "/private_shard/architecture",
+            "docId": "private_shard/architecture"
+          },
           {
             "type": "link",
-            "label": "index",
-            "href": "/interact/",
-            "docId": "interact/index"
+            "label": "Running a Shard",
+            "href": "/private_shard/running_a_shard",
+            "docId": "private_shard/running_a_shard"
           }
         ]
       },
@@ -87,17 +79,17 @@
             "docId": "bridge/light_client_prover"
           },
           {
+            "type": "link",
+            "label": "Running a Bridge",
+            "href": "/bridge/running_a_bridge",
+            "docId": "bridge/running_a_bridge"
+          },
+          {
             "type": "category",
             "label": "Connectors",
             "collapsible": true,
             "collapsed": true,
             "items": [
-              {
-                "type": "link",
-                "label": "Fungible Token Connector",
-                "href": "/bridge/connectors/fungible_token_connector",
-                "docId": "bridge/connectors/fungible_token_connector"
-              },
               {
                 "type": "link",
                 "label": "Cross Shard Contract Call Connector",
@@ -106,11 +98,81 @@
               },
               {
                 "type": "link",
+                "label": "Fungible Token Connector",
+                "href": "/bridge/connectors/fungible_token_connector",
+                "docId": "bridge/connectors/fungible_token_connector"
+              },
+              {
+                "type": "link",
                 "label": "Non-Fungible Token Connector",
                 "href": "/bridge/connectors/non_fungible_token_connector copy",
                 "docId": "bridge/connectors/non_fungible_token_connector copy"
               }
             ]
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Interact",
+        "collapsible": true,
+        "collapsed": false,
+        "items": [
+          {
+            "type": "link",
+            "label": "Local Development",
+            "href": "/interact/local_development",
+            "docId": "interact/local_development"
+          },
+          {
+            "type": "link",
+            "label": "AssemblyScript SDK",
+            "href": "/interact/assembly_script_sdk",
+            "docId": "interact/assembly_script_sdk"
+          },
+          {
+            "type": "link",
+            "label": "RPC",
+            "href": "/interact/rpc",
+            "docId": "interact/rpc"
+          },
+          {
+            "type": "link",
+            "label": "Rust SDK",
+            "href": "/interact/rust_sdk",
+            "docId": "interact/rust_sdk"
+          },
+          {
+            "type": "link",
+            "label": "Indexer",
+            "href": "/interact/indexer",
+            "docId": "interact/indexer"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Integrate",
+        "collapsible": true,
+        "collapsed": false,
+        "items": [
+          {
+            "type": "link",
+            "label": "Fungible Token Integration",
+            "href": "/integrate/fungible_token",
+            "docId": "integrate/fungible_token"
+          },
+          {
+            "type": "link",
+            "label": "Non-Fungible Token Integration",
+            "href": "/integrate/non_fungible_token",
+            "docId": "integrate/non_fungible_token"
+          },
+          {
+            "type": "link",
+            "label": "Wallet Integration",
+            "href": "/integrate/wallet_integration",
+            "docId": "integrate/wallet_integration"
           }
         ]
       },
@@ -165,6 +227,12 @@
       "description": "",
       "sidebar": "tutorialSidebar"
     },
+    "bridge/running_a_bridge": {
+      "id": "bridge/running_a_bridge",
+      "title": "Running a Bridge",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
     "faq": {
       "id": "faq",
       "title": "FAQs",
@@ -177,15 +245,51 @@
       "description": "",
       "sidebar": "tutorialSidebar"
     },
-    "integrate/index": {
-      "id": "integrate/index",
-      "title": "index",
+    "integrate/fungible_token": {
+      "id": "integrate/fungible_token",
+      "title": "Fungible Token Integration",
       "description": "",
       "sidebar": "tutorialSidebar"
     },
-    "interact/index": {
-      "id": "interact/index",
-      "title": "index",
+    "integrate/non_fungible_token": {
+      "id": "integrate/non_fungible_token",
+      "title": "Non-Fungible Token Integration",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "integrate/wallet_integration": {
+      "id": "integrate/wallet_integration",
+      "title": "Wallet Integration",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "interact/assembly_script_sdk": {
+      "id": "interact/assembly_script_sdk",
+      "title": "AssemblyScript SDK",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "interact/indexer": {
+      "id": "interact/indexer",
+      "title": "Indexer",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "interact/local_development": {
+      "id": "interact/local_development",
+      "title": "Local Development",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "interact/rpc": {
+      "id": "interact/rpc",
+      "title": "RPC",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "interact/rust_sdk": {
+      "id": "interact/rust_sdk",
+      "title": "Rust SDK",
       "description": "",
       "sidebar": "tutorialSidebar"
     },
@@ -193,6 +297,18 @@
       "id": "intro",
       "title": "Tutorial Intro",
       "description": "Let's discover Docusaurus in less than 5 minutes.",
+      "sidebar": "tutorialSidebar"
+    },
+    "private_shard/architecture": {
+      "id": "private_shard/architecture",
+      "title": "Architecture",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
+    "private_shard/running_a_shard": {
+      "id": "private_shard/running_a_shard",
+      "title": "Running a Shard",
+      "description": "",
       "sidebar": "tutorialSidebar"
     }
   }

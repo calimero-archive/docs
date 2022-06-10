@@ -4,9 +4,9 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "My Site",
-  "tagline": "Dinosaurs are cool",
-  "url": "https://your-docusaurus-test-site.com",
+  "title": "Calimero Documentation",
+  "tagline": "The only blockchain privacy toolkit you will ever need",
+  "url": "https://docs.calimero.network",
   "baseUrl": "/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
@@ -17,14 +17,7 @@ export default {
     [
       "/Users/chefsale/workspace/docs/node_modules/@docusaurus/plugin-client-redirects/lib/index.js",
       {
-        "redirects": [
-          {
-            "to": "/intro",
-            "from": [
-              "/"
-            ]
-          }
-        ]
+        "redirects": []
       }
     ]
   ],
@@ -35,7 +28,7 @@ export default {
         "docs": {
           "sidebarPath": "/Users/chefsale/workspace/docs/sidebars.js",
           "routeBasePath": "/",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "editUrl": "https://github.com/calimero-is-near/docs/edit/master"
         },
         "theme": {
           "customCss": "/Users/chefsale/workspace/docs/src/css/custom.css"
@@ -51,7 +44,7 @@ export default {
     },
     "navbar": {
       "logo": {
-        "alt": "My Site Logo",
+        "alt": "Calimero Logo",
         "src": "img/logo.svg"
       },
       "items": [],
@@ -61,42 +54,11 @@ export default {
       "style": "dark",
       "links": [
         {
-          "title": "Docs",
-          "items": [
-            {
-              "label": "Tutorial",
-              "to": "/docs/intro"
-            }
-          ]
-        },
-        {
-          "title": "Community",
-          "items": [
-            {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
-            },
-            {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
-            },
-            {
-              "label": "Twitter",
-              "href": "https://twitter.com/docusaurus"
-            }
-          ]
-        },
-        {
-          "title": "More",
-          "items": [
-            {
-              "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
-            }
-          ]
+          "title": null,
+          "items": []
         }
       ],
-      "copyright": "Copyright © 2022 My Project, Inc. Built with Docusaurus."
+      "copyright": "Copyright © 2022 Calimero Limited."
     },
     "prism": {
       "theme": {

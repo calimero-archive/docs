@@ -46,6 +46,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "bridge/running_a_bridge",
+              "path": "/bridge/running_a_bridge",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "faq",
               "path": "/faq",
               "sidebar": "tutorialSidebar"
@@ -56,18 +61,58 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "integrate/index",
-              "path": "/integrate/",
+              "id": "integrate/fungible_token",
+              "path": "/integrate/fungible_token",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "interact/index",
-              "path": "/interact/",
+              "id": "integrate/non_fungible_token",
+              "path": "/integrate/non_fungible_token",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "integrate/wallet_integration",
+              "path": "/integrate/wallet_integration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "interact/assembly_script_sdk",
+              "path": "/interact/assembly_script_sdk",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "interact/indexer",
+              "path": "/interact/indexer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "interact/local_development",
+              "path": "/interact/local_development",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "interact/rpc",
+              "path": "/interact/rpc",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "interact/rust_sdk",
+              "path": "/interact/rust_sdk",
               "sidebar": "tutorialSidebar"
             },
             {
               "id": "intro",
               "path": "/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "private_shard/architecture",
+              "path": "/private_shard/architecture",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "private_shard/running_a_shard",
+              "path": "/private_shard/running_a_shard",
               "sidebar": "tutorialSidebar"
             }
           ],

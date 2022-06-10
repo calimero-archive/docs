@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '997'),
+    component: ComponentCreator('/', 'ab1'),
     routes: [
       {
         path: '/',
@@ -95,6 +95,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/bridge/running_a_bridge',
+        component: ComponentCreator('/bridge/running_a_bridge', '1d3'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/faq',
         component: ComponentCreator('/faq', '204'),
         exact: true,
@@ -107,14 +113,62 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/integrate/',
-        component: ComponentCreator('/integrate/', '6d9'),
+        path: '/integrate/fungible_token',
+        component: ComponentCreator('/integrate/fungible_token', '496'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/interact/',
-        component: ComponentCreator('/interact/', 'c17'),
+        path: '/integrate/non_fungible_token',
+        component: ComponentCreator('/integrate/non_fungible_token', 'cc6'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/integrate/wallet_integration',
+        component: ComponentCreator('/integrate/wallet_integration', '183'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/interact/assembly_script_sdk',
+        component: ComponentCreator('/interact/assembly_script_sdk', '3d0'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/interact/indexer',
+        component: ComponentCreator('/interact/indexer', '684'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/interact/local_development',
+        component: ComponentCreator('/interact/local_development', 'b20'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/interact/rpc',
+        component: ComponentCreator('/interact/rpc', 'f9d'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/interact/rust_sdk',
+        component: ComponentCreator('/interact/rust_sdk', '16e'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/private_shard/architecture',
+        component: ComponentCreator('/private_shard/architecture', '9ce'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/private_shard/running_a_shard',
+        component: ComponentCreator('/private_shard/running_a_shard', '82b'),
         exact: true,
         sidebar: "tutorialSidebar"
       }

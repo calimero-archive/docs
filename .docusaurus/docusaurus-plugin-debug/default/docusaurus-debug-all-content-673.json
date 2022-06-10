@@ -10,8 +10,8 @@
           "className": "docs-version-current",
           "path": "/",
           "tagsPath": "/tags",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
-          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
+          "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs",
+          "editUrlLocalized": "https://github.com/calimero-is-near/docs/edit/master/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/chefsale/workspace/docs/sidebars.js",
@@ -28,7 +28,7 @@
               "slug": "/bridge/architecture",
               "permalink": "/bridge/architecture",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/architecture.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/architecture.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -38,8 +38,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "index",
-                "permalink": "/interact/"
+                "title": "Running a Shard",
+                "permalink": "/private_shard/running_a_shard"
               },
               "next": {
                 "title": "Relayer",
@@ -56,22 +56,22 @@
               "slug": "/bridge/connectors/cross_shard_contract_call_connector",
               "permalink": "/bridge/connectors/cross_shard_contract_call_connector",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/connectors/cross_shard_contract_call_connector.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/cross_shard_contract_call_connector.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 2,
+              "sidebarPosition": 1,
               "frontMatter": {
                 "title": "Cross Shard Contract Call Connector",
-                "sidebar_position": 2
+                "sidebar_position": 1
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Fungible Token Connector",
-                "permalink": "/bridge/connectors/fungible_token_connector"
+                "title": "Running a Bridge",
+                "permalink": "/bridge/running_a_bridge"
               },
               "next": {
-                "title": "Non-Fungible Token Connector",
-                "permalink": "/bridge/connectors/non_fungible_token_connector copy"
+                "title": "Fungible Token Connector",
+                "permalink": "/bridge/connectors/fungible_token_connector"
               }
             },
             {
@@ -84,22 +84,22 @@
               "slug": "/bridge/connectors/fungible_token_connector",
               "permalink": "/bridge/connectors/fungible_token_connector",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/connectors/fungible_token_connector.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/fungible_token_connector.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 1,
+              "sidebarPosition": 2,
               "frontMatter": {
                 "title": "Fungible Token Connector",
-                "sidebar_position": 1
+                "sidebar_position": 2
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Light Client Prover",
-                "permalink": "/bridge/light_client_prover"
-              },
-              "next": {
                 "title": "Cross Shard Contract Call Connector",
                 "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+              },
+              "next": {
+                "title": "Non-Fungible Token Connector",
+                "permalink": "/bridge/connectors/non_fungible_token_connector copy"
               }
             },
             {
@@ -112,22 +112,22 @@
               "slug": "/bridge/connectors/non_fungible_token_connector copy",
               "permalink": "/bridge/connectors/non_fungible_token_connector copy",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/connectors/non_fungible_token_connector copy.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/non_fungible_token_connector copy.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 2,
+              "sidebarPosition": 3,
               "frontMatter": {
                 "title": "Non-Fungible Token Connector",
-                "sidebar_position": 2
+                "sidebar_position": 3
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Cross Shard Contract Call Connector",
-                "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+                "title": "Fungible Token Connector",
+                "permalink": "/bridge/connectors/fungible_token_connector"
               },
               "next": {
-                "title": "FAQs",
-                "permalink": "/faq"
+                "title": "Local Development",
+                "permalink": "/interact/local_development"
               }
             },
             {
@@ -140,7 +140,7 @@
               "slug": "/bridge/light_client_contract",
               "permalink": "/bridge/light_client_contract",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/light_client_contract.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/light_client_contract.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 3,
@@ -168,7 +168,7 @@
               "slug": "/bridge/light_client_prover",
               "permalink": "/bridge/light_client_prover",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/light_client_prover.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/light_client_prover.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 4,
@@ -182,8 +182,8 @@
                 "permalink": "/bridge/light_client_contract"
               },
               "next": {
-                "title": "Fungible Token Connector",
-                "permalink": "/bridge/connectors/fungible_token_connector"
+                "title": "Running a Bridge",
+                "permalink": "/bridge/running_a_bridge"
               }
             },
             {
@@ -196,7 +196,7 @@
               "slug": "/bridge/relayer",
               "permalink": "/bridge/relayer",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/bridge/relayer.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/relayer.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -215,6 +215,34 @@
               }
             },
             {
+              "unversionedId": "bridge/running_a_bridge",
+              "id": "bridge/running_a_bridge",
+              "title": "Running a Bridge",
+              "description": "",
+              "source": "@site/docs/bridge/running_a_bridge.mdx",
+              "sourceDirName": "bridge",
+              "slug": "/bridge/running_a_bridge",
+              "permalink": "/bridge/running_a_bridge",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/running_a_bridge.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 5,
+              "frontMatter": {
+                "title": "Running a Bridge",
+                "sidebar_position": 5
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Light Client Prover",
+                "permalink": "/bridge/light_client_prover"
+              },
+              "next": {
+                "title": "Cross Shard Contract Call Connector",
+                "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+              }
+            },
+            {
               "unversionedId": "faq",
               "id": "faq",
               "title": "FAQs",
@@ -224,7 +252,7 @@
               "slug": "/faq",
               "permalink": "/faq",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/faq.md",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/faq.md",
               "tags": [],
               "version": "current",
               "frontMatter": {
@@ -232,8 +260,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Non-Fungible Token Connector",
-                "permalink": "/bridge/connectors/non_fungible_token_connector copy"
+                "title": "Wallet Integration",
+                "permalink": "/integrate/wallet_integration"
               }
             },
             {
@@ -246,7 +274,7 @@
               "slug": "/getting-started/architecture",
               "permalink": "/getting-started/architecture",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/getting-started/architecture.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/getting-started/architecture.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -260,56 +288,232 @@
                 "permalink": "/"
               },
               "next": {
-                "title": "index",
-                "permalink": "/integrate/"
+                "title": "Architecture",
+                "permalink": "/private_shard/architecture"
               }
             },
             {
-              "unversionedId": "integrate/index",
-              "id": "integrate/index",
-              "title": "index",
+              "unversionedId": "integrate/fungible_token",
+              "id": "integrate/fungible_token",
+              "title": "Fungible Token Integration",
               "description": "",
-              "source": "@site/docs/integrate/index.md",
+              "source": "@site/docs/integrate/fungible_token.mdx",
               "sourceDirName": "integrate",
-              "slug": "/integrate/",
-              "permalink": "/integrate/",
+              "slug": "/integrate/fungible_token",
+              "permalink": "/integrate/fungible_token",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/integrate/index.md",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/integrate/fungible_token.mdx",
               "tags": [],
               "version": "current",
-              "frontMatter": {},
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Fungible Token Integration",
+                "sidebar_position": 1
+              },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Architecture",
-                "permalink": "/getting-started/architecture"
+                "title": "Indexer",
+                "permalink": "/interact/indexer"
               },
               "next": {
-                "title": "index",
-                "permalink": "/interact/"
+                "title": "Non-Fungible Token Integration",
+                "permalink": "/integrate/non_fungible_token"
               }
             },
             {
-              "unversionedId": "interact/index",
-              "id": "interact/index",
-              "title": "index",
+              "unversionedId": "integrate/non_fungible_token",
+              "id": "integrate/non_fungible_token",
+              "title": "Non-Fungible Token Integration",
               "description": "",
-              "source": "@site/docs/interact/index.md",
-              "sourceDirName": "interact",
-              "slug": "/interact/",
-              "permalink": "/interact/",
+              "source": "@site/docs/integrate/non_fungible_token.mdx",
+              "sourceDirName": "integrate",
+              "slug": "/integrate/non_fungible_token",
+              "permalink": "/integrate/non_fungible_token",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/interact/index.md",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/integrate/non_fungible_token.mdx",
               "tags": [],
               "version": "current",
-              "frontMatter": {},
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Non-Fungible Token Integration",
+                "sidebar_position": 2
+              },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "index",
-                "permalink": "/integrate/"
+                "title": "Fungible Token Integration",
+                "permalink": "/integrate/fungible_token"
               },
               "next": {
-                "title": "Architecture",
-                "permalink": "/bridge/architecture"
+                "title": "Wallet Integration",
+                "permalink": "/integrate/wallet_integration"
+              }
+            },
+            {
+              "unversionedId": "integrate/wallet_integration",
+              "id": "integrate/wallet_integration",
+              "title": "Wallet Integration",
+              "description": "",
+              "source": "@site/docs/integrate/wallet_integration.mdx",
+              "sourceDirName": "integrate",
+              "slug": "/integrate/wallet_integration",
+              "permalink": "/integrate/wallet_integration",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/integrate/wallet_integration.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "title": "Wallet Integration",
+                "sidebar_position": 3
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Non-Fungible Token Integration",
+                "permalink": "/integrate/non_fungible_token"
+              },
+              "next": {
+                "title": "FAQs",
+                "permalink": "/faq"
+              }
+            },
+            {
+              "unversionedId": "interact/assembly_script_sdk",
+              "id": "interact/assembly_script_sdk",
+              "title": "AssemblyScript SDK",
+              "description": "",
+              "source": "@site/docs/interact/assembly_script_sdk.mdx",
+              "sourceDirName": "interact",
+              "slug": "/interact/assembly_script_sdk",
+              "permalink": "/interact/assembly_script_sdk",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/interact/assembly_script_sdk.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "AssemblyScript SDK",
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Local Development",
+                "permalink": "/interact/local_development"
+              },
+              "next": {
+                "title": "RPC",
+                "permalink": "/interact/rpc"
+              }
+            },
+            {
+              "unversionedId": "interact/indexer",
+              "id": "interact/indexer",
+              "title": "Indexer",
+              "description": "",
+              "source": "@site/docs/interact/indexer.mdx",
+              "sourceDirName": "interact",
+              "slug": "/interact/indexer",
+              "permalink": "/interact/indexer",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/interact/indexer.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 5,
+              "frontMatter": {
+                "title": "Indexer",
+                "sidebar_position": 5
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Rust SDK",
+                "permalink": "/interact/rust_sdk"
+              },
+              "next": {
+                "title": "Fungible Token Integration",
+                "permalink": "/integrate/fungible_token"
+              }
+            },
+            {
+              "unversionedId": "interact/local_development",
+              "id": "interact/local_development",
+              "title": "Local Development",
+              "description": "",
+              "source": "@site/docs/interact/local_development.mdx",
+              "sourceDirName": "interact",
+              "slug": "/interact/local_development",
+              "permalink": "/interact/local_development",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/interact/local_development.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Local Development",
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Non-Fungible Token Connector",
+                "permalink": "/bridge/connectors/non_fungible_token_connector copy"
+              },
+              "next": {
+                "title": "AssemblyScript SDK",
+                "permalink": "/interact/assembly_script_sdk"
+              }
+            },
+            {
+              "unversionedId": "interact/rpc",
+              "id": "interact/rpc",
+              "title": "RPC",
+              "description": "",
+              "source": "@site/docs/interact/rpc.mdx",
+              "sourceDirName": "interact",
+              "slug": "/interact/rpc",
+              "permalink": "/interact/rpc",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/interact/rpc.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "title": "RPC",
+                "sidebar_position": 3
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "AssemblyScript SDK",
+                "permalink": "/interact/assembly_script_sdk"
+              },
+              "next": {
+                "title": "Rust SDK",
+                "permalink": "/interact/rust_sdk"
+              }
+            },
+            {
+              "unversionedId": "interact/rust_sdk",
+              "id": "interact/rust_sdk",
+              "title": "Rust SDK",
+              "description": "",
+              "source": "@site/docs/interact/rust_sdk.mdx",
+              "sourceDirName": "interact",
+              "slug": "/interact/rust_sdk",
+              "permalink": "/interact/rust_sdk",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/interact/rust_sdk.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "title": "Rust SDK",
+                "sidebar_position": 4
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "RPC",
+                "permalink": "/interact/rpc"
+              },
+              "next": {
+                "title": "Indexer",
+                "permalink": "/interact/indexer"
               }
             },
             {
@@ -322,7 +526,7 @@
               "slug": "/",
               "permalink": "/",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/intro.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -335,6 +539,62 @@
               "next": {
                 "title": "Architecture",
                 "permalink": "/getting-started/architecture"
+              }
+            },
+            {
+              "unversionedId": "private_shard/architecture",
+              "id": "private_shard/architecture",
+              "title": "Architecture",
+              "description": "",
+              "source": "@site/docs/private_shard/architecture.md",
+              "sourceDirName": "private_shard",
+              "slug": "/private_shard/architecture",
+              "permalink": "/private_shard/architecture",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/private_shard/architecture.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Architecture",
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Architecture",
+                "permalink": "/getting-started/architecture"
+              },
+              "next": {
+                "title": "Running a Shard",
+                "permalink": "/private_shard/running_a_shard"
+              }
+            },
+            {
+              "unversionedId": "private_shard/running_a_shard",
+              "id": "private_shard/running_a_shard",
+              "title": "Running a Shard",
+              "description": "",
+              "source": "@site/docs/private_shard/running_a_shard.md",
+              "sourceDirName": "private_shard",
+              "slug": "/private_shard/running_a_shard",
+              "permalink": "/private_shard/running_a_shard",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/private_shard/running_a_shard.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "title": "Running a Shard",
+                "sidebar_position": 2
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Architecture",
+                "permalink": "/private_shard/architecture"
+              },
+              "next": {
+                "title": "Architecture",
+                "permalink": "/bridge/architecture"
               }
             }
           ],
@@ -359,25 +619,17 @@
               },
               {
                 "type": "category",
-                "label": "Integrate",
+                "label": "Calimero Shard",
                 "collapsible": true,
                 "collapsed": false,
                 "items": [
                   {
                     "type": "doc",
-                    "id": "integrate/index"
-                  }
-                ]
-              },
-              {
-                "type": "category",
-                "label": "Interact",
-                "collapsible": true,
-                "collapsed": false,
-                "items": [
+                    "id": "private_shard/architecture"
+                  },
                   {
                     "type": "doc",
-                    "id": "interact/index"
+                    "id": "private_shard/running_a_shard"
                   }
                 ]
               },
@@ -404,6 +656,10 @@
                     "id": "bridge/light_client_prover"
                   },
                   {
+                    "type": "doc",
+                    "id": "bridge/running_a_bridge"
+                  },
+                  {
                     "type": "category",
                     "label": "Connectors",
                     "collapsible": true,
@@ -411,17 +667,65 @@
                     "items": [
                       {
                         "type": "doc",
-                        "id": "bridge/connectors/fungible_token_connector"
+                        "id": "bridge/connectors/cross_shard_contract_call_connector"
                       },
                       {
                         "type": "doc",
-                        "id": "bridge/connectors/cross_shard_contract_call_connector"
+                        "id": "bridge/connectors/fungible_token_connector"
                       },
                       {
                         "type": "doc",
                         "id": "bridge/connectors/non_fungible_token_connector copy"
                       }
                     ]
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Interact",
+                "collapsible": true,
+                "collapsed": false,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "interact/local_development"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "interact/assembly_script_sdk"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "interact/rpc"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "interact/rust_sdk"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "interact/indexer"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Integrate",
+                "collapsible": true,
+                "collapsed": false,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "integrate/fungible_token"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "integrate/non_fungible_token"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "integrate/wallet_integration"
                   }
                 ]
               },

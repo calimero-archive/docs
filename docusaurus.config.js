@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/okaidia');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Calimero Documentation",
+  tagline: "The only blockchain privacy toolkit you will ever need",
+  url: "https://docs.calimero.network",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -21,10 +21,6 @@ const config = {
       require.resolve('@docusaurus/plugin-client-redirects'),
       {
         redirects: [
-          {
-            to: '/intro',
-            from: ['/'],
-          },
         ]
       }
     ]
@@ -40,7 +36,7 @@ const config = {
           routeBasePath: "/",
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/calimero-is-near/docs/edit/master",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -57,7 +53,7 @@ const config = {
       },
       navbar: {
         logo: {
-          alt: "My Site Logo",
+          alt: "Calimero Logo",
           src: "img/logo.svg",
         },
         items: [],
@@ -66,42 +62,9 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Calimero Limited.`,
       },
       prism: {
         theme: darkCodeTheme,
