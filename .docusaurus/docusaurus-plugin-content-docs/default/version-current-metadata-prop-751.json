@@ -10,7 +10,7 @@
     "tutorialSidebar": [
       {
         "type": "link",
-        "label": "Welcome",
+        "label": "Overview",
         "href": "/",
         "docId": "intro"
       },
@@ -80,6 +80,12 @@
           },
           {
             "type": "link",
+            "label": "Prover Service",
+            "href": "/bridge/prover_service",
+            "docId": "bridge/prover_service"
+          },
+          {
+            "type": "link",
             "label": "Running a Bridge",
             "href": "/bridge/running_a_bridge",
             "docId": "bridge/running_a_bridge"
@@ -90,6 +96,12 @@
             "collapsible": true,
             "collapsed": true,
             "items": [
+              {
+                "type": "link",
+                "label": "Connectors Overview",
+                "href": "/bridge/connectors/overview",
+                "docId": "bridge/connectors/overview"
+              },
               {
                 "type": "link",
                 "label": "Cross Shard Contract Call Connector",
@@ -209,22 +221,34 @@
       "description": "",
       "sidebar": "tutorialSidebar"
     },
+    "bridge/connectors/overview": {
+      "id": "bridge/connectors/overview",
+      "title": "Connectors Overview",
+      "description": "",
+      "sidebar": "tutorialSidebar"
+    },
     "bridge/light_client_contract": {
       "id": "bridge/light_client_contract",
       "title": "Light Client Contract",
-      "description": "",
+      "description": "There are 2 scenarios, either a bridge from NEAR mainnet to Calimero shard is needed, or a Calimero shard to Calimero shard bridge can be needed for various use cases. Calimero on NEAR Client and NEAR on Calimero Client are implementations of the NEAR light client as a contract. The light client contract will accept block headers that are being relayed to it if the blocks meet certain validation criteria - most notably each valid block header needs to contain at least two thirds valid signatures of the epoch block producers. The contract does not need to verify every single block header for blocks that happened ever in the chain history, as long as it has at least one verified block header per epoch. Another useful property of the light client is that every NEAR header contains a root of the merkle tree computed from all headers before it. As a result, if you have one NEAR header you can efficiently verify any event that happened in any header before it.",
       "sidebar": "tutorialSidebar"
     },
     "bridge/light_client_prover": {
       "id": "bridge/light_client_prover",
       "title": "Light Client Prover",
-      "description": "",
+      "description": "What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.",
+      "sidebar": "tutorialSidebar"
+    },
+    "bridge/prover_service": {
+      "id": "bridge/prover_service",
+      "title": "Prover Service",
+      "description": "What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.",
       "sidebar": "tutorialSidebar"
     },
     "bridge/relayer": {
       "id": "bridge/relayer",
       "title": "Relayer",
-      "description": "",
+      "description": "Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.",
       "sidebar": "tutorialSidebar"
     },
     "bridge/running_a_bridge": {
@@ -295,8 +319,8 @@
     },
     "intro": {
       "id": "intro",
-      "title": "Tutorial Intro",
-      "description": "Let's discover Docusaurus in less than 5 minutes.",
+      "title": "Private Shard",
+      "description": "A Calimero Private Shard is a customizable L2 network built on top of NEAR Protocol. Private shards are independent networks and do not share validators, execution and state storage. NEAR Protocol is a blockchain that has been built from the ground up to be high-performant, incredibly secure, and infinitely scalable all while supporting sustainability and Calimero Shards share all the benefits.",
       "sidebar": "tutorialSidebar"
     },
     "private_shard/architecture": {

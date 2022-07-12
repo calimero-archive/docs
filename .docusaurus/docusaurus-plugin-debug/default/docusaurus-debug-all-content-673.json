@@ -59,15 +59,15 @@
               "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/cross_shard_contract_call_connector.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 1,
+              "sidebarPosition": 2,
               "frontMatter": {
                 "title": "Cross Shard Contract Call Connector",
-                "sidebar_position": 1
+                "sidebar_position": 2
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Running a Bridge",
-                "permalink": "/bridge/running_a_bridge"
+                "title": "Connectors Overview",
+                "permalink": "/bridge/connectors/overview"
               },
               "next": {
                 "title": "Fungible Token Connector",
@@ -87,10 +87,10 @@
               "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/fungible_token_connector.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 2,
+              "sidebarPosition": 3,
               "frontMatter": {
                 "title": "Fungible Token Connector",
-                "sidebar_position": 2
+                "sidebar_position": 3
               },
               "sidebar": "tutorialSidebar",
               "previous": {
@@ -115,10 +115,10 @@
               "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/non_fungible_token_connector copy.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 3,
+              "sidebarPosition": 4,
               "frontMatter": {
                 "title": "Non-Fungible Token Connector",
-                "sidebar_position": 3
+                "sidebar_position": 4
               },
               "sidebar": "tutorialSidebar",
               "previous": {
@@ -131,10 +131,38 @@
               }
             },
             {
+              "unversionedId": "bridge/connectors/overview",
+              "id": "bridge/connectors/overview",
+              "title": "Connectors Overview",
+              "description": "",
+              "source": "@site/docs/bridge/connectors/overview.mdx",
+              "sourceDirName": "bridge/connectors",
+              "slug": "/bridge/connectors/overview",
+              "permalink": "/bridge/connectors/overview",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/connectors/overview.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "title": "Connectors Overview",
+                "sidebar_position": 1
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Running a Bridge",
+                "permalink": "/bridge/running_a_bridge"
+              },
+              "next": {
+                "title": "Cross Shard Contract Call Connector",
+                "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+              }
+            },
+            {
               "unversionedId": "bridge/light_client_contract",
               "id": "bridge/light_client_contract",
               "title": "Light Client Contract",
-              "description": "",
+              "description": "There are 2 scenarios, either a bridge from NEAR mainnet to Calimero shard is needed, or a Calimero shard to Calimero shard bridge can be needed for various use cases. Calimero on NEAR Client and NEAR on Calimero Client are implementations of the NEAR light client as a contract. The light client contract will accept block headers that are being relayed to it if the blocks meet certain validation criteria - most notably each valid block header needs to contain at least two thirds valid signatures of the epoch block producers. The contract does not need to verify every single block header for blocks that happened ever in the chain history, as long as it has at least one verified block header per epoch. Another useful property of the light client is that every NEAR header contains a root of the merkle tree computed from all headers before it. As a result, if you have one NEAR header you can efficiently verify any event that happened in any header before it.",
               "source": "@site/docs/bridge/light_client_contract.mdx",
               "sourceDirName": "bridge",
               "slug": "/bridge/light_client_contract",
@@ -162,7 +190,7 @@
               "unversionedId": "bridge/light_client_prover",
               "id": "bridge/light_client_prover",
               "title": "Light Client Prover",
-              "description": "",
+              "description": "What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.",
               "source": "@site/docs/bridge/light_client_prover.mdx",
               "sourceDirName": "bridge",
               "slug": "/bridge/light_client_prover",
@@ -182,6 +210,34 @@
                 "permalink": "/bridge/light_client_contract"
               },
               "next": {
+                "title": "Prover Service",
+                "permalink": "/bridge/prover_service"
+              }
+            },
+            {
+              "unversionedId": "bridge/prover_service",
+              "id": "bridge/prover_service",
+              "title": "Prover Service",
+              "description": "What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.",
+              "source": "@site/docs/bridge/prover_service.mdx",
+              "sourceDirName": "bridge",
+              "slug": "/bridge/prover_service",
+              "permalink": "/bridge/prover_service",
+              "draft": false,
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/prover_service.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 5,
+              "frontMatter": {
+                "title": "Prover Service",
+                "sidebar_position": 5
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "Light Client Prover",
+                "permalink": "/bridge/light_client_prover"
+              },
+              "next": {
                 "title": "Running a Bridge",
                 "permalink": "/bridge/running_a_bridge"
               }
@@ -190,7 +246,7 @@
               "unversionedId": "bridge/relayer",
               "id": "bridge/relayer",
               "title": "Relayer",
-              "description": "",
+              "description": "Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.",
               "source": "@site/docs/bridge/relayer.mdx",
               "sourceDirName": "bridge",
               "slug": "/bridge/relayer",
@@ -227,19 +283,19 @@
               "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/running_a_bridge.mdx",
               "tags": [],
               "version": "current",
-              "sidebarPosition": 5,
+              "sidebarPosition": 6,
               "frontMatter": {
                 "title": "Running a Bridge",
-                "sidebar_position": 5
+                "sidebar_position": 6
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Light Client Prover",
-                "permalink": "/bridge/light_client_prover"
+                "title": "Prover Service",
+                "permalink": "/bridge/prover_service"
               },
               "next": {
-                "title": "Cross Shard Contract Call Connector",
-                "permalink": "/bridge/connectors/cross_shard_contract_call_connector"
+                "title": "Connectors Overview",
+                "permalink": "/bridge/connectors/overview"
               }
             },
             {
@@ -284,7 +340,7 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Welcome",
+                "title": "Overview",
                 "permalink": "/"
               },
               "next": {
@@ -519,8 +575,8 @@
             {
               "unversionedId": "intro",
               "id": "intro",
-              "title": "Tutorial Intro",
-              "description": "Let's discover Docusaurus in less than 5 minutes.",
+              "title": "Private Shard",
+              "description": "A Calimero Private Shard is a customizable L2 network built on top of NEAR Protocol. Private shards are independent networks and do not share validators, execution and state storage. NEAR Protocol is a blockchain that has been built from the ground up to be high-performant, incredibly secure, and infinitely scalable all while supporting sustainability and Calimero Shards share all the benefits.",
               "source": "@site/docs/intro.mdx",
               "sourceDirName": ".",
               "slug": "/",
@@ -532,7 +588,7 @@
               "sidebarPosition": 1,
               "frontMatter": {
                 "sidebar_position": 1,
-                "sidebar_label": "Welcome",
+                "sidebar_label": "Overview",
                 "slug": "/"
               },
               "sidebar": "tutorialSidebar",
@@ -657,6 +713,10 @@
                   },
                   {
                     "type": "doc",
+                    "id": "bridge/prover_service"
+                  },
+                  {
+                    "type": "doc",
                     "id": "bridge/running_a_bridge"
                   },
                   {
@@ -665,6 +725,10 @@
                     "collapsible": true,
                     "collapsed": true,
                     "items": [
+                      {
+                        "type": "doc",
+                        "id": "bridge/connectors/overview"
+                      },
                       {
                         "type": "doc",
                         "id": "bridge/connectors/cross_shard_contract_call_connector"

@@ -1,8 +1,8 @@
 {
   "unversionedId": "intro",
   "id": "intro",
-  "title": "Tutorial Intro",
-  "description": "Let's discover Docusaurus in less than 5 minutes.",
+  "title": "Private Shard",
+  "description": "A Calimero Private Shard is a customizable L2 network built on top of NEAR Protocol. Private shards are independent networks and do not share validators, execution and state storage. NEAR Protocol is a blockchain that has been built from the ground up to be high-performant, incredibly secure, and infinitely scalable all while supporting sustainability and Calimero Shards share all the benefits.",
   "source": "@site/docs/intro.mdx",
   "sourceDirName": ".",
   "slug": "/",
@@ -14,7 +14,7 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "sidebar_label": "Welcome",
+    "sidebar_label": "Overview",
     "slug": "/"
   },
   "sidebar": "tutorialSidebar",

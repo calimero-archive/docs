@@ -31,6 +31,11 @@
               "sidebar": "tutorialSidebar"
             },
             {
+              "id": "bridge/connectors/overview",
+              "path": "/bridge/connectors/overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "bridge/light_client_contract",
               "path": "/bridge/light_client_contract",
               "sidebar": "tutorialSidebar"
@@ -38,6 +43,11 @@
             {
               "id": "bridge/light_client_prover",
               "path": "/bridge/light_client_prover",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "bridge/prover_service",
+              "path": "/bridge/prover_service",
               "sidebar": "tutorialSidebar"
             },
             {

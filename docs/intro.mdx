@@ -1,49 +1,45 @@
 ---
 sidebar_position: 1
-sidebar_label: Welcome
+sidebar_label: Overview
 slug: /
 ---
 
-# Tutorial Intro
+# Private Shard
+A Calimero Private Shard is a **customizable L2 network built on top of NEAR Protocol**. Private shards are independent networks and do not share validators, execution and state storage. NEAR Protocol is a blockchain that has been built from the ground up to be high-performant, incredibly secure, and infinitely scalable all while supporting sustainability and Calimero Shards share all the benefits.
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Calimero shards support three main modes of operation:
+- Permissioned Private Calimero Shard owned by a single entity
+- Permissioned Private Calimero Shard owned by a consortium 
+- Public Calimero Shard owned by a community
 
-## Getting Started
+Calimero shards can support up to 100k transactions per second, but a standard one shard deployment has the throughput of 5k transactions per second.
 
-Get started by **creating a new site**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+# Features
 
-### What you'll need
+Enhance your application by interoperating with open source protocols and applications, from DeFi to NFTs.
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Move your assets between private shards and other public chains seamlessly.
 
-## Generate a new site
 
-Generate a new Docusaurus site using the **classic template**.
+Using Calimero you are benefiting from cross shard transactions which provide you with the ability to interact with other third parties on the public chain or other permissioned enterprise shards.
 
-The classic template will automatically be added to your project after you run the command:
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+Hold and manage public assets.
+Smart contracts from private shards can call
+into public shard to interact with those applications
+Public smart contracts if setup can also call into private
+shard’s contracts (extended trust model, similar to Oracles)
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+Private shards can interact with each other over encrypted channel
 
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+# Requirements​
+Calimero shards may require validators to have certain properties depending on the use cases and applications running on top of the private shard.
+The hardware requirements are pretty flexible, but we recommend a minimum requirement for hardware which is:
+- Number of nodes
+- Number of RPC nodes
+- Number of Indexers
+- CPUs
+- RAM
+- Storage 
+Specific use cases require larger amounts of CPU power, RAM or storage and the shards can be tailored to them.

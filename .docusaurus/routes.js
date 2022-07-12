@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'ab1'),
+    component: ComponentCreator('/', 'b67'),
     routes: [
       {
         path: '/',
@@ -77,6 +77,12 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
+        path: '/bridge/connectors/overview',
+        component: ComponentCreator('/bridge/connectors/overview', '821'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
         path: '/bridge/light_client_contract',
         component: ComponentCreator('/bridge/light_client_contract', '8f4'),
         exact: true,
@@ -85,6 +91,12 @@ export default [
       {
         path: '/bridge/light_client_prover',
         component: ComponentCreator('/bridge/light_client_prover', '902'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
+      {
+        path: '/bridge/prover_service',
+        component: ComponentCreator('/bridge/prover_service', '08e'),
         exact: true,
         sidebar: "tutorialSidebar"
       },
