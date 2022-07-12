@@ -66,11 +66,6 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "getting-started/architecture",
-              "path": "/getting-started/architecture",
-              "sidebar": "tutorialSidebar"
-            },
-            {
               "id": "integrate/fungible_token",
               "path": "/integrate/fungible_token",
               "sidebar": "tutorialSidebar"

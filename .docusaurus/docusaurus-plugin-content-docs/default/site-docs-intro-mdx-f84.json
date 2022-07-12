@@ -14,12 +14,12 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "sidebar_label": "Overview",
+    "sidebar_label": "Getting Started",
     "slug": "/"
   },
   "sidebar": "tutorialSidebar",
   "next": {
     "title": "Architecture",
-    "permalink": "/getting-started/architecture"
+    "permalink": "/private_shard/architecture"
   }
 }

@@ -10,23 +10,9 @@
     "tutorialSidebar": [
       {
         "type": "link",
-        "label": "Overview",
+        "label": "Getting Started",
         "href": "/",
         "docId": "intro"
-      },
-      {
-        "type": "category",
-        "label": "Getting Started",
-        "collapsible": true,
-        "collapsed": false,
-        "items": [
-          {
-            "type": "link",
-            "label": "Architecture",
-            "href": "/getting-started/architecture",
-            "docId": "getting-started/architecture"
-          }
-        ]
       },
       {
         "type": "category",
@@ -260,12 +246,6 @@
     "faq": {
       "id": "faq",
       "title": "FAQs",
-      "description": "",
-      "sidebar": "tutorialSidebar"
-    },
-    "getting-started/architecture": {
-      "id": "getting-started/architecture",
-      "title": "Architecture",
       "description": "",
       "sidebar": "tutorialSidebar"
     },

@@ -321,34 +321,6 @@
               }
             },
             {
-              "unversionedId": "getting-started/architecture",
-              "id": "getting-started/architecture",
-              "title": "Architecture",
-              "description": "",
-              "source": "@site/docs/getting-started/architecture.mdx",
-              "sourceDirName": "getting-started",
-              "slug": "/getting-started/architecture",
-              "permalink": "/getting-started/architecture",
-              "draft": false,
-              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/getting-started/architecture.mdx",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "title": "Architecture",
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Overview",
-                "permalink": "/"
-              },
-              "next": {
-                "title": "Architecture",
-                "permalink": "/private_shard/architecture"
-              }
-            },
-            {
               "unversionedId": "integrate/fungible_token",
               "id": "integrate/fungible_token",
               "title": "Fungible Token Integration",
@@ -588,13 +560,13 @@
               "sidebarPosition": 1,
               "frontMatter": {
                 "sidebar_position": 1,
-                "sidebar_label": "Overview",
+                "sidebar_label": "Getting Started",
                 "slug": "/"
               },
               "sidebar": "tutorialSidebar",
               "next": {
                 "title": "Architecture",
-                "permalink": "/getting-started/architecture"
+                "permalink": "/private_shard/architecture"
               }
             },
             {
@@ -617,8 +589,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Architecture",
-                "permalink": "/getting-started/architecture"
+                "title": "Getting Started",
+                "permalink": "/"
               },
               "next": {
                 "title": "Running a Shard",
@@ -660,18 +632,6 @@
               {
                 "type": "doc",
                 "id": "intro"
-              },
-              {
-                "type": "category",
-                "label": "Getting Started",
-                "collapsible": true,
-                "collapsed": false,
-                "items": [
-                  {
-                    "type": "doc",
-                    "id": "getting-started/architecture"
-                  }
-                ]
               },
               {
                 "type": "category",
