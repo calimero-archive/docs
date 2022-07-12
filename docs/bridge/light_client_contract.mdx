@@ -7,14 +7,14 @@ There are 2 scenarios, either a bridge from NEAR mainnet to Calimero shard is ne
 
 The light client updates its head with the information from LightClientBlockView iff:
 
-```
-The height of the block is higher than the height of the current head;
-The epoch of the block is equal to the epoch_id or next_epoch_id known for the current head;
-If the epoch of the block is equal to the next_epoch_id of the head, then next_bps is not None;
+
+- The height of the block is higher than the height of the current head;
+- The epoch of the block is equal to the epoch_id or next_epoch_id known for the current head;
+- If the epoch of the block is equal to the next_epoch_id of the head, then next_bps is not None;
 approvals_after_next contain valid signatures on approval_message from the block producers of the corresponding epoch (see next section);
-The signatures present in approvals_after_next correspond to more than 2/3 of the total stake (see next section).
-If next_bps is not none, sha256(borsh(next_bps)) corresponds to the next_bp_hash in inner_lite.`
-```
+- The signatures present in approvals_after_next correspond to more than 2/3 of the total stake (see next section).
+- If next_bps is not none, sha256(borsh(next_bps)) corresponds to the next_bp_hash in inner_lite.`
+
 
 NEAR on ETH light client has optimistic validation since 1 signature verification on ETH costs 500-600k gas which is prohibitively expensive.
 
