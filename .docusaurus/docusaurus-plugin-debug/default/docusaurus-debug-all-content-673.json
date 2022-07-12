@@ -42,8 +42,8 @@
                 "permalink": "/private_shard/running_a_shard"
               },
               "next": {
-                "title": "Relayer",
-                "permalink": "/bridge/relayer"
+                "title": "Relayer Service",
+                "permalink": "/bridge/relayer_service"
               }
             },
             {
@@ -134,7 +134,7 @@
               "unversionedId": "bridge/connectors/overview",
               "id": "bridge/connectors/overview",
               "title": "Connectors Overview",
-              "description": "",
+              "description": "The prover enables us to build a set of contracts for transferring assets from one chain to another, or even to make cross shard contract calls. Most notably, Calimero supports transfering Fungible tokens as well as Non Fungible tokens from one chain to another.",
               "source": "@site/docs/bridge/connectors/overview.mdx",
               "sourceDirName": "bridge/connectors",
               "slug": "/bridge/connectors/overview",
@@ -178,8 +178,8 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Relayer",
-                "permalink": "/bridge/relayer"
+                "title": "Relayer Service",
+                "permalink": "/bridge/relayer_service"
               },
               "next": {
                 "title": "Light Client Prover",
@@ -210,14 +210,14 @@
                 "permalink": "/bridge/light_client_contract"
               },
               "next": {
-                "title": "Prover Service",
+                "title": "Bridge Service",
                 "permalink": "/bridge/prover_service"
               }
             },
             {
               "unversionedId": "bridge/prover_service",
               "id": "bridge/prover_service",
-              "title": "Prover Service",
+              "title": "Bridge Service",
               "description": "What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.",
               "source": "@site/docs/bridge/prover_service.mdx",
               "sourceDirName": "bridge",
@@ -229,7 +229,7 @@
               "version": "current",
               "sidebarPosition": 5,
               "frontMatter": {
-                "title": "Prover Service",
+                "title": "Bridge Service",
                 "sidebar_position": 5
               },
               "sidebar": "tutorialSidebar",
@@ -243,21 +243,21 @@
               }
             },
             {
-              "unversionedId": "bridge/relayer",
-              "id": "bridge/relayer",
-              "title": "Relayer",
+              "unversionedId": "bridge/relayer_service",
+              "id": "bridge/relayer_service",
+              "title": "Relayer Service",
               "description": "Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.",
-              "source": "@site/docs/bridge/relayer.mdx",
+              "source": "@site/docs/bridge/relayer_service.mdx",
               "sourceDirName": "bridge",
-              "slug": "/bridge/relayer",
-              "permalink": "/bridge/relayer",
+              "slug": "/bridge/relayer_service",
+              "permalink": "/bridge/relayer_service",
               "draft": false,
-              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/relayer.mdx",
+              "editUrl": "https://github.com/calimero-is-near/docs/edit/master/docs/bridge/relayer_service.mdx",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
               "frontMatter": {
-                "title": "Relayer",
+                "title": "Relayer Service",
                 "sidebar_position": 2
               },
               "sidebar": "tutorialSidebar",
@@ -290,7 +290,7 @@
               },
               "sidebar": "tutorialSidebar",
               "previous": {
-                "title": "Prover Service",
+                "title": "Bridge Service",
                 "permalink": "/bridge/prover_service"
               },
               "next": {
@@ -701,7 +701,7 @@
                   },
                   {
                     "type": "doc",
-                    "id": "bridge/relayer"
+                    "id": "bridge/relayer_service"
                   },
                   {
                     "type": "doc",

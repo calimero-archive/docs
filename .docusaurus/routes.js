@@ -44,7 +44,7 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'b67'),
+    component: ComponentCreator('/', '6d7'),
     routes: [
       {
         path: '/',
@@ -101,8 +101,8 @@ export default [
         sidebar: "tutorialSidebar"
       },
       {
-        path: '/bridge/relayer',
-        component: ComponentCreator('/bridge/relayer', '183'),
+        path: '/bridge/relayer_service',
+        component: ComponentCreator('/bridge/relayer_service', 'c42'),
         exact: true,
         sidebar: "tutorialSidebar"
       },

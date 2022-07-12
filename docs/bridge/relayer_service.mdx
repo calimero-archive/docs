@@ -1,11 +1,13 @@
 ---
-title: Relayer
+title: Relayer Service
 sidebar_position: 2
 ---
 
 Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.
 
 LightClientBlockView is the struct that is being relayed. Here is how it looks together with the substructs:
+
+<img src={require('@site/static/img/relayer_simple.jpg').default} />
 
 ```
 pub struct LightClientBlockView {

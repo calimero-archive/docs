@@ -51,8 +51,8 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "bridge/relayer",
-              "path": "/bridge/relayer",
+              "id": "bridge/relayer_service",
+              "path": "/bridge/relayer_service",
               "sidebar": "tutorialSidebar"
             },
             {

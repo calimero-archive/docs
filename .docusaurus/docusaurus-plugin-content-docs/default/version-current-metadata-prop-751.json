@@ -62,9 +62,9 @@
           },
           {
             "type": "link",
-            "label": "Relayer",
-            "href": "/bridge/relayer",
-            "docId": "bridge/relayer"
+            "label": "Relayer Service",
+            "href": "/bridge/relayer_service",
+            "docId": "bridge/relayer_service"
           },
           {
             "type": "link",
@@ -80,7 +80,7 @@
           },
           {
             "type": "link",
-            "label": "Prover Service",
+            "label": "Bridge Service",
             "href": "/bridge/prover_service",
             "docId": "bridge/prover_service"
           },
@@ -224,7 +224,7 @@
     "bridge/connectors/overview": {
       "id": "bridge/connectors/overview",
       "title": "Connectors Overview",
-      "description": "",
+      "description": "The prover enables us to build a set of contracts for transferring assets from one chain to another, or even to make cross shard contract calls. Most notably, Calimero supports transfering Fungible tokens as well as Non Fungible tokens from one chain to another.",
       "sidebar": "tutorialSidebar"
     },
     "bridge/light_client_contract": {
@@ -241,13 +241,13 @@
     },
     "bridge/prover_service": {
       "id": "bridge/prover_service",
-      "title": "Prover Service",
+      "title": "Bridge Service",
       "description": "What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.",
       "sidebar": "tutorialSidebar"
     },
-    "bridge/relayer": {
-      "id": "bridge/relayer",
-      "title": "Relayer",
+    "bridge/relayer_service": {
+      "id": "bridge/relayer_service",
+      "title": "Relayer Service",
       "description": "Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.",
       "sidebar": "tutorialSidebar"
     },

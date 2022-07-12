@@ -49,7 +49,7 @@
     },
     "content": "content---markdown-page-393-028"
   },
-  "/-b67": {
+  "/-6d7": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---92-f-eae"
@@ -92,9 +92,9 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---bridge-prover-servicef-68-041"
   },
-  "/bridge/relayer-183": {
+  "/bridge/relayer_service-c42": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---bridge-relayer-21-d-88b"
+    "content": "content---bridge-relayer-servicef-1-c-d01"
   },
   "/bridge/running_a_bridge-1d3": {
     "__comp": "__comp---theme-doc-item-178-a40",
