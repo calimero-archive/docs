@@ -18,7 +18,7 @@ pub struct LightClientBlockView {
     pub next_bps: Option<Vec<ValidatorStakeView>>,
     pub approvals_after_next: Vec<Option<Signature>>,
 }
-
+```
 
 pub struct BlockHeaderInnerLiteView {
     pub height: BlockHeight,
@@ -30,18 +30,24 @@ pub struct BlockHeaderInnerLiteView {
     pub next_bp_hash: CryptoHash,
     pub block_merkle_root: CryptoHash,
 }
+```
 
+```
 pub enum ApprovalInner {
     Endorsement(CryptoHash),
     Skip(BlockHeight)
 }
+```
 
+```
 pub struct ValidatorStakeView {
     pub account_id: AccountId,
     pub public_key: PublicKey,
     pub stake: Balance,
 }
+```
 
+```
 pub struct LightClientBlockLiteView {
     pub prev_block_hash: CryptoHash,
     pub inner_rest_hash: CryptoHash,
