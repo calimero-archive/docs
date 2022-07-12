@@ -2,3 +2,7 @@
 title: Light Client Prover
 sidebar_position: 4
 ---
+
+What makes the light client contract interesting is the ability to prove that something happened on a specific chain. The prover takes as input the proof data that contain a merkle path to the block where the transaction/receipt originated and a merkle path to the transaction/receipt, also as input the height of the known block to the light client contract needs to be provided, and this block needs to be ahead or on the block of the transaction that we are proving. With all of this the prover can calculate the expected block merkle root and compare it to the one stored in the light client block.
+
+Proof for a certain receipt can be fetched by making an RPC call (EXPERIMENTAL_light_client_proof) to the Archival node. Together with the block height from the light client contract which needs to be higher than the block height of the block where the transaction/receipt happened, everything that needs to be provided to the Prover is ready.
