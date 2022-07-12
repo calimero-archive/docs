@@ -2,6 +2,7 @@
 title: Overview
 sidebar_position: 1
 ---
+# Overview 
 
 # Shard Token
 The private shard token is only used for consensus, to ensure that validators with a certain stake get the ability to verify and propose blocks. The token can be customized to be a CBDC, but by default it will be just used for consensus, to create accounts and to be attached for gas fees.
