@@ -2,3 +2,45 @@
 title: Relayer
 sidebar_position: 2
 ---
+
+Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.
+
+LightClientBlockView is the struct that is being relayed. Here is how it looks together with the substructs:
+
+pub struct LightClientBlockView {
+    pub prev_block_hash: CryptoHash,
+    pub next_block_inner_hash: CryptoHash,
+    pub inner_lite: BlockHeaderInnerLiteView,
+    pub inner_rest_hash: CryptoHash,
+    pub next_bps: Option<Vec<ValidatorStakeView>>,
+    pub approvals_after_next: Vec<Option<Signature>>,
+}
+
+
+pub struct BlockHeaderInnerLiteView {
+    pub height: BlockHeight,
+    pub epoch_id: CryptoHash,
+    pub next_epoch_id: CryptoHash,
+    pub prev_state_root: CryptoHash,
+    pub outcome_root: CryptoHash,
+    pub timestamp: u64,
+    pub next_bp_hash: CryptoHash,
+    pub block_merkle_root: CryptoHash,
+}
+
+pub enum ApprovalInner {
+    Endorsement(CryptoHash),
+    Skip(BlockHeight)
+}
+
+pub struct ValidatorStakeView {
+    pub account_id: AccountId,
+    pub public_key: PublicKey,
+    pub stake: Balance,
+}
+
+pub struct LightClientBlockLiteView {
+    pub prev_block_hash: CryptoHash,
+    pub inner_rest_hash: CryptoHash,
+    pub inner_lite: BlockHeaderInnerLiteView,
+}
