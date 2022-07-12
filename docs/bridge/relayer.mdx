@@ -7,6 +7,7 @@ Relayer reads blocks from a source chain and sends the block headers to the ligh
 
 LightClientBlockView is the struct that is being relayed. Here is how it looks together with the substructs:
 
+```
 pub struct LightClientBlockView {
     pub prev_block_hash: CryptoHash,
     pub next_block_inner_hash: CryptoHash,
@@ -44,3 +45,4 @@ pub struct LightClientBlockLiteView {
     pub inner_rest_hash: CryptoHash,
     pub inner_lite: BlockHeaderInnerLiteView,
 }
+```
