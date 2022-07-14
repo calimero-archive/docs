@@ -9,7 +9,7 @@ Relayer reads blocks from a source chain and sends the block headers to the ligh
 
 LightClientBlockView is the struct that is being relayed. Here is how it looks together with the substructs:
 
-```
+```rust
 pub struct LightClientBlockView {
     pub prev_block_hash: CryptoHash,
     pub next_block_inner_hash: CryptoHash,
@@ -20,7 +20,7 @@ pub struct LightClientBlockView {
 }
 ```
 
-```
+```rust
 pub struct BlockHeaderInnerLiteView {
     pub height: BlockHeight,
     pub epoch_id: CryptoHash,
@@ -33,14 +33,14 @@ pub struct BlockHeaderInnerLiteView {
 }
 ```
 
-```
+```rust
 pub enum ApprovalInner {
     Endorsement(CryptoHash),
     Skip(BlockHeight)
 }
 ```
 
-```
+```rust
 pub struct ValidatorStakeView {
     pub account_id: AccountId,
     pub public_key: PublicKey,
@@ -48,7 +48,7 @@ pub struct ValidatorStakeView {
 }
 ```
 
-```
+```rust
 pub struct LightClientBlockLiteView {
     pub prev_block_hash: CryptoHash,
     pub inner_rest_hash: CryptoHash,
