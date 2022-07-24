@@ -2,3 +2,62 @@
 title: Wallet Integration
 sidebar_position: 3
 ---
+
+Calimero Private Shard are intergrated into the NEAR Wallet and users are able to authenticate via the NEAR Wallet.
+
+We have built a demo example application which can be used as a tutorial for integration. The application can be found on https://github.com/calimero-is-near/calimero-examples/tree/master/calimero-login and uses the Calimero Authentication SDK which is open-sourced: https://github.com/calimero-is-near/calimero-auth-sdk and published on npm: https://www.npmjs.com/package/calimero-auth-sdk.
+
+Add the calimero-auth-sdk to you project by running:
+```sh
+yarn install calimero-auth-sdk
+```
+or
+```sh
+npm install calimero-auth-sdk
+```
+
+
+
+Once installed you will need to use the `Calimero.isSignedIn()` method to check if user has authorized with Calimero. In the example we render a Login button for the user to click on.
+```js
+import React from 'react';
+
+import { CalimeroAuth } from 'calimero-auth-sdk';
+
+export default function Dashboard() {
+  if (CalimeroAuth.isSignedIn()) {
+    return <button onClick={CalimeroAuth.signOut}>
+      Logout
+    </button>
+  }
+  
+  return(
+  <button>
+    <a href='/login'>Login with NEAR</a>
+  </button>
+);
+}
+```
+
+The second part of the integration includes implementing a Login component which checks if the user has not signed in. Redirects the user to the NEAR wallet to authorize the connection with the Private Shard, once authorized it will redirect the user to this component and send the authorization request to the Calimero Authentication Service.
+
+```js
+import { CalimeroAuth } from 'calimero-auth-sdk';
+
+export default function Login() {
+    if (!CalimeroAuth.isSignedIn()) {
+        CalimeroAuth.signIn({
+            shardId: "testing.calimero",
+            walletUrl: "https://testnet.mynearwallet.com/verify-owner",
+            authServiceUrl: "http://localhost:1336"
+        });
+    }
+
+    return (
+        <div className="App">
+            <header className="App-header">
+            </header>
+        </div>
+    );
+}
+```
