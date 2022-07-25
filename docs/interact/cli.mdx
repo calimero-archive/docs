@@ -10,23 +10,28 @@ You can install the NEAR CLI using:
 npm install -g near-cli
 ```
 
-All methods from NEAR CLI are compatible with Calimero and the documentation can be found on the official NEAR docs: https://docs.near.org/tools/near-cli.
+All methods from NEAR CLI are compatible with Calimero Private Shards and the documentation can be found on the official NEAR docs: https://docs.near.org/tools/near-cli.
 
 
 To use NEAR CLI with Calimero SDK you will need to:
-- generate an Authentication token through the Calimero Dashboard
-- set the custom RPC endpoint for the CLI tool to use
+- generate an Authentication token on the Security page inside the Calimero Console
+- set the custom RPC endpoint for the CLI tool to use from your Dashboard
 - set the API token for the CLI to use
 
-NEAR_CLI_MAINNET_RPC_SERVER_URL
-NEAR_CLI_TESTNET_RPC_SERVER_URL
 
+In case you are using a mainnet private shard, set the NEAR_CLI_MAINNET_RPC_SERVER_URL environment variable. On the other hand, for testnet use the
+NEAR_CLI_TESTNET_RPC_SERVER_URL environment variable instead.
+
+
+Mainet Example :
+```bash
+export NEAR_CLI_MAINNET_RPC_SERVER_URL=<put_your_rpc_server_url_here>
+near set-api-key $NEAR_CLI_MAINNER_RPC_SERVER_URL <api-key>
 ```
+
+Testnet Example :
+```bash
 export NEAR_CLI_TESTNET_RPC_SERVER_URL=<put_your_rpc_server_url_here>
-```
-
-
-```
 near set-api-key $NEAR_CLI_TESTNET_RPC_SERVER_URL <api-key>
 ```
 
