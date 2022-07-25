@@ -50,6 +50,7 @@ const config = {
     ({
       colorMode: {
         respectPrefersColorScheme: true,
+        disableSwitch: true,
       },
       navbar: {
         logo: {
