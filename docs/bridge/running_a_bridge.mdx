@@ -7,21 +7,21 @@ sidebar_position: 6
 
 These steps assume creating a bridge between NEAR Testnet and a Calimero shard, but in reality it can be any chain to any chain.
 
-1) Deploy light client contract on Testnet
-2) Deploy prover contract on Testnet
-3) Start relayer from Calimero to Testnet (keep it running at all times)
-4) Deploy light client contract on Calimero
-5) Deploy prover contract on Calimero
-6) Start relayer from Testnet to Calimero (keep it running at all times)
+1. Deploy light client contract on Testnet
+2. Deploy prover contract on Testnet
+3. Start relayer from Calimero to Testnet (keep it running at all times)
+4. Deploy light client contract on Calimero
+5. Deploy prover contract on Calimero
+6. Start relayer from Testnet to Calimero (keep it running at all times)
 
 # Deploy the Connectors
 
 Again, here we assume the source chain to be the NEAR Testnet, and destination chain to be a Calimero shard
 
-1) Deploy ft_connector_source on Testnet
-2) Deploy ft_connector_destination on Calimero
-3) Call set_locker on ft_connector_source & ft_connector_destination (we’ll provide you with the commands)
-4) Start bridge service and keep it running
+1. Deploy ft_connector_source on Testnet
+2. Deploy ft_connector_destination on Calimero
+3. Call set_locker on ft_connector_source & ft_connector_destination (we’ll provide you with the commands)
+4. Start bridge service and keep it running
 
 # Transferring tokens
 
