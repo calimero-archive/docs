@@ -5,7 +5,4 @@ sidebar_position: 1
 
 The prover enables us to build a set of contracts for transferring assets from one chain to another, or even to make cross shard contract calls. Most notably, Calimero supports transfering Fungible tokens as well as Non Fungible tokens from one chain to another.
 
-
-Example: NEAR tokens are already locked on NEAR mainnet and we want them back in circulation on NEAR, so we want to take them out of circulation on Calimero, but we need to provide proof that they are burnt on Calimero.
-First step is to burn wNEAR on Calimero. Once that transaction is done, eventually the relayer will relay the block that has higher height than the block where the burn transaction was finalized to the NEAR light client contract. Once that is done we ask for the latest height on the NEAR light client contract. Then an RPC call to fetch the light client proof is made.
-With the proof data and the block height, a withdraw() contract call can be performed on the contract on NEAR where original NEAR tokens were locked. If the prover returns true, meaning essentially that with the provided proof data a hash could be calculated that matches the block merkle root stored under light client contract. Once this step is completed, NEAR tokens are released back to the user on NEAR mainnet, simply by the fact that a relayer that is trustless filled valid blocks from Calimero to NEAR.
+In next sections we describe how the Fungible, Nonfungible and Cross shard calls connectors work.
