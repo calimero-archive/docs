@@ -2,3 +2,40 @@
 title: Web Frontend - NEAR API JS
 sidebar_position: 7
 ---
+
+## Prerequisites
+Access to the Calimero console running a private shard. 
+
+## Configure NEAR API JS
+
+
+### Create a new shard token
+https://near.github.io/near-api-js/interfaces/connect.connectconfig.html
+
+
+Generate a new token in the calimero security [dashboard](https://alpha.app.calimero.network/security/tokens)
+Copy your API key somewhere safe. For security reasons, you will only be shown your API key one time. Please store it somewhere safe as we will not be able to retrieve or restore it.
+
+
+### Initialize the connection with the private shard
+
+Create a new ConnectConfig with the following parameters and initialize the connection.
+
+* nodeUrl: The JSON RPC url. It can be obtained from the Calimero dashboard and it follows the pattern https://api.testnet.calimero.network/api/v1/shards/${shardId}/neard-rpc/
+
+* token: The token generated in the previous step
+
+* shardId: The identificator of the shard is passed as the network ID to the Near Connection
+
+```
+const connectionConfig = {
+  networkId: shardId,
+  keyStore: myKeyStore,
+  nodeUrl: "https://api-testnet.calimero.network/api/v1/shards/xabi/neard-rpc/",
+  headers: {
+    "x-api-key" : TOKEN
+  }
+};
+
+const near = await connect({ ...config, keyStore });
+```
