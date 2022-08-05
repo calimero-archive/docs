@@ -2,3 +2,35 @@
 title: Fetch data from the Indexer
 sidebar_position: 4
 ---
+
+## Prerequisites
+Access to the Calimero console running a private shard.
+
+## Configuration
+
+Create a new shard token
+https://near.github.io/near-api-js/interfaces/connect.connectconfig.html
+
+Generate a new token in the calimero security dashboard.
+
+## Fetching data
+
+**Method:** POST
+
+**Url:** (https://api.testnet.calimero.network/api/v1/shards/{{shardId}}/indexer-graphql/graphql)
+
+**Headers:** Any request to the indexer endpoint must include an `authorization` header. The value is the token generated in the previous step.
+
+**Body:** A GraphQL query
+
+Example
+```{
+    "query": "query getAccountType($accountId: String!){\n    allActionReceiptActions(\n      condition: {actionKind: DEPLOY_CONTRACT, receiptPredecessorAccountId: $accountId}\n      orderBy: RECEIPT_INCLUDED_IN_BLOCK_TIMESTAMP_DESC\n      first: 1\n    ) {\n      totalCount\n    }\n  }",
+    "variables":{
+      "accountId": "{{shardId}}.calimero"
+  }
+}
+```
+
+<img width="767" alt="Screen Shot 2022-08-05 at 12 31 10 PM" src="https://user-images.githubusercontent.com/2929173/183059329-c3516b05-8926-4851-8482-4085eaba53bf.png">
+
