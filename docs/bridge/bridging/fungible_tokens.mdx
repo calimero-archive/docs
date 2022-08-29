@@ -2,3 +2,89 @@
 title: How to bridge fungible tokens
 sidebar_position: 2
 ---
+
+Here we will show how to bridge fungible tokens from NEAR testnet to Calimero, all calls are being done with near-cli tool.
+
+
+## Check balance on Near testnet
+
+```near view banana.ft-fin.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
+View call: banana.ft-fin.testnet.ft_balance_of({"account_id":"igi.testnet"})
+'18377'
+```
+
+## Check balance of FT on calimero
+
+It is non-existent yet on Calimero since the contract has not yet been deployed on Calimero.
+
+```
+calimero lucija-calimero-testnet view banana_ft-fin.connector.lucija.calimero.testnet ft_balance_of --args '{"account_id":"igi.lucija.calimero.testnet"}'
+View call: banana-ft-fin.connector.lucija.calimero.testnet.ft_balance_of({"account_id":"igi.lucija.calimero.testnet"})
+
+Account banana-ft-fin.connector.lucija.calimero.testnet is not found in testnet
+```
+
+## Send FTs to ft_connector on NEAR:
+
+```
+near call banana.ft-fin.testnet ft_transfer_call --args '{"receiver_id":"connector.lucija.igi.testnet","amount":"377","msg":"testnet"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+Scheduling a call: banana.ft-fin.testnet.ft_transfer_call({"receiver_id":"connector.lucija.igi.testnet","amount":"377","msg":"testnet"}) with attached 0.000000000000000000000001 NEAR
+Doing account.functionCall()
+Receipts: F1Kiw8QFytYyWm2L32KcqyEKQNeQU6wrJrTcvFJtFRtT, 6SyRCNmG2uFpCW2pXcbDRn1S1RUkgAJHojWvT6ZKiDrm, 7hmtjrgW98jRrpZbad5yXyU1LDs1J4MLWiPhUp6Y6cZd
+	Log [banana.ft-fin.testnet]: Transfer 377 from igi.testnet to connector.lucija.igi.testnet
+Receipt: 7AsauuwpctDbjKHvXkDGuRtG3aVQdKWxDV8v2kGHrpYT
+	Log [banana.ft-fin.testnet]: CALIMERO_EVENT_LOCK:banana.ft-fin.testnet:igi.testnet:377
+Transaction Id AudG8WTkQGgAxHKVT6h1AhZsmTJoF8PsDzKSH3hHetNc
+To see the transaction in the transaction explorer, please open this url in your browser
+https://explorer.testnet.near.org/transactions/AudG8WTkQGgAxHKVT6h1AhZsmTJoF8PsDzKSH3hHetNc
+'377'
+```
+
+
+## Check balance on Near Testnet:
+
+```
+near view banana.ft-fin.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
+View call: banana.ft-fin.testnet.ft_balance_of({"account_id":"igi.testnet"})
+'18000'
+```
+
+## Check balance on Calimero:
+
+```
+calimero lucija-calimero-testnet view banana_ft-fin.connector.lucija.calimero.testnet ft_balance_of --args '{"account_id":"igi.lucija.calimero.testnet"}'
+View call: banana_ft-fin.connector.lucija.calimero.testnet.ft_balance_of({"account_id":"igi.lucija.calimero.testnet"})
+'377'
+```
+
+## Withdraw FTs back to NEAR
+
+```
+calimero lucija-calimero-testnet call banana_ft-fin.connector.lucija.calimero.testnet withdraw --args '{"amount":"77"}' --accountId igi.lucija.calimero.testnet --depositYocto 1 --gas 300000000000000
+Scheduling a call: banana_ft-fin.connector.lucija.calimero.testnet.withdraw({"amount":"77"}) with attached 0.000000000000000000000001 NEAR
+Doing account.functionCall()
+Receipt: 
+	Log [banana_ft-fin.connector.lucija.calimero.testnet]: CALIMERO_EVENT_BURN:banana_ft-fin.connector.lucija.calimero.testnet:igi.lucija.calimero.testnet:77
+Transaction Id Gthd8M1AsSwfjv8H2wfs6tXbiE79MFuz8cESJuz3aYm6
+```
+
+## Check balance on Calimero
+
+```
+calimero lucija-calimero-testnet view banana_ft-fin.connector.lucija.calimero.testnet ft_balance_of --args '{"account_id":"igi.lucija.calimero.testnet"}'
+View call: banana_ft-fin.connector.lucija.calimero.testnet.ft_balance_of({"account_id":"igi.lucija.calimero.testnet"})
+'300'
+```
+
+## Check balance on NEAR testnet
+
+```
+near view banana.ft-fin.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
+View call: banana.ft-fin.testnet.ft_balance_of({"account_id":"igi.testnet"})
+'18077'
+```
+
+## Recap
+
+We have transferred Banana fungible tokens from NEAR testnet to a Calimero shard called lucija. We did this by locking the NEAR Banana coins on the source ft_connector contract. This will emit an event that the tokens were locked. The tesntet to calimero relayer will pick up this event and relay a block from Near testnet to Calimero shard. Also, the bridge service will pick up this event and try to prove on Calimero that the locking of tokens actually happened on Near testnet. If proved, Banana fungible tokens will be minted on Calimero.
+Also, we have witdrawn Banana coins back to Near testnet. We did this by calling withdraw on the FT token contract on Calimero, which will essentially burn the requested amount of tokens. Once this happens the Calimero to Testnet relayer will be notified about the burn event, and will relay a block from Calimero to testnet. Also, the bridge service will pick up this event and try to prove on Testnet that the amount was burnt on Calimero. If proved, the tokens are released back on the Near testnet.
