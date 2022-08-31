@@ -31,6 +31,30 @@ https://explorer.testnet.near.org/transactions/AudG8WTkQGgAxHKVT6h1AhZsmTJoF8PsD
 '377'
 ```
 
+### JS
+
+For a fully working example check out this repo: https://github.com/calimero-is-near/calimero-examples/tree/master/bridging-fts
+
+Here is a short snippet:
+
+```
+const callFtTransferCallOnSource: FunctionCallOptions = {
+  contractId: 'usdn.testnet',
+  methodName: 'ft_transfer_call',
+  args: {
+    receiver_id: ftConnectorOnNearContractId,
+    amount: amount,
+    msg: 'testnet',
+  },
+  attachedDeposit: new big.BN('1'),
+  gas: new big.BN(MAX_GAS_LIMIT),
+};
+
+const transferTokensTx = await senderAccount.functionCall(callFtTransferCallOnSource);
+```
+
+
+
 ## Withdraw FTs back to NEAR
 
 ### Burn FTs on Calimero
@@ -47,6 +71,26 @@ Doing account.functionCall()
 Receipt: 
 	Log [banana_ft-fin.connector.lucija.calimero.testnet]: CALIMERO_EVENT_BURN:banana_ft-fin.connector.lucija.calimero.testnet:igi.lucija.calimero.testnet:77
 Transaction Id Gthd8M1AsSwfjv8H2wfs6tXbiE79MFuz8cESJuz3aYm6
+```
+
+### JS
+
+For a fully working example check out this repo: https://github.com/calimero-is-near/calimero-examples/tree/master/bridging-fts
+
+Here is a short snippet:
+
+```
+const callWithdrawOnCalimero: FunctionCallOptions = {
+  contractId: `usdn.connectore.${shard_id}.calimero.testnet`,
+  methodName: 'withdraw',
+  args: {
+    amount: amount,
+  },
+  attachedDeposit: new big.BN('1'),
+  gas: new big.BN(MAX_GAS_LIMIT),
+};
+
+const withdrawTokensTx = await senderAccount.functionCall(callWithdrawOnCalimero);
 ```
 
 ### Recap
