@@ -3,7 +3,7 @@ title: Relayer Service
 sidebar_position: 2
 ---
 
-Relayer reads blocks from a source chain and sends the block headers to the light client contract on the destination chain. To have a bidirectional bridge, block headers need to be relayed both ways, meaning that light client contracts need to exist on both chains/shards.
+A relayer receives blocks from a source chain and sends them to a light client contract on a destination chain, establishing a bidirectional bridge between the chains/shards. In order to accomplish this, light client contracts must exist on both chains/shards.
 
 <img src={require('@site/static/img/relayer_simple.jpg').default} />
 
