@@ -5,27 +5,31 @@ sidebar_position: 6
 
 # Install Bridge
 
-These steps assume creating a bridge between NEAR Testnet and a Calimero shard, but in reality it can be any chain to any chain.
+These steps assume creating a bridge between NEAR Testnet and a Calimero shard manually. 
 
-1. Deploy light client contract on Testnet
-2. Deploy prover contract on Testnet
-3. Start relayer from Calimero to Testnet (keep it running at all times)
-4. Deploy light client contract on Calimero
-5. Deploy prover contract on Calimero
-6. Start relayer from Testnet to Calimero (keep it running at all times)
+All of these steps can be setup automatically with the Calimero Console tool for which you can contact us either [here](https://www.calimero.network/contact) or send us an [email](mailto:info@calimero.network)
+
+1. Deploy and init the light client contract on NEAR Testnet
+2. Deploy and init the prover contract on NEAR Testnet
+3. Start relayer from Calimero to NEAR Testnet (keep it running at all times)
+4. Deploy and init the light client contract on Calimero
+5. Deploy and init the prover contract on Calimero
+6. Start relayer from NEAR Testnet to Calimero (keep it running at all times)
+
+Steps (1-3) and (4-6) can be completed in parallel
 
 # Deploy the Connectors
 
-Again, here we assume the source chain to be the NEAR Testnet, and destination chain to be a Calimero shard
+Here are the steps for creating the FT connecters, but similary an NFT and a cross shard call connectors would be created
 
-1. Deploy ft_connector_source on Testnet
-2. Deploy ft_connector_destination on Calimero
-3. Call set_locker on ft_connector_source & ft_connector_destination (we’ll provide you with the commands)
+1. Deploy and init ft_connector on NEAR Testnet
+2. Deploy and init ft_connector on Calimero
+3. Call set_locker on ft_connector on NEAR Testnet and call it on Calimero as well
 4. Start bridge service and keep it running
 
 # Transferring tokens
 
-Prerequisite for transferring tokens from source chain to destination chain, is that the fungible token on source chain is registered with the ft_connector_source contract account id. Most of the fungible tokens require to call near_deposit before ever interacting with that specific fungible token. This step is called registering the account with the ft contract. (NOTE: This is not always the case - for example USN does not require this step).
+Prerequisite for transferring tokens from source chain to destination chain, is that the fungible token on source chain is registered with the ft_connector contract account id. Most of the fungible tokens require to call storage_deposit before ever interacting with that specific fungible token. This step is called registering the account with the ft contract. (NOTE: This is not always the case - for example USN does not require this step).
 
-Once the ft_connector_source is registered with the fungible token, anyone can start transferring tokens from source to destination chain and withdraw the tokens back from the destination chain to source chain. All the steps that are happening when initiating a transfer to either side are described under Fungible token connector section.
+Once the ft_connector is registered with the fungible token, anyone can start transferring tokens from source to destination chain and withdraw the tokens back from the destination chain to source chain. All the steps that are happening when initiating a transfer to either side are described under Fungible token connector section.
 
