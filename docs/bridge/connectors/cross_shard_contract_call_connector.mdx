@@ -2,3 +2,32 @@
 title: Cross Shard Contract Call Connector
 sidebar_position: 2
 ---
+
+Via the Calimero bridge, cross shard calls can be executed with a callback. Meaning that a contract on Calimero can call into contracts on NEAR and get a callback. Also, contracts on NEAR can call into Calimero contracts and get a callback.
+
+An example DAPP that is deployed on NEAR testnet and makes cross shard calls to Calimero and back is the [tic-tac-toe game whose contracts can be found here](https://github.com/calimero-is-near/calimero-examples/tree/master/tic-tac-toe/contracts)
+
+Once both players register for playing on the contract on NEAR testnet, the game gets started on Calimero, a cross shard call is executed denoting that two players from NEAR testnet want to start a game on Calimero:
+
+```
+near call tictactoe.igi.testnet register_player --accountId igi.testnet
+near call tictactoe.igi.testnet register_player --accountId mikimaus.testnet
+```
+Players registered for a game: [playerA](https://explorer.testnet.near.org/transactions/7TscAyfni781qz2vgpeKXTR2Bc8JRXaeftjK1SHJHMNc) and [playerB](https://explorer.testnet.near.org/transactions/8Ex1pojKw8fp5Y8X85gy5fTX9VyWrC4VUHCTvNR1kArT)
+
+Once the second player registered for a game, a ```CALIMERO_EVENT_CROSS_CALL``` event is emitted via which the arguments to call on Calimero shard are transitted. The bridge service gets this events and tries to prove on the cross shard connector on Calimero that a game of tic tac toe needs to start. If proved, ```start_game``` method is called on tic tac toe contract on Calimero. Immediatelly after that a ```CALIMERO_EVENT_CROSS_RESPONSE``` event is emitted from the cross shard connector on Calimero. Once proved on NEAR, the callback method ```game_started``` is called. Here is the transaction showing the [executed callback](https://explorer.testnet.near.org/transactions/DWyCptftairNMtryiikSkWRVadeqSRN8CEgC1eEAZahL).
+
+Similarly, you can see how a ```game_ended``` was called from Calimero to NEAR testnet [here](https://explorer.testnet.near.org/transactions/FkE4dEHzbJ5tZKdrYC3QYbpWf5dGVgsqbqVwb12wUp1z)
+
+And now the final result of the game player on Calimero can be viewed on NEAR testnet:
+```
+near view tictactoe.igi.testnet get_finished_game --args '{"game_id":0}'
+View call: tictactoe.igi.testnet.get_finished_game({"game_id":0})
+{
+  board: [ [ 'O', 'X', 'X' ], [ 'O', 'U', 'U' ], [ 'O', 'U', 'U' ] ],
+  player_a: 'igi.testnet',
+  player_b: 'igi.testnet',
+  status: 'PlayerAWon',
+  player_a_turn: false
+}
+```
