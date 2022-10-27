@@ -13,11 +13,11 @@ The light client updates its head with the information from LightClientBlockView
 - If the epoch of the block is equal to the next_epoch_id of the head, then next_bps is not None;
 approvals_after_next contain valid signatures on approval_message from the block producers of the corresponding epoch;
 - The signatures present in approvals_after_next correspond to more than 2/3 of the total stake;
-- If next_bps is not none, sha256(borsh(next_bps)) corresponds to the next_bp_hash in inner_lite`
+- If next_bps is not None, sha256(borsh(next_bps)) corresponds to the next_bp_hash in inner_lite`
 
 
 For Calimero on the NEAR light client there is a limitation as on NEAR there is a 300 Tgas limit per transaction. Signature verifications are expensive (with ~50 signature checks we break the limit and tx fails). However the good news is that initially the number of validators on Calimero will be limited to around 20, so this will pass.
 
 Even better news is [NEP364](https://github.com/near/nearcore/issues/7567) which is in progress. It will add ed25519_verify as a precompiled function on NEAR runtime, which should allow us to verify all maximum 100 validator signatures on every relayed block.
 
-For the NEAR on Calimero light client contract the signature verifying cost is not a big issue since the shard creator can setup genesis in such way that the gas costs are 0.
+For the NEAR on Calimero light client contract the signature verifying cost is not a big issue since the shard creator can setup genesis in such way that the gas costs are cheaper.
