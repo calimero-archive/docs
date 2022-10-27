@@ -3,55 +3,68 @@ title: Relayer Service
 sidebar_position: 2
 ---
 
-A relayer receives blocks from a source chain and sends them to a light client contract on a destination chain, establishing a bidirectional bridge between the chains/shards. In order to accomplish this, light client contracts must exist on both chains/shards.
+The relayer is probably the simplest component of the bridge. It receives blocks from a source chain and sends those block to a light client contract on a destination chain, establishing a bidirectional bridge between the chains/shards. In order to accomplish this, light client contracts must exist on both chains.
+
+The NEAR to Calimero relayer reads latest blocks on the NEAR blockchain and sends (relays) those blocks to the light client contract on Calimero shard.
+
+Similarly, the Calimero to NEAR relayer reads latest blocks on the Calimero shards and relays those blocks to the light client contract on the NEAR blockchain.
 
 <img src={require('@site/static/img/relayer_simple.jpg').default} />
 
-The LightClientBlockView structure is being relayed here. Here is a code sample of the structure together with its substructs:
+
+Here is the light client block structure that is being relayed with its substructs:
 
 ```rust
-pub struct LightClientBlockView {
-    pub prev_block_hash: CryptoHash,
-    pub next_block_inner_hash: CryptoHash,
-    pub inner_lite: BlockHeaderInnerLiteView,
-    pub inner_rest_hash: CryptoHash,
-    pub next_bps: Option<Vec<ValidatorStakeView>>,
+pub struct LightClientBlock {
+    pub prev_block_hash: Hash,
+    pub next_block_inner_hash: Hash,
+    pub inner_lite: BlockHeaderInnerLite,
+    pub inner_rest_hash: Hash,
+    pub next_bps: Option<Vec<Validator>>,
     pub approvals_after_next: Vec<Option<Signature>>,
 }
 ```
 
 ```rust
-pub struct BlockHeaderInnerLiteView {
-    pub height: BlockHeight,
-    pub epoch_id: CryptoHash,
-    pub next_epoch_id: CryptoHash,
-    pub prev_state_root: CryptoHash,
-    pub outcome_root: CryptoHash,
-    pub timestamp: u64,
-    pub next_bp_hash: CryptoHash,
-    pub block_merkle_root: CryptoHash,
+pub struct BlockHeaderInnerLite {
+    pub height: u64, // Height of this block since the genesis block (height 0).
+    pub epoch_id: Hash, // Epoch start hash of this block's epoch. Used for retrieving validator information
+    pub next_epoch_id: Hash,
+    pub prev_state_root: Hash, // Root hash of the state at the previous block.
+    pub outcome_root: Hash, // Root of the outcomes of transactions and receipts.
+    pub timestamp: u64, // Timestamp at which the block was built.
+    pub next_bp_hash: Hash, // Hash of the next epoch block producers set
+    pub block_merkle_root: Hash,
 }
 ```
 
 ```rust
-pub enum ApprovalInner {
-    Endorsement(CryptoHash),
-    Skip(BlockHeight)
+pub enum Validator {
+    V1(ValidatorV1),
+    V2(ValidatorV2),
 }
 ```
 
 ```rust
-pub struct ValidatorStakeView {
-    pub account_id: AccountId,
+pub struct ValidatorV1 {
+    pub account_id: String,
     pub public_key: PublicKey,
-    pub stake: Balance,
+    pub stake: u128,
 }
 ```
 
 ```rust
-pub struct LightClientBlockLiteView {
-    pub prev_block_hash: CryptoHash,
-    pub inner_rest_hash: CryptoHash,
-    pub inner_lite: BlockHeaderInnerLiteView,
+pub struct ValidatorV2 {
+    pub account_id: String,
+    pub public_key: PublicKey,
+    pub stake: u128,
+    pub is_chunk_only: bool,
+}
+```
+
+```rust
+pub enum Signature {
+    ED25519(ed25519_dalek::Signature),
+    SECP256K1(Secp256K1Signature),
 }
 ```
