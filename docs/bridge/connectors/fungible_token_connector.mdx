@@ -36,8 +36,8 @@ In blockchain terminology here we are locking FTs on NEAR and minting wFT (wrapp
 5. Call Mint() on Calimero ft_connector, these are all the steps that happen:
    - If this is first time transferring that FT then deploy the bridge_token on Calimero (since wFT does not exist yet on Calimero) 
    - Proves outcome (fails if proof invalid), if proved mints wFT on Calimero
-   - get_metadata for bridge_FT on Calimero, if empty: get_metadata on NEAR, and set_metadata on Calimero
-   - map_contract on NEAR with Calimero FT contract and NEAR contract
+   - get_metadata for wFT on Calimero, if empty: get_metadata on NEAR, and set_metadata on Calimero
+   - map_contract on NEAR ft_connector, map the Calimero FT contract with NEAR FT contract
 6. Congrats, wFT exists now on Calimero
 
 # Bridging back FT from Calimero to NEAR (burn the wrapped FT)
