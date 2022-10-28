@@ -33,7 +33,7 @@ In blockchain terminology here we are locking FTs on NEAR and minting wFT (wrapp
    - the current_height on the light client contract on Calimero needs to be higher than the block height where the lock of FTs happened on source chain
 4. Call NEAR RPC for light client proof
    - this is all the proof data from the archival node on NEAR needed to be able to prove tx actually passed successfuly
-5. Call Mint() on Calimero ft_connector, these are all the steps that happen:
+5. Call mint() on Calimero ft_connector, these are all the steps that happen:
    - If this is first time transferring that FT then deploy the bridge_token on Calimero (since wFT does not exist yet on Calimero) 
    - Proves outcome (fails if proof invalid), if proved mints wFT on Calimero
    - get_metadata for wFT on Calimero, if empty: get_metadata on NEAR, and set_metadata on Calimero
