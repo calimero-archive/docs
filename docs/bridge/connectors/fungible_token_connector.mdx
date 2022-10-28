@@ -5,49 +5,66 @@ sidebar_position: 3
 
 # Overview
 
-The Fungible Token Connector consists of 3 contracts:
-- ft_connector_source
-- ft_connector_destination
+The Fungible Token Connector consists of 4 contracts:
+- ft_connector
+- bridge_token_deployer
 - bridge_token
+- permissions_manager
 
-For installing the bridge and all the prerequisties take a look on the previous section called 'Running a Bridge'
+All of these contracts need to be installed on both chains.
 
-In this description we assume that a bridge with NEAR Testnet as source chain and a Calimero shard as destination chain are set up, but it will work for any source and destination chain.
+For installing the bridge and all the prerequisties take a look on the section [Running a Bridge](https://docs.calimero.network/bridge/running_a_bridge)
 
-# Transferring NEAR to Calimero 
+In this description we assume that a bridge between NEAR Testnet and a Calimero shard are set up.
 
-In blockchain terminology here we are locking FTs on NEAR and minting wFT on Calimero.
+# Setting up the ft_connectors
+
+On the ft_connector, the owner of the contract needs to set the locker account, which is the ft_connector contract on the other chain. This info is used to check when proving that a transaction/receipt happend on the other network, that it happened on the corresponding ft_connector contract.
+
+# Bridging FT from NEAR to Calimero (when original token is on NEAR)
+
+In blockchain terminology here we are locking FTs on NEAR and minting wFT (wrapped FT) on Calimero.
 
 1. Call ft_transfer_call on FT contract on NEAR (lock on NEAR)
-   - this step essentially locks a fungible token on the NEAR side, as a user/dapp sends FTs to the ft_connector_source account id on the FT contract on source chain
+   - this step essentially locks a fungible token on the NEAR side, as a user/dapp sends FTs to the ft_connector contract on NEAR
 2. Call NEAR RPC for tx status
-   - this is the transaction we are going to prove on Calimero
+   - inside this transaction is the receipt with the event denoting a lock happened, and we are going to prove this on Calimero
 3. Call Calimero light client for current height
    - the current_height on the light client contract on Calimero needs to be higher than the block height where the lock of FTs happened on source chain
 4. Call NEAR RPC for light client proof
-   - this is all the proof data from the archival node on source chain to be able to provide to proof tx actually passed on the source chain
-5. Call Mint() on Calimero ft_connector (ft_connector_destination), these are all the steps that happen:
-   - If this is first time transferring that FT then deploy bridge_token contract on Calimero (since wFT does not exist yet on Calimero) 
+   - this is all the proof data from the archival node on NEAR needed to be able to prove tx actually passed successfuly
+5. Call Mint() on Calimero ft_connector, these are all the steps that happen:
+   - If this is first time transferring that FT then deploy the bridge_token on Calimero (since wFT does not exist yet on Calimero) 
    - Proves outcome (fails if proof invalid), if proved mints wFT on Calimero
    - get_metadata for bridge_FT on Calimero, if empty: get_metadata on NEAR, and set_metadata on Calimero
    - map_contract on NEAR with Calimero FT contract and NEAR contract
 6. Congrats, wFT exists now on Calimero
 
-# Transferring Calimero to NEAR
+# Bridging back FT from Calimero to NEAR (burn the wrapped FT)
 
 In blockchain terminology here we are burning/withdrawing wFTs on Calimero and unlocking FT on NEAR.
 
-1. Call view_mapping on ft_connector_destination in order to get the name of the wFT since transfer initiator maybe knows only the FT name on NEAR
+1. Call view_mapping on ft_connector on Calimero in order to get the name of the wFT since transfer initiator maybe knows only the FT name on NEAR
 1. Call withdraw on the wFT (bridge_token) on Calimero
    - this is the transaction we will need to prove that it actually happened
+   - this method burns the wanted amount of wFT on Calimero
 3. Call Calimero RPC for tx status
-4. Call NEAR light client for current height
+   - we want to prove the receipt denoting a burn of a specific wFT happened with the given amount, and to whom it should be unlocked on NEAR side
+5. Call NEAR light client for current height
    - needs to be higher than the block height where the withdraw of wFTs happened on destination chain
-5. Call Calimero RPC for light client proof
-6. Unlock() on NEAR ft_connector
+6. Call Calimero RPC for light client proof
+7. Call unlock() on NEAR ft_connector with the obtained proof and a valid block height
    - Proves outcome and if proved unlocks FT on NEAR
-7. Congrats, FT is now unlocked on the source network
+8. Congrats, FT is now unlocked on the source network
 
+# Bridging between Calimero and NEAR when original asset is on Calimero
+
+Original asset means that it was first time ever minted on Calimero. This means that bridging to NEAR would bring a wrapped FT on NEAR.
+All steps from the previous two sections apply, its only reversed.
+
+# Automatic bridging
+
+All of these steps are automated with the Calimero Bridge service. The user/dapp needs only to make a ft_transfer_call when locking FTs on a chain, the bridge service will do all the `magic` and the wrapped asset will appear on the other chain. Similarly, when someone wants to unlock the funds, they simply need to make a withdraw call on the ft contract, and the bridge service will automatically do its thing and all the components are updated automatically. The tokens will be unlocked on the other side if tokens were burnt on the starting chain.
 
 
 
