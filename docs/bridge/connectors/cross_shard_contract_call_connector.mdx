@@ -40,4 +40,12 @@ When executed, the cross_call will emit a `CALIMERO_EVENT_CROSS_CALL` with all t
 
 Once the event is emitted, the indexer will detect this event and populate the message queue. The relayer and the bridge service are subsribed to the message queue to Calimero specific events. Simultaneously, both components receive this event from the message queue. The relayer sends a block from the source chain to the light client contract on the destination chain with the latest light client block. While the bridge service fetches the RPC for the `EXPERIMENTAL_light_client_proof`, it also asks the light client contract for the latest block height it has. With the proof data and the block height it will call the xsc_connector on the other network. Specifically it will call the `cross_call_execute` method. If proven that a cross_call was initiated on the other network, the xsc_connector will execute the given method on the contract on the other chain.
 
+# Callback execution
 
+Once the `cross_call_execute` method executed the call on the contract on the other chain a `CALIMERO_EVENT_CROSS_RESPONSE` event will be emitted on that chain.
+
+The params appended to the event are the `source_contract_id`, the `source_contract_method` and the `execution_result` that is base64 encoded.
+
+Through the bridge service this event will be proven on the originating chain, and the callback arguments are provided to the original smart contract that initiated the cross call.
+
+With this we have a full circle closed, a contract on chain A called into a contract method on chain B and got a callback with the result from executing the contract method on chain B.
