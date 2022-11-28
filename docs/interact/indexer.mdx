@@ -12,13 +12,14 @@ To be able to call Indexer API you must set few parameters:
 1. Endpoint
 2. Authorization token
 
-#Endpoint
+# Endpoint
 Endpoint is constructed from multiple parts:
 - **networkId**: can be either **testnet** (with suffix: **-calimero-testnet**) or **mainnet** (with suffix:**-calimero**)
 - **shardId**: unique identifier of your shard. Consist of user defined shard name and network suffix. All parts are required.
 ```
 https://api.{{networkId}}.calimero.network/api/v1/shards/{{shardId}}/indexer-graphql/graphql
 ```
+You can find it directly in the [Console](/interact/endpoints).
 
 ### Authorization token
 You must be authorised in order to fetch data. Use existing token or create a new one through the Console UI.
