@@ -32,7 +32,7 @@ const bridge = new Bridge(
 
 ### Get Fungible Token balance
 
-``` ftBalanceOf ``` method returns the number of fungible tokens (on contract that can be both on Near and Calimero side) of a given account.
+``` ftBalanceOf ``` method returns the number of fungible tokens (on a contract that can be both on the Near and Calimero side) of a given account.
 
 ```js
 const res = await bridge.ftBalanceOf(
@@ -45,7 +45,7 @@ console.log("Balance on Calimero: " + res);
 
 ### Get NFT Owner Id
 
-``` getNftOwnerId ``` returns a owner of the NFT on a given chain.
+``` getNftOwnerId ``` returns the owner of the NFT on a given chain.
 
 ```js
 const res = await bridge.getNftOwnerId(
@@ -58,42 +58,42 @@ console.log("NFT token owner on Calimero: " + res);
 
 ### Get NFTs of an owner
 
-``` getNftTokensForOwner ``` returns all NFTs on a NFT contract for a given owner.
+``` getNftTokensForOwner ``` returns all NFTs on an NFT contract for a given owner.
 
 ```js
 const res = await bridge.getNftTokensForOwner(
     ChainType.NEAR,
     "paras-token-v2.testnet", // contract id
-    "nft_connector.q.dev.calimero.testnet" // account id, here we are checking which tokens are locked on NFT Connector account on Near side
+    "nft_connector.q.dev.calimero.testnet" // account id, here we are checking which tokens are locked on the NFT Connector account on the Near side
 );
 console.log("NFT tokens on Near: " + JSON.stringify(res));
 ```
 
 ### Get current Light client block height
 
-``` getCurrentBlockHeight ``` returns current (last verified) Light client block height on Calimero or Near side.
+``` getCurrentBlockHeight ``` returns the current (last verified) Light client block height on Calimero or Near side.
 
 ```js
 const res = await bridge.getCurrentBlockHeight(ChainType.CALIMERO);
 console.log("Light client block height on Calimero side: " + res);
 ```
 
-### Check if account can use bridge
+### Check if an account can use the bridge
 
-``` canBridge ``` returns ``` true ``` if a given account can use defined bridge (FT, NFT or XSC), ``` false ``` otherwise.
+``` canBridge ``` returns ``` true ``` if a given account can use the defined bridge (FT, NFT, or XSC), and ``` false ``` otherwise.
 
 ```js
 const res = await bridge.canBridge(
-    ChainType.NEAR, // defines source chain for the checking, if this call returns true that means that account can use a defined bridge in the direction from Near to Calimero (note that this does not mean that it can bridge from Calimero to Near).
-    "check.for.account.testnet", // account for which we are checking if it can use bridge
+    ChainType.NEAR, // defines the source chain for the checking, if this call returns true that means that the account can use a defined bridge in the direction from Near to Calimero (note that this does not mean that it can bridge from Calimero to Near).
+    "check.for.account.testnet", // account for which we are checking if it can use the bridge
     ConnectorType.FT // connector for which we are checking, note that we are managing bridging permissions separately for each connector.
 );
 console.log("Can bridge FT: " + res);
 ```
 
-### Get all allow rules for a connector
+### Get all allowed rules for a connector
 
-``` getAllowRegexRules ``` returns an array of regex rules (passed as strings) for a given connector. Note that if there are more than 10 rules this method will return exactly 10 rules and others will not be shown. Also, order of the rules is not guaranteed, and if there are more than 10 rules arbitrary 10 rules are returned.
+``` getAllowRegexRules ``` returns an array of regex rules (passed as strings) for a given connector. Note that if there are more than 10 rules this method will return exactly 10 rules and others will not be shown. Also, the order of the rules is not guaranteed, and if there are more than 10 rules arbitrarily 10 rules are returned.
 
 ```js
 const res = await bridge.getAllowRegexRules(
@@ -105,7 +105,7 @@ console.log("List of allowed regex rules: " + res);
 
 ### Add allow regex rule for a connector
 
-``` addAllowRegexRule ``` returns ``` true ``` if rule is successfully added to the list of rules, ``` false ``` otherwise. ``` addAllowRegexRule ``` adds a regex rule for allowing all accounts that match that rule to use a defined connector.
+``` addAllowRegexRule ``` returns ``` true ``` if a rule is successfully added to the list of rules, ``` false ``` otherwise. ``` addAllowRegexRule ``` adds a regex rule for allowing all accounts that match that rule to use a defined connector.
 
 ```js
 const connectorPrivateKey = "ed25519:connector-private-key"; // to add rules to the connector permissions we need to provide a private key of a given connector. In this example that will be the FT connector.
@@ -114,7 +114,7 @@ const connectorKeyPair = KeyPair.fromString(privateKey);
 const res = await bridge.addAllowRegexRule(
     ChainType.CALIMERO,
     connectorKeyPair,
-    ".*", // regex rule that we are adding to the list of allowed rules. In this example we are allowing all accounts to bridge FTs from Calimero to Near.
+    ".*", // regex rule that we are adding to the list of allowed rules. In this example, we are allowing all accounts to bridge FTs from Calimero to Near.
     ConnectorType.FT, // same connector as the provided private key above.
     "100000000000000000000000" // attached storage deposit
 );
@@ -123,10 +123,10 @@ console.log("Add allow rule result: " + res)
 
 ### Remove allowed regex rule for a connector
 
-``` removeAllowedRegexRule ``` returns ``` true ``` if rule is successfully removed from the list of rules, ``` false ``` otherwise. ``` removeAllowedRegexRule ``` removes a regex rule from the allowing list of a connector.
+``` removeAllowedRegexRule ``` returns ``` true ``` if a rule is successfully removed from the list of rules, ``` false ``` otherwise. ``` removeAllowedRegexRule ``` removes a regex rule from the allowing list of a connector.
 
 ```js
-const connectorPrivateKey = "ed25519:connector-private-key"; // to remove rules from the connector permissions we need to provide a private key of a given connector. In this example that will be removing rule from the FT connector.
+const connectorPrivateKey = "ed25519:connector-private-key"; // to remove rules from the connector permissions we need to provide a private key of a given connector. In this example that will be removing the rule from the FT connector.
 const connectorKeyPair = KeyPair.fromString(privateKey);
 
 const res = await bridge.removeAllowedRegexRule(
