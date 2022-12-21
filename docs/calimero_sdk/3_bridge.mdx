@@ -1,0 +1,270 @@
+---
+title: Bridge SDK
+sidebar_position: 3
+---
+
+Calimero bridge SDK is used to abstract the most frequent calls to various Calimero-related smart contract methods on both chains (Calimero and Near). At this point, SDK is implemented only for JavaScript.
+
+# Basics for using Calimero Bridge SDK
+
+When calling bridge SDK methods often we will need to define:
+- Shard name is a string, note that this is the same name entered through the console when creating a shard (e.g. myshard, alice32...)
+- Environment is an enum and can be one of the following: DEVELOPMENT, STAGING, or PRODUCTION. Environment is internally used for obtaining RPC URL, naming certain smart contracts, and more.
+- NetworkType is an enum defining Near Protocol network. And currently, Calimero supports Testnet and Mainnet, hence network enum can be TESTNET or MAINNET.
+- API key is used to access smart contracts on the Calimero chain. Note that not providing an API key to the bridge SDK is completely valid if one wishes to call only the Calimero-related smart contracts on the Near side.
+- ChainType is an enum defining a chain where we are calling smart contract methods or performing some other operation. Chain can obtain values of CALIMERO or NEAR.
+- ConnectorType is an enum defining connector for Connector Permissions management. It can be FT, NFT or XSC.
+
+# Bridge SDK functionality
+
+Rest of this page will show Calimero Bridge SDK functionality on examples.
+
+### Constructing Bridge instance
+
+```js
+const bridge = new Bridge(
+    "q", // shard name
+    Environment.DEVELOPMENT, // environment
+    NetworkType.TESTNET, // network
+    "API-key" // API key
+);
+```
+
+### Get Fungible Token balance
+
+``` ftBalanceOf ``` method returns the number of fungible tokens (on contract that can be both on Near and Calimero side) of a given account.
+
+```js
+const res = await bridge.ftBalanceOf(
+    ChainType.CALIMERO,
+    "dev-1668507284663-45605813374523.ft_deployer.q.calimero.testnet", // contract id, note that if it is a bridged token it needs to be suffixed with a bridged token contract part.
+    "myaccount.testnet" // account id
+);
+console.log("Balance on Calimero: " + res);
+```
+
+### Get NFT Owner Id
+
+``` getNftOwnerId ``` returns a owner of the NFT on a given chain.
+
+```js
+const res = await bridge.getNftOwnerId(
+    ChainType.CALIMERO,
+    "paras-token-v2.nft_deployer.q.calimero.testnet", // contract id, note that if it is a bridged token it needs to be suffixed with a bridged token contract part.
+    "1976:57" // token id
+);
+console.log("NFT token owner on Calimero: " + res);
+```
+
+### Get NFTs of an owner
+
+``` getNftTokensForOwner ``` returns all NFTs on a NFT contract for a given owner.
+
+```js
+const res = await bridge.getNftTokensForOwner(
+    ChainType.NEAR,
+    "paras-token-v2.testnet", // contract id
+    "nft_connector.q.dev.calimero.testnet" // account id, here we are checking which tokens are locked on NFT Connector account on Near side
+);
+console.log("NFT tokens on Near: " + JSON.stringify(res));
+```
+
+### Get current Light client block height
+
+``` getCurrentBlockHeight ``` returns current (last verified) Light client block height on Calimero or Near side.
+
+```js
+const res = await bridge.getCurrentBlockHeight(ChainType.CALIMERO);
+console.log("Light client block height on Calimero side: " + res);
+```
+
+### Check if account can use bridge
+
+``` canBridge ``` returns ``` true ``` if a given account can use defined bridge (FT, NFT or XSC), ``` false ``` otherwise.
+
+```js
+const res = await bridge.canBridge(
+    ChainType.NEAR, // defines source chain for the checking, if this call returns true that means that account can use a defined bridge in the direction from Near to Calimero (note that this does not mean that it can bridge from Calimero to Near).
+    "check.for.account.testnet", // account for which we are checking if it can use bridge
+    ConnectorType.FT // connector for which we are checking, note that we are managing bridging permissions separately for each connector.
+);
+console.log("Can bridge FT: " + res);
+```
+
+### Get all allow rules for a connector
+
+``` getAllowRegexRules ``` returns an array of regex rules (passed as strings) for a given connector. Note that if there are more than 10 rules this method will return exactly 10 rules and others will not be shown. Also, order of the rules is not guaranteed, and if there are more than 10 rules arbitrary 10 rules are returned.
+
+```js
+const res = await bridge.getAllowRegexRules(
+    ChainType.NEAR, // defines source chain since we are separately managing permissions for bridging in 2 directions (from Near to Calimero and from Calimero to Near).
+    ConnectorType.FT // connector for which we are inspecting rules, note that we are managing bridging permissions separately for each connector.
+);
+console.log("List of allowed regex rules: " + res);
+```
+
+### Add allow regex rule for a connector
+
+``` addAllowRegexRule ``` returns ``` true ``` if rule is successfully added to the list of rules, ``` false ``` otherwise. ``` addAllowRegexRule ``` adds a regex rule for allowing all accounts that match that rule to use a defined connector.
+
+```js
+const connectorPrivateKey = "ed25519:connector-private-key"; // to add rules to the connector permissions we need to provide a private key of a given connector. In this example that will be the FT connector.
+const connectorKeyPair = KeyPair.fromString(privateKey);
+
+const res = await bridge.addAllowRegexRule(
+    ChainType.CALIMERO,
+    connectorKeyPair,
+    ".*", // regex rule that we are adding to the list of allowed rules. In this example we are allowing all accounts to bridge FTs from Calimero to Near.
+    ConnectorType.FT, // same connector as the provided private key above.
+    "100000000000000000000000" // attached storage deposit
+);
+console.log("Add allow rule result: " + res)
+```
+
+### Remove allowed regex rule for a connector
+
+``` removeAllowedRegexRule ``` returns ``` true ``` if rule is successfully removed from the list of rules, ``` false ``` otherwise. ``` removeAllowedRegexRule ``` removes a regex rule from the allowing list of a connector.
+
+```js
+const connectorPrivateKey = "ed25519:connector-private-key"; // to remove rules from the connector permissions we need to provide a private key of a given connector. In this example that will be removing rule from the FT connector.
+const connectorKeyPair = KeyPair.fromString(privateKey);
+
+const res = await bridge.removeAllowedRegexRule(
+    ChainType.NEAR,
+    connectorKeyPair,
+    ".*", // regex rule we are removing from the list of allowed rules.
+    ConnectorType.FT // same connector as the provided private key above.
+);
+console.log("Remove allowed rule result: " + res)
+```
+
+### Deny Accounts from using XSC for a specific Contracts
+
+``` denyCrossShardCallPerContract ``` returns ``` true ``` if rule is successfully added to the deny list of pairs of contract rules and account rules. ``` denyCrossShardCallPerContract ``` adds pair of account regex rule and contract regex rule, and if account wants to use XSC for a contract and that pair matches at least one rule in the deny list, XSC can not be called for that combination. Note that if account and contract pair does not match any of the rules in deny list, account still needs to have valid permissions for using XSC connector.
+
+```js
+const privateKeyXsc = "ed25519:private-key-xsc-connector";
+const keyPairXsc = KeyPair.fromString(privateKeyXsc);
+
+const res = await bridge.denyCrossShardCallPerContract(
+    ChainType.NEAR,
+    keyPairXsc,
+    ".*", // account regex rule
+    "evil\.contract\.testnet", // contract regex rule, here we are denying all accounts from using contract "evil.contract.testnet"
+    "100000000000000000000000" // attached storage deposit
+);
+console.log("Deny XSC account regex per contract regex result: " + res);
+```
+
+### Remove denied Accounts from using XSC for a specific Contracts
+
+``` removeDeniedCrossShardCallPerContract ``` returns ``` true ``` if deny pair is successfully removed from the list of rules, ``` false ``` otherwise. This method removes rule pairs from the same list that ``` denyCrossShardCallPerContract ``` adds rules to.
+
+```js
+const privateKeyXsc = "ed25519:private-key-xsc-connector";
+const keyPairXsc = KeyPair.fromString(privateKeyXsc);
+
+res = await bridge.removeDeniedCrossShardCallPerContract(
+    ChainType.NEAR,
+    keyPairXsc,
+    ".*",
+    "evil\.contract\.testnet" // here we are removing pair of rules that we added in the example above
+);
+console.log("Remove denied XSC account regex per contract regex result: " + res);
+```
+
+### Check if Account can use Contract through the XSC connector
+
+``` canMakeCrossShardCallForContract ``` returns ``` true ``` if Account can call Contract through the XSC connector, ``` false ``` otherwise.
+
+```js
+const res = await bridge.canMakeCrossShardCallForContract(
+    ChainType.NEAR,
+    "myaccount.testnet", // account id
+    "evil.contract.testnet" // contract id
+);
+console.log("Can use XSC for myaccount.test account and evil.contract.testnet contract: " + res);
+```
+
+### Get pairs of Account and Contract regex rules for using XSC connector
+
+``` getAccountPerContractDeniesForXsc ``` returns an array of pairs of deny regex rules for a XSC connector. Note that if there are more than 20 pairs this method will return exactly 20 rules and others will not be shown. Also, order of the pairs is not guaranteed, and if there are more than 20 pairs arbitrary 20 pairs are returned.
+
+```js
+const res = await bridge.getAccountPerContractDeniesForXsc(ChainType.NEAR);
+console.log("XSC connector deny rules: " + res);
+```
+
+### Bridge FTs to another chain
+
+``` ftBridge ``` transfers fungible tokens from the chain where a token is originally created to another chain. In this example, we will show how to transfer FTs from the Near side to the Calimero side.
+
+```js
+const myAccountId = "myaccount.testnet";
+const myAccountPrivateKey = "ed25519:myaccount-private-key"; // here we should use the actual private key for the account that is bridging FTs
+const myAccountKeyPair = KeyPair.fromString(myAccountPrivateKey);
+
+const res = await bridge.ftBridge(
+    ChainType.NEAR, // the side where we are locking tokens, in this example we are locking tokens on the Near side and bridging them to the Calimero side
+    myAccountId, // the account that is bridging FTs to the other side
+    myAccountKeyPair, // key pair of the account that is briding FTs
+    "dev-1668507284663-45605813374523", // FT contract id whose tokens we are bridging, note that the account that is bridging assets needs to possess them on that side.
+    3 // the amount that we are bridging
+);
+console.log("FT result: " + res);
+```
+
+### Withdraw FTs to the original chain
+
+Now we will withdraw FTs that we bridged in the earlier example. For the withdrawal, we will use the ``` ftWithdraw ``` method.
+
+```js
+const accountId = "myaccount.testnet"; // same account as in the earlier example
+const calimeroPrivateKey = "ed25519:myaccount-private-key-on-calimero-side"; // note that this private key is different than the one in the example above since one Account does not share key pair across chains
+const keyPair = KeyPair.fromString(calimeroPrivateKey);
+
+const res = await bridge.ftWithdraw(
+    ChainType.CALIMERO, // the side where we are burning and withdrawing FTs, in this example we are burning tokens on the Calimero side and unlocking them on the Near side (inverse action to the one in the previous example).
+    accountId, // the account that is withdrawing FTs to the other side
+    keyPair, // key pair of the account that is withdrawing FTs
+    "dev-1668507284663-45605813374523.ft_deployer.q.calimero.testnet", // FT contract with Calimero bridged suffix
+    3 // the amount that we are withdrawing, in this example we are withdrawing the exact amount we bridged in the earlier example
+);
+```
+
+### Bridge NFTs to another chain
+
+``` nftBridge ``` transfers non-fungible tokens from the chain where a token is originally created to another chain. In this example, we will show how to transfer NFTs from the Near side to the Calimero side.
+
+```js
+const myAccountId = "myaccount.testnet";
+const myAccountPrivateKey = "ed25519:myaccount-private-key"; // here we should use the actual private key for the account that is bridging NFTs
+const myAccountKeyPair = KeyPair.fromString(myAccountPrivateKey);
+
+const res = await bridge.nftBridge(
+    ChainType.NEAR, // the side where we are locking token, in this example we are locking token on the Near side and bridging it to the Calimero side
+    myAccountId, // the account that is bridging NFT to the other side
+    myAccountKeyPair, // key pair of the account that is briding NFT
+    "paras-token-v2.testnet", // NFT contract id whose token we are bridging, note that the account that is bridging the asset needs to possess that asset (possess token with that token id) on that side.
+    "1976:57" // token id
+);
+console.log("NFT result: " + res);
+```
+
+### Withdraw NFTs to the original chain
+
+Now we will withdraw NFT that we bridged in the earlier example. For the withdrawal, we will use the ``` nftWithdraw ``` method.
+
+```js
+const accountId = "myaccount.testnet"; // same account as in the earlier example
+const calimeroPrivateKey = "ed25519:myaccount-private-key-on-calimero-side"; // note that this private key is different than the one in the example above since one Account does not share key pair across chains
+const keyPair = KeyPair.fromString(calimeroPrivateKey);
+
+await bridge.nftWithdraw(
+    ChainType.CALIMERO, // the side where we are burning and withdrawing NFTs, in this example, we are burning token on the Calimero side and unlocking it on the Near side (inverse action to the one in the previous example).
+    accountId, // the account that is withdrawing NFT to the other side
+    keyPair, // key pair of the account that is withdrawing NFT
+    "paras-token-v2.nft_deployer.q.calimero.testnet", // NFT contract with Calimero bridged suffix
+    "1976:57" // token id
+);
+```
