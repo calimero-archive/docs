@@ -8,3 +8,4 @@ At this moment you are able to run the Private Shard only through our Calimero D
 We are working on support Permissioned Private Calimero Shard owned by a consortium and Public Calimero Shard owned by a community which will be coming soon to the Calimero Network.
 
 ## Need help?
+Send a request to support@calimero.network, or send as an enquiry on https://www.calimero.network/trial.
