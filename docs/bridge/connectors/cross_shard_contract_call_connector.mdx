@@ -17,7 +17,7 @@ On the xsc_connector, the owner of the contract needs to set the locker account,
 
 In order to execute a call into a contract on another chain, the DAPP needs to make a `cross_call` call on the xsc_connector (shorthand for cross shard connector contract). This is the method on the xsc_connector that needs to be called:
 
-```
+```rust
 pub fn cross_call(
   &mut self,
   destination_contract_id: String,
