@@ -72,8 +72,7 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Calimero Limited.`,
       },
       prism: {
-        theme: darkCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
         additionalLanguages: [
           "rust", "java", "python", "ruby", "go", "toml"
         ]
