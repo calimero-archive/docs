@@ -4,27 +4,70 @@
  * work well for content-centric websites.
  */
 
+ @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+  --ifm-color-primary: #aa70f5;
+  --ifm-color-primary-dark: #a05ff4;
+  --ifm-color-primary-darker: #9e5cf4;
+  --ifm-color-primary-darkest: #9e5cf4;
+  --ifm-color-primary-light: #be91f7;
+  --ifm-color-primary-lighter: #c8a2f9;
+  --ifm-color-primary-lightest: #e6d4fc;
+  --ifm-background-color: #171616;
+  --ifm-background-surface-color: #1E1E1E;
+  --ifm-code-font-size: 110%;
+  --ifm-font-family-base: 'Inter';
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono';
+  font-size: 14px;
+}
+
+p {
+  font-size: 15px;
+}
+
+.theme-doc-sidebar-menu {
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 32px;
+  font-style: bold;
+  font-family: 'Inter';
+}
+
+h2 {
+  font-size: 24px;
+  font-style: bold;
+  font-family: 'Inter';
+}
+
+h4 {
+  font-size: 18px;
+  font-style: bold;
+  font-family: 'Inter';
+}
+
+h6 {
+  font-size: 13.5px;
+  font-family: 'Inter';
 }
 
 .docusaurus-highlight-code-line {
