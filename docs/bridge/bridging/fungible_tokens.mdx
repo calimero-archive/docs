@@ -17,7 +17,7 @@ This is the only transaction from user/dapp input that needs to happen in order 
 ### CLI command
 
 Example of locking fungible tokens on NEAR testnet with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/FAGjdTYkHJ2bdWP9CRznzxj7kB3KXRfNDw3hsdUGdFZX):
-```
+``` bash
 near call usdn.testnet ft_transfer_call --args ‘{“receiver_id”:“ft_source_connector.cali99.apptest-development.testnet”,“amount”:“12345",“msg”:“”}’ --accountId igi.testnet --depositYocto 1 --gas 3000000000000
 ```
 
@@ -27,7 +27,7 @@ For a fully working example check out this repo: https://github.com/calimero-is-
 
 Here is a short snippet:
 
-```
+``` js
 const callFtTransferCallOnSource: FunctionCallOptions = {
   contractId: 'usdn.testnet',
   methodName: 'ft_transfer_call',
@@ -62,7 +62,7 @@ For a fully working example check out this repo: https://github.com/calimero-is-
 
 Here is a short snippet:
 
-```
+``` js
 const callWithdrawOnCalimero: FunctionCallOptions = {
   contractId: `usdn.ft_dest_connector.cali99.calimero.testnet`,
   methodName: 'withdraw',
@@ -86,11 +86,11 @@ Also, we have witdrawn usdn coins back to Near testnet. We did this by calling w
 Here are the CLI commands to read fungible token balanace on both NEAR and Calimero:
 
 NEAR:
-```
+``` bash
 near view usdn.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
 ```
 
 Calimero:
-```
+``` bash
 near view usdn.ft_dest_connector.cali99.calimero.testnet ft_balance_of --args '{"account_id":"igi.testnet"}' --nodeUrl https://api-{`$ENVIRONMENT`}.calimero.network/api/v1/shards/cali99-calimero-testnet/neard-rpc --networkId cali99-calimero-testnet
 ```

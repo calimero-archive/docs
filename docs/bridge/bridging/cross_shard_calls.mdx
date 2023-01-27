@@ -9,7 +9,7 @@ An example DAPP that is deployed on NEAR testnet and makes cross shard calls to 
 
 Once both players register for playing on the contract on NEAR testnet, the game gets started on Calimero, a cross shard call is executed denoting that two players from NEAR testnet want to start a game on Calimero:
 
-```
+``` bash
 near call tictactoe.igi.testnet register_player --accountId igi.testnet
 near call tictactoe.igi.testnet register_player --accountId mikimaus.testnet
 ```
@@ -20,7 +20,7 @@ Once the second player registered for a game, a ```CALIMERO_EVENT_CROSS_CALL``` 
 Similarly, you can see how a ```game_ended``` was called from Calimero to NEAR testnet [here](https://explorer.testnet.near.org/transactions/FkE4dEHzbJ5tZKdrYC3QYbpWf5dGVgsqbqVwb12wUp1z)
 
 And now the final result of the game player on Calimero can be viewed on NEAR testnet:
-```
+``` bash
 near view tictactoe.igi.testnet get_finished_game --args '{"game_id":0}'
 View call: tictactoe.igi.testnet.get_finished_game({"game_id":0})
 {
