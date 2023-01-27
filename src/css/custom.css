@@ -46,6 +46,7 @@ code,
 pre {
   font-family: 'JetBrains Mono';
   font-size: 14px;
+  background-color: #160f1c;
 }
 
 p {
@@ -98,7 +99,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --ifm-color-primary-light: #be91f7;
   --ifm-color-primary-lighter: #c8a2f9;
   --ifm-color-primary-lightest: #e6d4fc;
-  --ifm-font-color-base: #d9d9d9;
   --ifm-background-color: #171616;
   --ifm-tabs-color-active: #ffff00;
   --ifm-background-surface-color: #4c4b4b;
