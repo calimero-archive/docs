@@ -23,6 +23,14 @@
   --ifm-font-family-base: 'Inter';
 }
 
+.menu .menu__link {
+  color: #b3b1b1;
+}
+
+.menu .menu__link--active{
+  color: #9e5cf4;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -92,7 +100,8 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --ifm-color-primary-lightest: #e6d4fc;
   --ifm-font-color-base: #d9d9d9;
   --ifm-background-color: #171616;
-  --ifm-background-surface-color: #1E1E1E;
+  --ifm-tabs-color-active: #ffff00;
+  --ifm-background-surface-color: #4c4b4b;
   --ifm-code-font-size: 110%;
   --ifm-font-family-base: 'Inter';
 }
