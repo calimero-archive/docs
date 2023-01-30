@@ -1,0 +1,37 @@
+---
+title: Bridge permissions management
+sidebar_position: 2
+---
+
+In order to use Calimero bridge (transfer FTs, NFTs or making cross shard calls) it is needed to setup permissions properly.
+Permissions are managed on connector basis and at the beginning all connectors are denied for all accounts. For each connector
+permissions are managed on both sides, on Near (for bridging from Near to Calimero) and on Calimero (for bridging from Calimero to Near).
+
+When using Calimero bridge:
+- calling `ft_transfer_call` on FT contract for bridging FTs
+- calling `nft_transfer_call` on NFT contract for bridging NFTs
+- calling `cross_call` through another contract for using cross shard calls (using Calimero bridge)
+
+Methods mentioned here (`ft_transfer_call`, `nft_transfer_call` and `cross_call`) when called check if a call has correct permissions for a given call. If that call is denied bridging will not happen.
+
+Now we will explain how permissions logic works per connector and finally we will describe how to manage permissions through connector permissions contract.
+
+### FT Connector Permissions
+
+When all FT Bridge contracts are deployed all FT bridging will be denied (in both directions). Now if we want to allow bridging from Near to Calimero we need to add
+a regex rule on source side (in this example on Near side) that will allow wanted Account ID to bridge FTs to destination side (in this example Calimero). When rule is added for FT connector on one side that transaction needs to be signed by FT connector on the same side.
+
+Lets assume we want to bridge FT `usdn.testnet` with Account ID `john.testnet` from Near to Calimero. To allow this bridging we need to add regex rule that will match Account ID (`john.testnet`), some examples how to do this:
+- `john\.testnet` -> Only `john.testnet` can bridge FTs with this rule (Account `doe.john.testnet` can not bridge FTs)
+- `.*john.*` -> Every Account that has `john` anywhere in ID can bridge FTs
+- `.*\.testnet` -> Every Testnet Account can bridge FTs
+
+Finally, when FT connectors method `ft_on_transfer` (as a result of `ft_transfer_call` call on some FT contract) is called it checks if original account has bridging permissions.
+Any given account has bridging permissions if it matches any allow rule, otherwise it is denied for bridging.
+
+When adding allow rule for FT connector we always need to keep in mind that every Account ID that matches at least one allow rule can bridge assets.
+
+### NFT Connector Permissions
+
+
+
