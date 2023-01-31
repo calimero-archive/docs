@@ -14,8 +14,6 @@ When using Calimero bridge:
 
 Methods mentioned here (`ft_transfer_call`, `nft_transfer_call` and `cross_call`) when called check if a call has correct permissions for a given call. If that call is denied bridging will not happen.
 
-Now we will explain how permissions logic works per connector and finally we will describe how to manage permissions through connector permissions contract.
-
 ### FT Connector Permissions
 
 When all FT Bridge contracts are deployed all FT bridging will be denied (in both directions). Now if we want to allow bridging from Near to Calimero we need to add
@@ -33,5 +31,27 @@ When adding allow rule for FT connector we always need to keep in mind that ever
 
 ### NFT Connector Permissions
 
+NFT connector permissions are managed in the same manner as FT connector. In the beginning all accounts are denied for bridging NFTs.
+With NFT connectors key from destination side add regex rule transactions are signed. Finally, when NFT connector method `nft_on_transfer`
+(as a result of `nft_transfer_call` call on some NFT contract) is called it checks if original account has bridging permissions (Account ID needs to match at least 1 NFT allow rule on that side).
+
+### Cross Shard Call Connector Permissions
+
+XSC permissions are a bit more granular because of the Cross Shard Calls delicacy. Here we will first explain why we decided to add a more complex permissions management mechanism for XSC than for FTs and NFTs.
+Since Calimero is a private sharding solution it is crucial to preserve wanted customer privacy. Smart contracts often have public getter methods that expose current contract state and privacy could be
+violated if anyone from public network (Near) could fetch information stored in contracts on private shard.
+
+XSC permissions are managed separately for Near and Calimero side, in the same way as earlier explained for FT permissions and NFT permissions.
+
+XSC permissions have 2 parts: account allow list (same mechanism as FT and NFT) and deny list of pairs of accounts and contracts.
+Flow of XSC permissions management:
+- At the beginning all accounts are denied for calling any smart contract on the other side
+- When Near side Account ID `john.testnet` wants to call a method on contract `game.myshard.calimero.testnet` on Calimero side it needs to pass both checks on allow list and deny list
+- First Account ID `john.testnet` needs to match at least 1 allow regex rule for XSC (same as before for FT and NFT)
+- Additionally, Account ID and Contract ID pair should not match any of the deny regex pair rules to be allowed to make cross shard call
+
+Lets look at one example if we have following regex rules defined:
+- Allow list: [`.*apple.*`, `.*banana.*`] -> every account that has `apple` or `banana` will pass first check
+- Deny list (list of pairs of contract regex rule and account regex rule): [(`.*secret.*`, `.*`)] -> no account can call any smart contract that has `secret` in its name
 
 
