@@ -54,4 +54,7 @@ Lets look at one example if we have following regex rules defined:
 - Allow list: [`.*apple.*`, `.*banana.*`] -> every account that has `apple` or `banana` will pass first check
 - Deny list (list of pairs of contract regex rule and account regex rule): [(`.*secret.*`, `.*`)] -> no account can call any smart contract that has `secret` in its name
 
-
+Now lets look at the following examples of using XSC:
+- Account ID `orange.testnet` calls `contract.calimero.testnet` -> this call is denied because it does not pass the first check (there is no allow regex rule that matches this Account ID)
+- Account ID `one.apple.testnet` calls `contract.calimero.testnet` -> this call is allowed, it passes first check (matches `.*apple.*` rule) and does not match any rule pair from deny list (`contract.calimero.testnet` does not match `.*secret.*`)
+- Account ID `one.apple.testnet` calls `secret.contract.calimero.testnet` -> this call is denied, it passes first check (matches `.*apple.*` rule), but also matches one check in the deny list (`secret.contract.calimero.testnet` matches `.*secret.*` and `one.apple.testnet` matches `.*`)
