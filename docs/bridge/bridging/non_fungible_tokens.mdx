@@ -1,6 +1,6 @@
 ---
 title: How to bridge non-fungible tokens
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 With the non fungible token connector nft's can be bridged from NEAR to Calimero and back. In order to bridge some nft from NEAR testnet to Calimero, a single transaction needs to be called. Just lock the wanted token to the nft connector contract. Once the token is transferred, the bridge service will be notified about it and try to prove on the Calimero shard that the locking of tokens happened on NEAR. If proved, wrapped token is minted on Calimero shard.
