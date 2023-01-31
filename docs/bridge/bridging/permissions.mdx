@@ -65,3 +65,15 @@ If you wish to manage XSC permissions in the same way as permissions for FT and 
 
 ### Bridge Permissions Management
 
+Link to the permissions smart contract: <br /> https://github.com/calimero-is-near/bridge-contracts/blob/master/contracts/connector_permissions/src/lib.rs
+
+An important thing to note is that smart contract rule getters return only a subset of rules if there are more rules than:
+- 10 for `get_allow_regex_rules`
+- 20 for `get_regex_account_per_contract_for_xsc`
+
+Rules that are not returned through those getters are still taken into consideration when determining bridging permissions, they can also be removed same as any other rule.
+
+Currently, there are 3 main ways for connector permissions management:
+- Management through the Calimero Console UI
+- Management through the Calimero Bridge SDK
+- Directly through the CLI
