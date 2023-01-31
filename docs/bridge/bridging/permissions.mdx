@@ -21,6 +21,8 @@ a regex rule on the source side (in this example on the Near side) that will all
 
 Let us assume we want to bridge FT `usdn.testnet` with Account ID `john.testnet` from Near to Calimero. To allow this bridging we need to add a regex rule that will match the Account ID (`john.testnet`), some examples of how to do this:
 - `john\.testnet` -> Only `john.testnet` can bridge FTs with this rule (Account `doe.john.testnet` can not bridge FTs)
+- `.*john\.testnet` -> Every Account that ends with `john.testnet` can bridge FTs
+-  `.*\.john\.testnet` -> Every Account that is sub-account of `john.testnet` can bridge FTs
 - `.*john.*` -> Every Account that has `john` anywhere in the ID can bridge FTs
 - `.*\.testnet` -> Every Testnet Account can bridge FTs
 
@@ -48,7 +50,7 @@ The flow of XSC permissions management:
 - At the beginning, all accounts are denied for calling any smart contract on the other side
 - When Near side Account ID `john.testnet` wants to call a method on contract `game.myshard.calimero.testnet` on the Calimero side it needs to pass both checks on allow list and deny list
 - First Account ID `john.testnet` needs to match at least 1 allow regex rule for XSC (same as before for FT and NFT)
-- Additionally, the Account ID and Contract ID pair should not match any of the deny regex pair rules to be allowed to make a cross-shard call
+- Additionally, the Account ID and Contract ID pair should not match any of the deny regex pair rules to be allowed to make a cross-shard call.
 
 Let us look at one example if we have the following regex rules defined:
 - Allow list: [`.*apple.*`, `.*banana.*`] -> every account that has `apple` or `banana` will pass the first check
@@ -58,3 +60,8 @@ Now let's look at the following examples of using XSC:
 - Account ID `orange.testnet` calls `contract.calimero.testnet` -> this call is denied because it does not pass the first check (there is no allow regex rule that matches this Account ID)
 - Account ID `one.apple.testnet` calls `contract.calimero.testnet` -> this call is allowed, it passes the first check (matches `.*apple.*` rule) and does not match any rule pair from deny list (`contract.calimero.testnet` does not match `.*secret.*`)
 - Account ID `one.apple.testnet` calls `secret.contract.calimero.testnet` -> this call is denied, it passes the first check (matches `.*apple.*` rule) but also matches one check in the deny list (`secret.contract.calimero.testnet` matches `.*secret.*` and `one.apple.testnet` matches `.*`)
+
+If you wish to manage XSC permissions in the same way as permissions for FT and NFT connectors that can be achieved simply by not using deny list.
+
+### Bridge Permissions Management
+
