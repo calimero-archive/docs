@@ -18,7 +18,7 @@ This is the only transaction from user/dapp input that needs to happen in order 
 
 Example of locking fungible tokens on NEAR testnet with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/FAGjdTYkHJ2bdWP9CRznzxj7kB3KXRfNDw3hsdUGdFZX):
 ``` bash
-near call usdn.testnet ft_transfer_call --args ‘{“receiver_id”:“ft_source_connector.cali99.apptest-development.testnet”,“amount”:“12345",“msg”:“”}’ --accountId igi.testnet --depositYocto 1 --gas 3000000000000
+near call wrap.testnet ft_transfer_call --args '{"receiver_id":"ft_source_connector.cali99.apptest-development.testnet","amount":"12345","msg":""}' --accountId igi.testnet --depositYocto 1 --gas 3000000000000
 ```
 
 ### JS
@@ -29,7 +29,7 @@ Here is a short snippet:
 
 ``` js
 const callFtTransferCallOnSource: FunctionCallOptions = {
-  contractId: 'usdn.testnet',
+  contractId: 'wrap.testnet',
   methodName: 'ft_transfer_call',
   args: {
     receiver_id: ftConnectorOnNearContractId,
@@ -53,7 +53,7 @@ If the users want to get the tokens back on the original chain (in this case NEA
 
 Example of withdrawing/burning tokens on Calimero with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/5hnG8P52BrGVeuPR37nHvHz2SKtQabDKyC2yuQmfe34C):
 ```
-calimero cali99-calimero-testnet call usdn.ft_dest_connector.cali99.calimero.testnet withdraw --args '{"amount":"345"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+calimero cali99-calimero-testnet call wrap.ft_dest_connector.cali99.calimero.testnet withdraw --args '{"amount":"345"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
 ```
 
 ### JS
@@ -64,7 +64,7 @@ Here is a short snippet:
 
 ``` js
 const callWithdrawOnCalimero: FunctionCallOptions = {
-  contractId: `usdn.ft_dest_connector.cali99.calimero.testnet`,
+  contractId: 'wrap.ft_dest_connector.cali99.calimero.testnet',
   methodName: 'withdraw',
   args: {
     amount: amount,
@@ -78,8 +78,8 @@ const withdrawTokensTx = await senderAccount.functionCall(callWithdrawOnCalimero
 
 ### Recap
 
-We have transferred usdn fungible tokens from NEAR testnet to a Calimero shard called cali99. We did this by locking the NEAR usdn coins on the source ft_connector contract. This will emit an event that the tokens were locked. The tesntet to calimero relayer will pick up this event and relay a block from Near testnet to Calimero shard. Also, the bridge service will pick up this event and try to prove on Calimero that the locking of tokens actually happened on Near testnet. If proved, usdn fungible tokens will be minted on Calimero.
-Also, we have witdrawn usdn coins back to Near testnet. We did this by calling withdraw on the FT token contract on Calimero, which will essentially burn the requested amount of tokens. Once this happens the Calimero to Testnet relayer will be notified about the burn event, and will relay a block from Calimero to testnet. Also, the bridge service will pick up this event and try to prove on Testnet that the amount was burnt on Calimero. If proved, the tokens are released back on the Near testnet.
+We have transferred wrap fungible tokens from NEAR testnet to a Calimero shard called cali99. We did this by locking the wNEAR coins on the source ft_connector contract. This will emit an event that the tokens were locked. The tesntet to calimero relayer will pick up this event and relay a block from Near testnet to Calimero shard. Also, the bridge service will pick up this event and try to prove on Calimero that the locking of tokens actually happened on Near testnet. If proved, wNEAR will be minted on Calimero.
+Also, we have witdrawn wNEAR back to Near testnet. We did this by calling withdraw on the FT token contract on Calimero, which will essentially burn the requested amount of tokens. Once this happens the Calimero to Testnet relayer will be notified about the burn event, and will relay a block from Calimero to testnet. Also, the bridge service will pick up this event and try to prove on Testnet that the amount was burnt on Calimero. If proved, the tokens are released back on the Near testnet.
 
 ## Checking for FT balance
 
@@ -87,10 +87,10 @@ Here are the CLI commands to read fungible token balanace on both NEAR and Calim
 
 NEAR:
 ``` bash
-near view usdn.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
+near view wrap.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
 ```
 
 Calimero:
 ``` bash
-near view usdn.ft_dest_connector.cali99.calimero.testnet ft_balance_of --args '{"account_id":"igi.testnet"}' --nodeUrl https://api-{`$ENVIRONMENT`}.calimero.network/api/v1/shards/cali99-calimero-testnet/neard-rpc --networkId cali99-calimero-testnet
+near view wrap.ft_dest_connector.cali99.calimero.testnet ft_balance_of --args '{"account_id":"igi.testnet"}' --nodeUrl https://api-{`$ENVIRONMENT`}.calimero.network/api/v1/shards/cali99-calimero-testnet/neard-rpc --networkId cali99-calimero-testnet
 ```
