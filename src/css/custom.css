@@ -27,8 +27,10 @@
   color: #b3b1b1;
 }
 
-.menu .menu__link--active{
-  color: #9e5cf4;
+.menu .menu__link--active {
+  color: #df76ff;
+  background-color: #4200741c;
+  font-weight: bold;
 }
 
 .docusaurus-highlight-code-line {
