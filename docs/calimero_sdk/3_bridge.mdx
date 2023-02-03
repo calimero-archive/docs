@@ -138,15 +138,15 @@ const res = await bridge.removeAllowedRegexRule(
 console.log("Remove allowed rule result: " + res)
 ```
 
-### Deny Accounts from using XSC for a specific Contracts
+### Add Deny XSC rule for a pair of Account regex rule and Contract regex rule
 
-``` denyCrossShardCallPerContract ``` returns ``` true ``` if rule is successfully added to the deny list of pairs of contract rules and account rules. ``` denyCrossShardCallPerContract ``` adds pair of account regex rule and contract regex rule, and if account wants to use XSC for a contract and that pair matches at least one rule in the deny list, XSC can not be called for that combination. Note that if account and contract pair does not match any of the rules in deny list, account still needs to have valid permissions for using XSC connector.
+``` addDenyXscRulePair ``` returns ``` true ``` if rule is successfully added to the deny list of deny XSC rules. ``` addDenyXscRulePair ``` adds pair of account regex rule and contract regex rule, and if account wants to use XSC for a contract and that pair matches at least one rule in the deny list, XSC can not be called for that combination. Note that if account and contract pair does not match any of the rules in deny list, account still needs to have valid permissions for using XSC connector.
 
 ```js
 const privateKeyXsc = "ed25519:private-key-xsc-connector";
 const keyPairXsc = KeyPair.fromString(privateKeyXsc);
 
-const res = await bridge.denyCrossShardCallPerContract(
+const res = await bridge.addDenyXscRulePair(
     ChainType.NEAR,
     keyPairXsc,
     ".*", // account regex rule
@@ -156,15 +156,16 @@ const res = await bridge.denyCrossShardCallPerContract(
 console.log("Deny XSC account regex per contract regex result: " + res);
 ```
 
-### Remove denied Accounts from using XSC for a specific Contracts
+### Remove denied XSC rule pair (Account regex rule and Contract regex rule)
 
-``` removeDeniedCrossShardCallPerContract ``` returns ``` true ``` if deny pair is successfully removed from the list of rules, ``` false ``` otherwise. This method removes rule pairs from the same list that ``` denyCrossShardCallPerContract ``` adds rules to.
+``` removeDeniedXscRulePair ``` returns ``` true ``` if deny pair is successfully removed from the list of rules, ``` false ``` otherwise.
+This method removes rule pairs from the same list that ``` denyCrossShardCallPerContract ``` adds rules to.
 
 ```js
 const privateKeyXsc = "ed25519:private-key-xsc-connector";
 const keyPairXsc = KeyPair.fromString(privateKeyXsc);
 
-res = await bridge.removeDeniedCrossShardCallPerContract(
+res = await bridge.removeDeniedXscRulePair(
     ChainType.NEAR,
     keyPairXsc,
     ".*",
@@ -186,12 +187,20 @@ const res = await bridge.canMakeCrossShardCallForContract(
 console.log("Can use XSC for myaccount.test account and evil.contract.testnet contract: " + res);
 ```
 
-### Get pairs of Account and Contract regex rules for using XSC connector
+### Get XSC Deny Rule Pairs
 
-``` getAccountPerContractDeniesForXsc ``` returns an array of pairs of deny regex rules for a XSC connector. Note that if there are more than 20 pairs this method will return exactly 20 rules and others will not be shown. Also, order of the pairs is not guaranteed, and if there are more than 20 pairs arbitrary 20 pairs are returned.
+``` getXscDenyRulePairs ``` returns an array of objects of deny regex rules for a XSC connector. Note that if there are more than 20 pairs this method will return exactly 20 rules and others will not be shown. Also, order of the rules is not guaranteed, and if there are more than 20 rules arbitrary 20 rules are returned.
+
+Example of returned object:
+```js
+{
+  accountRule: ".*",
+  contractRule: "evil\.contract\.testnet"
+}
+```
 
 ```js
-const res = await bridge.getAccountPerContractDeniesForXsc(ChainType.NEAR);
+const res = await bridge.getXscDenyRulePairs(ChainType.NEAR);
 console.log("XSC connector deny rules: " + res);
 ```
 
