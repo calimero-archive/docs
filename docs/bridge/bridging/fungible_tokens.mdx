@@ -12,7 +12,11 @@ In order for bridging to work, see previous section on the prerequisites.
 
 With the fungible token connector ft's can be bridged from NEAR to Calimero and back. In order to bridge some ft from NEAR testnet to Calimero, a single transaction needs to be called. Just lock the wanted amount of tokens to the ft connector contract. Once they are transferred, the bridge service and the relayer will be notified about it and try to prove on the Calimero shard that the locking of tokens happened on NEAR. If proved, wrapped tokens are minted on Calimero shard.
 
-This is the only transaction from user/dapp input that needs to happen in order to bridge the tokens. 
+This is the only transaction from user/dapp input that needs to happen in order to bridge the tokens.
+
+:::caution
+When locking FTs on source side FT Connector you **MUST** do it through **ft_transfer_call**. If you try to do it through ** ft_transfer ** tokens will be **LOST**.
+:::
 
 ### CLI command
 
