@@ -77,3 +77,31 @@ Currently, there are 3 main ways for connector permissions management:
 - Management through the Calimero Console UI
 - Management through the Calimero Bridge SDK
 - Directly through the CLI
+
+### Security and Motivation
+
+There are multiple reasons why bridge permissions need to be set properly:
+1. Avoid malicious entities from bridging FTs/NFTs into private shard
+2. Avoid leaking private information through Cross Shard Calls
+3. Avoid paying connectors gas fees on the destination chain for malicious actor's calls
+4. And potentially more...
+
+Now we will dig deeper into malicious actors' motivation for depleting connectors' funds on the public side (Near).
+When any bridging operation is called, the connector on the destination side initially pays gas fees for those calls. Funds spent
+on the gas are billed to the customer. Now we can see that if permissions are not properly set a malicious actor can initiate a large
+number of bridging operations and cause financial harm to the person or organization paying for the shard.
+
+Aside from causing financial harm to the shard payer, there is also a way to come into possession of a small amount of assets paid
+for malicious Cross Shard Calls. Let us look at the following scenario:
+1. There is some Calimero shard named `victim` and XSC permissions are set to allow all (allow rule `.*`) on the Calimero side
+2. An attacker with Account ID `attacker.testnet` gets permissions for interaction with Calimero shard. The attacker can get access to Calimero in a nuber of ways, including but not limited to shard being public, being regular member of the shard community, social engineering, and information leaking.
+3. The attacker deploys a smart contract on the Near side called `contract.testnet`, this contract is just a random contract with some method that uses gas
+4. The attacker initiates a large number of Cross Shard Calls from the Calimero side to the Near side for a contract `contract.testnet`
+5. An attacker gets 30% of used gas (gas paid by Cross Shard Connector on the Near side) as a reward for deploying a smart contract. [Link to Near gas documentation](https://docs.near.org/concepts/basics/transactions/gas)
+
+Because of everything described here (and general security guidelines), it is important to set Bridge permissions as strictly as possible
+without losing any needed bridge functionality.
+
+:::caution
+Set Bridge permissions as strictly as possible to remove possible attack vectors (described above).
+:::
