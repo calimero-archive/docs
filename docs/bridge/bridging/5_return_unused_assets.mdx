@@ -3,4 +3,12 @@ title: Return of unused assets
 sidebar_position: 5
 ---
 
-Mirko Slavko
+If user locks assets (FTs or NFTs) on the source side connector and there is some kind of problem in destination side or bridge itself
+bridging will not work. If asset is not bridged in the following 4 days from the initial locking transaction asset will no longer be
+eligible for bridging to the destination side.
+
+Currently user with this problem should contact a shard admin, admin should verify that asset can no longer be bridged and return assets to
+the original owner (user). Note that if admin unlocks it before 4 days pass user will effectively get his assets two times since he can
+still prove that he locked assets (and bridge it to destination side), and he will get locked assets on the source side back.
+
+Calimero team plans to implement automatic return of unused assets, when that is implemented there will be no need to contact shard admin for the return of assets.
