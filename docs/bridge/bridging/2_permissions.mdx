@@ -94,7 +94,7 @@ number of bridging operations and cause financial harm to the person or organiza
 Aside from causing financial harm to the shard owner, there is also a way to come into possession of a small amount of assets paid
 for malicious Cross Shard Calls. Let us look at the following scenario:
 1. There is some Calimero shard named `victim` and XSC permissions are set to allow all (allow rule `.*`) on the Calimero side
-2. An attacker with Account ID `attacker.testnet` gets permissions for interaction with Calimero shard. The attacker can get access to Calimero in a nuber of ways, including but not limited to shard being public, being regular member of the shard community, social engineering, and information leaking.
+2. An attacker with Account ID `attacker.testnet` gets permissions for interaction with Calimero shard. The attacker can get access to Calimero in a number of ways, including but not limited to: shard being public, being regular member of the shard community, social engineering, and information leaking.
 3. The attacker deploys a smart contract on the Near side called `contract.testnet`, this contract is just a random contract with some method that uses gas
 4. The attacker initiates a large number of Cross Shard Calls from the Calimero side to the Near side for a contract `contract.testnet`
 5. An attacker gets 30% of used gas (gas paid by Cross Shard Connector on the Near side) as a reward for deploying a smart contract. [Link to Near gas documentation](https://docs.near.org/concepts/basics/transactions/gas)
