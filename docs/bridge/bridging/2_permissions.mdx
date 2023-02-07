@@ -84,7 +84,6 @@ There are multiple reasons why bridge permissions need to be set properly:
 1. Avoid malicious entities from bridging FTs/NFTs into private shard
 2. Avoid leaking private information through Cross Shard Calls
 3. Avoid paying connectors gas fees on the destination chain for malicious actor's calls
-4. And potentially more...
 
 Now we will dig deeper into malicious actors' motivation for depleting connectors' funds on the public side (Near).
 When any bridging operation is called, the connector on the destination side initially pays gas fees for those calls. Funds spent
