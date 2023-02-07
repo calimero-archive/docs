@@ -18,7 +18,7 @@ Bob has Account ID bob.testnet on the Calimero side and wants to bridge his FTs 
 FT Connector on the Calimero side. Now Alice observes that Bob is bridging his assets to the Near side and creates bob.testnet Account on
 Near side (Bob did not possess this Account ID on the Near side before bridging). Now Alice gains Bob's bridged FTs and has successfully stolen them. Note that here Alice did not have any information that is not publicly available on Near side, so this problem can not be fixed by properly setting permissions.
 
-If you want to securely bridge assets from the source chain to the destination chain you should first possess the same Account ID on both sides, and
+If you want to securely bridge assets from the source chain to the destination chain you should **be in possession of the same Account ID on both sides**, and
 if that is not possible for some Account ID you should find another Account ID and obtain that new Account ID on both sides. Now you should
 bridge assets from a newly obtained Account ID.
 
