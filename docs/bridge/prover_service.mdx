@@ -5,6 +5,13 @@ sidebar_position: 6
 
 With the bridge service a user or an application can initiate token transfers through the bridge or more generally execute cross shard calls. 
 
-Let's take a look at the most frequently used scenario of transferring fungible tokens from one chain to another. Users want to transfer NEAR from the mainnet to a Calimero shard. First a lock method is called on the ft contract on NEAR mainnet. Once the transaction ends on the blockchain, the bridge service realizes through the message queue an interesting event has happaned, and makes an RPC call to an archival node on NEAR mainnet to get the proof of this transaction. Simoltaneosly, and a bit before the bridge service, the NEAR to Calimero relayer gets notified about this event through the message queue, and relays the latest block from NEAR to the light client contract on the Calimero shard. A mint method on an FT contract on Calimero shard can now be called, supplied with the proof that NEAR tokens are indeed locked on mainnet. Prover contract on Calimero can check the proof by comparing expected block merkle root from the light client contract that was supplied with valid block headers from NEAR mainnet. If this hash matches, wrapped NEAR can be minted on Calimero shard.
+Let's take a look at the most frequently used scenario of transferring fungible tokens from one chain to another. Users want to transfer NEAR from the mainnet to a Calimero shard. 
+
+- First a lock method is called on the ft contract on NEAR mainnet. 
+- Once the transaction ends on the blockchain, the bridge service realizes through the message queue an interesting event has happaned, and makes an RPC call to an archival node on NEAR mainnet to get the proof of this transaction.
+- Simultaneously, and a bit before the bridge service, the NEAR to Calimero relayer gets notified about this event through the message queue, and relays the latest block from NEAR to the light client contract on the Calimero shard. 
+- A mint method on an FT contract on Calimero shard can now be called, supplied with the proof that NEAR tokens are indeed locked on mainnet. 
+- Prover contract on Calimero can check the proof by comparing expected block merkle root from the light client contract that was supplied with valid block headers from NEAR mainnet. 
+- If this hash matches, wrapped NEAR can be minted on Calimero shard.
 
 <img src={require('@site/static/img/bridge_full.jpg').default} />
