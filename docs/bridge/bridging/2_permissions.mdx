@@ -88,7 +88,7 @@ There are multiple reasons why bridge permissions need to be set properly:
 
 Now we will dig deeper into malicious actors' motivation for depleting connectors' funds on the public side (Near).
 When any bridging operation is called, the connector on the destination side initially pays gas fees for those calls. Funds spent
-on the gas are billed to the customer. Now we can see that if permissions are not properly set a malicious actor can initiate a large
+on the gas are paid by the shard owner. Now we can see that if permissions are not properly set a malicious actor can initiate a large
 number of bridging operations and cause financial harm to the person or organization paying for the shard.
 
 Aside from causing financial harm to the shard payer, there is also a way to come into possession of a small amount of assets paid
