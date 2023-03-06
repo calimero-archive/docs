@@ -47,6 +47,15 @@ const callFtTransferCallOnSource: FunctionCallOptions = {
 const transferTokensTx = await senderAccount.functionCall(callFtTransferCallOnSource);
 ```
 
+## Wrapped tokens naming
+
+When a token is bridged it is created as a deployer sub-account. For example, if we have FT with the name `wrap.testnet` on the source side and the shard name is `cali99` then the wrapped/bridged token name is `wrap.ft_deployer.cali99.calimero.testnet`.
+
+This will work as expected when the bridged token name is not longer than 64 characters (this is a Near protocol requirement). Now let's imagine we want to bridge the token with the name `cali_ft.testnet` and our shard name is `my-extremely-long-shard-name` than our bridged token name would be `cali_ft.ft_deployer.my-extremely-long-shard-name.calimero.testnet`.
+Since this name is 65 characters long its name will be determined by calculating the SHA256 hash of the 65-character name and only the first characters of the hash will be used so that the bridged token name is exactly 64 characters long.
+
+In this example SHA256 of `cali_ft.ft_deployer.my-extremely-long-shard-name.calimero.testnet` is `58aff6667559339001150b5453d8becd9100331207b3c42fa67a33039363a885` so the bridged token name is `58aff6.ft_deployer.my-extremely-long-shard-name.calimero.testnet`.
+
 ## Withdraw FTs back to NEAR
 
 ### Burn FTs on Calimero
