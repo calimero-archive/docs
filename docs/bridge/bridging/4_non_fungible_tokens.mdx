@@ -11,20 +11,21 @@ When locking NFTs on source side NFT Connector you **MUST** do it through **nft_
 
 Example of locking non fungible token on NEAR testnet with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/BNSeCbCqUN1WAh5mr7pAnaXsfDWMff4keYzQXZkR4YuP):
 ```
-near call nft-test.igi.testnet nft_transfer_call --args '{"receiver_id":"nft_source_connector.cali99.apptest-development.testnet", "token_id":"0", "msg":""}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+near call nft-test.igi.testnet nft_transfer_call --args '{"receiver_id":"nft_connector.cali99.dev.calimero.testnet", "token_id":"0", "msg":""}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
 ```
 
 If the users want to get the token back on the original chain (in this case NEAR testnet), they simply call withdraw on the bridged token on the other chain (in this case Calimero shard) which will essentially burn the token. The bridge service will be notified via emitted event that a burn happened and try to prove on the nft connector contract on NEAR that a burn happaned on Calimero shard. If proved, tokens are unlocked.
 
 Example of withdrawing/burning the nft token on Calimero with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/87kTM6E4rtbDZtm91hhScPrjbu2GXWdwoBY4LBkDXLUs):
 ```
-calimero cali99-calimero-testnet call nft-test_igi.nft_dest_connector.cali99.calimero.testnet withdraw --args '{"token_id":"0"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+calimero cali99-calimero-testnet call nft-test_igi.nft_deployer.cali99.calimero.testnet withdraw --args '{"token_id":"0"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
 ```
 
 
 ### Helper cli
+For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
 ```
-alias calimero='function x() { near ${@:2} --nodeUrl https://api.development.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
+alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
 ```
 
 # Other direction

@@ -22,7 +22,7 @@ When locking FTs on source side FT Connector you **MUST** do it through **ft_tra
 
 Example of locking fungible tokens on NEAR testnet with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/FAGjdTYkHJ2bdWP9CRznzxj7kB3KXRfNDw3hsdUGdFZX):
 ``` bash
-near call wrap.testnet ft_transfer_call --args '{"receiver_id":"ft_source_connector.cali99.apptest-development.testnet","amount":"12345","msg":""}' --accountId igi.testnet --depositYocto 1 --gas 3000000000000
+near call wrap.testnet ft_transfer_call --args '{"receiver_id":"ft_connector.cali99.dev.calimero.testnet","amount":"12345","msg":""}' --accountId igi.testnet --depositYocto 1 --gas 3000000000000
 ```
 
 ### JS
@@ -53,11 +53,17 @@ const transferTokensTx = await senderAccount.functionCall(callFtTransferCallOnSo
 
 If the users want to get the tokens back on the original chain (in this case NEAR testnet), they simply call withdraw on the bridged token on the other chain (in this case Calimero shard) which will essentially burn tokens. The bridge service will be notified via emitted event that a burn happened and try to prove on the ft connector contract on NEAR that a burn happaned on Calimero shard. If proved, tokens are unlocked.
 
+### Helper cli
+For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
+```
+alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
+```
+
 ### CLI command
 
 Example of withdrawing/burning tokens on Calimero with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/5hnG8P52BrGVeuPR37nHvHz2SKtQabDKyC2yuQmfe34C):
 ```
-calimero cali99-calimero-testnet call wrap.ft_dest_connector.cali99.calimero.testnet withdraw --args '{"amount":"345"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+calimero cali99-calimero-testnet call wrap.ft_deployer.cali99.calimero.testnet withdraw --args '{"amount":"345"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
 ```
 
 ### JS
@@ -68,7 +74,7 @@ Here is a short snippet:
 
 ``` js
 const callWithdrawOnCalimero: FunctionCallOptions = {
-  contractId: 'wrap.ft_dest_connector.cali99.calimero.testnet',
+  contractId: 'wrap.ft_deployer.cali99.calimero.testnet',
   methodName: 'withdraw',
   args: {
     amount: amount,
@@ -92,11 +98,6 @@ Here are the CLI commands to read fungible token balanace on both NEAR and Calim
 NEAR:
 ``` bash
 near view wrap.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
-```
-
-For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
-``` bash
-alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
 ```
 
 Calimero:
