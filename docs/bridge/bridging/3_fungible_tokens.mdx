@@ -53,6 +53,12 @@ const transferTokensTx = await senderAccount.functionCall(callFtTransferCallOnSo
 
 If the users want to get the tokens back on the original chain (in this case NEAR testnet), they simply call withdraw on the bridged token on the other chain (in this case Calimero shard) which will essentially burn tokens. The bridge service will be notified via emitted event that a burn happened and try to prove on the ft connector contract on NEAR that a burn happaned on Calimero shard. If proved, tokens are unlocked.
 
+:::caution
+When withdrawing FTs from the destination side account that is performing the transfer **MUST** be registered (storage deposit paid) on the original FT contract on the source side. Funds will be **LOST** (locked on the connector on the source side) if withdrawing is performed before registration.
+
+**Note:** If this happened to you contact the shard admin.
+:::
+
 ### Helper cli
 For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
 ```
