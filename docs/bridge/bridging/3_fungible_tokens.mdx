@@ -94,7 +94,12 @@ NEAR:
 near view wrap.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
 ```
 
+For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
+``` bash
+alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
+```
+
 Calimero:
 ``` bash
-near view wrap.ft_dest_connector.cali99.calimero.testnet ft_balance_of --args '{"account_id":"igi.testnet"}' --nodeUrl https://api-{`$ENVIRONMENT`}.calimero.network/api/v1/shards/cali99-calimero-testnet/neard-rpc --networkId cali99-calimero-testnet
+calimero cali99-calimero-testnet view wrap.ft_deployer.cali99.calimero.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
 ```
