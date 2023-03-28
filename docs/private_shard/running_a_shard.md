@@ -38,4 +38,4 @@ Once the deployment process is complete, you will have access to your private sh
 
 
 ## Need help?
-Send a request to [support@calimero.network](support@calimero.network), or via https://www.calimero.network/trial.
+Send a request to [support@calimero.network](mailto:support@calimero.network), or via https://www.calimero.network/trial.
