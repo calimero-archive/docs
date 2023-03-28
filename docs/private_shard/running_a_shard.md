@@ -37,6 +37,5 @@ Currently we only have support for Devlopers Shard, Professional Shard will be c
 Once the deployment process is complete, you will have access to your private shard on the Calimero Network.
 
 
-
 ## Need help?
 Send a request to [support@calimero.network](support@calimero.network), or via https://www.calimero.network/trial.
