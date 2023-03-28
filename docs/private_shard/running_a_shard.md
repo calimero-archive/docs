@@ -1,27 +1,27 @@
 ---
-title: Setting up your Shard
+title: Setting up your Private Shard
 sidebar_position: 2
 ---
 
 import Logo from '../../static/img/login_form.png';
 
-In this guide, we will show you how you can set up your own private shard on Calimero Network. To get started:
 
-- Go to the [Calimero dashboard](https://app.calimero.network.) and sign in to create an account. 
+In this guide, we will show you how to set up your own private shard on the Calimero Network. Follow these steps to get started:
+
+1. Go to the [Calimero dashboard](https://app.calimero.network.) and sign in to create an account.  Once you have created an account, you will be redirected to the login form.
 
 <img src={Logo} width="600" height="600"/>
 
-After creating your account, you'll be redirected to login form.
 
 :::info
 Currently we only have support for Permissioned Private Calimero Shard owned by a single entity ran on Calimero Infrastructure. We are working on support Permissioned Private Calimero Shard owned by a consortium and Public Calimero Shard owned by a community which will be coming soon to the Calimero Network.
 :::
 
-- Click on the Shard dropdown on the top navigation bar. 
+2. Click on the Shard dropdown on the top navigation bar. If this is your first time creating a shard, you will be prompted to select a shard type.
 
 ![](../../static/img/12.png)
 
-- If this is your first shard you will be redirected to the shard type selection.
+When creating your Shard for the first time you'll see this screen. Select Developer Shard as the shard type.
 
 ![](../../static/img/shard_type.png)
 
@@ -29,11 +29,14 @@ Currently we only have support for Permissioned Private Calimero Shard owned by 
 Currently we only have support for Devlopers Shard, Professional Shard will be coming soon to the Calimero Network.
 :::
 
-- Select Developer Shard as the shard type.
-- Add a name and description for your shard.
-- Click on Create Shard to start the deployment process.
+3. Add a name and description for your shard.
+4. Click on Create Shard to start the deployment process.
 
 ![](../../static/img/developers_shard.png)
+
+Once the deployment process is complete, you will have access to your private shard on the Calimero Network.
+
+
 
 ## Need help?
 Send a request to [support@calimero.network](support@calimero.network), or via https://www.calimero.network/trial.
