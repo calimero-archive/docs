@@ -8,7 +8,7 @@ const sidebars = {
     "intro",
     {
       type: "category",
-      label: "Calimero Shard",
+      label: "Getting Started",
       collapsible: true,
       collapsed: false,
       items: [
