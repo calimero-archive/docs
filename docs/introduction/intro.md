@@ -15,12 +15,11 @@ Refer to our _Get started_ documentation to get up and running with Calimero Pri
 
 - [Sign up to Calimero](/docs/getting_started/signup.md)
 - [Set up your private Shard](/docs/getting_started/running_a_shard.md)
-- [Add tokens to your Private Shard](/docs/getting_started/generate_token.md)
+- [Create auth tokens and set up near cli to access the shard via CLI](/docs/getting_started/generate_token.md)
 - [Add an account to your Private Shard](/docs/getting_started/access_account.md)
-- [use explorer]()
-- [invite users]()
-- [create auth token] (and then set up near cli to access the shard via CLI)
-- [deploy bridge]
+- [use explorer](/)
+- [invite users](/)
+- [deploy bridge](/)
 
 Or go through the [Calimero tutorial](/) to learn how to:
 

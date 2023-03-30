@@ -41,6 +41,44 @@ Once you have created your auth token, be sure to store it in a secure location,
 
 With your auth token in hand, you are ready to call smart contracts or deploy dapps on Calimero Private Shard!
 
+## Setting up the NEAR CLI to access the Shard via CLI
+
+To deploy a contract on a Calimero shard using `near-cli`, you need to set the token value that gives permission to deploy contracts and make function calls using **near set-api-key** command. But, as of now, the "--nodeUrl" option is ignored, so you have to set the default node to <https://rpc.testnet.near.org>. To set up your near CLI run the following commands, in your terminal:
+
+1. Set API key
+
+```
+ near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
+```
+- **<AUTH_TOKEN>**: is your copied token ID. For more information, see [Generate token](/docs/getting_started/generate_token.md).
+
+2. Create a new keypair for the shard main account (if your shard name is 'demos-calimero-testnet', your main account is 'demos.calimero.testnet').
+
+```
+ near generate-key <MAIN_ACCOUNT_ID> --networkId <SHARD_ID>   
+```
+
+- **<MAIN_ACCOUNT_ID>**: is your account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
+- **<SHARD_ID>**: is your shard name. For more information, see [set up your shard](/docs/getting_started/running_a_shard.md)
+
+3. The previous command will generate a new keypair and stored it in  `~/.near-credentials/` folder. Navigate to the `~/.near-credentials/` folder to access your keypair.
+
+```
+cd ~/.near-credentials
+```
+
+Then navigate to your stored keypair file which is usually in a `.json` format.
+
+4. Open your `.json` file and copy the Public key.
+5. Open Calimero [Console](https://app.calimero.network/dashboard)
+6. Click on **Security**
+7. Click on **Accounts**
+8. Search for your **Main Account**  in the list and click on the  `⋮` three dots menu.
+9. Click on Add public key
+
+![](../../static/img/public_key.png)
+
+
 ## Need help?
 
 Send a request to [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/trial).

@@ -1,5 +1,5 @@
 ---
-title: Create your custodian account
+title: Accessing your custodian account
 sidebar_position: 4
 ---
 

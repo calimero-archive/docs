@@ -57,12 +57,18 @@ To deploy a contract on a Calimero shard using `near-cli`, you need to set the t
 ```
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
 ```
+
 - **<AUTH_TOKEN>**: is your copied token ID. For more information, see [Generate token](/docs/getting_started/generate_token.md).
 
 2. Create a new keypair for the shard main account (if your shard name is 'demos-calimero-testnet', your main account is 'demos.calimero.testnet').
 
 ```
  near generate-key <MAIN_ACCOUNT_ID> --networkId <SHARD_ID>   
+```
+In our example this will be
+
+```
+ near generate-key demos.calimero.testnet --networkId demos-calimero-testnet
 ```
 
 - **<MAIN_ACCOUNT_ID>**: is your account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
@@ -87,19 +93,83 @@ Then navigate to your stored keypair file which is usually in a `.json` format.
 
 ## Create sub account
 
- In NEAR it’s possible to add code to the accounts for that create contract. You can arbitrarily name the sub-account id. Main accounts can create sub-accounts of themselves, helping to better organize related-accounts.
+In NEAR it’s possible to add code to the accounts for that create contract. You can arbitrarily name the sub-account id. Main accounts can create sub-accounts of themselves, helping to better organize related-accounts.
 
  ```bash
   near create-account <SUB_ACCOUNT_ID>.<MAIN_ACCOUNT_ID> --masterAccount <MAIN_ACCOUNT_ID> --networkId <SHARD_ID> --nodeUrl https://api.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/  
+ ```
+
+ In our example, this will be
+
+ ```bash
+  near create-account yt-voting-example.demos.calimero.testnet--masterAccount demos.calimero.testnet --networkId demos-calimero-testnet--nodeUrl https://api.calimero.network/api/v1/shards/test.calimero.testnet/neard-rpc/  
  ```
 
 - **<SUB_ACCOUNT_ID>**: Sub account can be anything for e.g voting-app-example
 - **<MAIN_ACCOUNT_ID>**: is your account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
 - **<SHARD_ID>**: is your shard name. For more information, see [set up your shard](/docs/getting_started/running_a_shard.md)
 
-After, you run the command you can check in the **Accounts** section in your console to view the sub account you created.-
+After, you run the command you can check in the **Accounts** section in your console to view the sub account you created.
+
+## Deploy your NEAR contract
+
+Back to your cloned repo, in `deployl.calimero.sh`.  You'll see the NEAR deploy command. Before running the command change the values to match yours
+
+```
+near deploy \
+  --accountId "voting.$destination_master_account" \
+  --initFunction new --initArgs '{"question": "Which blockchain is best?", "options": ["NEAR","Bitcoin"]}' \
+  --wasmFile target/wasm32-unknown-unknown/release/poll.wasm \
+  --nodeUrl "calimero-rpc-node-url" \
+  --networkId "$1-calimero-testnet"
+```
+
+- Change the accountID to your sub account name. In our example this will be `--accountId "yt-voting-example.demos.calimero.testnet"`
+- Change networkID to your shard name. In our example this will be `--networkId "demos-calimero-testnet"`
+- For the `calimero-rpc-node-url`, go to the Calimero [Console dashboard](https://app.calimero.network/dashboard) and copy the the near rpc endpoint
+
+![](../../static/img/near_rpc_endpoint.png)
+
+To view your NEAR contract that was deployed go to **Indexer > Transactions** on your  Calimero [Console](https://app.calimero.network/dashboard)
+
+![](../../static/img/voting_tranactions.png)
 
 
+## Updating config file and starting up DAPP frontend
+To set up the frontend, you'll need to:
+
+1. Configure your connection settings in the "calimeroSdk.ts" file.
+
+![](../../static/img/calimero.sdk.png)
+
+We recommend using environment variables `.env`  to save these settings. Here's a breakdown of what each configuration property does:
+
+- **NEXT_PUBLIC_CALIMERO_URL**: this is an RPC endpoint used for syncing account and querying shard data and can be found on your Calimero Console dashboard page under endpoints table.
+- **NEXT_PUBLIC_CALIMERO_TOKEN**: auth token for the RPC node (use the token previously created from the console).
+
+![](../../static/img/rpc_voting.png)
+
+2. Run the following command to start your http://localhost:3000 
+
+```
+$ yarn && yarn dev
+```
+
+![](../../static/img/localhost.png)
+
+3. From your http://localhost:3000  click **Login wit NEAR**. You'll be redirected to wear you can connect your Shard
+
+![](../../static/img/connect_shard.png)
+
+4. Click on **Connect**. You'll be redirected to a screen with the poll options
+
+![](../../static/img/poll.png)
+
+You can click on any of the options and also switch accounts to to click on the poll. Your result would be displayed immediately 
+
+![](../../static/img/poll_options.png)
+
+That's it, you now have an application that can access shard contracts.
 
 ## Need help?
 
