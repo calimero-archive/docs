@@ -30,10 +30,10 @@ Once the deployment process is complete, you will have access to your private sh
 
 ## Next Steps
 
-- [How to Use Calimero from the CLI](/docs/get-started-with-neon/signing-up)
-- [How to bridge FT contract](/docs/get-started-with-neon/setting-up-a-project)
-- [How to bridge NFT contract](/docs/get-started-with-neon/query-with-neon-sql-editor)
-- [How to bridge cross shard contract](/docs/get-started-with-neon/query-with-neon-sql-editor)
+- [How to Use Calimero from the CLI](/)
+- [How to bridge FT contract](/)
+- [How to bridge NFT contract](/)
+- [How to bridge cross shard contract](/)
 
 ## Need help?
 Send a request to [support@calimero.network](mailto:support@calimero.network) or via https://www.calimero.network/trial.
