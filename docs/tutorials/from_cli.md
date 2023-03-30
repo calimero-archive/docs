@@ -1,5 +1,5 @@
 ---
-title: How to deploy a Voting smart contract Dapp
+title: How to deploy a voting smart contract Dapp
 sidebar_position: 1
 ---
 
