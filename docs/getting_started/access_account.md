@@ -1,9 +1,9 @@
 ---
-title: Access Account ID
+title: Create your custodian account
 sidebar_position: 4
 ---
 
-When creating a keypair and adding public key you'll need your Private Shard `<MAIN_ACCOUNT_ID>`. 
+When creating a keypair and adding public key you'll need your Private Shard `Main account`.  If your shard name is 'demos-calimero-testnet', your main account is 'demos.calimero.testnet'.
 
 To access your account ID, follow these steps:
 
@@ -16,7 +16,7 @@ By default Calimero creates an account ID for you but you can go ahead and creat
 
 ![](../../static/img/access_account.png)
 
-## Top your account
+## Top up account
 You can top your account with tokens from your account ID, to do so:
 
 1. Click on  **⋮** and select **Top Account**
@@ -39,8 +39,6 @@ From your acccount ID, you can add a public key to do so;
 2. Add your public key and click on **Add public key**
 
 ![](../../static/img/public_key.png)
-
-
 
 
 ## Need help?

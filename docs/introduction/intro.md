@@ -13,16 +13,21 @@ Calimero is a private shard infrastructure lets you protect your data while leve
 
 Refer to our _Get started_ documentation to get up and running with Calimero Private Shard in just a few minutes. You will learn how to:
 
-- [Sign up to Calimero](/)
-- [Set up your private Shard](/)
-- [Add tokens to your Private Shard](/)
-- [Add an account to your Private Shard](/)
+- [Sign up to Calimero](/docs/getting_started/signup.md)
+- [Set up your private Shard](/docs/getting_started/running_a_shard.md)
+- [Add tokens to your Private Shard](/docs/getting_started/generate_token.md)
+- [Add an account to your Private Shard](/docs/getting_started/access_account.md)
+- [use explorer]()
+- [invite users]()
+- [create auth token] (and then set up near cli to access the shard via CLI)
+- [deploy bridge]
 
-Or step through the [Calimero tutorial](/) to learn how to: 
-- [How to use Calimero from the CLI](/)
-- [How to bridge FT contract](/)
-- [How to bridge NFT contract](/)
-- [How to bridge cross shard contract](/)
+Or go through the [Calimero tutorial](/) to learn how to:
+
+- [How to deploy a Voting smart contract Dapp](/docs/tutorials/from_cli.md)
+- [Coming Soon - How to bridge FT contract](/)
+- [Coming Soon - How to bridge NFT contract](/)
+- [Coming Soon - How to bridge cross shard contract](/)
 
 ## Continue learning
 

@@ -1,10 +1,10 @@
 ---
-title: Setting up your Private Shard
+title: Set up your Private Shard
 sidebar_position: 2
 ---
 
 
-To set up your Private Shard:
+To set up your private shard:
 
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 
