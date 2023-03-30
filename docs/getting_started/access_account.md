@@ -1,5 +1,5 @@
 ---
-title: Accessing your custodian account
+title: Accessing your Custodian account
 sidebar_position: 4
 ---
 
