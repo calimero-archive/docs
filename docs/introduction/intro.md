@@ -9,7 +9,7 @@ slug: /
 
 Calimero is a private shard infrastructure lets you protect your data while leveraging all the business benefits of open-source blockchains. is a fully managed serverless PostgreSQL. Neon separates storage and compute to offer modern developer features such as serverless, branching, bottomless storage, and more.
 
-## New to Calimer0?
+## New to Calimero?
 
 Refer to our _Get started_ documentation to get up and running with Calimero Private Shard in just a few minutes. You will learn how to:
 
