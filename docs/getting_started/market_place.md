@@ -1,11 +1,12 @@
 ---
-title: Installing applications in Marketplace
+title: Install applications from Marketplace
 sidebar_position: 7
 ---
 
-The marketplace that allows users to browse and install pre-built smart contracts onto their private shard. By utilizing a marketplace to install contracts in a private shard, users can save time and effort by avoiding the need to write and deploy their own smart contracts. This can be especially useful for users who are not familiar with smart contract development or who do not have the time or resources to develop their own contracts from scratch.
+The marketplace allows users to browse and install pre-built smart contracts onto their private shard. By utilizing the marketplace to install contracts in your private shard, you can save time and effort by avoiding the need to write and deploy their own smart contracts. 
 
-:::
+
+:::info
 Payments and EVM support coming soon
 :::
 
