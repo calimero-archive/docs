@@ -5,9 +5,7 @@ sidebar_position: 1
 
 import Logo from '../../static/img/login_form.png';
 
-You can sign up for Calimero developer shard, professional shard or Enterprise Shard. For information, see our various [Plans](https://www.calimero.network/plans).
-
-Signing up for Calimero is easy. Simply navigate to https://app.calimero.network/dashboard and sign in with your email and password. Once you have created an account, you will be redirected to the login form.
+Signing up for Calimero is easy. Simply navigate to https://app.calimero.network/dashboard and sign up with your email and password.
 
 <img src={Logo} width="600" height="600"/>
 

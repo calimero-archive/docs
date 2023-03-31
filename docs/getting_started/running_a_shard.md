@@ -8,25 +8,25 @@ To set up your private shard:
 
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 
-2. Click on the Shard dropdown on the top navigation bar. If this is your first time creating a shard, you will be prompted to select a shard type.
-
+2. Click on the Shard dropdown on the top navigation bar. 
 ![](../../static/img/12.png)
 
-When creating your Shard for the first time you'll see this screen. Select Developer Shard as the shard type.
+3. You will be prompted to choose your shard type. Select the shard type for your needs. For more information, see our [pricing plans](https://www.calimero.network/plans)
 
-![](../../static/img/shard_type.png)
+![](../../static/img/shard-types.png)
 
 :::note
 Currently we only have support for Devlopers Shard, Professional Shard will be coming soon to the Calimero Network.
 :::
 
-3. Add a name and description for your shard.
+4. Add a name and description for your shard.
 
-4. Click on **Create Shard** to start the deployment process.
+5. Click on **Create Shard** to start the deployment process.
 
 ![](../../static/img/shard-types.png)
 
 Once the deployment process is complete, you will have access to your private shard on the Calimero Network.
 
 ## Need help?
-Send a request to [support@calimero.network](mailto:support@calimero.network) or via https://www.calimero.network/trial.
+
+Send an email to [support@calimero.network](mailto:support@calimero.network) or via https://www.calimero.network/contact.

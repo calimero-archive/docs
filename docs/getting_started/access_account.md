@@ -1,9 +1,9 @@
 ---
-title: Accessing your Custodian account
+title: Accessing Custodian accounts
 sidebar_position: 4
 ---
  
-Accounts in the custodian are the ones which have at least one keypair in the calimero managed valut (KMS). In other words, we only display accounts for which  Calimero (the shard admin) are key custodians. With your custodian account, you can create a key pair, add public keys and top up your tokens.
+In custodial accounts, we only display those accounts for which the Calimero platform is the custodian. With your custodian account, you can create a key pair, add public keys and top up your tokens.
 
 If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
 
