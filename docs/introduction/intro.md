@@ -11,11 +11,11 @@ Calimero is a private shard infrastructure lets you protect your data while leve
 
 ## New to Calimero?
 
-Refer to our _Get started_ documentation to get up and running with Calimero Private Shard in just a few minutes. You will learn how to:
+Refer to our _Getting started_ documentation to set up and run your Calimero private shard in just a few minutes. You will learn how to:
 
 - [Sign up to Calimero](/docs/getting_started/signup.md)
 - [Set up your private shard](/docs/getting_started/running_a_shard.md)
-- [Create auth tokens and set up near cli to access the shard via CLI](/docs/getting_started/generate_token.md)
+- [Create auth tokens and set up NEAR CLI to access the shard via CLI](/docs/getting_started/generate_token.md)
 - [Acess your custodian account](/docs/getting_started/access_account.md)
 - [Add users to your private shard](/docs/getting_started/users.md)
 - [Install applications in Marketplace](/docs/getting_started/market_place.md)
