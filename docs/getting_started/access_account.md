@@ -3,7 +3,7 @@ title: Accessing your Custodian account
 sidebar_position: 4
 ---
  
-In the custodian account, we only display those for which we (the shard admin) are key custodians. With your custodian account, you can create a key pair, add public keys and top up your tokens.
+Accounts in the custodian are the ones which have at least one keypair in the calimero managed valut (KMS). In other words, we only display accounts for which  Calimero (the shard admin) are key custodians. With your custodian account, you can create a key pair, add public keys and top up your tokens.
 
 If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
 
@@ -13,6 +13,8 @@ To access your custodian account, do the following:
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 2. Click on the Security dropdown in the left navigation menu.
 3. Select **Custodian**.
+
+![](../../static/img/custodian.png)
 
 By default Calimero creates an custodian account for you but you can go ahead and create your own by clicking on **Add an account**.
 
