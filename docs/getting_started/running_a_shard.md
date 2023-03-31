@@ -28,12 +28,5 @@ Currently we only have support for Devlopers Shard, Professional Shard will be c
 
 Once the deployment process is complete, you will have access to your private shard on the Calimero Network.
 
-## Next Steps
-
-- [How to Use Calimero from the CLI](/)
-- [How to bridge FT contract](/)
-- [How to bridge NFT contract](/)
-- [How to bridge cross shard contract](/)
-
 ## Need help?
 Send a request to [support@calimero.network](mailto:support@calimero.network) or via https://www.calimero.network/trial.
