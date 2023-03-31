@@ -7,7 +7,7 @@ slug: /
 
 # Introduction to Calimero 
 
-Calimero is a private shard infrastructure lets you protect your data while leveraging all the business benefits of open-source blockchains. 
+Calimero is a private shard infrastructure that lets you protect your data while leveraging all the business benefits of open-source blockchains. 
 
 ## New to Calimero?
 
