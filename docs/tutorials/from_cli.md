@@ -71,7 +71,7 @@ In our example this will be
  near generate-key demos.calimero.testnet --networkId demos-calimero-testnet
 ```
 
-- **<MAIN_ACCOUNT_ID>**: is your account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
+- **<MAIN_ACCOUNT_ID>**: is your custodian account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
 - **<SHARD_ID>**: is your shard name. For more information, see [set up your shard](/docs/getting_started/running_a_shard.md)
 
 3. The previous command will generate a new keypair and stored it in  `~/.near-credentials/` folder. Navigate to the `~/.near-credentials/` folder to access your keypair.
@@ -86,7 +86,7 @@ Then navigate to your stored keypair file which is usually in a `.json` format.
 5. Open Calimero [Console](https://app.calimero.network/dashboard)
 6. Click on **Security**
 7. Click on **Accounts**
-8. Search for your **Main Account**  in the list and click on the  `⋮` three dots menu.
+8. Search for your custodian account ID  in the list and click on the  `⋮` three dots menu.
 9. Click on Add public key
 
 ![](../../static/img/public_key.png)
