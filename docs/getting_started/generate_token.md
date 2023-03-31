@@ -3,7 +3,7 @@ title: Generate Auth Token
 sidebar_position: 3
 ---
 
-Before running any contract or deploying any application on your private shard, you must first generate a Calimero auth token.Authentication tokens strengthen account security by verifying users identity. These unique codes offer extra protection from unauthorized access. This token will authenticate and authorize external applications to communicate with your shard. Calimero is a permissioned chain and it allows for granular control over the token's time to live and associated permissions.
+Before running any contract or deploying any application on your private shard, you must first generate a Calimero auth token. Authentication tokens strengthen account security by verifying users identity. These unique codes offer extra protection from unauthorized access. This token will authenticate and authorize external applications to communicate with your shard. Calimero is a permissioned chain and it allows for granular control over the token's time to live and associated permissions.
 
 To create an auth token, follow these steps:
 
