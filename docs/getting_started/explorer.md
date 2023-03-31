@@ -3,7 +3,7 @@ title: Explorer
 sidebar_position: 6
 ---
 
-In the explorer, you can quickly search for and analyze the specifics of your transaction, contract, block or account. The explorer dashboard offers a convenient way to monitor shard activity, track transactions, verify smart contract and examine the details of individual account.
+From your  Calimero [Console](https://app.calimero.network/dashboard) you can access the explorer which enables quickly search and analysis of the specifics of your transaction, contract, block or account. The explorer dashboard offers a convenient way to monitor shard activity, track transactions, verify smart contract and examine the details of individual account.
 
 ![](../../static/img/explorer.png)
 
@@ -45,22 +45,75 @@ By clicking on any of the blocks, you'll be able to have an overview of:
 
 ## Transactions
 
-Transactions provides data and insights into transaction activities, transaction volume, transaction hash, transaction status, related to network activity.
+Transactions provides data and insights into transaction activities, your method call from one account to the other, transaction hash, transaction status, related to network activity.
 
 ![](../../static/img/transaction.png)
 
 By clicking on any of the blocks, you'll be able to have an overview of:
 
-- The date the transactions occured
-- The account author of transaction
+- The Tx hash
 - The status of the transaction
-- The block and parent hash
-- The transaction amount
-- The receipt of the transaction
-- The gas used for the transaction
+- The date the transaction was created
+- The account it was sent from
+- The account that received the transaction
+- The block height
+- The block hash
+- The deposit value
+- The transaction fee
+- The amount of the attached gas used
 
-![](../../static/img/)
+![](../../static/img/transaction_overview.png)
 
+
+## Fungible tokens
+
+FT tokens are digital assets that can be transferred between accounts on the network and can be used as a form of currency or to represent other digital or physical assets. The fungible token shows data on the total ft transfers in your shard. 
+
+
+![](../../static/img/ft_token.png)
+
+By clicking on any of the blocks, you'll have both an overview of the transaction and contract information.
+
+- The number of transactions occured on that account
+- The amount of storage used
+- The native account balance currently on the account
+- The amount of validator stake used
+- The transactio hash details
+- The total amount of fungible tokens the account has
+- The total amount of non fungible tokens the account has
+
+For the contract information: 
+- Created At
+- Locked
+- Last Update
+- Transaction Hash
+- Code Hash
+- Holders
+- Volume
+- All Transfers
+
+![](../../static/img/ft_overview.png)
+
+
+
+## Non-Fungible tokens
+
+NFT tokens are digital assets are unique digital assets that are not interchangeable and represent ownership or proof of authenticity of a specific asset. The non-fungible token shows data on the total nft transfers in your shard. 
+
+
+![](../../static/img/nft.png)
+
+By clicking on any of the blocks, you'll have both an overview of the transaction and contract information.
+
+- The number of transactions occured on that account
+- The amount of storage used
+- The native account balance currently on the account
+- The amount of validator stake used
+- The transactio hash details
+- The total amount of fungible tokens the account has
+- The total amount of non fungible tokens the account has
+
+![](../../static/img/nft_overview.png)
 
 ## Need help?
 
