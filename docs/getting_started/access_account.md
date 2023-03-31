@@ -21,7 +21,7 @@ By default Calimero creates an custodian account for you but you can go ahead an
 
 ## Top up account
 
-Topping up the token balance allows users to add funds to their account and participate in transactions on the network.  To top up your account with tokens, you will need to follow these steps::
+Topping up the token balance allows users to add funds to their account and participate in transactions on the network.  To top up your account with tokens, you will need to follow these steps:
 
 1. Click on  **⋮** and select **Top Account**
 
@@ -34,7 +34,7 @@ Topping up the token balance allows users to add funds to their account and part
 
 ## Add public key
 
-To add a public key to your account, you will need to follow these steps::
+To add a public key to your account, you will need to follow these steps:
 
 1. Click on  **⋮** and select **Public key**
 
