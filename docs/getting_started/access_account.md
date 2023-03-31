@@ -3,7 +3,9 @@ title: Accessing your Custodian account
 sidebar_position: 4
 ---
  
-In the custodian account, we only display those for which we (the shard admin) are key custodians. With your custodian account, you can create a key pair, add public keys and top up your tokensyou can access your main accountTo add your public key you'll need your Private shard custodian account.  If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
+In the custodian account, we only display those for which we (the shard admin) are key custodians. With your custodian account, you can create a key pair, add public keys and top up your tokens.
+
+If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
 
 
 To access your custodian account, do the following:
