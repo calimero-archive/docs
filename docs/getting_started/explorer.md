@@ -3,7 +3,7 @@ title: Explorer
 sidebar_position: 6
 ---
 
-From your  Calimero [Console](https://app.calimero.network/dashboard) you can access the explorer which enables quickly search and analysis of the specifics of your transaction, contract, block or account. The explorer dashboard offers a convenient way to monitor shard activity, track transactions, verify smart contract and examine the details of individual account.
+From your  Calimero [Console](https://app.calimero.network/dashboard) you can access the explorer which enables quick search and analysis of the specifics of your transaction, contract, block or account. The explorer dashboard offers a convenient way to monitor shard activity, track transactions, verify smart contract and examine the details of individual account.
 
 ![](../../static/img/explorer.png)
 
