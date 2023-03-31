@@ -3,7 +3,7 @@ title: Generate Auth Token
 sidebar_position: 3
 ---
 
-Before running any contract or deploying any application on your private shard, you must first generate a Calimero auth token. This token will authenticate and authorize external applications to communicate with your shard. Calimero is a permissioned chain and it allows for granular control over the token's time to live and associated permissions.
+Before running any contract or deploying any application on your private shard, you must first generate a Calimero auth token.Authentication tokens strengthen account security by verifying users identity. These unique codes offer extra protection from unauthorized access. This token will authenticate and authorize external applications to communicate with your shard. Calimero is a permissioned chain and it allows for granular control over the token's time to live and associated permissions.
 
 To create an auth token, follow these steps:
 
@@ -37,7 +37,9 @@ Granular access have the following checkboxes represent different types of permi
 
 8. Once the token is issued, you can copy it to your clipboard or request to be sent to you via email.
 
+:::tip
 Once you have created your auth token, be sure to store it in a secure location, as it will be required to communicate with your private shard. The token cannot be obtained afterwards, which means you’ll have to issue a new token if you forget its value.
+:::
 
 With your auth token in hand, you are ready to call smart contracts or deploy dapps on Calimero Private Shard!
 
@@ -50,9 +52,9 @@ To deploy a contract on a Calimero shard using `near-cli`, you need to set the t
 ```
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
 ```
-- **<AUTH_TOKEN>**: is your copied token ID. For more information, see [Generate token](/docs/getting_started/generate_token.md).
+- **<AUTH_TOKEN>**: is your copied token ID.
 
-2. Create a new keypair for the shard main account (if your shard name is 'demos-calimero-testnet', your main account is 'demos.calimero.testnet').
+2. Create a new keypair for the shard main account (if your shard name is 'demos-calimero-testnet', your custodian main account is 'demos.calimero.testnet').
 
 ```
  near generate-key <MAIN_ACCOUNT_ID> --networkId <SHARD_ID>   
@@ -61,7 +63,7 @@ To deploy a contract on a Calimero shard using `near-cli`, you need to set the t
 - **<MAIN_ACCOUNT_ID>**: is your account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
 - **<SHARD_ID>**: is your shard name. For more information, see [set up your shard](/docs/getting_started/running_a_shard.md)
 
-3. The previous command will generate a new keypair and stored it in  `~/.near-credentials/` folder. Navigate to the `~/.near-credentials/` folder to access your keypair.
+3. The keypair created isand stored it in  `~/.near-credentials/` folder. Navigate to the `~/.near-credentials/` folder to access your keypair.
 
 ```
 cd ~/.near-credentials
@@ -72,8 +74,8 @@ Then navigate to your stored keypair file which is usually in a `.json` format.
 4. Open your `.json` file and copy the Public key.
 5. Open Calimero [Console](https://app.calimero.network/dashboard)
 6. Click on **Security**
-7. Click on **Accounts**
-8. Search for your **Main Account**  in the list and click on the  `⋮` three dots menu.
+7. Click on **Custodian**
+8. Search for your **Main Account** in the list and click on the  `⋮` three dots menu.
 9. Click on Add public key
 
 ![](../../static/img/public_key.png)

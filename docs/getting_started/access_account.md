@@ -3,19 +3,23 @@ title: Accessing your Custodian account
 sidebar_position: 4
 ---
  
-To add your public key you'll need your Private shard custodian account.  If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
+In the custodian account, we only display those for which we (the shard admin) are key custodians. With your custodian account, you can create a key pair, add public keys and top up your tokensyou can access your main accountTo add your public key you'll need your Private shard custodian account.  If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
 
-To access your account ID, follow these steps:
+
+To access your custodian account, do the following:
 
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 2. Click on the Security dropdown in the left navigation menu.
 3. Select **Custodian**.
+
 By default Calimero creates an custodian account for you but you can go ahead and create your own by clicking on **Add an account**.
 
 ![](../../static/img/access_account.png)
 
+
 ## Top up account
-You can top up your account with tokens from your custodian account, to do so:
+
+Topping up the token balance allows users to add funds to their account and participate in transactions on the network.  To top up your account with tokens, you will need to follow these steps::
 
 1. Click on  **⋮** and select **Top Account**
 
@@ -28,7 +32,7 @@ You can top up your account with tokens from your custodian account, to do so:
 
 ## Add public key
 
-From your custodian acccount, you can add a public key to do so;
+To add a public key to your account, you will need to follow these steps::
 
 1. Click on  **⋮** and select **Public key**
 
@@ -37,6 +41,11 @@ From your custodian acccount, you can add a public key to do so;
 2. Add your public key and click on **Add public key**
 
 ![](../../static/img/public_key.png)
+
+
+:::info
+In your custodian account you have account from the Calimero side and NEAR side, you carry out these actions on the Calimero side
+:::
 
 
 ## Need help?
