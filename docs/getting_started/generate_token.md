@@ -64,8 +64,8 @@ To interact with a Calimero shard using `near-cli`, you need to set the token va
  near generate-key <MAIN_ACCOUNT_ID> --networkId <SHARD_ID>   
 ```
 
-- Replace **<MAIN_ACCOUNT_ID>**: is the main shard account ID. 
-- Replace **<SHARD_ID>**: is your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
+- Replace **<MAIN_ACCOUNT_ID>** with your main shard account ID.
+- Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
 
 3. The keypair is created and stored it in `~/.near-credentials/` directory. Navigate to the `~/.near-credentials/` directory to access your keypair.
 
@@ -79,7 +79,7 @@ cd ~/.near-credentials/SHARD_ID
 cd ~/.near-credentials/network-id/account-id.json
 ```
 
-4. Open your `.json` file and copy the Public key.
+4. Copy the _Public key_ from your JSON file.
 5. Open Calimero [Console](https://app.calimero.network/dashboard)
 6. Click on **Security**
 7. Click on **Custodian**
