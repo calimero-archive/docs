@@ -148,7 +148,7 @@ To set up the frontend, you'll need to:
 ![](../../static/img/calimero.sdk.png)
 
 :::info
-We recommend using environment variables `.env`  to save these settings. Here's a breakdown of what each configuration property does:
+We recommend using environment variables **.env** to save these settings. Here's a breakdown of what each configuration property does:
 :::
 
 - **NEXT_PUBLIC_CALIMERO_URL**: this is an RPC endpoint used for syncing account and querying shard data and can be found on your Calimero Console dashboard page under endpoints table.
