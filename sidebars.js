@@ -19,7 +19,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Getting Started",
+      label: "Console",
       collapsible: true,
       collapsed: false,
       items: [

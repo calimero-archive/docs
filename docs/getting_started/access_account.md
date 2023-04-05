@@ -1,35 +1,35 @@
 ---
-title: Accessing Custodian accounts
+title: Accessing Custodial accounts
 sidebar_position: 4
 ---
  
 In custodial accounts, we only display those accounts for which the Calimero platform is the custodian. With your custodian account, you can create a key pair, add public keys and top up your tokens.
 
-If your shard name is 'demos-calimero-testnet', your custodian account name is 'demos.calimero.testnet'.
-
-
-To access your custodian account, do the following:
+To access your custodial account, do the following:
 
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 2. Click on the Security dropdown in the left navigation menu.
-3. Select **Custodian**.
+3. Select **Custodial**.
 
-![](../../static/img/custodian.png)
+![](../../static/img/custodial.png)
 
-By default Calimero creates an custodian account for you but you can go ahead and create your own by clicking on **Add an account**.
+By default Calimero creates an custodial account for you but you can go ahead and create your own by clicking on **Add an account**.
 
 ![](../../static/img/access_account.png)
 
+:::info
+Your custodian account ID is your shard_name + the suffix calimero.testnet (SHARDNAME.calimero.testnet)
+:::
 
 ## Top up account
 
 Topping up the token balance allows users to add funds to their account and participate in transactions on the network.  To top up your account with tokens, you will need to follow these steps:
 
-1. Click on  **⋮** and select **Top Account**
+1. Click on  **⋮** and select **Top up Account**
 
 ![](../../static/img/top_account.png)
 
-2. Add the number of tokens that you want and click on **Top up**
+2. Add the number of tokens that you want and click on **Top up** button
 
 ![](../../static/img/token_number.png)
 
@@ -38,17 +38,17 @@ Topping up the token balance allows users to add funds to their account and part
 
 To add a public key to your account, you will need to follow these steps:
 
-1. Click on  **⋮** and select **Public key**
+1. Click on  **⋮** and select **Add Public key**
 
 ![](../../static/img/top_account.png)
 
-2. Add your public key and click on **Add public key**
+2. Add your public key and click on **Add public key** button
 
 ![](../../static/img/public_key.png)
 
 
 :::info
-In your custodian account you have account from the Calimero side and NEAR side, you carry out these actions on the Calimero side
+You can only carry out these actions from the Calimero side
 :::
 
 

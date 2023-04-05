@@ -3,7 +3,9 @@ title: Explorer
 sidebar_position: 6
 ---
 
-From your  Calimero [Console](https://app.calimero.network/dashboard) you can access the explorer which enables quick search and analysis of the specifics of your transaction, contract, block or account. The explorer dashboard offers a convenient way to monitor shard activity, track transactions, verify smart contract and examine the details of individual account.
+From your  Calimero [Console](https://app.calimero.network/dashboard) you can access the explorer which provides you with the ability to view all crypto transactions and information including: accounts, blocks, transactions and receipts, Fungible Tokens and Non-Fungible Tokens in details. 
+
+It is by default a fully private explorer only available to the administrators of the network, but specific information can be shared via API endpoints or shared links through the permissions management service implemented inside the Console.
 
 ![](../../static/img/explorer.png)
 
