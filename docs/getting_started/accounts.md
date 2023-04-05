@@ -8,7 +8,6 @@ There are two main types of accounts inside the Private Shards:
 - Private accounts inside the Shard (generated through Console or CLI)
 - Public wallets synced into the Shard (NEAR wallets used on Mainnet or Testnet)
 
-
 ## Public NEAR Wallets
 Public wallet integrations which allows the user to sign transactions from their wallet and interact with the Shard (the public wallet account is synced into the shard providing a seamless experience to the user).
 

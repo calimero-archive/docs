@@ -38,9 +38,9 @@ Before deploying the Voting smart dApp on our private shard, we must first gener
 To create an auth token, follow these steps:
 
 - Log in to your Calimero Network account.
-- Click on the Security dropdown in the left navigation menu.
-- Select Tokens.
-- Click on Create new token.
+- Click on the **Security** dropdown in the left navigation menu.
+- Select **Tokens**.
+- Click on **Create new token**.
 - Choose a name for your auth token.
 - Select a duration for the token. For this demo, we will use a Perpetual token.
 - Configure the token's permissions by selecting the appropriate checkboxes. In this case, we will select **Full access**.
@@ -50,39 +50,43 @@ Make sure to store your token in a safe place, as it will be required to communi
 
 ## Setting up the near CLI
 
-To deploy a contract on a Calimero shard using `near-cli`, you need to set the token value that gives permission to deploy contracts and make function calls using **near set-api-key** command. But, as of now, the "--nodeUrl" option is ignored, so you have to set the default node to <https://rpc.testnet.near.org>. To set up your near CLI run the following commands, in your terminal:
+To interact with a Calimero shard using `near-cli`, you need to set the token value using _near set-api-key_ command. At the time of writing, the "--nodeUrl" option is ignored, so you have to set the value to https://rpc.testnet.near.org. To set up your near CLI run the following commands, in your terminal:
 
 1. Set API key
 
 ```
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
 ```
+- Replace **<MAIN_ACCOUNT_ID>** with your main shard account ID.
 
-- **<AUTH_TOKEN>**: is your copied token ID. For more information, see [Generate token](/docs/getting_started/generate_token.md).
 
 2. Create a new keypair for the shard main account (if your shard name is 'demos-calimero-testnet', your main account is 'demos.calimero.testnet').
 
 ```
  near generate-key <MAIN_ACCOUNT_ID> --networkId <SHARD_ID>   
 ```
-In our example this will be
+
+In our example this will be:
 
 ```
  near generate-key demos.calimero.testnet --networkId demos-calimero-testnet
 ```
 
-- **<MAIN_ACCOUNT_ID>**: is your custodian account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
-- **<SHARD_ID>**: is your shard name. For more information, see [set up your shard](/docs/getting_started/running_a_shard.md)
+- Replace **<MAIN_ACCOUNT_ID>** with your main shard account ID.
+- Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
 
-3. The previous command will generate a new keypair and stored it in  `~/.near-credentials/` folder. Navigate to the `~/.near-credentials/` folder to access your keypair.
+3. The keypair is created and stored it in `~/.near-credentials/` directory. Navigate to the `~/.near-credentials/` directory to access your keypair.
 
 ```
-cd ~/.near-credentials
+cd ~/.near-credentials/SHARD_ID
 ```
 
-Then navigate to your stored keypair file which is usually in a `.json` format.
+4. Then navigate to your stored keypair file which is usually in a `.json` format. The JSON file is located inside a network directory,
 
-4. Open your `.json` file and copy the Public key.
+```
+cd ~/.near-credentials/network-id/account-id.json
+```
+
 5. Open Calimero [Console](https://app.calimero.network/dashboard)
 6. Click on **Security**
 7. Click on **Accounts**
@@ -105,15 +109,15 @@ In NEAR it’s possible to add code to the accounts for that create contract. Yo
   near create-account yt-voting-example.demos.calimero.testnet--masterAccount demos.calimero.testnet --networkId demos-calimero-testnet--nodeUrl https://api.calimero.network/api/v1/shards/test.calimero.testnet/neard-rpc/  
  ```
 
-- **<SUB_ACCOUNT_ID>**: Sub account can be anything for e.g voting-app-example
-- **<MAIN_ACCOUNT_ID>**: is your account ID.  For more information, see [Access account ID](/docs/getting_started/access_account.md)
-- **<SHARD_ID>**: is your shard name. For more information, see [set up your shard](/docs/getting_started/running_a_shard.md)
+- **<SUB_ACCOUNT_ID>**: Sub account can be anything for e.g yt-voting-example
+- Replace **<MAIN_ACCOUNT_ID>** with your main shard account ID.
+- Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
 
 After, you run the command you can check in the **Accounts** section in your console to view the sub account you created.
 
 ## Deploy your NEAR contract
 
-Back to your cloned repo, in `deployl.calimero.sh`.  You'll see the NEAR deploy command. Before running the command change the values to match yours
+In your cloned repository, navigate to `deploy.calimero.sh`, you will find the NEAR deploy command there. Before executing the command, make sure to update the values to match your own.
 
 ```
 near deploy \
@@ -124,9 +128,9 @@ near deploy \
   --networkId "$1-calimero-testnet"
 ```
 
-- Change the accountID to your sub account name. In our example this will be `--accountId "yt-voting-example.demos.calimero.testnet"`
-- Change networkID to your shard name. In our example this will be `--networkId "demos-calimero-testnet"`
-- For the `calimero-rpc-node-url`, go to the Calimero [Console dashboard](https://app.calimero.network/dashboard) and copy the the near rpc endpoint
+- Replace the _accountID_ to your sub account name. In our example this will be `--accountId "yt-voting-example.demos.calimero.testnet"`
+- Replace _networkID_ to your shard name. In our example this will be `--networkId "demos-calimero-testnet"`
+- For the `calimero-rpc-node-url`, go to the Calimero [Console dashboard](https://app.calimero.network/dashboard) and copy the the near RPC endpoint
 
 ![](../../static/img/near_rpc_endpoint.png)
 
@@ -136,13 +140,16 @@ To view your NEAR contract that was deployed go to **Indexer > Transactions** on
 
 
 ## Updating config file and starting up DAPP frontend
+
 To set up the frontend, you'll need to:
 
 1. Configure your connection settings in the "calimeroSdk.ts" file.
 
 ![](../../static/img/calimero.sdk.png)
 
+:::info
 We recommend using environment variables `.env`  to save these settings. Here's a breakdown of what each configuration property does:
+:::
 
 - **NEXT_PUBLIC_CALIMERO_URL**: this is an RPC endpoint used for syncing account and querying shard data and can be found on your Calimero Console dashboard page under endpoints table.
 - **NEXT_PUBLIC_CALIMERO_TOKEN**: auth token for the RPC node (use the token previously created from the console).

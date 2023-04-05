@@ -79,13 +79,13 @@ cd ~/.near-credentials/SHARD_ID
 cd ~/.near-credentials/network-id/account-id.json
 ```
 
-4. Copy the _Public key_ from your JSON file.
-5. Open Calimero [Console](https://app.calimero.network/dashboard)
-6. Click on **Security**
-7. Click on **Custodian**
-8. Search for your master shard account in the list and click on the  `⋮` three dots menu.
-9. Click on Add public key
-10. Paste the public key, wait for the operation to finish and that's it! The key has been added to the master shard account.
+5. Copy the _Public key_ from your JSON file.
+6. Open Calimero [Console](https://app.calimero.network/dashboard)
+7. Click on **Security**
+8. Click on **Custodian**
+9. Search for your master shard account in the list and click on the  `⋮` three dots menu.
+10. Click on Add public key
+11. Paste the public key, wait for the operation to finish and that's it! The key has been added to the master shard account.
 
 ![](../../static/img/public_key.png)
 
