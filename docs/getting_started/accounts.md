@@ -1,5 +1,5 @@
 ---
-title: Accounts
+title: Shard Accounts
 sidebar_position: 4
 ---
 
