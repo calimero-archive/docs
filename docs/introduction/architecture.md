@@ -13,7 +13,7 @@ Due to the fact that by default the network’s token doesn’t have any monetar
 
 ## Validators
 Private shard validators will own some percentage of the stake (tokens) in the shard defined in the genesis of the network. The tokens are used for consensus only, and do not have any real monetary value. This is the default behavior and it is possible to create networks with actual monetary value if needed in cases of CBDC and similar. To run a minimal private shard you could run only one node controlling the network, but we recommend to run a minimum of four validators, as the network will halt if ⅓ of the nodes go down. This gives minimal redundancy and we recommend running as many validators as possible.
-For example, if a private shard is run by 100 validators owned by 100 different companies, it can be configured so that every single one of them has 1 percent of the total stake distributed. In this case every company will produce 1% of the blocks and more than 66% of the companies will need to behave maliciously and collude to corrupt the shard and 33% + 1 to stale the network.
+For example, if a private shard is run by 100 validators owned by 100 different companies, it can be configured so that every single one of them has 1 percent of the total stake distributed. In this case every company will produce 1% of the blocks and more than 66% of the companies will need to behave maliciously and collude to corrupt the shard and 33% + 1 to stall the network.
 In the future we plan to implement different validator staking mechanisms. Being an owner of an NFT could be an entry ticket to become an validator in the shard. The NFT can represent anything from ownership of a game to having gone through KYC.
 
 ## Consensus
