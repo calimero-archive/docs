@@ -23,7 +23,6 @@ Currently we only have support for Devlopers Shard, Professional Shard will be c
 
 5. Click on **Create Shard** to start the deployment process.
 
-![](../../static/img/shard-types.png)
 
 Once the deployment process is complete, you will have access to your private shard on the Calimero Network.
 
