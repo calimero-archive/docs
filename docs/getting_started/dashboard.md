@@ -5,7 +5,7 @@ sidebar_position: 3
 
 The [Console](https://app.calimero.network/dashboard) dashboard is your frontend to managing your Calimero Private Shard. Here you can access all the information about your nodes, indexers and services. The dashboard also provides users with access to important information such as the RPC and Indexer GraphQL URL endpoints, as well as basic statistics about the network, including current block height, number of transactions, and number of accounts.
 
-If your infrastructure needs grow, you can use the Console to scale up the number of validators, RPCs, and indexers running on your network. This ensures that your network can handle increased traffic as your business grows.
+If your infrastructure needs to grow, you can use the Console to scale up the number of validators, RPCs, and indexers running on your network. This ensures that your network can handle increased traffic as your business grows.
 
 - **Environment**: This refers to either Testnet or Mainnet blockchain environment.
 - **Accounts**: This refers to the total number of account you have in each shard
