@@ -30,4 +30,4 @@ Or go through the [Calimero tutorials](/) to learn how to:
 
 ## Continue learning
 
-If you have technical questions, reach out via [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/trial).
+If you have technical questions, reach out via [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/contact).
