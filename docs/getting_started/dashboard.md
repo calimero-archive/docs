@@ -8,7 +8,7 @@ The [Console](https://app.calimero.network/dashboard) dashboard is your frontend
 If your infrastructure needs grow, you can use the Console to scale up the number of validators, RPCs, and indexers running on your network. This ensures that your network can handle increased traffic as your business grows.
 
 - **Environment**: This refers to either Testnet or Mainnet blockchain environment.
-- **Account**: This refers to the total number of account you have in each shard
+- **Accounts**: This refers to the total number of account you have in each shard
 - **Validators**: This refers to the number of active validator node currently participating in the consensus process of validating transactions and creating new blocks in the blockchain network.
 - **Block height**:  This refers to the number of blocks that have been added to the blockchain within that specific private shard.
 - **Transactions**: This refers to all transactions(_FUNCTION_CALL, CREATE_ACCOUNT, ADD_KEY, TRANSFER_ etc) executed in the shard.
