@@ -21,7 +21,7 @@ Refer to our _Console_ documentation to set up and run your Calimero private sha
 - [Install applications in Marketplace](/docs/getting_started/market_place.md)
 
 
-Or go through the [Calimero tutorial](/) to learn how to:
+Or go through the [Calimero tutorials](/) to learn how to:
 
 - [How to deploy a Voting smart contract Dapp](/docs/tutorials/from_cli.md)
 - [Coming Soon - How to bridge FT contract](/)
