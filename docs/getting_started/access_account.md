@@ -3,13 +3,13 @@ title: Accessing Custodial accounts
 sidebar_position: 4
 ---
  
-In custodial accounts, we only display those accounts for which the Calimero platform is the custodian. With your custodian account, you can create a key pair, add public keys and top up your tokens.
+In custodial accounts, we only display accounts for which the Calimero platform is the custodian. With your custodial account, you can create a key pair, add public keys and top up your tokens.
 
 To access your custodial account, do the following:
 
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 2. Click on the Security dropdown in the left navigation menu.
-3. Select **Custodial**.
+3. Select **Custodial accounts**.
 
 ![](../../static/img/custodial.png)
 
@@ -18,7 +18,7 @@ By default Calimero creates an custodial account for you but you can go ahead an
 ![](../../static/img/access_account.png)
 
 :::info
-Your custodian account ID is your shard_name + the suffix calimero.testnet (SHARDNAME.calimero.testnet)
+Your custodial account ID is your shard_name + the suffix calimero.testnet (SHARDNAME.calimero.testnet)
 :::
 
 ## Top up account

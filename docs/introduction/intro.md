@@ -11,7 +11,7 @@ Calimero is a private shard infrastructure solution which allows you to protect 
 
 ## New to Calimero?
 
-Refer to our _Getting started_ documentation to set up and run your Calimero private shard in just a few minutes. You will learn how to:
+Refer to our _Console_ documentation to set up and run your Calimero private shard in just a few minutes. You will learn how to:
 
 - [Sign up to Calimero](/docs/getting_started/signup.md)
 - [Set up your private shard](/docs/getting_started/running_a_shard.md)
