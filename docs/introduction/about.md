@@ -73,7 +73,7 @@ There are countless use cases, as only the imagination is the limit. To provide 
 
 ## What you can do with Calimero
 
-- Learn how to spin up your own [private shard](/docs/getting_started/running_a_shard.md) from the console
+- Learn how to spin up your own [private shard](/) from the console
 
 - Learn how to transfer tokens/assets using th [Calimero Bridge](https://docs.calimero.network/bridge/architecture)
 
