@@ -13,7 +13,7 @@ If your infrastructure needs to grow, you can use the Console to scale up the nu
 This is not currently supported, but will be when the Professional plan is introduced
 :::
 
-## Components in the dashboard
+## Components of the dashboard
 
 - **Environment**: This refers to either Testnet or Mainnet blockchain environment.
 - **Account**: This refers to the total number of account you have in each shard
