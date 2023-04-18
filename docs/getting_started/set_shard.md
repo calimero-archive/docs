@@ -3,7 +3,7 @@ title: Set up your Private Shard
 sidebar_position: 1
 ---
 
-1. Navigate to https://app.calimero.network/dashboard and sign up with your email and password.
+1. Navigate to [Calimero Console](https://app.calimero.network/dashboard) and sign up with your email and password.
 
 ![](../../static/img/login_form.png)
 
