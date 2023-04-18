@@ -20,7 +20,7 @@ After signing in you'll be directed to verify your email address. An email with 
 ![](../../static/img/shard-types.png)
 
 :::note
-Currently we only have support for Devlopers Shard, Professional Shard will be coming soon to the Calimero Network.
+Currently we only have support for Developers Shard, Professional Shard will be coming soon to the Calimero Network.
 :::
 
 4. Next, personalize your shard by adding a name and description for your shard.
