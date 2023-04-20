@@ -26,8 +26,3 @@ This is not currently supported, but will be when the Professional plan is intro
     - **neard-rpc**: This refers to the endpoint for interacting with the Calimero RPC Service.
     - **near-rpc**: This refers to the endpoint for interacting with the Calimero GraphQL Indexer Service.
 
-
-
-## Need help?
-
-Send a request to [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/trial).
