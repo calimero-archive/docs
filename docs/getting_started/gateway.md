@@ -2,14 +2,12 @@
 title: Gateway
 sidebar_position: 9
 ---
+Calimero Gateway is the service responsible for allowing or rejecting requests towards private shard components. It allows authorized users and applications to interact with the private shard. The gateway also acts as an intermediary layer between the client and the private shard infrastructure including the RPC and GraphQL Indexer endpoints.
 
-The gateway is a reverse proxy service that is used to route incoming requests from clients to the intended server. It acts as an intermediary layer between the client and the Private Shard infrastructure including the RPC and GraphQL Indexer endpoints.
-
-There are two endpoints for clients to connect:
+All requests towards the private shard are routed through the gateway. Accessing the blockchain means sending requests to the RPC nodes or querying the indexer nodes.
 
 - The **RPC endpoint** for sending transactions and fetching data directly from the Shard
 - The **Indexer GraphQL endpoint** for fetching Indexer Private Shard off-chain stored data inside a Postgres database with a GraphQL reverse proxy in front
 
 ![](../../static/img/endpoint.png)
 
-With these endpoints clients are able to generate a variety of API keys with different policies on how the users can interact with the RPC and the Indexer endpoints. This includes anything from allowing all public users with a wallet to send transactions or fetch data to fine-grained permissions or fully disallowing any access.
