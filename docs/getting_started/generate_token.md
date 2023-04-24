@@ -7,21 +7,21 @@ Authentication token is needed for communicating with the shard outside of the c
 
 To create an auth token, follow these steps:
 
-1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
-2. Click on the Security dropdown in the left navigation menu.
-3. Select **Tokens**.
+1. Navigate to [https://app.calimero.network/security/tokens](https://app.calimero.network/security/tokens).
 
-![](../../static/img/security.png)
+:::info
+You can also access this from the console dasboard by clicking on **Security** > **Tokens** in the left navigation menu.
+:::
 
-4. Click on **Create new token**.
+2. Click on **Create new token**.
 
 ![](../../static/img/add_token.png)
 
-5. Choose a name and select a duration for your auth token.
+3. Choose a name and select a duration for your auth token.
 
 ![](../../static/img/token_name.png)
 
-6. Configure the token's permissions by selecting the appropriate access. You can choose either **Granular** or full access
+4. Configure the token's permissions by selecting the appropriate access. You can choose either **Granular** or full access
 
 ![](../../static/img/token_permissions.png)
 
@@ -36,10 +36,10 @@ Granular access have the following checkboxes represent different types of permi
 - **View blocks**: View block details
 - **View chunks**: View chunk details
 
-7. Click on **Generate Token**.
+5. Click on **Generate Token**.
 ![](../../static/img/generate_token_button.png)
 
-8. Once the token is issued, you can copy it to your clipboard or request to be sent to you via email.
+6. Once the token is issued, you can copy it to your clipboard or request to be sent to you via email.
 
 :::tip
 Once you have created your auth token, be sure to store it in a secure location, as it will be required to communicate with your private shard. The token cannot be obtained afterwards, which means you’ll have to issue a new token if you forget its value.
@@ -55,10 +55,6 @@ To interact with Calimero shard using `near-cli`, you need to set the token valu
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
 ```
 Replace **<AUTH_TOKEN>** with your token value 
-
-:::info
-The nodeUrl option is ignored when using the **set-api-key** call, on other calls you need to provide it to point to Calimero
-:::
 
 To verify, run the following command
 
