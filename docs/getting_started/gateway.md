@@ -3,7 +3,7 @@ title: Gateway
 sidebar_position: 9
 ---
 
-The gateway is a reverse proxy service that is used to route incoming requests from clients to the intended server. It acts as an intermediary layer between the client and the private shard infrastructure including the RPC and GraphQL Indexer endpoints. It provides security, privacy, and scalability. It also monitors the traffic that comes into and out of the computer, and blocking any malicious or unauthorized activity.
+The gateway is a reverse proxy service that is used to route incoming requests from clients to the intended server. It acts as an intermediary layer between the client and the Private Shard infrastructure including the RPC and GraphQL Indexer endpoints. It also monitors the traffic that comes into the private shard and block any malicious or unauthorized activity.
 
 There are two endpoints for clients to connect:
 
