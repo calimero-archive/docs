@@ -47,46 +47,26 @@ Once you have created your auth token, be sure to store it in a secure location,
 
 With your auth token in hand, you are ready to call smart contracts or deploy dapps on Calimero Private Shard!
 
-## Setting up the NEAR CLI to access the Shard via CLI
+## Set up the NEAR CLI to access the Shard via CLI
 
-To interact with a Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. 
-
-At the time of writing, the "--nodeUrl" option is ignored, so you have to set the value to <https://rpc.testnet.near.org>. To set up your near CLI run the following commands, in your terminal:
-
-1. Set API key
+To interact with Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. 
 
 ```
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
 ```
-- Replace **<AUTH_TOKEN>** with your token value 
+Replace **<AUTH_TOKEN>** with your token value 
 
-2. Create a new keypair for the shard main account (if your shard name is 'demos-calimero-testnet', main shard account is 'demos.calimero.testnet').
+:::info
+The nodeUrl option is ignored when using the **set-api-key** call, on other calls you need to provide it to point to Calimero
+:::
+
+To verify, run the following command
 
 ```
- near generate-key <MAIN_ACCOUNT_ID> --networkId <SHARD_ID>   
+near state --nodeUrl<RPC URL> --networkID<Shard ID>
 ```
 
-- Replace **<MAIN_ACCOUNT_ID>** with your main shard account ID.
+- The RPC URL for NEAR is: `https://rpc.testnet.near.org/`
+- The RPC URL for Calimero is: `https://api.dev.calimero.network/api/v1/shards/$%7BSHARD_NAME%7D/neard-rpc`
 - Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
 
-3. The keypair is created and stored it in `~/.near-credentials/` directory. Navigate to the `~/.near-credentials/` directory to access your keypair.
-
-```
-cd ~/.near-credentials/SHARD_ID
-```
-
-4. Then navigate to your stored keypair file which is usually in a `.json` format. The JSON file is located inside a network directory,
-
-```
-cd ~/.near-credentials/network-id/account-id.json
-```
-
-5. Copy the _Public key_ from your JSON file.
-6. Open Calimero [Console](https://app.calimero.network/dashboard)
-7. Click on **Security**
-8. Click on **Custodian**
-9. Search for your master shard account in the list and click on the  `⋮` three dots menu.
-10. Click on Add public key
-11. Paste the public key, wait for the operation to finish and that's it! The key has been added to the master shard account.
-
-![](../../static/img/public_key.png)
