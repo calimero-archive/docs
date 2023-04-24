@@ -35,13 +35,13 @@ Blocks serve as a record of transactions and other network activity. Each block 
 
 By clicking on any of the blocks, you'll be able to have an overview of:
 
-- The date the transactions occured
-- The account author of transaction
-- The status of the transaction
-- The block and parent hash
-- The transaction amount
-- The receipt of the transaction
-- The gas used for the transaction
+- date the transactions occured
+- account author of transaction
+- status of the transaction
+- block and parent hash
+- transaction amount
+- receipt of the transaction
+- gas used for the transaction
 
 ![](../../static/img/blocks_overview.png)
 
