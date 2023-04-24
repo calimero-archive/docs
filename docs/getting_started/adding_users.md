@@ -7,7 +7,7 @@ Adding users to your private shard can be a valuable way to enhance collaboratio
 
 1. Navigate to [https://app.calimero.network/security/users](https://app.calimero.network/security/users).
 
-::info
+:::info
 You can also access this from the console dashboard by clicking on **Security** > **Users** in the left navigation menu.
 :::
 
