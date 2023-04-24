@@ -19,7 +19,6 @@ To install smart contracts from your marketplace, do the following:
 The Marketplace can also be accessed from the left hand navigation in the console dashboard
 :::
 
-
 ![](../../static/img/marketplace.png)
 
 2. Click on any of the contract you want to install
@@ -34,6 +33,3 @@ The Marketplace can also be accessed from the left hand navigation in the consol
 All installed contracts are viewed from **Applications** which is located in the left navigation menu of the console.
 
 ![](../../static/img/applications.png)
-
-
-
