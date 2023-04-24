@@ -47,7 +47,7 @@ By clicking on any of the blocks, you'll be able to have an overview of:
 
 ## Transactions
 
-Transactions provides data and insights into transaction activities, your method call from one account to the other, transaction hash, transaction status, related to network activity.
+Transactions page provides data and insights into transaction activities, your method call from one account to the other, transaction hash, transaction status, related to network activity.
 
 ![](../../static/img/transaction.png)
 
