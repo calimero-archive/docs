@@ -74,7 +74,7 @@ FT tokens are digital assets that can be transferred between accounts on the net
 
 ![](../../static/img/ft_token.png)
 
-By clicking on any of the blocks, you'll have both an overview of the transaction and contract information.
+By clicking on any of the fungible tokens, you'll have both an overview of the transaction and contract information.
 
 - The number of transactions occured on that account
 - The amount of storage used
