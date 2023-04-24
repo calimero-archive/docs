@@ -21,15 +21,14 @@ To install smart contracts from your marketplace, do the following:
 The Marketplace can also be accessed from the left hand navigation in the console dashboard
 :::
 
-2. Click on the **Marketplace** in the left navigation menu.
 
 ![](../../static/img/marketplace.png)
 
-4. Click on any of the contract you want to install
+2. Click on any of the contract you want to install
 
 ![](../../static/img/ft_marketplace.png)
 
-5. Click on **Install**
+3. Click on **Install**
 
 
 ## Viewing  installed applications
@@ -39,6 +38,4 @@ All installed contracts are viewed from **Applications** which is located in the
 ![](../../static/img/applications.png)
 
 
-## Need help?
 
-Send a request to [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/trial).
