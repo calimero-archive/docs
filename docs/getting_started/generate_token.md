@@ -69,5 +69,5 @@ near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.calimero.network/api/v1/shard
 Here is an example:
 
 ```
-near state demo.calimero.testnet --nodeUrl https://api.dev.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet
+near state demo.calimero.testnet --nodeUrl https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet
 ```
