@@ -3,7 +3,7 @@ title: Explorer
 sidebar_position: 6
 ---
 
-From your  Calimero [Console](https://app.calimero.network/dashboard) you can access the explorer which provides you with the ability to view all crypto transactions and information including: accounts, blocks, transactions and receipts, Fungible Tokens and Non-Fungible Tokens in details. 
+From your  Calimero [Console](https://app.calimero.network/explorer/dashboard) you can access the explorer which provides you with the ability to view all crypto transactions and information including: accounts, blocks, transactions and receipts, Fungible Tokens and Non-Fungible Tokens in details. 
 
 It is by default a fully private explorer only available to the administrators of the network, but specific information can be shared via API endpoints or shared links through the permissions management service implemented inside the Console.
 
