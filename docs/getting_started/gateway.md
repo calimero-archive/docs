@@ -8,7 +8,7 @@ The gateway is a reverse proxy service that is used to route incoming requests f
 There are two endpoints for clients to connect:
 
 - The **RPC endpoint** for sending transactions and fetching data directly from the Shard
-- The **Indexer GraphQL endpoint** for fetching Indexer Private Shard off-chain stored inside data inside a Postgres database with a GraphQL reverse proxy in front
+- The **Indexer GraphQL endpoint** for fetching Indexer Private Shard off-chain stored data inside a Postgres database with a GraphQL reverse proxy in front
 
 ![](../../static/img/endpoint.png)
 
