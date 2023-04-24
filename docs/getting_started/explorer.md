@@ -21,7 +21,7 @@ By clicking on any of the account ID, you'll be able to have an overview of:
 - The amount of storage used
 - The native account balance currently on the account
 - The amount of validator stake used
-- The transactio hash details
+- The transaction hash details
 - The total amount of fungible tokens the account has
 -  The total amount of non fungible tokens the account has
 
