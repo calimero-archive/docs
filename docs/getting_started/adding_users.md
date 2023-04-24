@@ -13,7 +13,7 @@ You can also access this from the console dashboard by clicking on **Security** 
 
 2. Click on **Add user**.
 
-![](../../static/img/add_token.png)
+![](../../static/img/add_user.png)
 
 3. Add the **User email** and select the type of **User permissions** you wish to give the user.
 
