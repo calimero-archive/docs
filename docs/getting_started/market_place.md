@@ -21,7 +21,7 @@ To install your tokens from your marketplace, do the following:
 
 ![](../../static/img/marketplace.png)
 
-4. Click on any of the token you want to install
+4. Click on any of the contract you want to install
 
 ![](../../static/img/ft_marketplace.png)
 
