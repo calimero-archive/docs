@@ -5,11 +5,9 @@ sidebar_position: 7
 
 The marketplace allows users to browse and install pre-built smart contracts onto their private shard. By utilizing the marketplace to install contracts in your private shard, you can save time and effort by avoiding the need to write and deploy your own smart contracts. 
 
-
 :::info
 Payments and EVM support coming soon
 :::
-
 
 ## Install tokens from your marketplace
 
