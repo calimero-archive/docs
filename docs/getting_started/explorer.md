@@ -51,7 +51,7 @@ Transactions page provides data and insights into transaction activities, your m
 
 ![](../../static/img/transaction.png)
 
-By clicking on any of the blocks, you'll be able to have an overview of:
+By clicking on any of the transactions, you'll have an overview of:
 
 - The Tx hash
 - The status of the transaction
