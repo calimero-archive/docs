@@ -13,7 +13,7 @@ Payments and EVM support coming soon
 
 ## Install tokens from your marketplace
 
-To install your tokens from your marketplace, do the following:
+To install smart contracts from your marketplace, do the following:
 
 1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
 
