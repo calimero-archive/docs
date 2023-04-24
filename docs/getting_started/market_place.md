@@ -17,7 +17,7 @@ To install smart contracts from your marketplace, do the following:
 
 1. Navigate to https://app.calimero.network/marketplace
 
-::info
+:::info
 The Marketplace can also be accessed from the left hand navigation in the console dashboard
 :::
 
