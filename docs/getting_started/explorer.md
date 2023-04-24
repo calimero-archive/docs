@@ -69,7 +69,7 @@ By clicking on any of the blocks, you'll be able to have an overview of:
 
 ## Fungible tokens
 
-FT tokens are digital assets that can be transferred between accounts on the network and can be used as a form of currency or to represent other digital or physical assets. The fungible token shows data on the total ft transfers in your shard. 
+FT tokens are digital assets that can be transferred between accounts on the network and can be used as a form of currency or to represent other digital or physical assets. The fungible token shows data on the total fungible token transfers in your shard. 
 
 
 ![](../../static/img/ft_token.png)
