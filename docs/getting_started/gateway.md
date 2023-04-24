@@ -9,7 +9,6 @@ Calimero gateway is responsible for allowing or rejecting requests towards priva
 ## Incoming requests
 The gateway also acts as an intermediary layer between the client and the private shard infrastructure including the RPC and GraphQL Indexer endpoints.
 
-
 Accessing the blockchain means sending requests to the RPC nodes or querying the indexer nodes.
 
 - The **RPC endpoint** for sending transactions and fetching data directly from the Shard
