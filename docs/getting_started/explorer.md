@@ -100,7 +100,7 @@ For the contract information:
 
 ## Non-Fungible tokens
 
-NFT tokens are digital assets are unique digital assets that are not interchangeable and represent ownership or proof of authenticity of a specific asset. The non-fungible token shows data on the total nft transfers in your shard. 
+NFT tokens are digital assets are unique digital assets that are not interchangeable and represent ownership or proof of authenticity of a specific asset. The non-fungible token page shows data on the total nft transfers in your shard. 
 
 
 ![](../../static/img/nft.png)
