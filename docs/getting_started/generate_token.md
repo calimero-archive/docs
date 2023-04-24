@@ -3,7 +3,7 @@ title: Generate Auth Token
 sidebar_position: 5
 ---
 
-Authentication token is needed for communicating with the shard outside of the console. Authentication tokens strengthen account security by verifying users identity. These unique codes offer protection from unauthorized access. This token will authenticate and authorize external applications to communicate with your shard. Calimero is a permissioned chain and it allows for granular control over the token's time to live and associated permissions.
+Authentication token is needed for communicating with the shard outside of the console. Authentication tokens strengthen your shard account security by verifying users identity. These unique codes offer protection from unauthorized access. This token will authenticate and authorize external applications to communicate with your shard. Calimero is a permissioned chain and it allows for granular control over the token's time to live and associated permissions.
 
 To create an auth token, follow these steps:
 
@@ -90,8 +90,3 @@ cd ~/.near-credentials/network-id/account-id.json
 11. Paste the public key, wait for the operation to finish and that's it! The key has been added to the master shard account.
 
 ![](../../static/img/public_key.png)
-
-
-## Need help?
-
-Send a request to [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/trial).
