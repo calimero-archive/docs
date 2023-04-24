@@ -5,13 +5,11 @@ sidebar_position: 6
 
 From your  Calimero [Console](https://app.calimero.network/explorer/dashboard) you can access the explorer which provides you with the ability to view all crypto transactions and information including: accounts, blocks, transactions and receipts, Fungible Tokens and Non-Fungible Tokens in details. 
 
-It is by default a fully private explorer only available to the administrators of the network, but specific information can be shared via API endpoints or shared links through the permissions management service implemented inside the Console.
-
 ![](../../static/img/explorer.png)
 
 ## Account
 
-Accounts store digital assets, maintain balances, and track transactions.
+[NEAR Accounts](https://docs.near.org/concepts/basics/accounts/model) store digital assets, maintain balances, and track transactions.
 
 ![](../../static/img/demo_account.png)
 
@@ -20,7 +18,7 @@ By clicking on any of the account ID, you'll be able to have an overview of:
 - The number of transactions occured on that account
 - The amount of storage used
 - The native account balance currently on the account
-- The amount of validator stake used
+- The amount of validator stake used. This NEAR is actively being used to back a validator and secure the network. When you decide to unstake this NEAR, it will take some time to be shown in your Available Balance, as NEAR takes 3 epochs (~36 hours) to unstake.
 - The transaction hash details
 - The total amount of fungible tokens the account has
 -  The total amount of non fungible tokens the account has
@@ -29,14 +27,14 @@ By clicking on any of the account ID, you'll be able to have an overview of:
 
 ## Blocks
 
-Blocks serve as a record of transactions and other network activity. Each block in the private shard contains a unique cryptographic hash of the previous block in the chain, which creates a secure and tamper-proof record of all network activity. As new transactions are submitted to the network, they are validated by the network's validators and added to a new block in the chain. Once the block is validated, it is added to the private shard and becomes part of the network's transaction history.
+Blocks serve as a record of transactions. Each block in the private shard contains a unique cryptographic hash of the previous block in the chain, which creates a secure and tamper-proof record of all network activity. As new transactions are submitted to the network, they are validated by the network's validators and added to a new block in the chain. Once the block is validated, it is added to the private shard and becomes part of the network's transaction history.
 
 ![](../../static/img/blocks.png)
 
 By clicking on any of the blocks, you'll be able to have an overview of:
 
 - date the transactions occured
-- account author of transaction
+- author of transaction
 - status of the transaction
 - block and parent hash
 - transaction amount
@@ -76,13 +74,13 @@ FT tokens are digital assets that can be transferred between accounts on the net
 
 By clicking on any of the fungible tokens, you'll have both an overview of the transaction and contract information.
 
-- The number of transactions occured on that account
-- The amount of storage used
-- The native account balance currently on the account
-- The amount of validator stake used
-- The transactio hash details
-- The total amount of fungible tokens the account has
-- The total amount of non fungible tokens the account has
+- number of transactions occured on that account
+- amount of storage used
+- native account balance currently on the account
+- amount of validator stake used
+- transactio hash details
+- total amount of fungible tokens the account has
+- total amount of non fungible tokens the account has
 
 For the contract information: 
 - Created At
@@ -96,23 +94,21 @@ For the contract information:
 
 ![](../../static/img/ft_overview.png)
 
-
-
 ## Non-Fungible tokens
 
-NFT tokens are digital assets are unique digital assets that are not interchangeable and represent ownership or proof of authenticity of a specific asset. The non-fungible token page shows data on the total nft transfers in your shard. 
+NFT tokens are digital assets are unique digital assets that are not interchangeable and represent ownership or proof of authenticity of a specific asset. The non-fungible token page shows data on the total non-fungible transfers in your shard. 
 
 
 ![](../../static/img/nft.png)
 
 By clicking on any of the blocks, you'll have both an overview of the transaction and contract information.
 
-- The number of transactions occured on that account
-- The amount of storage used
-- The native account balance currently on the account
-- The amount of validator stake used
-- The transactio hash details
-- The total amount of fungible tokens the account has
-- The total amount of non fungible tokens the account has
+- number of transactions occured on that account
+- amount of storage used
+- native account balance currently on the account
+- amount of validator stake used
+- transactio hash details
+- total amount of fungible tokens the account has
+- total amount of non fungible tokens the account has
 
 ![](../../static/img/nft_overview.png)
