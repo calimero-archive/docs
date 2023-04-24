@@ -53,7 +53,7 @@ Transactions page provides data and insights into transaction activities, your m
 
 By clicking on any of the transactions, you'll have an overview of:
 
-- The Tx hash
+- transaction hash
 - The status of the transaction
 - The date the transaction was created
 - The account it was sent from
