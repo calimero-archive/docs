@@ -49,7 +49,9 @@ With your auth token in hand, you are ready to call smart contracts or deploy da
 
 ## Setting up the NEAR CLI to access the Shard via CLI
 
-To interact with a Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. At the time of writing, the "--nodeUrl" option is ignored, so you have to set the value to <https://rpc.testnet.near.org>. To set up your near CLI run the following commands, in your terminal:
+To interact with a Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. 
+
+At the time of writing, the "--nodeUrl" option is ignored, so you have to set the value to <https://rpc.testnet.near.org>. To set up your near CLI run the following commands, in your terminal:
 
 1. Set API key
 
