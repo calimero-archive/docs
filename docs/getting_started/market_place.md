@@ -15,7 +15,11 @@ Payments and EVM support coming soon
 
 To install smart contracts from your marketplace, do the following:
 
-1. Navigate to the Calimero [Console](https://app.calimero.network/dashboard).
+1. Navigate to https://app.calimero.network/marketplace
+
+::info
+The Marketplace can also be accessed from the left hand navigation in the console dashboard
+:::
 
 2. Click on the **Marketplace** in the left navigation menu.
 
