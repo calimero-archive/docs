@@ -29,7 +29,7 @@ By clicking on any of the account ID, you'll be able to have an overview of:
 
 ## Blocks
 
-The blocks serve as a record of transactions and other network activity. Each block in the private shard contains a unique cryptographic hash of the previous block in the chain, which creates a secure and tamper-proof record of all network activity. As new transactions are submitted to the network, they are validated by the network's validators and added to a new block in the chain. Once the block is validated, it is added to the private shard and becomes part of the network's transaction history.
+Blocks serve as a record of transactions and other network activity. Each block in the private shard contains a unique cryptographic hash of the previous block in the chain, which creates a secure and tamper-proof record of all network activity. As new transactions are submitted to the network, they are validated by the network's validators and added to a new block in the chain. Once the block is validated, it is added to the private shard and becomes part of the network's transaction history.
 
 ![](../../static/img/blocks.png)
 
