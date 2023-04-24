@@ -30,7 +30,7 @@ To install your tokens from your marketplace, do the following:
 
 ## Viewing  installed applications
 
-All installed token are viewed from **Applications** which is located in the left navigation menu of the console.
+All installed contracts are viewed from **Applications** which is located in the left navigation menu of the console.
 
 ![](../../static/img/applications.png)
 
