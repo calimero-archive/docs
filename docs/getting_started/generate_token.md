@@ -10,7 +10,7 @@ To create an auth token, follow these steps:
 1. Navigate to [https://app.calimero.network/security/tokens](https://app.calimero.network/security/tokens).
 
 :::info
-You can also access this from the console dasboard by clicking on **Security** > **Tokens** in the left navigation menu.
+You can also access this from the console dashboard by clicking on **Security** > **Tokens** in the left navigation menu.
 :::
 
 2. Click on **Create new token**.
