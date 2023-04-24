@@ -63,10 +63,15 @@ The nodeUrl option is ignored when using the **set-api-key** call, on other call
 To verify, run the following command
 
 ```
-near state --nodeUrl<RPC URL> --networkID<Shard ID>
+near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.dev.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkID<Shard ID>
 ```
 
-- The RPC URL for NEAR is: `https://rpc.testnet.near.org/`
-- The RPC URL for Calimero is: `https://api.dev.calimero.network/api/v1/shards/$%7BSHARD_NAME%7D/neard-rpc`
+- Replace **<MAIN_ACCOUNT_ID>** with your shard name + the suffix **calimero.testnet** (`SHARD_NAME.calimero.testnet`)
 - Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
+- Replace the **<SHARD_ID>** in the URL
 
+Here is an example:
+
+```
+near state demo.calimero.testnet --nodeUrl https://api.dev.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet
+```
