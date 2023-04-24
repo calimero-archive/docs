@@ -59,7 +59,7 @@ Replace **<AUTH_TOKEN>** with your token value
 To verify, run the following command
 
 ```
-near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.dev.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkId <SHARD_ID>
+near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkId <SHARD_ID>
 ```
 
 - Replace **<MAIN_ACCOUNT_ID>** with your shard name + the suffix **calimero.testnet** (`SHARD_NAME.calimero.testnet`)
