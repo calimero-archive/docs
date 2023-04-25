@@ -30,6 +30,3 @@ Currently we only have support for Developers Shard, Professional Shard will be 
 5. Once the deployment process is complete, you will have access to your private shard on the Calimero Network.
 
 ![](../../static/img/deploy.png)
-
-## Need help?
-Send a request to [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/trial).
