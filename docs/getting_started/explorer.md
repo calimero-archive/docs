@@ -19,9 +19,9 @@ By clicking on any of the account ID, you'll be able to have an overview of:
 - amount of storage used
 - native account balance currently on the account
 - amount of validator stake used. This NEAR is actively being used to back a validator and secure the network. When you decide to unstake this NEAR, it will take some time to be shown in your Available Balance, as NEAR takes 3 epochs (~36 hours) to unstake.
-- The transaction hash details
-- The total amount of fungible tokens the account has
--  The total amount of non fungible tokens the account has
+- transaction hash details
+- total amount of fungible tokens the account has
+- total amount of non fungible tokens the account has
 
 ![](../../static/img/account_details.png)
 
@@ -52,9 +52,13 @@ Transactions page provides data and insights into transaction activities, your m
 By clicking on any of the transactions, you'll have an overview of:
 
 - transaction hash
-- The status of the transaction
-- The date the transaction was created
-- The account it was sent from
+- status of the transaction
+- date the transaction was created
+- The 
+
+
+
+account it was sent from
 - The account that received the transaction
 - The block height
 - The block hash
