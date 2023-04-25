@@ -54,17 +54,13 @@ By clicking on any of the transactions, you'll have an overview of:
 - transaction hash
 - status of the transaction
 - date the transaction was created
-- The 
-
-
-
-account it was sent from
-- The account that received the transaction
-- The block height
-- The block hash
-- The deposit value
-- The transaction fee
-- The amount of the attached gas used
+- account it was sent from
+- account that received the transaction
+- block height
+- block hash
+- deposit value
+- transaction fee
+- amount of the attached gas used
 
 ![](../../static/img/transaction_overview.png)
 
