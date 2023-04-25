@@ -1,6 +1,6 @@
 ---
 title: Shard Accounts
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 There are two main types of accounts inside the Private Shards:
