@@ -9,7 +9,7 @@ The KV pair oracle is a Calimero application that allows you to set key-value pa
 To install the oracle:
 
 1. Go to the Calimero console.
-2. Click on "Applications".
+2. Click on "Marketplace".
 3. Select "KV Oracle" from the list.
 4. Enter the name of the contract and click "Install".
 5. Wait for the installation to complete.
