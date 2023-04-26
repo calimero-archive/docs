@@ -5,7 +5,7 @@ sidebar_label: Accesing oracle data
 
 # Accessing Oracle data
 
-After storing key-value pairs in the KV Oracle contract, you can access these values from other contracts within the same shard. To achieve this, you can utilize the `get_value` function provided by the KV Oracle contract.
+After storing key-value pairs in a KV Oracle contract, you can access these values from other contracts within the same shard. To achieve this, you can utilize the `get_value` function provided by the KV Oracle contract.
 
 Here's a step-by-step guide on how to access key-value pairs within the shard from other contracts:
 
