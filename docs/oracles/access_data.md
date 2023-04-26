@@ -45,4 +45,4 @@ Here's a step-by-step guide on how to access key-value pairs within the shard fr
 
 4. Handle the returned `Promise` according to your contract's needs. You can either wait for the promise to be resolved or return the promise to the caller, depending on your use case.
 
-By following these steps, you can access key-value pairs stored in the KV Oracle contract from other contracts within the same shard.
+By following these steps, you can access key-value pairs stored in a KV Oracle contract from other contracts within the same shard.
