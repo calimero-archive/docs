@@ -4,7 +4,7 @@ sidebar_label: Installation
 ---
 # Installation
 
-The KV pair oracle is a Calimero application that allows you to set key-value pairs by sending a POST request to an endpoint. These values are stored in a smart contract and are accessible within the shards.
+The KV (key-value) pair oracle is a Calimero application that allows you to set key-value pairs by sending a POST request to an endpoint. These values are stored in a smart contract and are accessible within the shards.
 
 To install the oracle:
 
