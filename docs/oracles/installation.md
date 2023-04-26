@@ -10,7 +10,7 @@ To install the oracle:
 
 1. Go to the Calimero console.
 2. Click on "Marketplace".
-3. Select "KV Oracle" from the list.
+3. Select "Key Value Oracle" from the list.
 4. Enter the name of the contract and click "Install".
 5. Wait for the installation to complete.
 
