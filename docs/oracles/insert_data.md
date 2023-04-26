@@ -5,7 +5,7 @@ sidebar_label: Adding off-chain data
 
 # Updating Contract Values
 
-Once the KV Oracle is installed in the shard, you can start storing key-value pairs in the contract. To do this, you need to send a POST request to the endpoint displayed in the oracle details page.
+Once a KV Oracle is installed in the shard, you can start storing key-value pairs in the contract. To do this, you need to send a POST request to the endpoint displayed in the oracle details page.
 
 To access this page:
 
