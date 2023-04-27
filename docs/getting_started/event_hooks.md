@@ -2,12 +2,13 @@
 title: Event Hooks
 sidebar_position: 9
 ---
+Event hooks service will receive all events from near-lake stream. It will then check defined webhooks and based on filters either call the destination service or not. Destination service is the user defined service whose url has a user set while creating a webhook. That service may have an open endpoint or require an auth token for access.
+User can specify with a webhook authorization mechanism so the service can authorise incoming data.
 
 ## How to set up Event hooks from Calimero console
 Event Hooks feature is not enabled by default. User needs to enable it manually in the Console UI opening Event Hooks in a side menu.
 
 <img width="255" alt="All webhooks" src="https://user-images.githubusercontent.com/12198572/234869073-5eeef76a-a06f-4e53-98d8-b0728298d0c7.png"/>
-
 
 Users may want to receive information when certain events occur in their shard. To achieve this, users can add a webhook that will receive notifications for the desired events.
 From the console click on Add webhook button to register a webhook.
@@ -26,8 +27,5 @@ Select between defined action types or enter your own regex to match the logs.
 
 Click on Save. Once saved, you can access your webhook details
 
-Note: Users can define multiple webhooks, each with its own unique URL. If a user wants to receive notifications for additional events at an existing URL, they can simply add those events to the existing webhook. This allows users to receive customised information for multiple events at the same URL, without having to create a new webhook for each event.
+**Note**: Users can define multiple webhooks, each with its own unique URL. If a user wants to receive notifications for additional events at an existing URL, they can simply add those events to the existing webhook. This allows users to receive customised information for multiple events at the same URL, without having to create a new webhook for each event.
 
-:::info
-You can read more about event hooks in a separate section [Event Hooks](https://docs.calimero.network/event-hooks/introduction)
-:::
