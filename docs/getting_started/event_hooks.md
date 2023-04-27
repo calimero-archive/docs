@@ -6,7 +6,7 @@ sidebar_position: 9
 ## How to set up Event hooks from Calimero console
 Event Hooks feature is not enabled by default. User needs to enable it manually in the Console UI opening Event Hooks in a side menu.
 
-<img width="255" alt="All webhooks" src="https://user-images.githubusercontent.com/12198572/234869073-5eeef76a-a06f-4e53-98d8-b0728298d0c7.png"/>
+<img width="255" alt="Side menu" src="https://user-images.githubusercontent.com/12198572/235000034-6dc5dae8-9b43-4e0a-aff0-ad3810304227.png"/>
 
 
 Users may want to receive information when certain events occur in their shard. To achieve this, users can add a webhook that will receive notifications for the desired events.
@@ -27,6 +27,11 @@ Select between defined action types or enter your own regex to match the logs.
 Click on Save. Once saved, you can access your webhook details
 
 Note: Users can define multiple webhooks, each with its own unique URL. If a user wants to receive notifications for additional events at an existing URL, they can simply add those events to the existing webhook. This allows users to receive customised information for multiple events at the same URL, without having to create a new webhook for each event.
+
+## Received event
+When defined event occur in the blockchain user will receive data on his webhook. This is the example of a **FunctionCall**
+
+<img width="655" alt="Setup webhook" src="https://user-images.githubusercontent.com/12198572/235001284-299923a0-4847-4131-9a6f-dc6990d19d65.png"/>
 
 :::info
 You can read more about event hooks in a separate section [Event Hooks](https://docs.calimero.network/event-hooks/introduction)
