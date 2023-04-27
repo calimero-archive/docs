@@ -32,7 +32,7 @@ To use NEAR CLI with Calimero you will need to:
 
 ## Set API key
 
-You can interact with the Calimero shard using `near set-api-key` by running:
+Before being able to call this alias, you must set the api key. To use, run the following command:
 
 ```
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
@@ -40,7 +40,7 @@ You can interact with the Calimero shard using `near set-api-key` by running:
 
 ## NEAR state
 
-`near state` shows details of an account's state. To use, run the following command
+`near state` shows details of an account's state. To use, run the following command:
 
 ```
 near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkId <SHARD_ID>
