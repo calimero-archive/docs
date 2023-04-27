@@ -6,7 +6,7 @@ sidebar_position: 9
 ## How to set up Event hooks from Calimero console
 Event Hooks feature is not enabled by default. User needs to enable it manually in the Console UI opening Event Hooks in a side menu.
 
-<img width="255" alt="All webhooks" src="https://user-images.githubusercontent.com/12198572/234869073-5eeef76a-a06f-4e53-98d8-b0728298d0c7.png"/>
+<img width="255" alt="Side menu" src="https://user-images.githubusercontent.com/12198572/235000034-6dc5dae8-9b43-4e0a-aff0-ad3810304227.png"/>
 
 
 Users may want to receive information when certain events occur in their shard. To achieve this, users can add a webhook that will receive notifications for the desired events.
