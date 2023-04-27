@@ -2,7 +2,9 @@
 title: Event Hooks
 sidebar_position: 9
 ---
-Event hooks service will receive all events from near-lake stream. It will then check defined webhooks and based on filters either call the destination service or not. Destination service is the user defined service whose url has a user set while creating a webhook. That service may have an open endpoint or require an auth token for access.
+Event hooks service will receive all events from the near-lake stream.
+It will then check the defined webhooks and based on filters either call the destination service or not. Destination service is the user defined service whose URL is set when creating a webhook.
+That service may have an open endpoint or require an auth token for access.
 User can specify with a webhook authorization mechanism so the service can authorise incoming data.
 
 ## How to set up Event hooks from Calimero console
