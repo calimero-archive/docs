@@ -2,8 +2,33 @@
 title: Wallet SDK
 sidebar_position: 2
 ---
+The SDK enables the DApp to connect to a private shard through the NEAR wallet.
+
+## Interacting with the SDK
+
+To interact with the Calimero SDK, the DApp is developed using Next.js and relies on the Calimero SDK, which is a Node.js dependency available on npmjs. 
+
+## Initialize the SDK
+
+- To initialize the Calimero SDK, the authentication token obtained from the Calimero console is inputted, along with the RPC endpoint. 
+
+- The DApp then invokes functions like `requestSignIn` or `requestSignTransaction`, which redirect users to the NEAR wallet for approval. 
+
+- Upon approval of the requested action, such as sign-in, the connection to the Calimero shard is established.
+
+For first-time sign-ins:
+
+- The sync API is called within the Calimero console wallet API service. 
+
+- The wallet API service communicates with the wallet API web service, which in turn executes calls to the RPC endpoint, creating the account associated with the sign-in. 
+
+- Upon successful synchronization and sign-in, a function key is returned, enabling the DApp to access contract calls and other available functions through the walletConnection object from the `near-api-js` package.
+
+
+![](../../static/img/sdk.png)
 
 Once installed you will need to use the `Calimero.isSignedIn()` method to check if user has authorized with Calimero. In the example we render a Login button for the user to click on.
+
 ```js
 import React from 'react';
 
