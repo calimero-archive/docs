@@ -1,0 +1,32 @@
+---
+title: Introduction
+sidebar_position: 1
+---
+
+Event Hooks is a feature of our service that sends real-time events to user-specified URLs for custom processing. This allows you to receive information when defined events occur and write custom code to process the data and take appropriate actions based on the event that occurred.
+
+
+In Calimero shard, a transaction is a basic unit of operation that allows users to interact with the network and execute actions on the blockchain. When a transaction is executed, it generates a receipt as proof of its completion. The receipt contains information about the outcome of the transaction, such as whether it succeeded or failed, as well as other information such as the block height and gas burnt. The receipt also includes logs, which contain different types of information, such as events, error messages, or data. Actions are a specific type of log message that contains information about the individual operations executed within a transaction.
+
+
+In Near Protocol, an event is a way for a smart contract to communicate with the outside world by emitting a message that can be read by other contracts or applications. Events are often used to provide a notification of a significant occurrence or state change within the contract that other parties may be interested in tracking. When a contract emits an event, it creates a log entry in the transaction receipt.
+Users have a different business logic and smart contracts are not predefined so the number of events can be infinite. Different smart contracts can be deployed in a single shard with various number of events.
+Some users may be interested when sender id is a specific account. Some users may be interested when  logs contain specific value.
+
+In order to enable users to enhance their business around custom events in a shard we need to build a new solution to support both requests. The system should enable users to track receipt parameters  and logs such as Actions and Events.
+
+## Components
+
+**Event** is an object that encapsulate information about certain operation in a shard. Event represent a single action in receipt. Event consists of the following data: blockHeight, blockHash, blockTimestamp, predecessorId, receiverId, status, actionType and logs.
+
+
+**Action** is a type of message that is sent to a smart contract, instructing it to perform a specific operation. There are several action types: CreateAccount, DeployContract, FunctionCall, Transfer, Stake, AddKey, DeleteKey, DeleteAccount.
+
+
+**Webhook** is user-defined HTTP callback that is triggered by specific event or changes within a system or application
+
+
+**Event filter** is a mechanism used to selectively receive or filter events based on specific criteria or parameters.
+
+
+**Filter parameter** is criteria used to specify the type or value that should be included or excluded from a particular filter.
