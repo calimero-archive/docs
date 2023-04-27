@@ -46,28 +46,3 @@ Once you have created your auth token, be sure to store it in a secure location,
 :::
 
 With your auth token in hand, you are ready to call smart contracts or deploy dapps on Calimero Private Shard!
-
-## Set up the NEAR CLI to access the Shard via CLI
-
-To interact with Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. 
-
-```
- near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
-```
-Replace **<AUTH_TOKEN>** with your token value 
-
-To verify, run the following command
-
-```
-near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkId <SHARD_ID>
-```
-
-- Replace **<MAIN_ACCOUNT_ID>** with your shard name + the suffix **calimero.testnet** (`SHARD_NAME.calimero.testnet`)
-- Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
-- Replace the **<SHARD_ID>** in the URL
-
-Here is an example:
-
-```
-near state demo.calimero.testnet --nodeUrl https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet
-```

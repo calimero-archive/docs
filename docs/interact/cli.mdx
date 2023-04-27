@@ -17,10 +17,9 @@ You can always check your current version by running:
 near --version  # version info appears on the last line of output
 ```
 
-:::info
+:::tip
 All methods from NEAR CLI are compatible with Calimero Private Shards and the documentation can be found on the official NEAR docs: https://docs.near.org/tools/near-cli.
 :::
-
 
 ## Requirements
 
@@ -29,46 +28,42 @@ To use NEAR CLI with Calimero you will need to:
 - set the custom RPC endpoint for the CLI tool to use from your Dashboard
 - set the API token for the CLI to use
 
+## Set up the NEAR CLI to access the Shard via CLI
 
-## Set API key
-
-Before being able to call this alias, you must set the api key. To use, run the following command:
+To interact with Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. 
 
 ```
  near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
 ```
+Replace **<AUTH_TOKEN>** with your token value 
 
-## NEAR state
+:::note
+The https://rpc.testnet.near.org value is currently ignored by the CLI. However, this issue is fixed and will be released in the next version of the CLI.
+:::
 
-`near state` shows details of an account's state. To use, run the following command:
+To verify, run the following command
 
 ```
 near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkId <SHARD_ID>
 ```
 
-:::info
-More detailed information on this can be found in the [setup near cli](/getting_started/generate_token#set-up-the-near-cli-to-access-the-shard-via-cli) docs.
-:::
+- Replace **<MAIN_ACCOUNT_ID>** with your shard name + the suffix **calimero.testnet** (`SHARD_NAME.calimero.testnet`)
+- Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
+- Replace the **<SHARD_ID>** in the URL
 
-## RPC Server URL
+Here is an example:
 
-The RPC server URL allows you to communicate directly with the NEAR network. 
-
-If you are using a mainnet private shard, set the `NEAR_CLI_MAINNET_RPC_SERVER_URL` environment variable.
-
-Mainet Example :
-```bash
-export NEAR_CLI_MAINNET_RPC_SERVER_URL=<put_your_rpc_server_url_here>
-near set-api-key $NEAR_CLI_MAINNER_RPC_SERVER_URL <api-key>
+```
+near state demo.calimero.testnet --nodeUrl https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet
 ```
 
-On the other hand, for testnet use the `NEAR_CLI_TESTNET_RPC_SERVER_URL` environment variable instead.
+## Interacting with the RPC Server URL
 
-Testnet Example :
-```bash
-export NEAR_CLI_TESTNET_RPC_SERVER_URL=<put_your_rpc_server_url_here>
-near set-api-key $NEAR_CLI_TESTNET_RPC_SERVER_URL <api-key>
-```
+The RPC server allows you to communicate directly with the NEAR network. 
+
+By default NEAR CLI is sending requests to the testnet [https://rpc.testnet.near.org](https://rpc.testnet.near.org). 
+
+However, to interact with the shard the user needs to put the URL of the shard RPC node [https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/](https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/)
 
 ## Options
 Run `near --help` to see all options
