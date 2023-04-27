@@ -1,32 +1,31 @@
 ---
-title: Introduction
-sidebar_position: 1
+title: Event Hooks
+sidebar_position: 9
 ---
 
-Event Hooks is a feature of our service that sends real-time events to user-specified URLs for custom processing. This allows you to receive information when defined events occur and write custom code to process the data and take appropriate actions based on the event that occurred.
+Event Hooks feature is not enabled by default. User needs to enable it manually in the Console UI opening Event Hooks in a side menu.
 
+<img width="255" alt="All webhooks" src="https://user-images.githubusercontent.com/12198572/234869073-5eeef76a-a06f-4e53-98d8-b0728298d0c7.png"/>
 
-In Calimero shard, a transaction is a basic unit of operation that allows users to interact with the network and execute actions on the blockchain. When a transaction is executed, it generates a receipt as proof of its completion. The receipt contains information about the outcome of the transaction, such as whether it succeeded or failed, as well as other information such as the block height and gas burnt. The receipt also includes logs, which contain different types of information, such as events, error messages, or data. Actions are a specific type of log message that contains information about the individual operations executed within a transaction.
+Users may want to receive information when certain events occur in their shard. To achieve this, users can add a webhook that will receive notifications for the desired events.
 
+## How to set up Event hooks from Calimero console
+1. From the console click on **Add webhook** button to register a webhook.
 
-In Near Protocol, an event is a way for a smart contract to communicate with the outside world by emitting a message that can be read by other contracts or applications. Events are often used to provide a notification of a significant occurrence or state change within the contract that other parties may be interested in tracking. When a contract emits an event, it creates a log entry in the transaction receipt.
-Users have a different business logic and smart contracts are not predefined so the number of events can be infinite. Different smart contracts can be deployed in a single shard with various number of events.
-Some users may be interested when sender id is a specific account. Some users may be interested when  logs contain specific value.
+<img width="655" alt="All webhooks" src="https://user-images.githubusercontent.com/12198572/234868580-2b7c2702-fcd4-4e3b-b5f5-603abf1b188a.png"/>
 
-In order to enable users to enhance their business around custom events in a shard we need to build a new solution to support both requests. The system should enable users to track receipt parameters  and logs such as Actions and Events.
+2. To set up your webhook, you’ll need to:
+- Provide a unique URL that can receive the event. This URL will  be registered in the console.
+- (optional) Add Auth token: This is an option for users who do not want to have an open API to set authorization key which will be sent with every call in a header within a key “event-hooks-auth-token”
+Select between defined action types or enter your own regex to match the logs.
+- Define events
 
-## Components
+<img width="655" alt="Setup webhook" src="https://user-images.githubusercontent.com/12198572/234867963-a826f6d8-4d7d-4691-afb6-41743ab76b1a.png"/>
 
-**Event** is an object that encapsulate information about certain operation in a shard. Event represent a single action in receipt. Event consists of the following data: blockHeight, blockHash, blockTimestamp, predecessorId, receiverId, status, actionType and logs.
+3. Click on **Save**. Once saved, you can access your webhook details
 
+**Note**: Users can define multiple webhooks, each with its own unique URL. If a user wants to receive notifications for additional events at an existing URL, they can simply add those events to the existing webhook. This allows users to receive customised information for multiple events at the same URL, without having to create a new webhook for each event.
 
-**Action** is a type of message that is sent to a smart contract, instructing it to perform a specific operation. There are several action types: CreateAccount, DeployContract, FunctionCall, Transfer, Stake, AddKey, DeleteKey, DeleteAccount.
-
-
-**Webhook** is user-defined HTTP callback that is triggered by specific event or changes within a system or application
-
-
-**Event filter** is a mechanism used to selectively receive or filter events based on specific criteria or parameters.
-
-
-**Filter parameter** is criteria used to specify the type or value that should be included or excluded from a particular filter.
+:::info
+You can read more about event hooks in a separate section [Event Hooks](https://docs.calimero.network/event-hooks/introduction)
+:::
