@@ -2,3 +2,23 @@
 title: Interacting with the RPC
 sidebar_position: 3
 ---
+
+
+The NEAR RPC API allows you to communicate directly with the NEAR network. For example, tools such as near-api-js are just abstractions making RPC calls.
+
+## Setup
+In order to use the RPC API you will need to setup the correct RPC endpoints.
+
+### NEAR RPC endpoint setup
+Endpoint URL varies by network:
+  - mainnet `https://rpc.mainnet.near.org`
+  - testnet `https://rpc.testnet.near.org`
+  - localnet `http://localhost:3030`
+
+### Use endpoint to Calimero 
+By default NEAR CLI is sending requests to the testnet. We need to use it in Calimero. 
+
+```
+https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/
+```
+
