@@ -1,0 +1,65 @@
+---
+title: Using the RPC API
+sidebar_position: 2
+---
+
+The RPC API allows you to communicate directly with the Calimwero network. The approach is the same as with NEAR RPC, but the RPC endpoint is different.
+
+
+## [NEAR RPC - Quick Links](https://docs.near.org/api/rpc/introduction#near-rpc---quick-links)
+
+| API             | Description                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------- |
+| Access Keys     | Retrieve information about an account's access keys.                                                      |
+| Accounts/Contracts | View details about accounts and contracts as well as perform contract calls.                              |
+| Block/Chunk     | Query the network and get details about specific blocks or chunks.                                        |
+| Gas             | Get gas price for a specific block or hash.                                                                |
+| Protocol        | Retrieve current genesis and protocol configuration.                                                      |
+| Network         | Return status information for nodes and validators.                                                       |
+| Transactions    | Send transactions and query their status.                                                                  |
+| Maintenance Windows | Query the maintenance windows in current epoch for a validator.                                          |
+
+
+## Example of using Calimero RPC API
+
+POST https://api.calimero.network/api/v1/shards/cali-calimero-testnet/neard-rpc/
+Header: "Authorization: {auth_token}
+Request
+```json
+{
+  "jsonrpc": "2.0",
+  "id": "dontcare",
+  "method": "query",
+  "params": {
+    "request_type": "view_account",
+    "finality": "final",
+    "account_id": "cali.calimero.testnet"
+  }
+}
+```
+
+Response
+```json
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "amount": "9996499369999999999999999999900000",
+        "block_hash": "GzBVoCkvAPAGaHGmTJcmRK6FrPJ716rsr3Zm1WSLMSTK",
+        "block_height": 507347,
+        "code_hash": "11111111111111111111111111111111",
+        "locked": "0",
+        "storage_paid_at": 0,
+        "storage_usage": 182
+    },
+    "id": "dontcare"
+}
+```
+
+Instruction on how to get RPC endpoint and Authorization token can be found here:
+
+- [RPC endpoint](https://docs.calimero.network/interact/endpoints)
+- [Authorization token](https://docs.calimero.network/interact/indexer#authorization-token)
+
+:::info
+You can access the JSON RPC endpoints using Postman
+:::
