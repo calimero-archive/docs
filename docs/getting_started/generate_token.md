@@ -46,3 +46,5 @@ Once you have created your auth token, be sure to store it in a secure location,
 :::
 
 With your auth token in hand, you are ready to call smart contracts or deploy dapps on Calimero Private Shard!
+
+For more information on how to use the token, see [Using the NEAR CLI](https://docs.calimero.network/interact/cli)
