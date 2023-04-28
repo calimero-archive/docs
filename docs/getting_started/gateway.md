@@ -23,7 +23,7 @@ The structure of a request towards the RPC node can be studied at [NEAR doc](htt
 Additionally, to keep the private shard private, the requests must have an authorization token in the request header. Requests without the token in an authorization header are immediately rejected.
 
 ## Authorization
-The requests are authorized by using an authorization token. Calimero Console uses a custom authorization header, the near-cli uses the x-api-key header, while applications can use either the standard authorization or the x-api-key header, along with the authorization token issued from the Calimero Console.
+The requests are authorized by using an authorization token. Calimero Console uses a custom authorization header, the `near-cli` uses the `x-api-key` header, while applications can use either the standard authorization or the `x-api-key` header, along with the authorization token issued from the Calimero Console.
 
 ## Permissions
 The permissions are implemented as an allow list, linked to the token. The database holds the token with the associated actions which are allowed:
