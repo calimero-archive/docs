@@ -18,7 +18,7 @@ To install the oracle:
 4. Enter the name of the contract and click **Install**.
 5. Wait for the installation to complete.
 
-The contract will be deployed and initialized at the chosen address. The KV Oracle will be listed in the "Oracles" section of the console.
+The contract will be deployed and initialized at the chosen address. The KV Oracle will be listed in the **Oracles** section of the console.
 
 <img src={require('@site/static/img/oracle_list.png').default} />
 
