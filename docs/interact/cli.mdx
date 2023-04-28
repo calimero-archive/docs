@@ -69,3 +69,20 @@ However, to interact with the shard the user needs to put the URL of the shard R
 Run `near --help` to see all options
 
 Usage: `near <command> [options]`
+
+## Alias
+To minimize repetitive typing, a shell alias can be defined for using the NEAR CLI with Calimero.
+Here is one suggestion on how to define it for `zsh`:
+```
+alias calimero='(){near ${@:1} --nodeUrl <RPC_URL> --networkId <SHARD_ID>;}'
+```
+
+Using the values from this article:
+```
+alias calimero='(){near ${@:1} --nodeUrl https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet;}'
+```
+
+Here's the previous example, but this time using the alias:
+```
+$ calimero state demo.calimero.testnet
+```
