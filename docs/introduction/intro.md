@@ -22,7 +22,7 @@ Refer to our _Console_ documentation to set up and run your Calimero private sha
 
 Or go through the [Calimero tutorials](/) to learn how to:
 
-- [How to deploy a voting smart contract dapp](/)
+- [Coming Soon - How to deploy a voting smart contract dapp](/)
 - [Coming Soon - How to bridge FT contract](/)
 - [Coming Soon - How to bridge NFT contract](/)
 - [Coming Soon - How to bridge cross shard contract](/)
