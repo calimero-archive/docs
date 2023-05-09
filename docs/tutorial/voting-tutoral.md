@@ -127,7 +127,7 @@ Next, we will create sub account which will be used to deploy the account that w
 near create-account <SUB_ACCOUNT_ID>.SHARD_ID.calimero.testnet --masterAccount SHARD_ID.calimero.testnet --networkId SHARD_ID-calimero-testnet--nodeUrl https://api.calimero.network/api/v1/shards/SHARD_ID.calimero.testnet/neard-rpc/  
  ```
 
- In our example, this will be
+For our example, this will be
 
  ```bash
 near create-account yt-voting-example-1.demos.calimero.testnet--masterAccount demos.calimero.testnet --networkId demos-calimero-testnet--nodeUrl https://api.calimero.network/api/v1/shards/demos.calimero.testnet/neard-rpc/  
@@ -157,6 +157,8 @@ near deploy \
 - Replace _networkID_ to your shard name. In our example this will be `demos-calimero-testnet`
 - For the `calimero-rpc-node-url`, go to the Calimero [Console dashboard](https://app.calimero.network/dashboard) and copy the the near RPC endpoint
 
+For our example, this will be
+
 ```bash
 near deploy \
   --accountId "yt-voting-example-1.demos.calimero.testne" \
@@ -165,7 +167,6 @@ near deploy \
   --nodeUrl "https://api.calimero.network/api/v1/shards/demos-calimero-testnet/neard-rpc/  " \
   --networkId "demos-calimero-testnet"
 ```
-
 
 If the contract was successfully deployed you can check this on the [Explorer > Transactions](https://app.calimero.network/dashboard/explorer/transactions) on your the console.
 
