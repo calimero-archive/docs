@@ -166,6 +166,7 @@ near deploy \
   --wasmFile target/wasm32-unknown-unknown/release/poll.wasm \
   --nodeUrl "https://api.calimero.network/api/v1/shards/demos-calimero-testnet/neard-rpc/  " \
   --networkId "demos-calimero-testnet"
+```
 
 If the contract was successfully deployed you can check this on the [Explorer > Transactions](https://app.calimero.network/dashboard/explorer/transactions) on your the console.
 
