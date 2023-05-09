@@ -9,7 +9,7 @@ The NEAR to Calimero bridge enables users move assets between NEAR public networ
 
 To be able to brige tokens, you'll need to install **Connectors**. Calimero supports transfering fungible tokens(FTs) and non-fungible tokens(NFTs) from one chain to another. Also, through the Calimero bridge cross shard calls can be executed.
 
-From your [Console](https://app.calimero.network/dashboard), select **Bridge** on the left navigation bar.
+From your selected Shard in the [Console](https://app.calimero.network/dashboard), click on **Bridge** from the left navigation bar.
 
 ### FT connector
 
