@@ -1,6 +1,6 @@
 ---
 title: Shard management
-sidebar_position: 4
+sidebar_position: 11
 ---
 
 Shard management is a key feature that allows users to manage various aspects related to their selected shard within the console. With Shard management, users can configure nodes, add accounts, and perform token transfers.
@@ -11,7 +11,9 @@ Shard management is a key feature that allows users to manage various aspects re
 
 In custodial accounts, on the Calimero side, we only display accounts for which the Calimero platform has stored keys. With your custodial account, you can create a key pair, add public keys and top up your tokens.
 
-By default Calimero creates an custodial account for you but you create your own by clicking on **Add an account**.
+### Create Custodial Account
+
+By default Calimero creates an custodial account for you but you create your own by clicking on **Add an account**. You can create two types of custodial account: **Subaccount** and **Top Level account**.
 
 ![](../../static/img/access_account.png)
 
@@ -29,7 +31,7 @@ Account ID part consists of lowercase alphanumeric symbols separated by either _
 
 ### Top level account
 
-To create a **Top Level Account** you'll need to provide only an **Account ID**. You can't add public key to top level accounts.
+To create a **Top Level account** you'll need to provide only an **Account ID**. You can't add public key to top level accounts.
 
 ![](../../static/img/top-level-account.png)
 
@@ -39,8 +41,6 @@ To create a **Top Level Account** you'll need to provide only an **Account ID**.
 You can only add public key to subaccount. To do so, you will need to follow these steps:
 
 - Click on  **⋮** and select **Add public key**
-
-![](../../static/img/top_account.png)
 
 - Add your public key and click on **Add public key** button
 
@@ -58,7 +58,7 @@ You can transfer tokens from custodial accounts (on the Calimero side, accounts 
 ![](../../static/img/token-transfer.png)
 
 
-## Configure your Private Shard
+## Configure Shard
 
 :::info
 Developer Shards are nonconfigurable. You can only configure nodes for proffesional shard
