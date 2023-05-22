@@ -136,7 +136,7 @@ near create-account yt-voting-example-1.demos.calimero.testnet--masterAccount de
 - Replace **<SUB_ACCOUNT_ID>** with your sub account name which can be anything for e.g yt-voting-example
 - Replace **<SHARD_ID>** with your shard name
 
-After, the command has ben ran, you can check in the **Custodial Accounts** section in your console to view the sub account you created.
+After, the command has been ran, you can check in the **Custodial Accounts** section in your console to view the sub account you created.
 
 ![](../../static/img/yt-sub-account.png)
 
