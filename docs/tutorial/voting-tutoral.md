@@ -16,7 +16,7 @@ To get started, ensure that you have the following:
 - Node and npm installed in your machine
 - The [Rust and WASM](https://docs.near.org/develop/contracts/introduction#rust-and-wasm) toolchain installed
 
-## Build smart contract
+## Build the smart contract
 
 - Clone the [Calimero examples repository](https://github.com/calimero-is-near/calimero-examples)
 
