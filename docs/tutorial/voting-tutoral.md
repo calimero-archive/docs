@@ -142,7 +142,7 @@ After, the command has been ran, you can check in the **Custodial Accounts** sec
 
 ## Deploy your NEAR contract
 
-The next step, is to deploy this contract in the private shard. In your cloned repository, navigate to `deploy.calimero.sh`. We will be using the second command which is `near deploy`
+The next step is to deploy this contract in the private shard. In your cloned repository, navigate to `deploy_calimero.sh`. We will be using the second command which is `near deploy`
 
 ```bash
 near deploy \
