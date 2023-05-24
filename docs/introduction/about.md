@@ -9,7 +9,7 @@ Calimero is a powerful and customizable sidechain built on top of the NEAR proto
 
 ## Key Features of Calimero
 
-1 **Customizable Private Shards**: Calimero allows you to create and manage your own private shards. A private shard is a separate and isolated subset of a larger blockchain network, which is accessible only to authorized participants who have been granted permission to join the shard. These shards are fully customizable and owned by you or your organization. Each shard has the potential to support up to 200,000 transactions per second, although a standard one shard deployment offers a throughput of 5,000 transactions per second. Calimero shards support three main modes of operation:
+1. **Customizable Private Shards**: Calimero allows you to create and manage your own private shards. A private shard is a separate and isolated subset of a larger blockchain network, which is accessible only to authorized participants who have been granted permission to join the shard. These shards are fully customizable and owned by you or your organization. Each shard has the potential to support up to 200,000 transactions per second, although a standard one shard deployment offers a throughput of 5,000 transactions per second. Calimero shards support three main modes of operation:
 
 - Permissioned Private Calimero Shard: Owned by a single entity, this type of shard provides controlled access and ownership.
 
@@ -17,7 +17,7 @@ Calimero is a powerful and customizable sidechain built on top of the NEAR proto
 
 - Public Calimero Shard: Owned and operated by a community, this shard fosters open participation and collaboration.
 
-2 **Seamless communication between shards and networks**: Calimero enables seamless communication between your private shards, as well as with other networks. Even if different companies own the shards, they can still interact effectively.
+2. **Seamless communication between shards and networks**: Calimero enables seamless communication between your private shards, as well as with other networks. Even if different companies own the shards, they can still interact effectively.
 
 ## Who can benefit from Calimero's private shards?
 
