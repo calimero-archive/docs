@@ -3,29 +3,27 @@ title: Shard Architecture
 sidebar_position: 3
 ---
 
-A private shard is a separate and isolated subset of a larger blockchain network, which is accessible only to authorized participants who have been granted permission to join the shard. The architecture of a private shard typically includes several components:
+Shard Architecture refers to a system where a larger blockchain network is divided into smaller, isolated subsets called private shards. These private shards are only accessible to authorized participants who have been granted permission to join. The architecture of a private shard typically includes several components:
 
 ## Shard Token
 
-The private shard token is only used for consensus, to ensure that validators with a certain stake get the ability to verify and propose blocks. The token can be customized to be a CBDC, but by default it will be just used for consensus, to create accounts and to be attached for gas fees.
+The private shard token is used exclusively for achieving consensus within the shard. It ensures that validators who hold a certain stake in the network have the ability to verify and propose blocks. By default, the token is used solely for consensus, creating accounts, and attaching gas fees. While it can be customized to function as a Central Bank Digital Currency (CBDC), its default usage is limited to the aforementioned purposes.
   
 ## Gas Fees
 
-Due to the fact that by default the network’s token doesn’t have any monetary value, no gas fees will be paid on the network. The current design still has limitations on execution per contract call of 300 TGas, but all gas attached will be refunded. 
+Since the network's token does not possess any monetary value by default, no gas fees are paid within the network. However, there are still limitations on execution per contract call, currently set at 300 TGas. Any gas attached to transactions will be refunded.
 
 ## Validators
 
-Private shard validators will own some percentage of the stake (tokens) in the shard defined in the genesis of the network. The tokens are used for consensus only, and do not have any real monetary value. This is the default behavior and it is possible to create networks with actual monetary value if needed in cases of CBDC and similar. To run a minimal private shard you could run only one node controlling the network, but we recommend to run a minimum of four validators, as the network will halt if ⅓ of the nodes go down. This gives minimal redundancy and we recommend running as many validators as possible.
-For example, if a private shard is run by 100 validators owned by 100 different companies, it can be configured so that every single one of them has 1 percent of the total stake distributed. In this case every company will produce 1% of the blocks and more than 66% of the companies will need to behave maliciously and collude to corrupt the shard and 33% + 1 to stall the network.
-In the future we plan to implement different validator staking mechanisms. Being an owner of an NFT could be an entry ticket to become an validator in the shard. The NFT can represent anything from ownership of a game to having gone through KYC.
+Private shard validators own a percentage of the stake (tokens) defined in the shard's genesis. These tokens are solely used for achieving consensus and do not possess any real monetary value. The default behavior allows for networks without actual monetary value, but it is possible to create networks with monetary value, such as in the case of a Central Bank Digital Currency (CBDC). Running a minimal private shard requires only one node controlling the network, but it is recommended to have a minimum of four validators to ensure minimal redundancy. If one-third of the nodes go down, the network will halt. Therefore, running as many validators as possible is recommended. For instance, if a private shard is run by 100 validators owned by 100 different companies, each of them could have 1 percent of the total stake distributed. In this case, every company would produce 1% of the blocks, and more than 66% of the companies would need to behave maliciously and collude to corrupt the shard, while 33% + 1 would be required to stall the network. In the future, different validator staking mechanisms are planned, such as using ownership of a non-fungible token (NFT) as an entry ticket to become a validator in the shard. The NFT could represent ownership of a game or completion of a Know Your Customer (KYC) process.
 
 ## Consensus
 
-Calimero is using the NEAR consensus algorithm called Nightshade. It is modeled as a single blockchain, in which each block logically contains all the transactions for all the shards, and changes the whole state of all the shards. Physically, however, no participant downloads the full state or the full logical block. Instead, each participant of the network only maintains the state that corresponds to the shards that they validate transactions for, and the list of all the transactions in the block is split into physical chunks, one chunk per shard. You can find more information about how it works on on this [NEAR paper](https://near.org/papers/nightshade/#nightshade).
+Calimero utilizes the Nightshade consensus algorithm, which is based on the NEAR consensus algorithm. Nightshade models the blockchain as a single entity where each block logically contains all transactions for all the shards, thus changing the state of all the shards. However, participants in the network do not download the full state or logical block physically. Instead, each participant maintains only the state corresponding to the shards they validate transactions for. The list of transactions in a block is divided into physical chunks, with one chunk per shard. For more detailed information on how it works, refer to the [NEAR paper](https://near.org/papers/nightshade/#nightshade).
 
 ## Proof of Authority Shard
 
-In a proof of authority (PoA) shard, all validators have same voting power and number of blocks. PoA shards are often used in private or permissioned blockchain networks, where the validators are known and trusted entities, such as consortium members or enterprise partners. PoA shards offer faster transaction speeds and lower energy consumption compared to proof of work (PoW) or proof of stake (PoS) consensus mechanisms.
+In a proof of authority (PoA) shard, all validators have equal voting power and an equal number of blocks. PoA shards are commonly used in private or permissioned blockchain networks where validators are known and trusted entities, such as consortium members or enterprise partners. PoA shards offer faster transaction speeds and lower energy consumption compared to proof of work (PoW) or proof of stake (PoS) consensus mechanisms.
 
 ## Proof of Stake Shard
 
@@ -33,21 +31,18 @@ The proof of stake (PoS) shard, provides users the ability to have different amo
 
 ## Migration from the shard from PoA to PoS
 
-Migrating a shard from PoA to PoS is a matter of owners of the network agreeing to differently allocate the stake inside the network which will not be uniformly distributed like in the PoA network. The migration process typically involves coordinating with the existing validators and stakeholders, establishing a new set of rules and incentives for PoS validation. The migration process may also require the development and deployment of new smart contracts, protocols, and tools to support the PoS consensus mechanism. 
+Migrating a shard from PoA to PoS involves the owners of the network agreeing to allocate the stake differently within the network. Unlike in the PoA network, the stake in a PoS network is not uniformly distributed. The migration process requires coordination with existing validators and stakeholders to establish new rules and incentives for PoS validation. It may also involve developing and deploying new smart contracts, protocols, and tools to support the PoS consensus mechanism.
 
 ## State and Execution
 
-The private execution and state is accessible only by the nodes inside the private shard. Only information which is publicly announced are the light client proof for private shard blocks, used by the light client, prover and connector contracts.
-Additionally, some contract state may be accessible from a public chain if the developer allowed such access in the contract, through the bridge with cross shard contract calls which is one of main features of Calimero shards.
+Private execution and state are accessible only to the nodes within the private shard. The only publicly announced information includes the light client proof for private shard blocks, which is used by the light client, prover, and connector contracts. Additionally, some contract states may be accessible from a public chain if the developer allows such access in the contract through the bridge with cross-shard contract calls, which is one of the main features of Calimero shards.
 
 ## Treasury Account
 
-In the genesis of the network we also specify a treasury account, which holds all the tokens left after the distribution of tokens to validators specified at creation. These tokens can be owned by a multisig of multiple parties or by one, depending on the network use case. This gives us the ability to create new accounts using the treasury account, deploy contracts, but also onboard new validators if needed. The private shard can be started by a single entity and using this approach onboard new validators into the network eventually.
+In the genesis of the network, a treasury account is specified to hold all the tokens remaining after the distribution of tokens to the validators specified during creation. The ownership of these tokens can be assigned to a multisig account involving multiple parties or a single entity, depending on the network's use case. The treasury account enables the creation of new accounts, contract deployment, and onboarding of new validators if necessary. A private shard can be initiated by a single entity, and this approach allows for the subsequent onboarding of new validators into the network.
 
 ## Account model
 
-We are integrated with the NEAR wallet, which means that users are using their NEAR Mainnet or Testnet FullAccess Key to authenticate with the Calimero Shard. Users sign an authorization message with the FullAccess Key asking for permission to the Authorization Service for a specific shard and if they are able to interact they will receive a JWT token for communicating with the Private Shard. This ensures that only the user with the corresponding key is actually issuing transactions on the shard.
-On top of that, Private shards use the NEAR account model inside the shard and will generate FunctionCall keys for specific contract interaction improving on security for the users and network.
+Calimero Shard is integrated with the NEAR wallet, which means that users authenticate using their NEAR Mainnet or Testnet FullAccess Key. Users sign an authorization message with the FullAccess Key to request permission from the Authorization Service for a specific shard. If they are granted permission, they receive a JWT token for communicating with the Private Shard. This authentication process ensures that only users with the corresponding key can issue transactions on the shard. Additionally, Private shards employ the NEAR account model within the shard and generate FunctionCall keys for specific contract interactions, enhancing security for users and the network.
 
-
-Overall, the architecture of a private shard is designed to provide a secure, scalable, and efficient way for authorized participants to collaborate and share data and transactions within a trusted environment. Understanding the architecture and mechanics of private shards is essential for developers and users who want to use Calimero private shard to build private blockchain applications in a more effective and secure way.
+Overall, the architecture of a private shard aims to provide a secure, scalable, and efficient way for authorized participants to collaborate and share data and transactions within a trusted environment. Understanding the architecture and mechanics of private shards is crucial for developers and users who wish to utilize Calimero private shards to build private blockchain applications more effectively and securely.
