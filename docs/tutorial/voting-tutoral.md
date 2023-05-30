@@ -12,7 +12,7 @@ Before you begin, ensure that you have the following prerequisites in place:
 - Set up your [Calimero private shard](https://docs.calimero.network/getting_started/set_shard)
 - A code editor like [VSCode](https://code.visualstudio.com/download)
 - Install the [NEAR CLI](https://docs.near.org/tools/near-cli#setup) tool
-- Install Node.js and npm on your machine.
+- Install [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
 - Install the [Rust and WASM](https://docs.near.org/develop/contracts/introduction#rust-and-wasm) toolchain
 
 ## Step 1: Build the Smart Contract
@@ -42,11 +42,15 @@ Once the compilation is complete, the compiled .wasm file of the contract will b
 
 ## Step 2: Generate an Auth Token
 
-Before deploying the Voting smart Dapp, you need to generate a Calimero auth token. This token will authenticate and authorize external applications to communicate with your shard. Follow the steps provided [here](/docs/getting_started/generate_token.md) to generate an auth token for your Calimero shard.
+Before deploying the Voting smart Dapp, you need to generate a Calimero auth token. This token will authenticate and authorize external applications to communicate with your shard. 
+
+Follow the steps provided [here](/docs/getting_started/generate_token.md) to generate an auth token for your Calimero shard.
 
 ## Step 3: Set up the NEAR CLI
 
-To interact with your Calimero shard using NEAR CLI, set the token value using the command `near set-api-key`. Follow the steps provided [here](/interact/cli#set-up-the-near-cli-to-access-the-shard-via-cli) to set up the NEAR CLI.
+To interact with your Calimero shard using NEAR CLI, set the token value using the command `near set-api-key`. 
+
+Follow the steps provided [here](/interact/cli#set-up-the-near-cli-to-access-the-shard-via-cli) to set up the NEAR CLI.
 
 ## Step 4: Create a Keypair 
 
@@ -58,9 +62,7 @@ Generate a new keypair for the shard account by running the following command:
 
 **Note**: Replace **SHARD_ID** with your shard name
 
-This command will create a keypair in the `~/.near-credentials/` folder.
-
-Navigate to the `~/.near-credentials/` folder to locate the keypair file, usually in `.json` format:
+Navigate to the `~/.near-credentials/` folder to locate the generated keypair file which is in a `.json` format:
 
 ```bash
 cd ~/.near-credentials/network-id/account-id.json
@@ -107,8 +109,6 @@ To set up the frontend of your Dapp, follow these steps:
 ![](../../static/img/calimero.sdk.png)
 
 
-The required configuration properties are:
-
 :::info
 It is recommended to use environment variables (.env) to store these settings.
 :::
@@ -118,7 +118,7 @@ The required configuration properties are:
 - **NEXT_PUBLIC_CALIMERO_URL**: This is the RPC endpoint used for syncing accounts and querying shard data. You can find it on your Calimero Console dashboard under the endpoints table
 - **NEXT_PUBLIC_CALIMERO_TOKEN**: This is the auth token you generated earlier from the console.
 
-- Run the following command to start your localhost server:
+Run the following command to start your localhost server:
 
 ```bash
 $ yarn && yarn dev
