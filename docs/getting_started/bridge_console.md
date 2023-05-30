@@ -3,17 +3,18 @@ title: Bridge
 sidebar_position: 4
 ---
 
-The NEAR to Calimero bridge enables users move assets between NEAR public networks (Testnet or Mainnet) and your Private Shard. Additionally, you can execute cross shard contract calls which includes private smart contracts calls inside the Shard from a public contract or public smart contract calls from a contract inside the Private Shard.
+The NEAR to Calimero bridge provides users with the ability to move assets between NEAR public networks (Testnet or Mainnet) and their Private Shard. Additionally, the bridge enables cross-shard contract calls, including private smart contract calls within the Shard from a public contract, or public smart contract calls from a contract inside the Private Shard.
 
 ## Install the bridge
 
-To be able to bridge tokens, you'll need to install **Connectors**. Calimero supports transfering fungible tokens(FTs) and non-fungible tokens(NFTs) from one chain to another. Also, through the Calimero bridge cross shard calls can be executed.
+To bridge tokens, you need to install **Connectors**. Calimero supports the transfer of both fungible tokens (FTs) and non-fungible tokens (NFTs) between chains, and cross-shard calls through the Calimero bridge.
 
-From your selected Shard in the [Console](https://app.calimero.network/dashboard), click on **Bridge** from the left navigation bar.
+First, from your selected Shard in the [Console](https://app.calimero.network/dashboard), navigate to the **Bridge** in the left navigation bar.
+
 
 ### FT connector
 
-FT Connector is a contract pair used to lock a fungible token on one chain, mint a wrapped fungible token on the other, as well as to burn the wrapped fungible token and unlock it on the original chain. Follow these steps to install the FT connector:
+The FT Connector is a contract pair used to lock a fungible token on one chain, mint a wrapped fungible token on the other, as well as burn the wrapped fungible token and unlock it on the original chain. Follow these steps to install the FT connector:
 
 - Select **FT Connector**
 - Click on **Install FT bridge**
@@ -22,7 +23,7 @@ FT Connector is a contract pair used to lock a fungible token on one chain, mint
 
 ### NFT connector
 
-NFT connector is a contract pair used to lock a non-fungible token on one chain and mint a wrapped non-fungible token on the other, as well as burning the wrapped non-fungible token and unlocking it on the original chain. Follow these steps to install the NFT connector:
+The NFT Connector is a contract pair used to lock a non-fungible token on one chain, mint a wrapped non-fungible token on the other, as well as burn the wrapped non-fungible token and unlock it on the original chain. Follow these steps to install the NFT connector:
 
 - Select **NFT Connector**
 - Click on **Install NFT bridge**
@@ -31,7 +32,7 @@ NFT connector is a contract pair used to lock a non-fungible token on one chain 
 
 ### Cross shard call
 
-Cross shard connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the Cross Shard call:
+The Cross-Shard Connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the Cross-Shard Call connector:
 
 - Select **Cross Shard Call**
 - Click on **Install XSC**
@@ -39,7 +40,7 @@ Cross shard connector is a contract pair used to call one chain's contract metho
 ![](../../static/img/cross-shard.png)
 
 :::info
-More details on Bridges and how it works can be found [here](https://docs.calimero.network/bridge/architecture).
+For more details on Bridges and their architecture, refer to the [Bridge Architecture ](https://docs.calimero.network/bridge/architecture) documentation.
 :::
 
 ## Permissions Management
@@ -47,15 +48,19 @@ More details on Bridges and how it works can be found [here](https://docs.calime
 In order to use the Calimero bridge to transfer FTs, NFTs, or make cross-Shard calls, you'll need to set up bridge permissions.
 ![](../../static/img/permissions.png)
 
-Connectors by default are deny all and permissions for accounts must be set. Permissions are managed on a connector basis and at the beginning, all connectors are denied for all accounts. For each connector permissions are managed on both sides, on NEAR (for bridging from NEAR to Calimero) and on Calimero (for bridging from Calimero to NEAR). 
+Connectors have a "deny all" default setting, and permissions must be explicitly granted for accounts. Permissions are managed on a connector basis for both NEAR (bridging from NEAR to Calimero) and Calimero (bridging from Calimero to NEAR).
 
 ### Regex rules
 
-To allow bridging, you'll need to add a regex rule. When adding allow rule for the connector you need to keep in mind that every Account ID that matches at least one allow rule can bridge assets. For example, to add allow rule for XSC like `.* ` (regex so anyone can bridge) and add deny rule pair `.*evil.* ` for account and `.*` for contract ID.
-With those rules set, anyone with Account ID that does not have evil anywhere in it can make any cross shard call, and accounts that have evil anywhere inside this can not make any cross shard calls
+To allow bridging, you need to add a regex rule. When adding an allow rule for a connector, keep in mind that any Account ID that matches at least one allow rule can bridge assets. Here's an example of setting up rules:
+
+- Add an allow rule for the XSC connector using the regex .* (allowing anyone to bridge).
+- Add a deny rule pair using the regex .*evil.* for the account and .* for the contract ID.
+
+With these rules set, any Account ID that does not contain the term "evil" can make cross-shard calls, while accounts containing "evil" cannot make any cross-shard calls.
 
 ![](../../static/img/regex-rules.png)
 
 :::info
-More details on permissions can be found [here](/docs/bridge/bridging/2_permissions.mdx).
+For more details on permissions, refer to the [Permissions](/docs/bridge/bridging/2_permissions.mdx) documentation.
 :::
