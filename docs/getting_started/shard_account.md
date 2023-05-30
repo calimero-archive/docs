@@ -3,15 +3,16 @@ title: Shard Accounts
 sidebar_position: 3
 ---
 
-There are two main types of accounts inside the Private Shards:
+Within Calimero's Private Shards, there are two primary types of accounts:
 
 - Private accounts inside the Shard (generated through Console or CLI)
 - Public wallets synced into the Shard (NEAR wallets used on Mainnet or Testnet)
 
-## Public NEAR Wallets
-Public wallet integrations which allows the user to sign transactions from their wallet and interact with the Shard (the public wallet account is synced into the shard providing a seamless experience to the user).
+These account options provide users with different approaches to interact with Calimero's Private Shards, allowing for both self-custody and secure key management through the Calimero Key Management Service.
 
-Currently we support MyNEARWallet and are working on the integration with the official NEAR wallet. This allows self-custody of the keys and enables users to interact with any Private Shard they have permissions to do so.
+## Public NEAR Wallets
+Public wallet integrations enable users to sign transactions from their own NEAR wallet and interact seamlessly with the Shard. These public wallet accounts are synced into the Shard, ensuring a convenient and user-friendly experience. Currently, we support MyNEARWallet, and we are actively working on integrating with the official NEAR wallet. With these integrations, users can maintain self-custody of their keys and securely interact with any Private Shard they have permissions to access.
 
 ## Calimero Key Management Service
-Calimero's Key Management Service which is a custody wallet where the sealed keys are stored inside a Vault, the users can send transactions to be signed in a secure way. This is used for all internal keys generated through the Console. Keys inside the Vault can be revoked and replaced with users non-custody keys if needed through the Console.
+Calimero offers a Key Management Service that acts as a custody wallet. In this service, sealed keys are securely stored within a Vault. Users can send transactions to be signed in a highly secure manner. This Key Management Service is primarily used for managing internal keys generated through the Calimero Console. If necessary, keys stored in the Vault can be revoked and replaced with non-custodial keys managed by users through the Console. This flexibility ensures efficient key management within the Private Shards.
+
