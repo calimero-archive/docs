@@ -74,7 +74,7 @@ Take note of the `account_id`, `private_key`, and `public_key` values from the .
 
 Create a sub account that will be used to deploy the previously built contract. This sub account should be created from the [Custodial account](/getting_started/custodial#create-custodial-account) in the Calimero Console, and the public key gotten from the generated keypair should be added to the subaccount.
 
-Follow the steps [here](/getting_started/custodial#create-custodial-account) to set up the sub account and add public key.
+Follow the steps [here](https://docs.calimero.network/getting_started/custodial#custodial-account) to set up the sub account and add public key.
 
 ## Step 6: Deploy your NEAR contract
 
@@ -86,7 +86,7 @@ near deploy \
   --initFunction new --initArgs '{"question": "Which blockchain is best?", "options": ["NEAR","Bitcoin"]}' \
   --wasmFile target/wasm32-unknown-unknown/release/poll.wasm \
   --nodeUrl "calimero-rpc-node-url" \
-  --networkId "$1-calimero-testnet"
+  --networkId "$1-shardID"
 ```
 
 Modify the following parameters in the command:
