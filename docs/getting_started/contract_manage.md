@@ -35,10 +35,9 @@ On the Deployed Contracts page, you can see a list of contracts that have been d
 - Add your contract ID.
 - Click on **Create account and deploy contract** button
 
-This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and adds the binary file to the subaccount.
-
 ![](../../static/img/deployed-contract.png)
 
+This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and adds the binary file to the subaccount.
 
 ## Interacting with the contract
 
