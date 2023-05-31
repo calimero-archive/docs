@@ -27,9 +27,9 @@ Installed contract page shows the list of installed contracts for your specific 
 
 ## Deployed Contract
 
-On the Deployed Contracts page, you can see a list of contracts that have been deployed on your specific shard. Once a contract is installed, it can be deployed to the Deploy page. To deploy your contract on the blockchain, follow these steps:
-
 ![](../../static/img/deployed_contract-page.png)
+
+On the Deployed Contracts page, you can see a list of contracts that have been deployed on your specific shard. Once a contract is installed, it can be deployed to the Deploy page. To deploy your contract on the blockchain, follow these steps:
 
 - Select the installed contract that you want to deploy.
 - Add your contract ID.
