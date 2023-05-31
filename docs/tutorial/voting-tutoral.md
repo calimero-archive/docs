@@ -82,7 +82,7 @@ Now, it's time to deploy your contract to the private shard. In your cloned repo
 
 ```bash
 near deploy \
-  --accountId "" \
+  --accountId "sub_account" \
   --initFunction new --initArgs '{"question": "Which blockchain is best?", "options": ["NEAR","Bitcoin"]}' \
   --wasmFile target/wasm32-unknown-unknown/release/poll.wasm \
   --nodeUrl "calimero-rpc-node-url" \
@@ -90,9 +90,9 @@ near deploy \
 ```
 
 Modify the following parameters in the command:
-- Replace _accountID_  with the name of your sub account.
+- Replace _sub_account_  with the name of your sub account.
 - Replace _calimero-rpc-node-url_ with the NEAR RPC endpoint obtained from the Calimero [Console](https://app.calimero.network/dashboard) dashboard.
-- Replace _networkID_ with the name of your shard.
+- Replace _shardID_ with the name of your shard.
 
 You can check the deployed contract on the [Explorer > Transactions](https://app.calimero.network/dashboard/explorer/transactions) page.
 
