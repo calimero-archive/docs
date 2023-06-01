@@ -34,7 +34,7 @@ Deployed contracts page shows the list of deployed contracts for your specific s
 
 ![](../../static/img/deployed-contract.png)
 
-This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and deployes the smart contract `wasm` to it.
+This action will create a new account (which will be a subaccount of shard master account) and this account will be used for smart contract deployment.
 
 ## Interacting with the contract
 
