@@ -12,16 +12,12 @@ When you navigate to the Contract Management Page, you will be presented with tw
 
 ## Installed Contract
 
-On the Installed Contracts page, you can view a list of contracts that have been installed on your specific shard. Installing a contract involves uploading and saving the contract files to database and making them available for deployment from the Calimero Console. 
-To install your contract, follow these steps:
-
-
 Installed contract page shows the list of installed contracts for your specific shard. Installing the contract means putting the contract in the Installed state, meaning uploading the contract files to GCS and making the contract available for deployment from the Calimero Console. To install your contract:
 
 - Clicking on the **Install contract** button, which will prompt you to upload your contract files.
 - Provide a unique contract name, which will be displayed in the list of deployable contracts and used for storage purposes.
 - Upload your binary file (.wasm)
-- (Optional, but recommended) Upload the ABI file. If you upload an ABI file, a preview block will display the contents of the ABI file.
+- Upload the ABI file. If you upload an ABI file, a preview block will display the contents of the ABI file.
 - Click on the **Install new contract**.
 
 ![](../../static/img/install_contract.png)
