@@ -5,7 +5,7 @@ sidebar_position: 4
 
 The NEAR to Calimero bridge provides users with the ability to move assets between NEAR public networks (Testnet or Mainnet) and their Private Shard. Additionally, the bridge enables cross-shard contract calls, including private smart contract calls from a public contract into the shard, or public smart contract calls from a contract inside the private shard.
 
-## Install the bridge
+## Install bridge connectors
 
 To bridge tokens, you need to install **Connectors**. Calimero supports the transfer of both fungible tokens (FTs) and non-fungible tokens (NFTs) between chains, and cross-shard calls through the Calimero bridge.
 
