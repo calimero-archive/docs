@@ -47,7 +47,7 @@ After a contract is deployed, it will be listed on the Deployed Contracts page. 
 - Choose the desired call method from the drop-down
 - Provide the method parameters/arguments
 - From the dropdown list select your contract name (subaccount name)
-- (Optional) Specify the Gas fee and deposit. The default and minimum value for the deposit is 1 Ⓣ token
+- (Optional) Specify the Gas fee and deposit.
 - Click on **Send transaction** button
 
 ![](../../static/img/filled-contract.png)
