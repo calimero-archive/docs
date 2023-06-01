@@ -34,7 +34,7 @@ Deployed contracts page shows the list of deployed contracts for your specific s
 
 ![](../../static/img/deployed-contract.png)
 
-This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and deployes the smart contract wasm to it.
+This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and deployes the smart contract `wasm` to it.
 
 ## Interacting with the contract
 
