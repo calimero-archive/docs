@@ -40,7 +40,7 @@ Migrating a shard from Proof of Authority (PoA) to Proof of Stake (PoS) involves
 
 ## State and Execution
 
-Private execution and state are accessible only to the nodes within the private shard. The only publicly announced information includes the light client proof for private shard blocks, which is used by the light client, prover, and connector contracts. Additionally, some contract states may be accessible from a public chain if the developer allows such access in the contract through the bridge with cross-shard contract calls, which is one of the main features of Calimero shards.
+In a private shard, only the nodes within that shard can access and see the execution and state. The only information made public is the light client proof for private shard blocks. This proof is used by certain contracts to verify block validity. Additionally, if the contract developer allows it, some contract states may be accessible from a public chain through cross-shard contract calls using the bridge feature in Calimero shards.
 
 ## Treasury Account
 
