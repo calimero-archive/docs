@@ -12,7 +12,8 @@ When you navigate to the Contract Management Page, you will be presented with tw
 
 ## Installed Contract
 
-On the Installed Contracts page, you can view a list of contracts that have been installed on your specific shard. Installing a contract involves uploading the contract files to GCS(Google Cloud Storage) and making them available for deployment from the Calimero Console. To install your contract, follow these steps:
+On the Installed Contracts page, you can view a list of contracts that have been installed on your specific shard. Installing a contract involves uploading and saving the contract files to database and making them available for deployment from the Calimero Console. 
+To install your contract, follow these steps:
 
 
 Installed contract page shows the list of installed contracts for your specific shard. Installing the contract means putting the contract in the Installed state, meaning uploading the contract files to GCS and making the contract available for deployment from the Calimero Console. To install your contract:
