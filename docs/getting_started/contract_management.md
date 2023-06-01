@@ -12,7 +12,7 @@ When you navigate to the Contract Management Page, you will be presented with tw
 
 ## Installed Contracts
 
-Installed contracts page shows the list of installed contracts for your specific shard. Installing the contract means uploading and saving contract files to the database and making them available for deployment from the Calimero console. To install your contract:
+Installed contracts page shows the list of all the installed contracts in that specific shard. Installing the contract means uploading and saving contract files to the database and making them available for deployment from the Calimero console. To install your contract:
 
 - Clicking on the **Install contract** button, which will prompt you to upload your contract files
 - Provide a unique contract name (the contract name will be displayed in the list of deployable contracts)
