@@ -39,7 +39,7 @@ To deploy your contract on the blockchain, follow these steps:
 
 ![](../../static/img/deployed-contract.png)
 
-This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and adds the binary file to the subaccount.
+This action also creates a subaccount, which can be viewed under [custodial accounts](/docs/getting_started/custodial.md), and deployes the smart contract wasm to it.
 
 ## Interacting with the contract
 
