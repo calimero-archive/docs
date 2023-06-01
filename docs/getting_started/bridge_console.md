@@ -3,34 +3,48 @@ title: Bridge
 sidebar_position: 4
 ---
 
-The Calimero bridge enables users to transfer assets fungible tokens (FTs) and non-fungible tokens (NFTs) between NEAR public networks (Testnet or Mainnet) and their Private shard. It also enables you to make cross shard contract calls (smart contract calls from a public contract into the shard)
-
-## Bridge connectors
-
-The Calimero bridge has three bridge connectors:
+The Calimero bridge enables users to transfer assets fungible tokens (FTs) and non-fungible tokens (NFTs) between NEAR public networks (Testnet or Mainnet) and their Private shard. It also enables users to make cross shard contract calls (smart contract calls from a public contract into the shard). The Calimero bridge has three bridge connectors:
 - FT connector
 - NFT connector
 - Cross shard call
 
-### FT connector
+## FT connector
 
-The FT connector is a contract pair used to lock a fungible token on one chain, mint a wrapped fungible token on the other, as well as burn the wrapped fungible token and unlock it on the original chain. Follow these steps to install the FT connector:
+The FT connector is a contract pair that simplifies the process of transferring a fungible token from one chain to another. It enables one to lock a token on one chain, mint a wrapped version of the token on another chain, and later burn the wrapped token to unlock the original token. To install the FT connector:
 
 - Select **FT Connector**
 - Click on **Install FT bridge** button
 
 ![](../../static/img/ft-connectors.png)
 
-### NFT connector
+### Register FT token
 
-The NFT connector is a contract pair used to lock a non-fungible token on one chain, mint a wrapped non-fungible token on the other, as well as burn the wrapped non-fungible token and unlock it on the original chain. Follow these steps to install the NFT connector:
+Once you have successfully installed your FT connector, you can proceed to register your fungible token (FT). During the registration process the FT connector contract executes a call to the `storage_deposit` function on the specified FT contract. To register FT token:
+
+- Click on the **Register FT** button.
+
+![](../../static/img/register-ft.png)
+
+- A popup window will appear, prompting you to enter the contract address of your FT.
+
+- Enter the contract address of your FT to initiate the bridging process for this type of asset.
+
+![](../../static/img/ft_contract_address.png)
+
+:::info
+This registration step is a one-time action required before you can bridge an FT token for the first time to the designated destination blockchain.
+:::
+
+## NFT connector
+
+The NFT connector is a contract pair that simplifies the process of transferring a non-fungible token from one chain to another. It enables one to lock a token on one chain, mint a wrapped version of the token on another chain, and later burn the wrapped token to unlock the original token. To install the NFT connector:
 
 - Select **NFT Connector**
 - Click on **Install NFT bridge** button
 
 ![](../../static/img/nft-connectors.png)
 
-### Cross shard call
+## Cross shard call
 
 The Cross shard connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the Cross-Shard Call connector:
 
