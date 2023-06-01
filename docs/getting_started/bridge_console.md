@@ -3,39 +3,39 @@ title: Bridge
 sidebar_position: 4
 ---
 
-The NEAR to Calimero bridge provides users with the ability to move assets between NEAR public networks (Testnet or Mainnet) and their Private Shard. Additionally, the bridge enables cross-shard contract calls, including private smart contract calls from a public contract into the shard, or public smart contract calls from a contract inside the private shard.
+The Calimero bridge enables users to transfer assets fungible tokens (FTs) and non-fungible tokens (NFTs) between NEAR public networks (Testnet or Mainnet) and their Private shard. It also enables you to make cross shard contract calls (smart contract calls from a public contract into the shard)
 
-## Install bridge connectors
+## Bridge connectors
 
-To bridge tokens, you need to install **Connectors**. Calimero supports the transfer of both fungible tokens (FTs) and non-fungible tokens (NFTs) between chains, and cross-shard calls through the Calimero bridge.
-
-First, from your selected Shard in the [Console](https://app.calimero.network/dashboard), navigate to the **Bridge** in the left navigation bar.
-
+The Calimero bridge has three bridge connectors:
+- FT connector
+- NFT connector
+- Cross shard call
 
 ### FT connector
 
-The FT Connector is a contract pair used to lock a fungible token on one chain, mint a wrapped fungible token on the other, as well as burn the wrapped fungible token and unlock it on the original chain. Follow these steps to install the FT connector:
+The FT connector is a contract pair used to lock a fungible token on one chain, mint a wrapped fungible token on the other, as well as burn the wrapped fungible token and unlock it on the original chain. Follow these steps to install the FT connector:
 
 - Select **FT Connector**
-- Click on **Install FT bridge**
+- Click on **Install FT bridge** button
 
 ![](../../static/img/ft-connectors.png)
 
 ### NFT connector
 
-The NFT Connector is a contract pair used to lock a non-fungible token on one chain, mint a wrapped non-fungible token on the other, as well as burn the wrapped non-fungible token and unlock it on the original chain. Follow these steps to install the NFT connector:
+The NFT connector is a contract pair used to lock a non-fungible token on one chain, mint a wrapped non-fungible token on the other, as well as burn the wrapped non-fungible token and unlock it on the original chain. Follow these steps to install the NFT connector:
 
 - Select **NFT Connector**
-- Click on **Install NFT bridge**
+- Click on **Install NFT bridge** button
 
 ![](../../static/img/nft-connectors.png)
 
 ### Cross shard call
 
-The Cross-Shard Connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the Cross-Shard Call connector:
+The Cross shard connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the Cross-Shard Call connector:
 
 - Select **Cross Shard Call**
-- Click on **Install XSC**
+- Click on **Install XSC** button
 
 ![](../../static/img/cross-shard.png)
 
