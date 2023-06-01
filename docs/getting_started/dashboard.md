@@ -10,7 +10,7 @@ The [Console](https://app.calimero.network/dashboard) dashboard serves as a fron
 
 ## Key features
 
-1. **Information Access**: The dashboard offers access to important details such as the RPC and Indexer GraphQL URL endpoints. These endpoints enable you to interact with the network and retrieve data.
+1. **Information Access**: The dashboard offers access to important details such as the RPC and Indexer GraphQL URL endpoints. These endpoints enable you to interact with the network and retrieve the data.
 2. **Network Statistics**: Get insights into the current state of your network, including the block height, number of transactions, and the total number of accounts.
 3. **Scalability**: As your infrastructure requirements expand, the Console allows you to easily scale up the number of validators, RPCs, and indexers in your network. This ensures your network can handle increased traffic and accommodate business growth.
 
