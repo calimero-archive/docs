@@ -51,6 +51,8 @@ After a contract is deployed, it will be listed on the Deploy Contracts page. To
 - (Optional) Specify the Gas fee and deposit. The default and minimum value for the deposit is 1 Ⓣ token.
 - Click on **Send transaction**
 
+![](../../static/img/filled-contract.png)
+
 The result of your method call will be displayed on the right-hand side. You can also view the transaction details in the [Explorer](https://app.calimero.network/explorer/dashboard).
 
-![](../../static/img/dropdown.png)
+![](../../static/img/method-result-contract.png)
