@@ -52,6 +52,6 @@ After a contract is deployed, it will be listed on the Deployed Contracts page. 
 
 ![](../../static/img/filled-contract.png)
 
-he result of your method call will be displayed and you can see transaction details in the [Explorer](https://app.calimero.network/explorer/dashboard).
+The result of your method call will be displayed and you can see transaction details in the [Explorer](https://app.calimero.network/explorer/dashboard).
 
 ![](../../static/img/method-result-contract.png)
