@@ -3,7 +3,7 @@ title: Dashboard
 sidebar_position: 2
 ---
 
-The [Console](https://app.calimero.network/dashboard) dashboard serves as your frontend for managing your Calimero Private Shard. It provides access to all the necessary information about your nodes and services. With the dashboard, you can conveniently view key details and statistics about your network.
+The [Console](https://app.calimero.network/dashboard) dashboard serves as a frontend application for managing Calimero Private Shards. It provides access to all the necessary information about nodes and services. With the dashboard, you can conveniently view all the key details and statistics about your network.
 
 ![](../../static/img/dashboard.png)
 
@@ -11,7 +11,7 @@ The [Console](https://app.calimero.network/dashboard) dashboard serves as your f
 ## Key features
 
 1. **Information Access**: The dashboard offers access to important details such as the RPC and Indexer GraphQL URL endpoints. These endpoints enable you to interact with the network and retrieve data.
-2. **Network Statistics**: Get insights into the current state of your network, including the block height, number of transactions, and the total number of accounts
+2. **Network Statistics**: Get insights into the current state of your network, including the block height, number of transactions, and the total number of accounts.
 3. **Scalability**: As your infrastructure requirements expand, the Console allows you to easily scale up the number of validators, RPCs, and indexers in your network. This ensures your network can handle increased traffic and accommodate business growth.
 
 
