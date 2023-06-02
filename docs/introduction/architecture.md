@@ -15,9 +15,9 @@ Since the network's token does not possess any monetary value by default, no gas
 
 ## Validators
 
-Private shard validators hold a portion of the tokens allocated at the beginning of the shard. These tokens are solely used for achieving consensus and do not possess any real monetary value. By default, they are designed for networks without actual monetary transactions. However, it is possible to create networks with monetary value, such as in the case of a Central Bank Digital Currency (CBDC).
+Private shard validators hold a portion of the tokens allocated at the shard creation. These tokens are solely used for achieving consensus and do not possess any real monetary value. By default, they are designed for networks without actual monetary transactions. However, it is possible to create networks with monetary value, such as in the case of a Central Bank Digital Currency (CBDC).
 
-Running a minimal private shard requires at least one controlling node, but it is recommended to have at least four validators for redundancy. If more than one-third of the nodes go down, the network will come to a halt. Therefore, running as many validators as possible is recommended.
+At least one validator is needed for the private shard to work properly, but it is recommended to have at least four validators for redundancy and decentralisation. If more than one-third of the nodes go down, the network will come to a halt. Therefore, running as many validators as possible is recommended.
 
 ### NFT Validators (Planned Future Mechanism)
 In the future, there are plans to introduce different validator staking mechanisms. One such mechanism involves using ownership of a non-fungible token (NFT) as an entry ticket to become a validator in the shard. This NFT could represent ownership of a game or completion of a Know Your Customer (KYC) process. This approach aims to enhance validator diversity and provide additional security measures for private shards.
@@ -32,15 +32,15 @@ In a proof of authority (PoA) shard, all validators have equal voting power and 
 
 ## Proof of Stake Shard
 
-The proof of stake (PoS) shard, provides users the ability to have different amount of voting power/blocks produced in the network. PoS Network this can be customised based on the preferences of the network owners.Validators are required to lock up a certain amount of cryptocurrency or token as collateral, which incentivizes them to act honestly and secure the network. PoS shards are designed to be more energy-efficient, secure, and decentralized than PoW shards, as they do not require large amounts of computational power and electricity to perform the validation process. 
+The proof of stake (PoS) shard, provides users the ability to have different amount of voting power/blocks produced in the network. PoS network this can be customised based on the preferences of the network owners. Validators are required to lock up a specific amount of cryptocurrency or tokens as collateral. This serves as an incentive for them to act honestly and ensure the security of the network. PoS shards are designed to be more energy-efficient, secure, and decentralized than PoW shards, as they do not require large amounts of computational power and electricity to perform the validation process. 
 
-## Migration from the shard from Proof of Authority (PoA) to Proof of Stake (PoS)
+## Migration of shard from Proof of Authority (PoA) to Proof of Stake (PoS)
 
 Migrating a shard from Proof of Authority (PoA) to Proof of Stake (PoS) involves the owners of the network agreeing to allocate the stake differently within the network. Unlike in the PoA network, the stake in a PoS network is not uniformly distributed. The migration process requires coordination with existing validators and stakeholders to establish new rules and incentives for PoS validation. It may also involve developing and deploying new smart contracts, protocols, and tools to support the PoS consensus mechanism.
 
 ## State and Execution
 
-In a private shard, only the nodes within that shard can access and see the execution and state. The only information made public is the light client proof for private shard blocks. This proof is used by certain contracts to verify block validity. Additionally, if the contract developer allows it, some contract states may be accessible from a public chain through cross-shard contract calls using the bridge feature in Calimero shards.
+In a private shard, only the nodes within that shard can access and see the execution and state. The only information made public is the light client proof for private shard blocks. This proof is used by certain contracts to verify block validity. Additionally, if the contract developer allows it, some contract states may be accessible from a public chain through cross-shard contract calls using the bridge feature in Calimero console.
 
 ## Treasury Account
 
