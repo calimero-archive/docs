@@ -89,7 +89,7 @@ To check whether an account has the necessary permissions to use the Connector, 
 
 ![](../../static/img/check-permissions.png)
 
-### Cross shard connector regex rules and permissions
+### Cross shard connector regex rules
 
 Unlike FT and NFT connectors, Cross shard connectors have the **No allow** regex rule and **No deny XSC** regex rule. The **No deny XSC** regex rule allows Cross shard transactions for all accounts except those that match a specific regular expression pattern while the **No allow** regex rule grants permission for specific accounts to perform Cross shard transactions. For example:
 
@@ -105,9 +105,11 @@ With these rules set, any Account ID that does not contain the term "evil" can m
 
 ### Verify cross shard connector permission
 
-To verify if a specific pair of Account ID and Contract ID is eligible for making Cross shard calls, you need click on the **Check Permissions** button to provide the relevant Account ID and Contract ID that you want to check. This will help determine if the provided pair has the necessary permissions for performing Cross shard Calls.
+To verify if a specific pair of Account ID and Contract ID is eligible for making Cross shard calls, you need click on the **Check Permissions** button and provide the relevant Account ID and Contract ID that you want to check. 
 
 ![](../../static/img/deny-permisson-rule.png)
+
+This will help determine if the provided pair has the necessary permissions for performing Cross shard Calls.
 
 :::info
 For more details on permissions, refer to the [Permissions](/docs/bridge/bridging/2_permissions.mdx) documentation.
