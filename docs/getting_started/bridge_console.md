@@ -26,7 +26,7 @@ Once you have successfully installed the FT bridge, you will have access to the 
 
 ### Register FT token
 
-Once you have successfully installed your FT connector, you can proceed to register your fungible token (FT). During the registration process the FT connector contract executes a call to the `storage_deposit` function on the specified FT contract. To register FT token:
+To bridge your FT token and transfer it between different chains, you must register the token. Registering the token allows you to mint a wrapped FT token on the destination chain and burn it to unlock the original FT token on the source chain. To register FT token:
 
 - Click on the **Register FT** button
 
