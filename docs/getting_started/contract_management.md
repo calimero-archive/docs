@@ -46,9 +46,9 @@ After a contract is deployed, it will be listed on the Deployed Contracts page. 
 
 - Choose the desired call method from the drop-down
 - Provide the method parameters/arguments
-- From the dropdown list select your contract name (subaccount name)
-- (Optional) Specify the Gas fee and deposit.
-- Click on **Send transaction** button
+- Select your contract name (subaccount name) from the dropdown
+- (Optional) Specify the Gas fee and deposit
+- Click on the **Send transaction** button
 
 ![](../../static/img/filled-contract.png)
 
