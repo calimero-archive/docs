@@ -24,7 +24,7 @@ Installed contracts page shows the list of all the installed contracts in that s
 
 ## Deployed Contracts
 
-![](../../static/img/deployed_contract-page.png)
+![](../../static/img/contract-deployed-page.png)
 
 Deployed contracts page shows the list of deployed contracts for your specific shard. Installed contracts can be deployed to the blockchain. To deploy your contract:
 
@@ -32,7 +32,7 @@ Deployed contracts page shows the list of deployed contracts for your specific s
 - Add your contract ID
 - Click on the **Create account and deploy contract** button
 
-![](../../static/img/deployed-contract.png)
+![](../../static/img/deploy-contract.png)
 
 This action will create a new account (which will be a subaccount of shard master account) and this account will be used for smart contract deployment.
 
@@ -42,7 +42,7 @@ After a contract is deployed, it will be listed on the Deployed Contracts page. 
 
 - Select the contract you want to interact with. This will open a page displaying a drop-down selector.
 
-![](../../static/img/interact-contract.png)
+![](../../static/img/interact-contract-page.png)
 
 - Choose the desired call method from the drop-down
 - Provide the method parameters/arguments
