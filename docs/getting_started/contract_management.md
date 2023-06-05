@@ -14,7 +14,7 @@ When you navigate to the Contract Management Page, you will be presented with tw
 
 Installed contracts page shows the list of all the installed contracts in that specific shard. Installing the contract means uploading and saving contract files to the database and making them available for deployment from the Calimero console. To install your contract:
 
-- Clicking on the **Install contract** button, which will prompt you to upload your contract files
+- Click on the **Install contract** button, which will prompt you to upload your contract files
 - Provide a unique contract name (the contract name will be displayed in the list of deployable contracts)
 - Upload your binary file (`.wasm`)
 - Upload the `.json` ABI file (you will see a block displaying the content of the file)
@@ -48,7 +48,7 @@ After a contract is deployed, it will be listed on the Deployed Contracts page. 
 - Provide the method parameters/arguments
 - Select your contract name (subaccount name) from the dropdown
 - (Optional) Specify the Gas fee and deposit
-- Click on the **Send transaction** button
+- Click on the **Send Transaction** button
 
 ![](../../static/img/filled-contract.png)
 
