@@ -12,7 +12,7 @@ When you navigate to the Contract Management Page, you will be presented with tw
 
 ## Installed Contracts
 
-Installed contracts page shows the list of all the installed contracts in that specific shard. Installing the contract means uploading and saving contract files to the database and making them available for deployment from the Calimero console. To install your contract:
+Installed Contracts page shows the list of all the installed contracts in that specific shard. Installing the contract means uploading and saving contract files to the database and making them available for deployment from the Calimero console. To install your contract:
 
 - Click on the **Install contract** button, which will prompt you to upload your contract files
 - Provide a unique contract name (the contract name will be displayed in the list of deployable contracts)
@@ -26,7 +26,7 @@ Installed contracts page shows the list of all the installed contracts in that s
 
 ![](../../static/img/contract-deployed-page.png)
 
-Deployed contracts page shows the list of deployed contracts for your specific shard. Installed contracts can be deployed to the blockchain. To deploy your contract:
+Deployed Contracts page shows the list of deployed contracts for your specific shard. Installed contracts can be deployed to the blockchain. To deploy your contract:
 
 - Select the contract you want to deploy
 - Add your contract ID
@@ -46,7 +46,7 @@ After a contract is deployed, it will be listed on the Deployed Contracts page. 
 
 - Choose the desired call method from the drop-down
 - Provide the method parameters/arguments
-- Select your contract name (subaccount name) from the dropdown
+- Select your contract name (subaccount name) from the drop-down
 - (Optional) Specify the Gas fee and deposit
 - Click on the **Send Transaction** button
 
