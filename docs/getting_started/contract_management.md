@@ -5,7 +5,7 @@ sidebar_position: 12
 
 Contract management is a crucial feature that allows users to effectively interact with installed and deployed contracts. This feature enables users to upload their own `.wasm` and `ABI` files to the Console and deploy them to the blockchain.
 
-When you navigate to the Contract Management Page, you will be presented with two tabs: **Installed Contracts** and **Deployed Contracts**.
+When you navigate to the Contract Management, you will be presented with two tabs: **Installed Contracts** and **Deployed Contracts**.
 
 ![](../../static/img/contract_management.png)
 
@@ -14,10 +14,10 @@ When you navigate to the Contract Management Page, you will be presented with tw
 
 Installed Contracts page shows the list of all the installed contracts in that specific shard. Installing the contract means uploading and saving contract files to the database and making them available for deployment from the Calimero console. To install your contract:
 
-- Click on the **Install contract** button, which will prompt you to upload your contract files
+- Click on the **Install new contract** button, which will prompt you to upload your contract files
 - Provide a unique contract name (the contract name will be displayed in the list of deployable contracts)
 - Upload your binary file (`.wasm`)
-- Upload the `.json` ABI file (you will see a block displaying the content of the file)
+- Upload the `.json ABI` file (you will see a block displaying the content of the file)
 - Click on the **Install new contract** button
 
 ![](../../static/img/install_contract.png)
@@ -26,7 +26,7 @@ Installed Contracts page shows the list of all the installed contracts in that s
 
 ![](../../static/img/contract-deployed-page.png)
 
-Deployed Contracts page shows the list of deployed contracts for your specific shard. Installed contracts can be deployed to the blockchain. To deploy your contract:
+Deployed Contracts page shows the list of deployed contracts for that specific shard. Installed contracts can be deployed to the blockchain. To deploy your contract:
 
 - Select the contract you want to deploy
 - Add your contract ID
