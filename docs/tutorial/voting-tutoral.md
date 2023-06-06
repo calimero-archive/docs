@@ -3,7 +3,7 @@ title: How to deploy a voting smart contract Dapp
 sidebar_position: 1
 ---
 
-This tutorial will guide you through the process of deploying a voting smart contract Dapp on the Calimero Network.
+This tutorial will guide you through the process of deploying a voting smart contract Dapp on the Calimero network.
 
 ## Prerequisite
 
@@ -15,7 +15,7 @@ Before you begin, ensure that you have the following prerequisites in place:
 - Install [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
 - Install the [Rust and WASM](https://docs.near.org/develop/contracts/introduction#rust-and-wasm) toolchain
 
-## Step 1: Build the Smart Contract
+## Step 1: Build the smart contract
 
 - Clone the [Calimero examples repository](https://github.com/calimero-is-near/calimero-examples) by running the following command in your terminal:
 
@@ -35,40 +35,50 @@ cd calimero-examples/voting/contracts/private
 ./build.sh
 ```
 
-Once the compilation is complete, the compiled .wasm file of the contract will be located at:
+Once the compilation is complete, the compiled `.wasm` file of the contract will be located at:
 `target/wasm32-unknown-unknown/release/poll.wasm`
 
 ![](../../static/img/voting_wasm.png)
 
-## Step 2: Generate an Auth Token
+## Step 2: Generate an auth token
 
-Before deploying the Voting smart Dapp, you need to generate a Calimero auth token. This token will authenticate and authorize external applications to communicate with your shard. 
+Before deploying the voting smart Dapp, you need to generate a Calimero auth token. This token will authenticate and authorize external applications to communicate with your shard.
 
 Follow the steps provided [here](/docs/getting_started/generate_token.md) to generate an auth token for your Calimero shard.
 
 ## Step 3: Set up the NEAR CLI
 
-To interact with your Calimero shard using NEAR CLI, set the token value using the command `near set-api-key`. 
+To interact with your Calimero shard using NEAR CLI, set the token value using the command `near set-api-key`.
 
 Follow the steps provided [here](/interact/cli#set-up-the-near-cli-to-access-the-shard-via-cli) to set up the NEAR CLI.
 
-## Step 4: Create a Keypair 
+## Step 4: Create a keypair
 
-Generate a new keypair for the shard account by running the following command:
+A keypair for a shard account consists of a public key and a corresponding private key. To generate a new keypair for the shard account:
+
+- Set the SHARD_ID environment variable in your command-line interface
 
 ```bash
- near generate-key SHARD_ID.calimero.testnet --networkId SHARD_ID-calimero-testnet
+export SHARD_ID="your_shard_name"
 ```
 
-**Note**: Replace **SHARD_ID** with your shard name
+Make sure to replace **"your_shard_name"** with the name of your shard.
 
-Navigate to the `~/.near-credentials/` folder to locate the generated keypair file which is in a `.json` format:
+- Run the `near generate-key` command to generate a key for your shard
+
+```bash
+near generate-key $SHARD_ID.calimero.testnet --networkId $SHARD_ID-calimero-testnet
+```
+
+- Navigate to the `~/.near-credentials/` folder to locate the generated keypair file which is in a `.json` format. Alternatively, you can locate it by running the following command in your terminal:
 
 ```bash
 cd ~/.near-credentials/network-id/account-id.json
 ```
 
-Take note of the `account_id`, `private_key`, and `public_key` values from the .json file.
+:::info
+Take note of the **account_id**, **private_key**, and **public_key** values from the **.json** file.
+:::
 
 ## Step 5: Create sub account
 
@@ -78,27 +88,36 @@ Follow the steps [here](https://docs.calimero.network/getting_started/custodial#
 
 ## Step 6: Deploy your NEAR contract
 
-Now, it's time to deploy your contract to the private shard. In your cloned repository's directory, open the `deploy_calimero.sh` file. Run the code found in the file
+To deploy your contract to the private shard, follow these steps:
+
+- In your cloned repository's directory, open the `deploy_calimero.sh` file.
+- Set the following variables in your command-line interface:
+
+```bash
+export SUB_ACCOUNT="your_sub_account"
+export CALIMERO_RPC_NODE_URL="your_calimero_rpc_node_url"
+export SHARD_ID="your_shard_name"
+```
+
+Make sure to replace **"your_sub_account"** with the name of your sub account, **"your_calimero_rpc_node_url"** with the NEAR RPC endpoint obtained from the Calimero [Console](https://app.calimero.network/dashboard) dashboard, and **"your_shard_name"** with the name of your shard.
+
+- Run the `near deploy` command to deploy the application:
 
 ```bash
 near deploy \
-  --accountId "sub_account" \
+ near deploy \
+  --accountId "$SUB_ACCOUNT" \
   --initFunction new --initArgs '{"question": "Which blockchain is best?", "options": ["NEAR","Bitcoin"]}' \
   --wasmFile target/wasm32-unknown-unknown/release/poll.wasm \
-  --nodeUrl "calimero-rpc-node-url" \
-  --networkId "$1-shardID"
+  --nodeUrl "$CALIMERO_RPC_NODE_URL" \
+  --networkId "$SHARD_ID-calimero-testnet"
 ```
 
-Modify the following parameters in the command:
-- Replace _sub_account_  with the name of your sub account.
-- Replace _calimero-rpc-node-url_ with the NEAR RPC endpoint obtained from the Calimero [Console](https://app.calimero.network/dashboard) dashboard.
-- Replace _shardID_ with the name of your shard.
-
-You can check the deployed contract on the [Explorer > Transactions](https://app.calimero.network/dashboard/explorer/transactions) page.
+The command will deploy the application to the NEAR contract using the provided parameters. You can check the deployed contract on the [Explorer > Transactions](https://app.calimero.network/dashboard/explorer/transactions) page.
 
 ![](../../static/img/voting_tranactions.png)
 
-## Step 7: Update the config file and start the Dapp frontend:
+## Step 7: Update the config file and start the Dapp frontend
 
 To set up the frontend of your Dapp, follow these steps:
 
