@@ -105,7 +105,6 @@ Make sure to replace **"your_sub_account"** with the name of your sub account, *
 
 ```bash
 near deploy \
- near deploy \
   --accountId "$SUB_ACCOUNT" \
   --initFunction new --initArgs '{"question": "Which blockchain is best?", "options": ["NEAR","Bitcoin"]}' \
   --wasmFile target/wasm32-unknown-unknown/release/poll.wasm \
