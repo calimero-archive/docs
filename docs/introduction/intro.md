@@ -12,17 +12,15 @@ Calimero is a private shard infrastructure solution which allows you to protect 
 
 Refer to our _Console_ documentation to set up and run your Calimero private shard in just a few minutes. You will learn how to:
 
-- [Sign up to Calimero](/)
-- [Set up your private shard](/)
-- [Create auth tokens and set up NEAR CLI to access the shard via CLI](/)
-- [Access your custodian account](/)
-- [Add users to your private shard](/)
-- [Install applications in Marketplace](/)
-
+- [Set up your private shard](/docs/getting_started/set_shard.md)
+- [Generate auth tokens](/docs/getting_started/generate_token.md)
+- [Bridge assets between NEAR and Calimero to your private shard](/docs/getting_started/bridge_console.md)
+- [Add users to your private shard](/docs/getting_started/adding_users.md)
+- [Install applications in marketplace](/docs/getting_started/market_place.md)
 
 Or go through the [Calimero tutorials](/) to learn how to:
 
-- [How to deploy a voting smart contract dapp](/docs/tutorial/voting-tutoral.md)
+- [How to deploy a voting smart contract Dapp](/docs/tutorial/voting-tutoral.md)
 - [Coming Soon - How to bridge FT contract](/)
 - [Coming Soon - How to bridge NFT contract](/)
 - [Coming Soon - How to bridge cross shard contract](/)
