@@ -5,7 +5,7 @@ sidebar_position: 12
 
 Contract management is a crucial feature that allows users to effectively interact with installed and deployed contracts. This feature enables users to upload their own `.wasm` and `ABI` files to the Console and deploy them to the blockchain.
 
-When you navigate to the Contract Management, you will be presented with two tabs: **Installed Contracts** and **Deployed Contracts**.
+When you navigate to Contract Management, you will be presented with two tabs: **Installed Contracts** and **Deployed Contracts**.
 
 ![](../../static/img/contract_management.png)
 
