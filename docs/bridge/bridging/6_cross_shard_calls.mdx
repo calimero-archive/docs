@@ -3,26 +3,44 @@ title: How to make cross shard contract calls
 sidebar_position: 6
 ---
 
-Via the Calimero bridge, cross shard calls can be executed with a callback. Meaning that a contract on Calimero can call into contracts on NEAR and get a callback. Also, contracts on NEAR can call into Calimero contracts and get a callback.
 
-An example DAPP that is deployed on NEAR testnet and makes cross shard calls to Calimero and back is the [tic-tac-toe game whose contracts can be found here](https://github.com/calimero-is-near/calimero-examples/tree/master/tic-tac-toe/contracts)
+Cross shard contract calls can be executed via the Calimero bridge, allowing contracts on Calimero and NEAR to interact with each other through callbacks.
 
-Once both players register for playing on the contract on NEAR testnet, the game gets started on Calimero, a cross shard call is executed denoting that two players from NEAR testnet want to start a game on Calimero:
+## Example: Tic-Tac-Toe Game
 
-``` bash
+An example DApp deployed on the NEAR testnet demonstrates cross shard calls between Calimero and NEAR. The Tic-Tac-Toe game contracts can be found [here](https://github.com/calimero-is-near/calimero-examples/tree/master/tic-tac-toe/contracts).
+
+### Game Registration
+
+To initiate a game on Calimero, both players need to register on the NEAR testnet contract. The following commands register two players for the game:
+
+```bash
 near call tictactoe.igi.testnet register_player --accountId igi.testnet
 near call tictactoe.igi.testnet register_player --accountId mikimaus.testnet
 ```
-Players registered for a game: [playerA](https://explorer.testnet.near.org/transactions/7TscAyfni781qz2vgpeKXTR2Bc8JRXaeftjK1SHJHMNc) and [playerB](https://explorer.testnet.near.org/transactions/8Ex1pojKw8fp5Y8X85gy5fTX9VyWrC4VUHCTvNR1kArT)
 
-Once the second player registered for a game, a ```CALIMERO_EVENT_CROSS_CALL``` event is emitted via which the arguments to call on Calimero shard are transitted. The bridge service gets this events and tries to prove on the cross shard connector on Calimero that a game of tic tac toe needs to start. If proved, ```start_game``` method is called on tic tac toe contract on Calimero. Immediatelly after that a ```CALIMERO_EVENT_CROSS_RESPONSE``` event is emitted from the cross shard connector on Calimero. Once proved on NEAR, the callback method ```game_started``` is called. Here is the transaction showing the [executed callback](https://explorer.testnet.near.org/transactions/DWyCptftairNMtryiikSkWRVadeqSRN8CEgC1eEAZahL).
+Players registered for the game: [playerA](https://explorer.testnet.near.org/transactions/7TscAyfni781qz2vgpeKXTR2Bc8JRXaeftjK1SHJHMNc) and [playerB](https://explorer.testnet.near.org/transactions/8Ex1pojKw8fp5Y8X85gy5fTX9VyWrC4VUHCTvNR1kArT).
 
-Similarly, you can see how a ```game_ended``` was called from Calimero to NEAR testnet [here](https://explorer.testnet.near.org/transactions/FkE4dEHzbJ5tZKdrYC3QYbpWf5dGVgsqbqVwb12wUp1z)
+### Starting the Game
 
-And now the final result of the game player on Calimero can be viewed on NEAR testnet:
-``` bash
+Once the second player registers, a `CALIMERO_EVENT_CROSS_CALL` event is emitted, transmitting the arguments required to call the Calimero shard and start the game. The bridge service receives this event and attempts to prove on the cross shard connector on Calimero that a Tic-Tac-Toe game needs to start. If the proof is successful, the `start_game` method is called on the Tic-Tac-Toe contract on Calimero. Subsequently, a `CALIMERO_EVENT_CROSS_RESPONSE` event is emitted from the cross shard connector on Calimero. Upon successful proof on NEAR, the callback method `game_started` is executed. You can view the transaction showing the [executed callback](https://explorer.testnet.near.org/transactions/DWyCptftairNMtryiikSkWRVadeqSRN8CEgC1eEAZahL).
+
+### Game Completion
+
+Similarly, you can observe how the `game_ended` method was called from Calimero to NEAR testnet [here](https://explorer.testnet.near.org/transactions/FkE4dEHzbJ5tZKdrYC3QYbpWf5dGVgsqbqVwb12wUp1z).
+
+### Viewing the Final Game Result
+
+To view the final game result on NEAR testnet, use the following command:
+
+```bash
 near view tictactoe.igi.testnet get_finished_game --args '{"game_id":0}'
-View call: tictactoe.igi.testnet.get_finished_game({"game_id":0})
+```
+
+This command retrieves the details of the finished game, including the game board, the players, the game status, and whose turn it is.
+
+Example Result:
+```bash
 {
   board: [ [ 'O', 'X', 'X' ], [ 'O', 'U', 'U' ], [ 'O', 'U', 'U' ] ],
   player_a: 'igi.testnet',
@@ -31,3 +49,5 @@ View call: tictactoe.igi.testnet.get_finished_game({"game_id":0})
   player_a_turn: false
 }
 ```
+
+By following these steps, you can see how cross shard contract calls are made and the game progresses between Calimero and NEAR in the Tic-Tac-Toe example.

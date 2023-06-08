@@ -3,35 +3,55 @@ title: How to bridge non-fungible tokens
 sidebar_position: 4
 ---
 
-With the non fungible token connector nft's can be bridged from NEAR to Calimero and back. In order to bridge some nft from NEAR testnet to Calimero, a single transaction needs to be called. Just lock the wanted token to the nft connector contract. Once the token is transferred, the bridge service will be notified about it and try to prove on the Calimero shard that the locking of tokens happened on NEAR. If proved, wrapped token is minted on Calimero shard.
 
-:::caution
-When locking NFTs on source side NFT Connector you **MUST** do it through **nft_transfer_call**. If you try to do it through ** nft_transfer ** tokens will be **LOST**.
+The Non-Fungible Token (NFT) Connector enables the bridging of NFTs between NEAR and Calimero. This guide provides step-by-step instructions on how to bridge NFTs from NEAR Testnet to Calimero and back.
+
+## Bridging NFTs from NEAR to Calimero
+
+To bridge an NFT from NEAR Testnet to Calimero, follow these steps:
+
+1. Lock the desired NFT by calling a single transaction to transfer it to the NFT Connector contract on NEAR. Ensure that you use the `nft_transfer_call` function instead of `nft_transfer` to prevent token loss.
+
+   Here's an example of locking a non-fungible token on NEAR Testnet:
+
+   ```bash
+   near call nft-test.igi.testnet nft_transfer_call --args '{"receiver_id":"nft_connector.cali99.dev.calimero.testnet", "token_id":"0", "msg":""}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+   ```
+
+2. Once the token is transferred, the bridge service will be notified and attempt to verify the locking of tokens on NEAR. If the verification is successful, a wrapped token representing the NFT will be minted on the Calimero shard.
+
+:::tip
+When locking NFTs on the source side NFT Connector, you **MUST** use the `nft_transfer_call` function. If you try to use `nft_transfer`, the tokens will be **LOST**.
 :::
 
-Example of locking non fungible token on NEAR testnet with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/BNSeCbCqUN1WAh5mr7pAnaXsfDWMff4keYzQXZkR4YuP):
-```
-near call nft-test.igi.testnet nft_transfer_call --args '{"receiver_id":"nft_connector.cali99.dev.calimero.testnet", "token_id":"0", "msg":""}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
-```
+## Withdrawing NFTs back to NEAR
 
-If the users want to get the token back on the original chain (in this case NEAR testnet), they simply call withdraw on the bridged token on the other chain (in this case Calimero shard) which will essentially burn the token. The bridge service will be notified via emitted event that a burn happened and try to prove on the nft connector contract on NEAR that a burn happaned on Calimero shard. If proved, tokens are unlocked.
+To withdraw a bridged NFT from Calimero back to NEAR, follow these steps:
 
-Example of withdrawing/burning the nft token on Calimero with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/87kTM6E4rtbDZtm91hhScPrjbu2GXWdwoBY4LBkDXLUs):
-```
-calimero cali99-calimero-testnet call nft-test_igi.nft_deployer.cali99.calimero.testnet withdraw --args '{"token_id":"0"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
-```
+1. Call the `withdraw` function on the bridged token contract deployed on Calimero.
+   - This action will effectively burn the token on Calimero.
+   - The bridge service will be notified of the burn event and attempt to verify it on the NFT Connector contract on NEAR.
+   - If the verification is successful, the tokens will be unlocked and made available on NEAR Testnet.
 
+   Here's an example of withdrawing/burning the NFT token on Calimero:
 
-### Helper cli
-For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
-```
+   ```bash
+   calimero cali99-calimero-testnet call nft-test_igi.nft_deployer.cali99.calimero.testnet withdraw --args '{"token_id":"0"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+   ```
+
+## Wrapped Tokens Naming
+
+Wrapped or bridged NFTs are named using the same method as Fungible Tokens (FTs). For a detailed description of the naming process, refer to the [Fungible Token documentation](./fungible_tokens#wrapped-tokens-naming).
+
+### Helper CLI
+
+To simplify commands on the Calimero side, you can create a Calimero alias. Run the following command, replacing `dev` with `staging` for staging environments or removing it for production:
+
+```bash
 alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
 ```
 
-# Other direction
+## Bridging NFTs from Calimero to NEAR
 
-If the NFT was originally minted on Calimero, all the above would still apply. The only thing that is different is that a lock transaction needs to be called on the Calimero side, and on NEAR side a withdraw transaction needs to be called when wanting to get the token back on Calimero.
+If the NFT was originally minted on Calimero and needs to be bridged back to NEAR, the process is similar to the one described above. The only difference is that a lock transaction needs to be called on the Calimero side, and a withdraw transaction needs to be called on the NEAR side to bring the token back to Calimero.
 
-# Wrapped tokens naming
-
-Wrapped/bridged NFT naming is performed in the same way as FT naming so for a detailed description look at the [Fungible token documentation](./fungible_tokens#wrapped-tokens-naming).

@@ -3,15 +3,31 @@ title: Bridge Service
 sidebar_position: 6
 ---
 
-With the bridge service a user or an application can initiate token transfers through the bridge or more generally execute cross shard calls. 
 
-Let's take a look at the most frequently used scenario of transferring fungible tokens from one chain to another. Users want to transfer NEAR from the mainnet to a Calimero shard. 
+The bridge service provides the functionality to initiate token transfers and execute cross shard calls. One of the most commonly used scenarios is transferring fungible tokens from one chain to another. Let's explore the process of transferring NEAR tokens from the mainnet to a Calimero shard.
 
-- First a lock method is called on the ft contract on NEAR mainnet. 
-- Once the transaction ends on the blockchain, the bridge service realizes through the message queue an interesting event has happened, and makes an RPC call to an archival node on NEAR mainnet to get the proof of this transaction.
-- Simultaneously, and a bit before the bridge service, the NEAR to Calimero relayer gets notified about this event through the message queue, and relays the latest block from NEAR to the light client contract on the Calimero shard. 
-- A mint method on an FT contract on Calimero shard can now be called, supplied with the proof that NEAR tokens are indeed locked on mainnet. 
-- Prover contract on Calimero can check the proof by comparing expected block merkle root from the light client contract that was supplied with valid block headers from NEAR mainnet. 
-- If this hash matches, wrapped NEAR can be minted on Calimero shard.
+## Token Transfer Workflow
+The token transfer workflow involves several steps:
+
+### Lock Method on NEAR Mainnet
+The user or application initiates a token transfer by calling the lock method on the fungible token (FT) contract deployed on the NEAR mainnet. This method locks the desired amount of NEAR tokens.
+
+### Proof Retrieval from NEAR Mainnet
+Once the transaction is completed on the NEAR blockchain, the bridge service identifies the occurrence of the token transfer event through a message queue. It then makes an RPC call to an archival node on the NEAR mainnet to obtain the proof of this transaction.
+
+### Relaying Latest Block to Calimero Shard
+Simultaneously, the NEAR to Calimero relayer, which operates independently from the bridge service, receives a notification about the token transfer event through the message queue. The relayer then relays the latest block from the NEAR mainnet to the light client contract deployed on the Calimero shard.
+
+### Mint Method on FT Contract on Calimero Shard
+With the proof of NEAR token lock on the mainnet, the user or application can call the mint method on the FT contract deployed on the Calimero shard. This method mints the equivalent amount of wrapped NEAR tokens on the Calimero shard.
+
+### Prover Contract Verification on Calimero Shard
+The Prover contract deployed on the Calimero shard verifies the proof by comparing the expected block merkle root from the light client contract (supplied with valid block headers from the NEAR mainnet) with the calculated block merkle root.
+
+### Minting Wrapped NEAR on Calimero Shard
+If the computed block merkle root matches the expected value, the Prover contract on the Calimero shard confirms the validity of the proof. As a result, wrapped NEAR tokens can be minted on the Calimero shard, representing the locked NEAR tokens on the mainnet.
+
+
+## Workflow Diagram
 
 <img src={require('@site/static/img/bridge_full.jpg').default} />

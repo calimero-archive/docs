@@ -3,14 +3,16 @@ title: Relayer Service
 sidebar_position: 2
 ---
 
-The relayer is probably the simplest component of the bridge. It receives blocks from a source chain and sends those blocks to a light client contract on the destination chain, establishing a bidirectional bridge between the chains. In order to accomplish this, light client contracts must exist on both chains.
+The relayer serves as a fundamental component of the bridge, designed with simplicity in mind. Its primary function is to receive blocks from a source chain and forward them to a light client contract on the destination chain, enabling seamless bidirectional communication between the two chains. To establish this bridge, it is crucial to have light client contracts deployed on both chains.
 
-The NEAR to Calimero relayer reads latest blocks on the NEAR blockchain and sends (relays) those blocks to the light client contract on Calimero shard.
+## Workflow Diagram
 
-Similarly, the Calimero to NEAR relayer reads latest blocks on the Calimero shards and relays those blocks to the light client contract on the NEAR blockchain.
+In the NEAR to Calimero bridge, the relayer actively monitors the NEAR blockchain for the latest blocks and efficiently relays them to the designated light client contract on the Calimero shard.
+
 
 <img src={require('@site/static/img/relayer_simple.jpg').default} />
 
+## Light Client block structure
 
 Here is the light client block structure that is being relayed with its substructs:
 

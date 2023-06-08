@@ -1,14 +1,20 @@
 ---
-title: Return of unused assets
+title: Handling Unsuccessful Bridge Transactions
 sidebar_position: 5
 ---
 
-If user locks assets (FTs or NFTs) on the source chain connector and there is some kind of problem on the destination chain, or the automatic bridge service is experiencing downtime (which should happen extremely rarely, but in reality can happen)
-, bridging will not work. If asset is not bridged in the following 96 hours from the initial locking transaction, asset will no longer be
-eligible for bridging to the destination side.
 
-Currently user with this problem should contact a shard admin. Admin should verify that asset can no longer be bridged and return assets to
-the original owner (user). Note that if the admin unlocks it before 4 days pass user will effectively get his assets two times since he can
-still prove that he locked assets (and bridge it to destination chain), and he will get locked assets on the source chain back as well.
+In the event of a problem on the destination chain or if the automatic bridge service is experiencing downtime (which should be extremely rare but can happen in reality), there may be cases where the bridging of assets (both FTs and NFTs) fails. To ensure a smooth bridging process, it is important to note the following:
 
-Calimero team plans to implement automatic return of unused assets, when that is implemented there will be no need to contact shard admin for the return of assets.
+If an asset is locked on the source chain connector but fails to bridge to the destination side within 96 hours from the initial locking transaction, the asset will no longer be eligible for bridging.
+
+## Contacting Shard Admin for Asset Return
+
+If you encounter this situation, as a user, you should contact a shard admin for assistance. The shard admin will verify that the asset can no longer be successfully bridged and initiate the return of the assets to the original owner (the user).
+
+It is essential to understand that if the shard admin unlocks the asset before the 96-hour period has passed, the user will effectively receive their assets twice. This is because the user can still provide proof of the initial asset lock and successfully bridge it to the destination chain, while also receiving the locked assets back on the source chain.
+
+## Automatic Return of Unused Assets
+
+The Calimero team has plans to implement an automatic return mechanism for unused assets. Once this feature is implemented, users will no longer need to contact the shard admin to initiate the return of assets. The automatic return process will ensure a seamless experience and eliminate the need for manual intervention.
+
