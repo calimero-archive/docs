@@ -3,12 +3,12 @@ title: Bridge
 sidebar_position: 4
 ---
 
-The Calimero bridge enables users to transfer assets fungible tokens (FTs) and non-fungible tokens (NFTs) between NEAR public network (Testnet or Mainnet) and their private shard. It also enables users to make cross shard contract calls (smart contract calls from a public contract into the shard).
+The Calimero bridge enables users to transfer assets fungible tokens (FTs) and non-fungible tokens (NFTs) between NEAR public network (Testnet or Mainnet) and their private shard. It also enables users to make cross-shard contract calls (smart contract calls from a public contract into the shard).
 
 The Calimero bridge has three bridge connectors:
 - FT connector
 - NFT connector
-- Cross shard call
+- Cross-shard call
 
 ## FT connector
 
@@ -56,14 +56,14 @@ Once you have successfully installed the NFT bridge, you will have access to the
 
 ## Cross shard call
 
-The cross shard connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the cross shard call connector:
+The cross-shard connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the cross shard call connector:
 
 - Select **Cross Shard Call**
 - Click on **Install XSC** button
 
 ![](../../static/img/cross-shard.png)
 
-Once you have successfully installed the cross shard connector, you will have access to the XSC page. On this page, you can view your XSC contracts and transactions related to cross shard tokens.
+Once you have successfully installed the cross shard connector, you will have access to the XSC page. On this page, you can view your XSC contracts and transactions related to cross-shard tokens.
 
 ![](../../static/img/xsc-bridge-overview.png)
 
@@ -93,9 +93,9 @@ To check whether an account has the necessary permissions to use the connector, 
 
 ### Cross shard connector regex rules
 
-Unlike FT and NFT connectors, cross shard connectors have the **No allow** regex rule and **No deny XSC** regex rule. The **No deny XSC** regex rule allows Cross shard transactions for all accounts except those that match a specific regular expression pattern while the **No allow** regex rule grants permission for specific accounts to perform Cross shard transactions. For example:
+Unlike FT and NFT connectors, cross-shard connectors have the **No allow** regex rule and **No deny XSC** regex rule. The **No deny XSC** regex rule allows cross-shard transactions for all accounts except those that match a specific regular expression pattern while the **No allow** regex rule grants permission for specific accounts to perform cross-shard transactions. For example:
 
-- You can add an allow rule for the Cross shard connector using the regex .* (allowing anyone to bridge). 
+- You can add an allow rule for the cross-shard connector using the regex .* (allowing anyone to bridge). 
 
 ![](../../static/img/xsc-regex-allow.png)
 
@@ -103,15 +103,15 @@ Unlike FT and NFT connectors, cross shard connectors have the **No allow** regex
 
 ![](../../static/img/deny-rule.png)
 
-With these rules set, any Account ID that does not contain the term "evil" can make cross shard calls, while accounts containing "evil" cannot make any cross shard calls.
+With these rules set, any Account ID that does not contain the term "evil" can make cross-shard calls, while accounts containing "evil" cannot make any cross-shard calls.
 
-### Verify cross shard connector permission
+### Verify cross-shard connector permission
 
-To verify if a specific pair of Account ID and Contract ID is eligible for making cross shard calls, click on **Check Permissions** button and provide the relevant Account ID and Contract ID that you want to check. 
+To verify if a specific pair of Account ID and Contract ID is eligible for making cross-shard calls, click on **Check Permissions** button and provide the relevant Account ID and Contract ID that you want to check. 
 
 ![](../../static/img/deny-permisson-rule.png)
 
-This will determine if the provided pair has the necessary permissions for performing cross shard calls.
+This will determine if the provided pair has the necessary permissions for performing cross-shard calls.
 
 :::info
 For more details on permissions, refer to the [Permissions](/docs/bridge/bridging/2_permissions.mdx) documentation.
