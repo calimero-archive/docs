@@ -6,25 +6,19 @@ sidebar_position: 1
 
 Before bridging tokens from the source chain to the destination chain (e.g., from Calimero to NEAR), ensure the following prerequisites are met:
 
-1. Running Calimero Shard: Ensure that a Calimero shard is operational. If you wish to set up your own Calimero shard, please contact us via [email](mailto:info@calimero.network) or [fill out this form](https://www.calimero.network/contact).
-
-2. Contract Deployment: Deploy all the necessary contracts on both the NEAR and Calimero chains.
-
-3. Relayers: Set up a relayer from NEAR to Calimero and another relayer from Calimero to NEAR. These relayers facilitate the transfer of events and data between the chains.
-
-4. Bridge Service: Activate the bridge service, which continuously monitors events in real-time on both the NEAR and Calimero chains.
+1. **Running Calimero Shard**: Ensure that a Calimero shard is operational. If you wish to set up your own Calimero shard, please contact us via [email](mailto:info@calimero.network) or [fill out this form](https://www.calimero.network/contact).
+2. **Contract Deployment**: Deploy all the necessary contracts on both the NEAR and Calimero chains.
+3. **Relayers**: Set up a relayer from NEAR to Calimero and another relayer from Calimero to NEAR. These relayers facilitate the transfer of events and data between the chains.
+4. **Bridge Service**: Activate the bridge service, which continuously monitors events in real-time on both the NEAR and Calimero chains.
 
 ## Secure Bridging Process
 
 To ensure the secure bridging of tokens, it is crucial to follow the correct process:
 
-1. Account ID Possession: Before initiating the bridge, you **must possess the same Account ID on both the source and destination chains**. This ensures that you have full control over the bridged tokens.
-
-2. Account ID Creation: Create the desired Account ID on the destination chain (e.g., NEAR) before initiating the bridge. Ensure that you have complete ownership and control over this Account ID.
-
-3. Bridging Process: Once you have the same Account ID on both chains, proceed with the token bridging process. This involves locking the tokens on the source chain and transferring them to the specified FT or NFT connector contract.
-
-4. Security Reminder: Remember that assets can be easily lost if you attempt to obtain the Account ID on the destination chain **after** initiating the bridge. Always ensure you possess the Account ID beforehand to prevent any unauthorized access or loss of tokens.
+1. **Account ID Possession**: Before initiating the bridge, you **must possess the same Account ID on both the source and destination chains**. This ensures that you have full control over the bridged tokens.
+2. **Account ID Creation**: Create the desired Account ID on the destination chain (e.g., NEAR) before initiating the bridge. Ensure that you have complete ownership and control over this Account ID.
+3. **Bridging Process**: Once you have the same Account ID on both chains, proceed with the token bridging process. This involves locking the tokens on the source chain and transferring them to the specified FT or NFT connector contract.
+4. **Security Reminder**: Remember that assets can be easily lost if you attempt to obtain the Account ID on the destination chain **after** initiating the bridge. Always ensure you possess the Account ID beforehand to prevent any unauthorized access or loss of tokens.
 
 
 ### Scenario: Bob's Token Loss

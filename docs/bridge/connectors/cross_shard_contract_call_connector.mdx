@@ -3,15 +3,17 @@ title: Cross Shard Contract Call Connector
 sidebar_position: 4
 ---
 
-The Calimero bridge enables the execution of cross shard calls with a callback. This means that a contract on the Calimero shard can call contracts on NEAR and vice versa, receiving a callback in return.
+The Calimero bridge enables the execution of cross-shard calls with a callback. This means that a contract on the Calimero shard can call contracts on NEAR and vice versa, receiving a callback in return.
 
-To set up the bridge and fulfill the prerequisites, refer to the [Running a Bridge](https://docs.calimero.network/bridge/running_a_bridge) section.
+:::info
+Before proceeding to use the XSC connector check and fulfill the [prerequisites for using the bridge](https://docs.calimero.network/bridge/bridging/prerequisites).
+:::
 
 ## Setting up the xsc_connectors
 
 On the `xsc_connector` contract, the contract owner needs to set the locker account, which refers to the `xsc_connector` contract on the other chain. This information is utilized to verify that a transaction/receipt occurred on the corresponding`xsc_connector` contract of the other network.
 
-## Executing a cross shard contract call
+## Executing a cross-shard contract call
 
 To execute a call into a contract on another chain, the DAPP needs to make a `cross_call` invocation on the `xsc_connector` contract. The following method should be called:
 

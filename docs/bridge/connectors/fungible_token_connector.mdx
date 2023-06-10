@@ -3,12 +3,17 @@ title: Fungible Token Connector
 sidebar_position: 2
 ---
 
+The fungible token connector in the Calimero bridge consists of four contracts: 
+- ft_connector, 
+- bridge_token_deployer, 
+- bridge_token,
+- permissions_manager.
 
-The Fungible Token Connector consists of four contracts: `ft_connector`, `bridge_token_deployer`, `bridge_token`, and `permissions_manager`. These contracts need to be installed on both chains.
+To use the FT connector, these contracts need to be installed on both the NEAR Testnet and the Calimero shard.
 
-To install the bridge and fulfill all prerequisites, refer to the [Running a Bridge](https://docs.calimero.network/bridge/running_a_bridge) section.
-
-In this description, we assume that a bridge between the NEAR Testnet and a Calimero shard is already set up.
+:::info
+Before proceeding to use the FT connector check and fulfill the [prerequisites for using the bridge](https://docs.calimero.network/bridge/bridging/prerequisites).
+:::
 
 ## Setting up the ft_connectors
 

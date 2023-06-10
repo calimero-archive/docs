@@ -7,19 +7,19 @@ sidebar_position: 3
 The Light Client Contract facilitates bridging between NEAR mainnet and Calimero shard or between Calimero shards for various use cases.
 
 ## Validation Criteria
-The contract accepts block headers that meet specific validation criteria, most notably requiring each valid block header to contain at least two-thirds valid signatures from the epoch block producers.
+The contract accepts block headers that meet specific validation criteria, most notably requiring each valid block header to contain at least two-thirds of valid signatures from the epoch block producers.
 
 ## Efficient Verification
-To ensure efficiency, the contract does not need to verify every single block header in the chain's history. Instead, it only requires at least one verified block header per epoch. Additionally, each NEAR header contains a root of the merkle tree computed from all headers before it, enabling efficient verification of any event that occurred in previous headers when provided with a single NEAR header.
+To ensure efficiency, the contract does not need to verify every single block header in the chain's history. Instead, it only requires at least one verified block header per epoch. Additionally, each NEAR header contains a root of the Merkle tree computed from all headers before it, enabling efficient verification of any event that occurred in previous headers when provided with a single NEAR header.
 
 ## Updating the Light Client Head
 The light client updates its head using the information from LightClientBlockView under the following conditions:
 
 1. Height Comparison: The block's height is higher than the current head's height.
 2. Epoch Comparison: The block's epoch is equal to the known `epoch_id` or `next_epoch_id` of the current head.
-3. Next Epoch Verification: If the block's epoch is equal to the `next_epoch_id`of the head, the next_bps parameter must not be None. Additionally, `approvals_after_next` must contain valid signatures on the approval_message from the block producers of the corresponding epoch.
+3. Next Epoch Verification: If the block's epoch is equal to the `next_epoch_id`of the head, the next_bps parameter must be None. Additionally, `approvals_after_next` must contain valid signatures on the approval_message from the block producers of the corresponding epoch.
 4. Signature Threshold: The signatures in `approvals_after_next` correspond to more than two-thirds of the total stake.
-5. Next Block Producers Verification: If `next_bps` is not None, the hash of borsh(next_bps) using sha256 corresponds to the `next_bp_hash` in `inner_lite`.
+5. Next Block Producers Verification: If `next_bps` is None, the hash of borsh(next_bps) using sha256 corresponds to the `next_bp_hash` in `inner_lite`.
 
 ## Gas Cost Optimization for NEAR on Calimero
 

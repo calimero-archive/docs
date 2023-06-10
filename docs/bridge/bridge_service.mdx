@@ -4,7 +4,7 @@ sidebar_position: 6
 ---
 
 
-The bridge service provides the functionality to initiate token transfers and execute cross shard calls. One of the most commonly used scenarios is transferring fungible tokens from one chain to another. Let's explore the process of transferring NEAR tokens from the mainnet to a Calimero shard.
+The bridge service provides the functionality to initiate token transfers and execute cross-shard calls. One of the most commonly used scenarios is transferring fungible tokens from one chain to another. Let's explore the process of transferring NEAR tokens from the mainnet to a Calimero shard.
 
 ## Token Transfer Workflow
 The token transfer workflow involves several steps:
@@ -22,10 +22,10 @@ Simultaneously, the NEAR to Calimero relayer, which operates independently from 
 With the proof of NEAR token lock on the mainnet, the user or application can call the mint method on the FT contract deployed on the Calimero shard. This method mints the equivalent amount of wrapped NEAR tokens on the Calimero shard.
 
 ### Prover Contract Verification on Calimero Shard
-The Prover contract deployed on the Calimero shard verifies the proof by comparing the expected block merkle root from the light client contract (supplied with valid block headers from the NEAR mainnet) with the calculated block merkle root.
+The Prover contract deployed on the Calimero shard verifies the proof by comparing the expected block Merkle root from the light client contract (supplied with valid block headers from the NEAR mainnet) with the calculated block Merkle root.
 
 ### Minting Wrapped NEAR on Calimero Shard
-If the computed block merkle root matches the expected value, the Prover contract on the Calimero shard confirms the validity of the proof. As a result, wrapped NEAR tokens can be minted on the Calimero shard, representing the locked NEAR tokens on the mainnet.
+If the computed block Merkle root matches the expected value, the Prover contract on the Calimero shard confirms the validity of the proof. As a result, wrapped NEAR tokens can be minted on the Calimero shard, representing the locked NEAR tokens on the mainnet.
 
 
 ## Workflow Diagram

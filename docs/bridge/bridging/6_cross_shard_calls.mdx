@@ -1,14 +1,14 @@
 ---
-title: How to make cross shard contract calls
+title: How to make cross-shard contract calls
 sidebar_position: 6
 ---
 
 
-Cross shard contract calls can be executed via the Calimero bridge, allowing contracts on Calimero and NEAR to interact with each other through callbacks.
+Cross-shard contract calls can be executed via the Calimero bridge, allowing contracts on Calimero and NEAR to interact with each other through callbacks.
 
 ## Example: Tic-Tac-Toe Game
 
-An example DApp deployed on the NEAR testnet demonstrates cross shard calls between Calimero and NEAR. The Tic-Tac-Toe game contracts can be found [here](https://github.com/calimero-is-near/calimero-examples/tree/master/tic-tac-toe/contracts).
+An example DApp deployed on the NEAR testnet demonstrates cross-shard calls between Calimero and NEAR. The Tic-Tac-Toe game contracts can be found [here](https://github.com/calimero-is-near/calimero-examples/tree/master/tic-tac-toe/contracts).
 
 ### Game Registration
 
@@ -23,7 +23,7 @@ Players registered for the game: [playerA](https://explorer.testnet.near.org/tra
 
 ### Starting the Game
 
-Once the second player registers, a `CALIMERO_EVENT_CROSS_CALL` event is emitted, transmitting the arguments required to call the Calimero shard and start the game. The bridge service receives this event and attempts to prove on the cross shard connector on Calimero that a Tic-Tac-Toe game needs to start. If the proof is successful, the `start_game` method is called on the Tic-Tac-Toe contract on Calimero. Subsequently, a `CALIMERO_EVENT_CROSS_RESPONSE` event is emitted from the cross shard connector on Calimero. Upon successful proof on NEAR, the callback method `game_started` is executed. You can view the transaction showing the [executed callback](https://explorer.testnet.near.org/transactions/DWyCptftairNMtryiikSkWRVadeqSRN8CEgC1eEAZahL).
+Once the second player registers, a `CALIMERO_EVENT_CROSS_CALL` event is emitted, transmitting the arguments required to call the Calimero shard and start the game. The bridge service receives this event and attempts to prove on the cross-shard connector on Calimero that a Tic-Tac-Toe game needs to start. If the proof is successful, the `start_game` method is called on the Tic-Tac-Toe contract on Calimero. Subsequently, a `CALIMERO_EVENT_CROSS_RESPONSE` event is emitted from the cross-shard connector on Calimero. Upon successful proof on NEAR, the callback method `game_started` is executed. You can view the transaction showing the [executed callback](https://explorer.testnet.near.org/transactions/DWyCptftairNMtryiikSkWRVadeqSRN8CEgC1eEAZahL).
 
 ### Game Completion
 
@@ -50,4 +50,4 @@ Example Result:
 }
 ```
 
-By following these steps, you can see how cross shard contract calls are made and the game progresses between Calimero and NEAR in the Tic-Tac-Toe example.
+By following these steps, you can see how cross-shard contract calls are made and the game progresses between Calimero and NEAR in the Tic-Tac-Toe example.
