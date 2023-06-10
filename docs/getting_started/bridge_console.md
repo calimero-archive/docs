@@ -80,15 +80,21 @@ To utilize the Calimero bridge for token transfers and cross-shard calls, it is 
 
 ## FT and NFT connector regex rules
 
-Both the FT and NFT connectors have the **No allow** regex rule, which allows you to restrict certain accounts from using the bridge based on a defined regex pattern. Any account matching the specified pattern will be denied permission to utilize the bridge. To enable bridging for the FT and NFT connectors:
+The FT and NFT connectors provide the flexibility to define regex rules that determine which accounts are allowed to bridge tokens. These regex rules grant permission to specific accounts, enabling them to utilize the bridge for token transfers.
+
+To add a regex rule that allows specific accounts to bridge tokens:
 
 - Click on the **Add new rule** button
 
 ![](../../static/img/add-regex-ft-nft.png)
 
-- Add a regex rule that allows bridging for specific accounts matching that rule
+- In the input field, enter a regex pattern that matches the desired accounts for bridging. 
 
 ![](../../static/img/add-regex-rule.png)
+
+For example, if you want to allow Testnet accounts, you can use the regex pattern .*\.testnet.
+
+This regex rule allows any account ending with ".testnet" to bridge tokens using the FT or NFT connector.
 
 ### Verify FT and NFT connector permissions
 
@@ -127,8 +133,8 @@ The **No deny XSC** regex rule allows cross-shard transactions for all accounts 
 
 To add the **No deny XSC** regex rule:
 
-- Click on the **Add new rule** button for the desired side (either source or destination)
-- Configure the rule by specifying the regular expression pattern that matches the undesired account IDs
+- Click on the **Add new rule** button 
+- Configure the rule by specifying the regex expressattern that matches the undesired account IDs
 
 ![](../../static/img/deny-rule.png)
 
