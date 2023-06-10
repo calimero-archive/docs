@@ -102,7 +102,7 @@ To verify whether an account has the necessary permissions to use the FT or NFT 
 
 ![](../../static/img/check-permissions.png)
 
-## Cross shard connector regex rules
+## Cross-shard connector regex rules
 
 Cross-shard connectors have two important regex rules: the **No allow** rule and the **No deny XSC** rule. These rules control the permissions for cross-shard transactions on the connector.
 
