@@ -3,58 +3,59 @@ title: Bridge
 sidebar_position: 4
 ---
 
-The Calimero bridge enables users to transfer assets fungible tokens (FTs) and non-fungible tokens (NFTs) between the NEAR public network (Testnet or Mainnet) and their private shard. It also enables users to make cross-shard contract calls (smart contract calls from a public contract into the shard).
+The Calimero bridge serves as a vital tool for users to transfer assets, including fungible tokens (FTs) and non-fungible tokens (NFTs), between the NEAR public network (Testnet or Mainnet) and their private shard. Additionally, it facilitates cross-shard contract calls, allowing users to invoke smart contracts from a public contract into the shard.
 
-The Calimero bridge has three bridge connectors:
+The Calimero bridge comprises three essential bridge connectors:
+
 - FT connector
 - NFT connector
-- Cross-shard call
+- Cross-shard call connector
 
 ## FT connector
 
-The FT connector is a contract pair that simplifies transferring a fungible token from one chain to another. It enables one to lock a token on one chain, mint a wrapped version of the token on another chain, and later burn the wrapped token to unlock the original token. To install the FT connector:
+The FT connector serves as a contract pair that simplifies the transfer of fungible tokens (FTs) between different chains. It provides a straightforward process for locking an FT token on one chain, minting a wrapped version of the token on another chain, and later burning the wrapped token to unlock the original token. To install the FT connector:
 
 - Select **FT Connector**
 - Click on the **Install FT Bridge** button
 
 ![](../../static/img/ft-connectors.png)
 
-Once you have successfully installed the FT bridge, you will have access to the FT page. On this page, you can view your FT contracts and transactions related to fungible tokens. 
+Once the installation is successful, you will gain access to the FT page, which presents information about your FT contracts and displays transactions related to fungible tokens.
 
 ![](../../static/img/ft-connector-page.png)
 
 
 ### Register FT token
 
-To bridge your FT token and transfer it between different chains, you must register the token. Registering the token allows you to mint a wrapped FT token on the destination chain and burn it to unlock the original FT token on the source chain. To register FT token:
+Before bridging an FT token and transferring it between chains, you need to register the token. The registration process enables you to mint a wrapped FT token on the destination chain and subsequently burn it to unlock the original FT token on the source chain. To register an FT token:
 
-- Click on the **Register FT** button
+- On the FT Connector page, click on the **Register FT** button
 
 ![](../../static/img/register-ft.png)
 
-- A popup window will appear, prompting you to enter the contract address of your FT
-- Enter the contract address of your FT to initiate the bridging process for this type of asset
+- A popup window will appear, requesting the contract address of your FT token
+- EEnter the contract address of your FT token in the provided field to initiate the bridging process for this specific asset type
 
 ![](../../static/img/ft_contract_address.png)
 
 :::info
-This registration step is a one-time action required before you can bridge an FT token for the first time to the designated destination blockchain.
+The registration step is a one-time action required before bridging an FT token for the first time to the designated destination blockchain.
 :::
 
 ## NFT connector
 
-The NFT connector is a contract pair that simplifies transferring a non-fungible token from one chain to another. It enables one to lock a token on one chain, mint a wrapped version of the token on another chain, and later burn the wrapped token to unlock the original token. To install the NFT connector:
+The NFT connector serves as a contract pair that facilitates the transfer of non-fungible tokens (NFTs) between different chains. It simplifies the process of locking an NFT on one chain, minting a wrapped version of the token on another chain, and subsequently burning the wrapped token to unlock the original NFT. To install the NFT connector:
 
 - Select **NFT Connector**
 - Click on the **Install NFT Bridge** button
 
 ![](../../static/img/nft-connectors.png)
 
-Once you have successfully installed the NFT bridge, you will have access to the NFT page. On this page, you can view your NFT contracts and transactions related to non-fungible tokens.
+Once the installation is successful, you will gain access to the NFT page, which presents information about your NFT contracts and displays transactions related to non-fungible tokens.
 
 ![](../../static/img/nft-bridge-overview.png)
 
-## Cross shard call
+## Cross-shard call
 
 The cross-shard connector is a contract pair used to call one chain's contract methods from another chain. Follow these steps to install the cross-shard call connector:
 
@@ -73,46 +74,78 @@ For more details on Bridges and their architecture, refer to the [Bridge Archite
 
 ## Permissions Management
 
-You need to set up bridge permissions to use the Calimero bridge for transferring tokens and making cross-shard calls. These permissions allow you to access and utilize the bridge's features securely.
+To utilize the Calimero bridge for token transfers and cross-shard calls, it is essential to set up bridge permissions. These permissions ensure secure access and usage of the bridge's features.
 
 ![](../../static/img/permissions-management.png)
 
-### FT and NFT connector regex rules
+## FT and NFT connector regex rules
 
-To enable bridging for the NFT and FT connectors, click on the **Add new rule** button and add a regex rule that allows bridging for specific accounts matching that rule.
+Both the FT and NFT connectors have the **No allow** regex rule, which allows you to restrict certain accounts from using the bridge based on a defined regex pattern. Any account matching the specified pattern will be denied permission to utilize the bridge. To enable bridging for the FT and NFT connectors:
 
-Each connector has the **No allow** regex rule, which is a rule that restricts certain accounts from using the bridge based on your defined regex pattern. This means that any account matching the specified pattern will not be granted permission to utilize the bridge.
+- Click on the **Add new rule** button
+
+![](../../static/img/add-regex-ft-nft.png)
+
+- Add a regex rule that allows bridging for specific accounts matching that rule
 
 ![](../../static/img/add-regex-rule.png)
 
 ### Verify FT and NFT connector permissions
 
-To check whether an account has the necessary permissions to use the connector, click on **Check Permissions** button and provide the Account ID for which you want to verify the permissions. 
+To verify whether an account has the necessary permissions to use the FT or NFT connector:
+
+- Click on the **Check Permissions** button 
+
+![](../../static/img/check-permissions-nft-ft.png)
+
+- Provide the Account ID for which you want to verify the permissions
 
 ![](../../static/img/check-permissions.png)
 
-### Cross shard connector regex rules
+## Cross shard connector regex rules
 
-Unlike FT and NFT connectors, cross-shard connectors have the **No allow** regex rule and **No deny XSC** regex rule. The **No deny XSC** regex rule allows cross-shard transactions for all accounts except those that match a specific regular expression pattern while the **No allow** regex rule grants permission for specific accounts to perform cross-shard transactions. For example:
+Cross-shard connectors have two important regex rules: the **No allow** rule and the **No deny XSC** rule. These rules control the permissions for cross-shard transactions on the connector.
 
-- You can add an allow rule for the cross-shard connector using the regex .* (allowing anyone to bridge). 
+![](../../static/img/no-allow-xsc.png)
+
+### No Allow Regex Rule
+
+The **No allow** regex rule grants permission for specific accounts to perform cross-shard transactions. By adding this rule, you can specify which accounts are allowed to initiate cross-shard calls.
+
+To add the **No allow** regex rule:
+
+- Click on the **Add new rule** button for the desired side (either source or destination)
+- Configure the rule by specifying the regular expression pattern that matches the desired account IDs
 
 ![](../../static/img/xsc-regex-allow.png)
 
-- You can deny the rule pair using the regex .*evil.* for the account ID and .* for the contract ID.
+For example, using the regex pattern .* will allow any account to bridge and perform cross-shard calls.
+
+### No Deny XSC Regex Rule
+
+The **No deny XSC** regex rule allows cross-shard transactions for all accounts except those that match a specific regular expression pattern. This rule helps to block specific accounts from making cross-shard calls.
+
+To add the **No deny XSC** regex rule:
+
+- Click on the **Add new rule** button for the desired side (either source or destination)
+- Configure the rule by specifying the regular expression pattern that matches the undesired account IDs
 
 ![](../../static/img/deny-rule.png)
 
-With these rules set, any Account ID that does not contain the term "evil" can make cross-shard calls, while accounts containing "evil" cannot make any cross-shard calls.
+For example, using the regex pattern .*evil.* for the Account ID and .* for the Contract ID will block any accounts containing the term "evil" from making cross-shard calls.
 
 ### Verify cross-shard connector permission
 
-To verify if a specific pair of Account ID and Contract ID is eligible for making cross-shard calls, click on the **Check Permissions** button and provide the relevant Account ID and Contract ID that you want to check. 
+To verify if a specific pair of Account ID and Contract ID is eligible for making cross-shard calls:
+
+- Click on the **Check Permissions** button
+- A prompt will appear, requesting you to provide the relevant Account ID and Contract ID that you want to check for permissions
+- Enter the Account ID and Contract ID in the provided fields within the prompt.
 
 ![](../../static/img/deny-permisson-rule.png)
 
-This will determine if the provided pair has the necessary permissions for performing cross-shard calls.
+This process will determine if the specified pair has the necessary permissions to perform cross-shard calls.
 
 :::info
-For more details on permissions, refer to the [Permissions](/docs/bridge/bridging/2_permissions.mdx) documentation.
+For more detailed information regarding permissions, refer to the [Permissions](/docs/bridge/bridging/2_permissions.mdx) documentation.
 :::
