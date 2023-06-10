@@ -74,27 +74,25 @@ For more details on Bridges and their architecture, refer to the [Bridge Archite
 
 ## Permissions Management
 
-To utilize the Calimero bridge for token transfers and cross-shard calls, it is essential to set up bridge permissions. These permissions ensure secure access and usage of the bridge's features.
+To ensure secure access and usage of the Calimero bridge for token transfers and cross-shard calls, it is important to manage permissions effectively. Permissions are used to control which accounts can utilize the bridge's features and perform specific actions.
 
 ![](../../static/img/permissions-management.png)
 
 ## FT and NFT connector regex rules
 
-The FT and NFT connectors provide the flexibility to define regex rules that determine which accounts are allowed to bridge tokens. These regex rules grant permission to specific accounts, enabling them to utilize the bridge for token transfers.
+The FT and NFT connectors allow you to define regex rules that determine which accounts are allowed to bridge tokens. This rule known as the allow regex rule, grant permission to specific accounts, enabling them to utilize the bridge for token transfers.
 
-To add a regex rule that allows specific accounts to bridge tokens:
+To add an allow regex rule:
 
 - Click on the **Add new rule** button
 
 ![](../../static/img/add-regex-ft-nft.png)
 
-- In the input field, enter a regex pattern that matches the desired accounts for bridging. 
+- In the input field, enter a regex pattern that matches the desired accounts for bridging
 
 ![](../../static/img/add-regex-rule.png)
 
-For example, if you want to allow Testnet accounts, you can use the regex pattern .*\.testnet.
-
-This regex rule allows any account ending with ".testnet" to bridge tokens using the FT or NFT connector.
+For example, if you want to allow testnet accounts, you can use the regex pattern `.*\.testnet`.  This regex rule allows any account ending with ".testnet" to bridge tokens using the FT or NFT connector.
 
 ### Verify FT and NFT connector permissions
 
@@ -110,43 +108,45 @@ To verify whether an account has the necessary permissions to use the FT or NFT 
 
 ## Cross-shard connector regex rules
 
-Cross-shard connectors have two important regex rules: the **No allow** rule and the **No deny XSC** rule. These rules control the permissions for cross-shard transactions on the connector.
+Cross-shard connectors have two rules: the account allow rule (similar to FT and NFT connectors) and the deny account rule.
 
 ![](../../static/img/no-allow-xsc.png)
 
-### No Allow Regex Rule
+### Cross-shard allow regex rule
 
-The **No allow** regex rule grants permission for specific accounts to perform cross-shard transactions. By adding this rule, you can specify which accounts are allowed to initiate cross-shard calls.
+The account allow regex rule grants permission to specific accounts, enabling them to utilize the bridge for token transfers.
 
-To add the **No allow** regex rule:
+To add an account allow regex rule:
 
-- Click on the **Add new rule** button for the desired side (either source or destination)
-- Configure the rule by specifying the regular expression pattern that matches the desired account IDs
+- Click on the **Add new rule** button
+- In the input field, enter a regex pattern that matches the desired accounts for bridging. 
 
 ![](../../static/img/xsc-regex-allow.png)
 
-For example, using the regex pattern .* will allow any account to bridge and perform cross-shard calls.
+For example, if you want to allow testnet accounts, you can use the regex pattern `.*\.testnet`.
 
-### No Deny XSC Regex Rule
+This regex rule allows any account ending with ".testnet" to bridge tokens using the cross-shard connector.
 
-The **No deny XSC** regex rule allows cross-shard transactions for all accounts except those that match a specific regular expression pattern. This rule helps to block specific accounts from making cross-shard calls.
+### Cross-shard deny regex rule
 
-To add the **No deny XSC** regex rule:
+The deny account rule explicitly denies access or permission to a specific account or set of accounts. It is used to restrict certain accounts from performing certain actions or operations.
+
+To add a deny account rule regex rule:
 
 - Click on the **Add new rule** button 
-- Configure the rule by specifying the regex expressattern that matches the undesired account IDs
+
+- Enter a regex pattern in the input fields to specify which account and contract pairs should be denied permission for cross-shard calls.
 
 ![](../../static/img/deny-rule.png)
 
-For example, using the regex pattern .*evil.* for the Account ID and .* for the Contract ID will block any accounts containing the term "evil" from making cross-shard calls.
+For example, using the regex pattern `.*evil.*` for the Account ID and `.*` for the Contract ID will block any accounts containing the term "evil" from making cross-shard calls.
 
 ### Verify cross-shard connector permission
 
 To verify if a specific pair of Account ID and Contract ID is eligible for making cross-shard calls:
 
 - Click on the **Check Permissions** button
-- A prompt will appear, requesting you to provide the relevant Account ID and Contract ID that you want to check for permissions
-- Enter the Account ID and Contract ID in the provided fields within the prompt.
+- In the input fields, enter the relevant Account ID and Contract ID that you want to check for permissions
 
 ![](../../static/img/deny-permisson-rule.png)
 
