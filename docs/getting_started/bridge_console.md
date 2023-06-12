@@ -27,13 +27,13 @@ Once the installation is successful, you will gain access to the FT page, which 
 
 ### Register FT token
 
-The **Register FT token** button is used to pay the storage fee for the FT connector contract on the source side (Near mainnet side) for the FT token. This allows you to lock your FT using the connector. By registering the connector on the FT, the FT token can keep track of which connector owns the FT. To register an FT token:
+The **Register FT token** button is used to pay the storage fee for the FT connector contract on the source side (e.g Near mainnet side) for the FT token. This allows you to lock your FT using the connector. By registering the connector on the FT, the FT token can keep track of which connector owns the FT. To register an FT token:
 
 - On the FT Connector page, click on the **Register FT** button
 
 ![](../../static/img/register-ft.png)
 
-- A popup window will appear, requesting the contract address of your FT token. The contract address is on the source side (or Near mainnet side) 
+- A popup window will appear, requesting the contract address of your FT token. The contract address is on the source side (e.g Near mainnet side) 
 - Enter the contract address of your FT token in the provided field
 
 ![](../../static/img/ft_contract_address.png)
