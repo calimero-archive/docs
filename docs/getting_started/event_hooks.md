@@ -27,7 +27,7 @@ To use the Event Hooks, you need to enable it manually in the Console by followi
 
 <img width="621" alt="Screenshot 2023-06-12 at 13 31 23" src="https://github.com/calimero-is-near/docs/assets/39309699/4ad1dbbb-b648-4ec2-9905-2400836d2f69"/>
 
-6. Save your webhook configuration.
+6. Click on the **Save** button to save your webhook configuration.
 
 Users have the flexibility to define multiple webhooks, each with a unique URL. If you wish to receive notifications for additional events at an existing URL, simply add those events to the existing webhook. This eliminates the need to create a new webhook for each event, allowing you to receive customized information for multiple events using a single webhook.
 
