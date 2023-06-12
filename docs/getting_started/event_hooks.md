@@ -16,19 +16,19 @@ To use the Event Hooks, you need to enable it manually in the Console by followi
 
 3. Click on the **Add webhook** button to register a new webhook.
 
-<img width="915" alt="Screenshot 2023-06-12 at 17 58 45" src="https://github.com/calimero-is-near/docs/assets/39309699/a892af76-60d1-4bb0-9f0b-5027a6321893">
+<img width="915" alt="Screenshot 2023-06-12 at 17 58 45" src="https://github.com/calimero-is-near/docs/assets/39309699/a892af76-60d1-4bb0-9f0b-5027a6321893"/>
 
 4. Set up your webhook by providing a unique URL for event reception. Optionally, you can add an authorization token to enhance security. 
 
-<img width="898" alt="Screenshot 2023-06-12 at 17 59 00" src="https://github.com/calimero-is-near/docs/assets/39309699/fa4f154a-f341-496c-9d10-27acbb594c0a">
+<img width="898" alt="Screenshot 2023-06-12 at 17 59 00" src="https://github.com/calimero-is-near/docs/assets/39309699/fa4f154a-f341-496c-9d10-27acbb594c0a"/>
 
 5. Select the events you want to receive notifications for or enter your regex to match the logs.
 
-<img width="921" alt="Screenshot 2023-06-12 at 18 23 43" src="https://github.com/calimero-is-near/docs/assets/39309699/f389932b-ce0f-4851-8215-6fdd97478f86">
+<img width="921" alt="Screenshot 2023-06-12 at 18 23 43" src="https://github.com/calimero-is-near/docs/assets/39309699/f389932b-ce0f-4851-8215-6fdd97478f86"/>
 
 6. Click on the **Save** button to save your webhook configuration.
 
-<img width="885" alt="Screenshot 2023-06-12 at 18 34 19" src="https://github.com/calimero-is-near/docs/assets/39309699/75b5ed87-cb68-4af5-8ee4-ed1344876338">
+<img width="885" alt="Screenshot 2023-06-12 at 18 34 19" src="https://github.com/calimero-is-near/docs/assets/39309699/75b5ed87-cb68-4af5-8ee4-ed1344876338"/>
 
 Once saved, you can access your webhook details.
 
