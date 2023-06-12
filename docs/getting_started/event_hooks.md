@@ -3,7 +3,7 @@ title: Event Hooks
 sidebar_position: 9
 ---
 
-The Event Hooks service is as a centralized hub for handling event notifications from the near-lake stream. It enables users receive near real-time events at user-specified URLs, ensuring timely notifications for specific events. Additionally, users can enhance security by adding an authorization token during webhook creation, providing secure access and authorization for incoming data.
+The Event Hooks service is as a centralized hub for handling event notifications from the near-lake stream. It enables users receive near real-time events at user-specified URLs, ensuring timely notifications for specific events occurring within their contracts or blockchain network. Additionally, users can enhance security by adding an authorization token during webhook creation, providing secure access and authorization for incoming data.
 
 ## Setting up Event Hooks
 To use the Event Hooks, you need to enable it manually in the Console by following these steps:
