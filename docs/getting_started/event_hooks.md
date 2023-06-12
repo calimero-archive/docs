@@ -3,7 +3,7 @@ title: Event Hooks
 sidebar_position: 9
 ---
 
-The Event Hooks service is as a centralized hub for handling event notifications from the near-lake stream. It enables users receive near real-time events at user-specified URLs, ensuring timely notifications for specific events occurring within their contracts or blockchain network. Additionally, users can enhance security by adding an authorization token during webhook creation, providing secure access and authorization for incoming data.
+The Event Hooks service is as a centralized hub for handling event notifications from the near-lake stream. It enables users receive near real-time events at user-specified URLs, ensuring timely notifications for specific events occurring within their shard. 
 
 ## Setting up Event Hooks
 To use the Event Hooks, you need to enable it manually in the Console by following these steps:
@@ -27,7 +27,7 @@ To use the Event Hooks, you need to enable it manually in the Console by followi
 
 <img width="621" alt="Screenshot 2023-06-12 at 13 31 23" src="https://github.com/calimero-is-near/docs/assets/39309699/4ad1dbbb-b648-4ec2-9905-2400836d2f69"/>
 
-6. Save your webhook configuration. You can access the details of your webhook once it is saved.
+6. Save your webhook configuration.
 
 Users have the flexibility to define multiple webhooks, each with a unique URL. If you wish to receive notifications for additional events at an existing URL, simply add those events to the existing webhook. This eliminates the need to create a new webhook for each event, allowing you to receive customized information for multiple events using a single webhook.
 
