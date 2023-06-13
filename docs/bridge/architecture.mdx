@@ -3,14 +3,55 @@ title: Architecture
 sidebar_position: 1
 ---
 
-The NEAR to Calimero bridge facilitates the transfer of assets between NEAR public networks (Testnet or Mainnet) and the Calimero private shard. It also enables cross-shard contract calls, allowing for interactions between public and private smart contracts.
+## Overview
+
+The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between NEAR public networks (Testnet or Mainnet) and Calimero private shard. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
 
 ## Workflow Diagram
 
 Below is a high-level overview of the bridge's components:
 
-<img src={require('@site/static/img/bridge_components.jpg').default} />
+![Workflow Diagram](https://github.com/calimero-is-near/docs/assets/39309699/c63274ad-6873-4b86-bc4b-5c10bdd4e28d)
+
+## Key Components
+
+The architecture of the NEAR to Calimero bridge includes the following key components:
+
+### Light Client Contract
+
+The Light Client Contract validates and accepts block headers that meet specific validation criteria, ensuring the integrity and security of the bridge's operations.
+
+### Prover Contract
+
+The Prover Contract provides verifiable proofs of events or actions that occurred on a specific chain, enhancing transparency and trust.
+
+### Connector Contracts
+
+The Connector Contracts handle the transfer of specific asset types:
+
+- FT Connector: Facilitates the transfer of fungible tokens (FT) between NEAR and Calimero.
+- NFT Connector: Handles the transfer of non-fungible tokens (NFT) between NEAR and Calimero.
+- Cross-shard Contract Calls Connector: handles contract pair used to call one chain's contract methods from another chain.
+
+### Archival Node
+The Archival Node stores all past transactions, typically spanning a longer time period (e.g., a month or week ago). It serves as a historical record of transaction data.
+
+### Indexer
+The Indexer fetches blockchain data and stores it in a database, allowing for efficient retrieval and querying of transaction information.
+
+### Validator
+The Validator component communicates with the NEAR blockchain to validate transactions and maintain consensus across the network.
+
+### Relayer
+The Relayer is responsible for relaying information and transactions between NEAR and the Calimero private shard and vice versa, ensuring smooth communication and synchronization.
+
+### Message Queue
+The Message Queue facilitates the asynchronous communication and coordination of messages between different components of the bridge, ensuring reliable and scalable data processing.
+
+### Bridge Service
+The Bridge Service is a core component that manages the overall operation and coordination of the NEAR to Calimero bridge.
+
 
 :::note
-Read more about each component in subsequent sections.
+For more detailed information on each component and its functionality, refer to the subsequent sections.
 :::
