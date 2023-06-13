@@ -13,7 +13,7 @@ The Calimero bridge comprises three essential bridge connectors:
 
 ## FT connector
 
-The FT connector serves as a contract pair that simplifies the transfer of fungible tokens (FTs) between public chain and Calimero shard. It provides a straightforward process for locking an FT token on one chain, minting a wrapped version of the token on another chain, and later burning the wrapped token to unlock the original token. To install the FT connector:
+The FT connector serves as a contract pair that simplifies the transfer of fungible tokens (FTs) between the public chain and the Calimero shard. It provides a straightforward process for locking an FT token on one chain, minting a wrapped version on another chain, and later burning the wrapped token to unlock the original token. To install the FT connector:
 
 - Select **FT Connector**
 - Click on the **Install FT Bridge** button
@@ -27,24 +27,24 @@ Once the installation is successful, you will gain access to the FT page, which 
 
 ### Register FT token
 
-The **Register FT token** button is used to pay the storage fee for the FT connector contract on the source side (e.g Near mainnet side) for the FT token. This allows you to lock your FT using the connector. By registering the connector on the FT, the FT token can keep track of which connector owns the FT. To register an FT token:
+The **Register FT token** button is used to pay the storage fee for the FT connector contract on the source side (e.g. Near mainnet side) for the FT token. This allows you to lock your FT using the connector. By registering the connector on the FT, the FT token can keep track of which connector owns the FT. To register an FT token:
 
 - On the FT Connector page, click on the **Register FT** button
 
 ![](../../static/img/register-ft.png)
 
-- A popup window will appear, requesting the contract address of your FT token. The contract address is on the source side (e.g Near mainnet side) 
+- A popup window will appear, requesting the contract address of your FT token. The contract address is on the source side (e.g. Near mainnet side)
 - Enter the contract address of your FT token in the provided field
 
 ![](../../static/img/ft_contract_address.png)
 
 :::info
-The registration step is a one-time action. However, there are some FT tokens such as USDN that do not require this step.
+The registration step is a one-time action. However, some FT tokens such as USDN do not require this step.
 :::
 
 ## NFT connector
 
-The NFT connector serves as a contract pair that facilitates the transfer of non-fungible tokens (NFTs) between public chain and Calimero shard. It simplifies the process of locking an NFT on one chain, minting a wrapped version of the token on another chain, and subsequently burning the wrapped token to unlock the original NFT. To install the NFT connector:
+The NFT connector serves as a contract pair that facilitates the transfer of non-fungible tokens (NFTs) between the public chain and the Calimero shard. It simplifies the process of locking an NFT on one chain, minting a wrapped version of the token on another chain, and subsequently burning the wrapped token to unlock the original NFT. To install the NFT connector:
 
 - Select **NFT Connector**
 - Click on the **Install NFT Bridge** button
@@ -114,9 +114,9 @@ Cross-shard connectors have two rules: the account allow rule (similar to FT and
 
 ### Cross-shard allow regex rule
 
-The account allow regex rule grants permission to specific accounts, enabling them to utilize the bridge for token transfers.
+The cross-shard allow regex rule grants permission to specific accounts, enabling them to utilize the bridge for token transfers.
 
-To add an account allow regex rule:
+To add an allow regex rule:
 
 - Click on the **Add new rule** button
 - In the input field, enter a regex pattern that matches the desired accounts for bridging. 
