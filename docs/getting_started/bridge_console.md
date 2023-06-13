@@ -3,7 +3,7 @@ title: Bridge
 sidebar_position: 4
 ---
 
-The Calimero bridge serves as a vital tool for users to transfer assets, including fungible tokens (FTs) and non-fungible tokens (NFTs), between the NEAR public network (Testnet or Mainnet) and Calimero private shard. Additionally, it facilitates cross-shard contract calls, allowing users to invoke smart contracts from a public contract into the shard.
+The Calimero bridge handles the transfer of various assets, including fungible (FTs) and non-fungible tokens (NFTs), between NEAR public network (Testnet or Mainnet) and Calimero private shard. It also facilitates cross-shard contract calls, enabling users to invoke smart contracts from a public contract into the shard.
 
 The Calimero bridge comprises three essential bridge connectors:
 
