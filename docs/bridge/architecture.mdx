@@ -29,8 +29,8 @@ The Prover Contract provides verifiable proofs of events or actions that occurre
 
 The Connector Contracts handle the transfer of specific asset types:
 
-- FT Connector: Facilitates the transfer of fungible tokens (FT) between NEAR and Calimero.
-- NFT Connector: Handles the transfer of non-fungible tokens (NFT) between NEAR and Calimero.
+- FT Connector: Facilitates the transfer of fungible tokens (FT) between NEAR public networks (Testnet or Mainnet) and Calimero private shard.
+- NFT Connector: Handles the transfer of non-fungible tokens (NFT) between NEAR public networks (Testnet or Mainnet) and Calimero private shard.
 - Cross-shard Contract Calls Connector: handles contract pair used to call one chain's contract methods from another chain.
 
 ### Archival Node
@@ -43,13 +43,13 @@ The Indexer fetches blockchain data and stores it in a database, allowing for ef
 The Validator component communicates with the NEAR blockchain to validate transactions and maintain consensus across the network.
 
 ### Relayer
-The Relayer is responsible for relaying information and transactions between NEAR and the Calimero private shard and vice versa, ensuring smooth communication and synchronization.
+The Relayer is responsible for relaying information and transactions between NEAR public networks (Testnet or Mainnet) and Calimero private shard, ensuring smooth communication and synchronization.
 
 ### Message Queue
-The Message Queue facilitates the asynchronous communication and coordination of messages between different components of the bridge, ensuring reliable and scalable data processing.
+The Message Queue serves as a central component where events from different chains and shards are populated. 
 
 ### Bridge Service
-The Bridge Service is a core component that manages the overall operation and coordination of the NEAR to Calimero bridge.
+The Bridge Service receives the block where the locking occurred and initiates the proving process once the Calimero Light Client Contract has a new enough block.
 
 
 :::note
