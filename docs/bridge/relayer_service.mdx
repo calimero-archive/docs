@@ -3,16 +3,22 @@ title: Relayer Service
 sidebar_position: 2
 ---
 
-The relayer is probably the simplest component of the bridge. It receives blocks from a source chain and sends those blocks to a light client contract on the destination chain, establishing a bidirectional bridge between the chains. In order to accomplish this, light client contracts must exist on both chains.
-
-The NEAR to Calimero relayer reads latest blocks on the NEAR blockchain and sends (relays) those blocks to the light client contract on Calimero shard.
-
-Similarly, the Calimero to NEAR relayer reads latest blocks on the Calimero shards and relays those blocks to the light client contract on the NEAR blockchain.
+The relayer is a fundamental component of the bridge, responsible for establishing bidirectional communication between chains. It receives blocks from a source chain and relays them to a light client contract on the destination chain. 
+This enables seamless interoperability and data transfer between the two chains. It is important to note that light client contracts must be deployed on both the source and destination chains for the relayer to function effectively.
 
 <img src={require('@site/static/img/relayer_simple.jpg').default} />
 
 
-Here is the light client block structure that is being relayed with its substructs:
+## NEAR to Calimero Relayer
+The NEAR to Calimero relayer specifically focuses on relaying blocks from the NEAR blockchain to the designated light client contract on the Calimero shard. By actively monitoring the NEAR blockchain for the latest blocks, the relayer ensures that the most up-to-date information is relayed to the Calimero shard, enabling cross-chain communication and synchronization.
+
+## Calimero to NEAR Relayer
+Similarly, the Calimero to NEAR relayer performs the opposite function by relaying blocks from the Calimero shards to the light client contract on the NEAR blockchain. By reading the latest blocks on the Calimero shards, the relayer facilitates the transfer of relevant information to the NEAR blockchain, ensuring consistency and interoperability between the two chains.
+
+
+## Light Client Block Structure
+The light client block structure represents the data that is relayed by the relayer. It consists of several substructures that provide essential details about the block being relayed. 
+
 
 ```rust
 pub struct LightClientBlock {
@@ -24,6 +30,14 @@ pub struct LightClientBlock {
     pub approvals_after_next: Vec<Option<Signature>>,
 }
 ```
+- **LightClientBlock:** Represents a block being relayed. It contains the following fields:
+  - `prev_block_hash`: Hash of the previous block.
+  - `next_block_inner_hash`: Hash of the inner block of the next block.
+  - `inner_lite`: BlockHeaderInnerLite structure containing metadata about the block.
+  - `inner_rest_hash`: Hash of the rest of the inner block.
+  - `next_bps`: Optional vector of validators representing the next block producers.
+  - `approvals_after_next`: Vector of optional signatures representing approvals for the block.
+
 
 ```rust
 pub struct BlockHeaderInnerLite {
@@ -37,6 +51,16 @@ pub struct BlockHeaderInnerLite {
     pub block_merkle_root: Hash,
 }
 ```
+
+- **BlockHeaderInnerLite:** Contains metadata about the block. It includes the following fields:
+  - `height`: Height of this block since the genesis block (height 0).
+  - `epoch_id`: Epoch start hash of this block's epoch. Used for retrieving validator information.
+  - `next_epoch_id`: Hash representing the next epoch.
+  - `prev_state_root`: Root hash of the state at the previous block.
+  - `outcome_root`: Root hash of the outcomes of transactions and receipts.
+  - `timestamp`: Timestamp at which the block was built.
+  - `next_bp_hash`: Hash of the next epoch block producers set.
+  - `block_merkle_root`: Root hash of the Merkle tree representing the block.
 
 ```rust
 pub enum Validator {
@@ -61,6 +85,7 @@ pub struct ValidatorV2 {
     pub is_chunk_only: bool,
 }
 ```
+- **Validator:** Represents a validator participating in the consensus process. It can be of two types: `ValidatorV1` or `ValidatorV2`.
 
 ```rust
 pub enum Signature {
@@ -68,3 +93,4 @@ pub enum Signature {
     SECP256K1(Secp256K1Signature),
 }
 ```
+-  **Signature**: Represents the cryptographic signatures used for block validation. It can be of two types: ED25519 or SECP256K1. Signatures are relayed alongside the block data to ensure the authenticity and integrity of the relayed blocks.
