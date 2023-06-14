@@ -19,11 +19,11 @@ The architecture of the NEAR to Calimero bridge includes the following key compo
 
 ### Light Client Contract
 
-The Light Client Contract validates and accepts block headers that meet specific validation criteria, ensuring the integrity and security of the bridge's operations.
+The Light Client contract validates and accepts block headers that meet specific validation criteria, ensuring the integrity and security of the bridge's operations.
 
 ### Prover Contract
 
-The Prover Contract provides verifiable proofs of events or actions that occurred on a specific chain, enhancing transparency and trust.
+The Prover contract proves that a transaction occurred on the opposite chain (for example on the Near side if this Prover contract is on the Calimero side). It asks light client contract for the Merkle tree root for the specific block height, and he uses this information for the verification of the proof
 
 ### Connector Contracts
 
@@ -39,17 +39,14 @@ The Archival Node stores all past transactions, typically spanning a longer time
 ### Indexer
 The Indexer fetches blockchain data and stores it in a database, allowing for efficient retrieval and querying of transaction information.
 
-### Validator
-The Validator component communicates with the NEAR blockchain to validate transactions and maintain consensus across the network.
-
 ### Relayer
-The Relayer is responsible for relaying information and transactions between NEAR public networks (Testnet or Mainnet) and Calimero private shard, ensuring smooth communication and synchronization.
+The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
 
 ### Message Queue
-The Message Queue serves as a central component where events from different chains and shards are populated. 
+The Message Queue is used for communication of events indexer on one side and bridge and relayer service on the other sid
 
 ### Bridge Service
-The Bridge Service receives the block where the locking occurred and initiates the proving process once the Calimero Light Client Contract has a new enough block.
+The Bridge Service receives the block where a Calimero event occurred (lock, burn or cross shard calls related events)
 
 
 :::note
