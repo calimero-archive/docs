@@ -9,11 +9,10 @@ This enables seamless interoperability and data transfer between the two chains.
 <img src={require('@site/static/img/relayer_simple.jpg').default} />
 
 ## NEAR to Calimero Relayer
-The NEAR to Calimero relayer specifically focuses on relaying blocks from the NEAR blockchain to the designated light client contract on the Calimero shard. By actively monitoring the NEAR blockchain for the latest blocks, the relayer ensures that the most up-to-date information is relayed to the Calimero shard, enabling cross-chain communication and synchronization.
+The NEAR to Calimero relayer specifically focuses on relaying blocks from the NEAR blockchain to the designated light client contract on the Calimero shard. Information is relayed when needed (Calimero event occurred on the opposite side or one in the epoch). By actively monitoring the NEAR blockchain for the latest blocks, the relayer ensures that the most up-to-date information is relayed to the Calimero shard.
 
 ## Calimero to NEAR Relayer
 Similarly, the Calimero to NEAR relayer performs the opposite function by relaying blocks from the Calimero shards to the light client contract on the NEAR blockchain. By reading the latest blocks on the Calimero shards, the relayer facilitates the transfer of relevant information to the NEAR blockchain, ensuring consistency and interoperability between the two chains.
-
 
 ## Light Client Block Structure
 The light client block structure represents the data that is relayed by the relayer. It consists of several substructures that provide essential details about the block being relayed. 
