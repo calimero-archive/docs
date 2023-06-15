@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ## Overview
 
-The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between NEAR public networks (Testnet or Mainnet) and Calimero private shard. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
+The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between the NEAR public network (Testnet or Mainnet) and the Calimero private shard. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
 
 ## Workflow Diagram
 
@@ -36,18 +36,17 @@ The Connector Contracts handle the transfer of specific asset types:
 ### Archival Node
 The Archival Node stores all past transactions, typically spanning a longer time period (e.g., a month or week ago). It serves as a historical record of transaction data.
 
-### Indexer
-The Indexer fetches blockchain data and stores it in a database, allowing for efficient retrieval and querying of transaction information.
+### Events Indexer
+An Events indexer is a component that scans the blockchain and reads all events on it. If an event is a Calimero event it is published to the message queue. After that relayer and bridge service read the message queue and perform their job on those events
 
 ### Relayer
 The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
 
 ### Message Queue
-The Message Queue is used for communication of events indexer on one side and bridge and relayer service on the other sid
+The Message Queue is used for communication of events indexer on one side and bridge and relayer service on the other side
 
 ### Bridge Service
-The Bridge Service receives the block where a Calimero event occurred (lock, burn or cross shard calls related events)
-
+The Bridge Service receives the block where a Calimero event occurred (lock, burn, or cross-shard calls related events)
 
 :::note
 For more detailed information on each component and its functionality, refer to the subsequent sections.
