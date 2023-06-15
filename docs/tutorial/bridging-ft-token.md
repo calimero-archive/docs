@@ -20,7 +20,6 @@ Once you are signed into the Calimero console, set up the FT Connector to enable
 
 # Step 2: FT Connector Regex
 
-
 After installation, you need to provide access to the accounts that want to bridge tokens. This is done by adding regex rules to allow bridging for specific accounts. In this tutorial, we will configure the FT Connector to allow access to all accounts using the `.*` symbol as the regex.
 
 Follow these steps to configure FT Connector regex rules:
@@ -190,7 +189,7 @@ To swap your NEAR tokens for Wrapped NEAR, call `near_deposit` and deposit the d
 near call wrap.testnet near_deposit --args '{}' --accountId $CALLER_ACCOUNT_ID --amount 10 --gas 300000000000000
 ```
 
-## Viewing the balance on NEAR testnet
+## Step 11:  Viewing the balance on NEAR testnet
 
 After swapping your tokens, you can check your balance on the NEAR Testnet using the following method:
 
@@ -198,7 +197,7 @@ After swapping your tokens, you can check your balance on the NEAR Testnet using
 near view wrap.testnet ft_balance_of --args '{"account_id": "$REGISTERED_ACCOUNT_ID"}'
 ```
 
-## Viewing the balance in the FT Connector on the NEAR side
+## Step 12: Viewing the balance in the FT Connector on the NEAR side
 
 You can also check your balance in the FT Connector by running the following command:
 
@@ -206,7 +205,7 @@ You can also check your balance in the FT Connector by running the following com
 near view wrap.testnet ft_balance_of --args '{"account_id": "ft_connector.$SHARD_ID.calimero.testnet"}'
 ```
 
-## Step 11: Sending Wrapped NEAR to the FT Connector
+## Step 13: Sending Wrapped NEAR to the FT Connector
 
 When sending Wrapped NEAR to the FT Connector, the NEAR account acts as a locker on the NEAR side, while on the Calimero side, the account `ft_deployer.` is responsible for minting and distributing tokens to accounts in the shard.
 
@@ -218,7 +217,7 @@ near call wrap.testnet ft_transfer_call --args '{"receiver_id": "ft_connector.$S
 --accountId $CALLER_ACCOUNT_ID --depositYocto 1 --gas 300000000000000
 ```
 
-## Step 12: Viewing the FT balance in Calimero Shard to check that withdrawal was successful.
+## Step 14: Viewing the FT balance in Calimero Shard to check that withdrawal was successful.
 
 You can check the balance of your account in the Calimero Shard using `wrap.ft_deployer`, which represents the `wrap.testnet` fungible token on the Calimero side.
 
@@ -226,7 +225,7 @@ You can check the balance of your account in the Calimero Shard using `wrap.ft_d
 calimero $SHARD_ID-calimero-testnet view wrap.ft_deployer.$SHARD_ID.calimero.testnet ft_balance_of --args '{"account_id":"$REGISTERED_ACCOUNT_ID"}'
 ```
 
-## Step 13: Viewing the FT balance in NEAR to check that withdrawal was successful.
+## Step 15: Viewing the FT balance in NEAR to check that withdrawal was successful.
 
 You can also check the balance of in your NEAR account using  `wrap.testnet`  which represents the `wrap.testnet` fungible token on the NEAR side.
 
@@ -234,7 +233,7 @@ You can also check the balance of in your NEAR account using  `wrap.testnet`  wh
 near view wrap.testnet ft_balance_of --args '{"account_id":"$REGISTERED_ACCOUNT_ID"}'
 ```
 
-## Step 14: Withdrawing FT from Calimero Shard back to NEAR testnet
+## Step 16: Withdrawing FT from Calimero Shard back to NEAR testnet
 
 To bridge the token back to NEAR testnet, run the following:
 
