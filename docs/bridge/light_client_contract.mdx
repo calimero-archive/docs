@@ -3,11 +3,14 @@ title: Light Client Contract
 sidebar_position: 3
 ---
 
-The Light Client Contract plays a crucial role in enabling interoperability between the NEAR mainnet and Calimero shard. It provides implementations of the NEAR light client as a contract, allowing for the relay of block headers and validation of their authenticity. There are two possible scenarios where the Light Client Contract is utilized: bridging from the NEAR mainnet to the Calimero shard or bridging between Calimero shards for various use cases.
+The Light Client Contract plays a crucial role in enabling interoperability between the NEAR (mainnet or testnet) and Calimero shard. It provides implementations of the NEAR light client as a contract, allowing for the relay of block headers and validation of their authenticity. There are two possible scenarios where the Light Client Contract is utilized: bridging from the NEAR mainnet to the Calimero shard or bridging between Calimero shards for various use cases. 
 
 ## Validation Criteria for Block Headers
 
-The Light Client Contract imposes specific validation criteria on the relayed block headers. Notably, each valid block header must contain at least two-thirds of the valid signatures from the epoch block producers. This ensures the integrity and trustworthiness of the relayed headers. The contract doesn't need to verify every block header in the chain's history. Instead, it requires at least one verified block header per epoch. This approach balances efficiency with security.
+The Light Client Contract has specific validation criteria for validating block headers to ensure the integrity and trustworthiness of the blockchain. Each valid block header must include at least two-thirds of the valid signatures from the epoch block producers. This requirement guarantees the reliability of the relayed headers. To achieve efficiency without compromising security, the contract only needs to verify at least one block header per epoch, rather than every block header in the chain's history.
+
+When providing proof of a transaction occurring at a particular block height, it is crucial to have a block header on the opposite side of the blockchain that confirms the transaction's finality. To meet this condition, the block header on the opposite side should have a block height that is two blocks higher than the block where the transaction took place. This "X+2 rule" ensures that the transaction is considered fully confirmed and provides the necessary blockchain context for verification.
+
 
 ## Efficient Verification of Events
 
@@ -29,4 +32,4 @@ For the Calimero on the NEAR light client, there is a limitation due to NEAR's t
 
 ## Gas Cost Considerations for NEAR on Calimero Light Client
 
-In contrast, the signature verification cost is not a significant concern for the NEAR on the Calimero light client contract. The shard creator has the ability to set up the genesis block in such a way that the gas costs are cheaper, ensuring that the signature verification process remains within acceptable limits. This provides flexibility in managing gas costs for signature verification in the context of NEAR on Calimero.
+In contrast, the signature verification cost is not a significant concern for the NEAR on the Calimero light client contract. Native Calimero tokens do not have any monetary value, they are just used as a consensus mechanism. The shard creator has the ability to set up the genesis block in such a way that the gas costs are cheaper, ensuring that the signature verification process remains within acceptable limits. This provides flexibility in managing gas costs for signature verification in the context of NEAR on Calimero.
