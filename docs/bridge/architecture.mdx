@@ -5,13 +5,13 @@ sidebar_position: 1
 
 ## Overview
 
-The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between NEAR public networks (Testnet or Mainnet) and Calimero private shard. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
+The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between the NEAR public network (Testnet or Mainnet) and the Calimero private shard. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
 
 ## Workflow Diagram
 
 Below is a high-level overview of the bridge's components:
 
-![Workflow Diagram](https://github.com/calimero-is-near/docs/assets/39309699/c63274ad-6873-4b86-bc4b-5c10bdd4e28d)
+![Workflow Diagram](https://github.com/calimero-is-near/docs/assets/39309699/6d0691e7-1816-4d30-8065-264718464340)
 
 ## Key Components
 
@@ -23,7 +23,7 @@ The Light Client contract validates and accepts block headers that meet specific
 
 ### Prover Contract
 
-The Prover contract proves that a transaction occurred on the opposite chain (for example on the Near side if this Prover contract is on the Calimero side). It asks light client contract for the Merkle tree root for the specific block height, and he uses this information for the verification of the proof
+The Prover contract proves that a transaction occurred on the opposite chain (for example, on the Near side if this Prover contract is on the Calimero side). It asks the light client contract for the Merkle tree root for the specific block height, and he uses this information for the verification of the proof.
 
 ### Connector Contracts
 
@@ -31,23 +31,22 @@ The Connector Contracts handle the transfer of specific asset types:
 
 - FT Connector: Facilitates the transfer of fungible tokens (FT) between NEAR public networks (Testnet or Mainnet) and Calimero private shard.
 - NFT Connector: Handles the transfer of non-fungible tokens (NFT) between NEAR public networks (Testnet or Mainnet) and Calimero private shard.
-- Cross-shard Contract Calls Connector: handles contract pair used to call one chain's contract methods from another chain.
+- Cross-shard Contract Calls Connector: handles contract pairs used to call one chain's contract methods from another chain.
 
 ### Archival Node
 The Archival Node stores all past transactions, typically spanning a longer time period (e.g., a month or week ago). It serves as a historical record of transaction data.
 
-### Indexer
-The Indexer fetches blockchain data and stores it in a database, allowing for efficient retrieval and querying of transaction information.
+### Events Indexer
+An Events indexer is a component that scans the blockchain and reads all events on it. If an event is a Calimero event, it is published to the message queue. After that, the relayer and bridge service read the message queue and perform their jobs on those events.
 
 ### Relayer
 The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
 
 ### Message Queue
-The Message Queue is used for communication of events indexer on one side and bridge and relayer service on the other sid
+The Message Queue is used for communication between the events indexer on one side and the bridge and relayer service on the other side.
 
 ### Bridge Service
-The Bridge Service receives the block where a Calimero event occurred (lock, burn or cross shard calls related events)
-
+The Bridge Service receives the block where a Calimero event occurred (lock, burn, or cross-shard calls related events).
 
 :::note
 For more detailed information on each component and its functionality, refer to the subsequent sections.
