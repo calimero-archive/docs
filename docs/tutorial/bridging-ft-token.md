@@ -21,7 +21,7 @@ Once you are signed into the Calimero console, set up the FT Connector to enable
 # Step 2: FT Connector Regex
 
 
-After installation, you need to provide access to the accounts that want to bridge tokens. This is done by adding regex rules to allow bridging for specific accounts. In this tutorial, we will configure the FT Connector to allow access to all accounts using the `*` symbol as the regex.
+After installation, you need to provide access to the accounts that want to bridge tokens. This is done by adding regex rules to allow bridging for specific accounts. In this tutorial, we will configure the FT Connector to allow access to all accounts using the `.*` symbol as the regex.
 
 Follow these steps to configure FT Connector regex rules:
 
@@ -100,7 +100,6 @@ To call a contract function from the CLI, we will first set up our public and pr
 
 To retrieve your private key, follow these steps:
 
-
 1. Go to your NEAR wallet.
 2. Navigate to the **Accounts** tab.
 3. Click on the **Export Local Private Key** button.
@@ -112,7 +111,6 @@ To retrieve your private key, follow these steps:
 ### Creating a JSON File
 
 Now that we have the public and private keys, let's create a JSON file that will be used for calling the contract function from the CLI.
-
 
 1. Create a `~/.near-credentials` folder.
 2. Create a `.json` file.
@@ -140,7 +138,7 @@ The `REGISTER_ACCOUNT_ID` is the account name you receive when you create your N
 
 ## Set environmental variables
 
-Before continuning with the next steps, set up your environmental variables in the command line, you can use the export command followed by the variable name and its value.
+Before continuing with the next steps, set up your environmental variables in the command line, you can use the export command followed by the variable name and its value.
 
 ```bash
 export REGISTER_ACCOUNT_ID="YOUR_REGISTER_ACCOUNT_ID"
@@ -149,11 +147,11 @@ export SHARD_ID="YOUR_SHARD_ID"
 export ACCOUNT_ID="YOUR_ACCOUNT_ID"
 ```
 - Replace `YOUR_REGISTER_ACCOUNT_ID` is the account name you receive when you create your NEAR wallet account
-- Replace `YOUR_CALLER_ACCOUNT_ID`  with account name that calls the function. This can be similar to `REGISTER_ACCOUNT_ID`
+- Replace `YOUR_CALLER_ACCOUNT_ID`  with the account name that calls the function. This can be similar to `REGISTER_ACCOUNT_ID`
 - Replace `YOUR_SHARD_ID` with your shard name
-- Replace `YOUR_ACCOUNT_ID` with value of the account ID you want to check the balance for
+- Replace `YOUR_ACCOUNT_ID` with the value of the account ID you want to check the balance for
 
-After setting the environmental variables, you can access them in following commands.
+After setting the environment variables, you can access them in the following commands.
 
 ## Step 9: Registering the Account from the Wallet
 
@@ -200,7 +198,7 @@ After swapping your tokens, you can check your balance on the NEAR Testnet using
 near view wrap.testnet ft_balance_of --args '{"account_id": "$REGISTERED_ACCOUNT_ID"}'
 ```
 
-## Viewing the balance in the FT Connector
+## Viewing the balance in the FT Connector on the NEAR side
 
 You can also check your balance in the FT Connector by running the following command:
 
@@ -225,19 +223,14 @@ near call wrap.testnet ft_transfer_call --args '{"receiver_id": "ft_connector.$S
 You can check the balance of your account in the Calimero Shard using `wrap.ft_deployer`, which represents the `wrap.testnet` fungible token on the Calimero side.
 
 ```bash
-near view wrap.ft_deployer.$SHARD_ID.calimero.testnet ft_balance_of --args '{"account_id": "$REGISTERED_ACCOUNT_ID"}' \
---nodeUrl "https://api.calimero.network/api/v1/shards/$SHARD_ID-calimero-testnet/neard-rpc/" \
---networkId "$SHARD_ID-calimero-testnet"
+calimero $SHARD_ID-calimero-testnet view wrap.ft_deployer.$SHARD_ID.calimero.testnet ft_balance_of --args '{"account_id":"$REGISTERED_ACCOUNT_ID"}'
 ```
-
 ## Step 12: Withdrawing FT from Calimero Shard to NEAR testnet
 
 To bridge the token back to NEAR testnet, run the following:
 
 ```bash
-near call wrap.ft_deployer.$SHARD_ID.calimero.testnet withdraw --args '{"amount": "1"}' --accountId "$CALLER_ACCOUNT_ID" \
---depositYocto 1 --gas 300000000000000 --nodeUrl "https://api.staging.calimero.network/api/v1/shards/$SHARD_ID-calimero-testnet/neard-rpc/" \
---networkId "$SHARD_ID-calimero-testnet"
+calimero $SHARD_ID-calimero-testnet call wrap.ft_deployer.$SHARD_ID.calimero.testnet withdraw --args '{"amount":"345"}' --accountId $CALLER_ACCOUNT_ID --depositYocto 1 --gas 300000000000000
 ```
 
 You can check the withdrawn token status:
