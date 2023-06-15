@@ -8,7 +8,6 @@ This enables seamless interoperability and data transfer between the two chains.
 
 <img src={require('@site/static/img/relayer_simple.jpg').default} />
 
-
 ## NEAR to Calimero Relayer
 The NEAR to Calimero relayer specifically focuses on relaying blocks from the NEAR blockchain to the designated light client contract on the Calimero shard. By actively monitoring the NEAR blockchain for the latest blocks, the relayer ensures that the most up-to-date information is relayed to the Calimero shard, enabling cross-chain communication and synchronization.
 
@@ -19,6 +18,7 @@ Similarly, the Calimero to NEAR relayer performs the opposite function by relayi
 ## Light Client Block Structure
 The light client block structure represents the data that is relayed by the relayer. It consists of several substructures that provide essential details about the block being relayed. 
 
+### LightClientBlock
 
 ```rust
 pub struct LightClientBlock {
@@ -38,6 +38,7 @@ pub struct LightClientBlock {
   - `next_bps`: Optional vector of validators representing the next block producers.
   - `approvals_after_next`: Vector of optional signatures representing approvals for the block.
 
+### BlockHeaderInnerLite
 
 ```rust
 pub struct BlockHeaderInnerLite {
@@ -61,6 +62,8 @@ pub struct BlockHeaderInnerLite {
   - `timestamp`: Timestamp at which the block was built.
   - `next_bp_hash`: Hash of the next epoch block producers set.
   - `block_merkle_root`: Root hash of the Merkle tree representing the block.
+
+### Validator
 
 ```rust
 pub enum Validator {
@@ -86,6 +89,8 @@ pub struct ValidatorV2 {
 }
 ```
 - **Validator:** Represents a validator participating in the consensus process. It can be of two types: `ValidatorV1` or `ValidatorV2`.
+
+### Signature
 
 ```rust
 pub enum Signature {
