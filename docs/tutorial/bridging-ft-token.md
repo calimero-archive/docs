@@ -218,14 +218,23 @@ near call wrap.testnet ft_transfer_call --args '{"receiver_id": "ft_connector.$S
 --accountId $CALLER_ACCOUNT_ID --depositYocto 1 --gas 300000000000000
 ```
 
-## Step 12: Viewing the FT balance in Calimero Shard
+## Step 12: Viewing the FT balance in Calimero Shard to check that withdrawal was successful.
 
 You can check the balance of your account in the Calimero Shard using `wrap.ft_deployer`, which represents the `wrap.testnet` fungible token on the Calimero side.
 
 ```bash
 calimero $SHARD_ID-calimero-testnet view wrap.ft_deployer.$SHARD_ID.calimero.testnet ft_balance_of --args '{"account_id":"$REGISTERED_ACCOUNT_ID"}'
 ```
-## Step 12: Withdrawing FT from Calimero Shard to NEAR testnet
+
+## Step 13: Viewing the FT balance in NEAR to check that withdrawal was successful.
+
+You can also check the balance of in your NEAR account using  `wrap.testnet`  which represents the `wrap.testnet` fungible token on the NEAR side.
+
+```bash
+near view wrap.testnet ft_balance_of --args '{"account_id":"$REGISTERED_ACCOUNT_ID"}'
+```
+
+## Step 14: Withdrawing FT from Calimero Shard back to NEAR testnet
 
 To bridge the token back to NEAR testnet, run the following:
 
@@ -241,6 +250,6 @@ You can check the withdrawn token status:
 
 <img width="1425" alt="transactions2" src="https://github.com/calimero-is-near/docs/assets/39309699/e7131a08-2c9e-4fe6-b0ff-9a3623543028"/>
 
-Conclusion
+## Conclusion
 
 Bridging between the NEAR and Calimero networks allows for seamless interoperability and token transfers. In this tutorial, we bridged fungible tokens from the NEAR Testnet to the Calimero Shard and back. If you want to learn more about bridging, check out our [Docs](https://docs.calimero.io/)
