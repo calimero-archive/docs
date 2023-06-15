@@ -3,7 +3,7 @@ title: Prover Contract
 sidebar_position: 4
 ---
 
-The Prover contract proves that a transaction occurred on the opposite chain (for example on the Near side if this Prover contract is on the Calimero side). Prover contract asks light client contract for the Merkle tree root for the specific block height, and he uses this information for the verification of the proof.
+The Prover contract plays a crucial role in verifying transactions that occur on the opposite chain (e.g., the Calimero side if the Prover contract is on the Near side). To verify a transaction, the Prover contract requires the Merkle tree root for a specific block height. It obtains this information by making an RPC call (EXPERIMENTAL_light_client_proof) to the Archival node and retrieving the proof for a particular receipt.
 
 ## Proof Data Structure
 
