@@ -3,36 +3,31 @@ title: How to bridge fungible tokens
 sidebar_position: 3
 ---
 
-Here we will show how to bridge fungible tokens from NEAR Testnet to Calimero and withdraw the tokens back to NEAR Testnet.
-In order for bridging to work, see previous section on the prerequisites.
+
+This guide explains how to bridge fungible tokens from NEAR Testnet to Calimero and withdraw the tokens back to NEAR Testnet. Make sure you have met the prerequisites mentioned in the previous section.
 
 ## Bridging FTs from NEAR to Calimero
 
-### Send FTs to ft_connector on NEAR
-
-With the fungible token connector ft's can be bridged from NEAR to Calimero and back. In order to bridge some ft from NEAR testnet to Calimero, a single transaction needs to be called. Just lock the wanted amount of tokens to the ft connector contract. Once they are transferred, the bridge service and the relayer will be notified about it and try to prove on the Calimero shard that the locking of tokens happened on NEAR. If proved, wrapped tokens are minted on Calimero shard.
-
-This is the only transaction from user/dapp input that needs to happen in order to bridge the tokens.
+To bridge fungible tokens from NEAR Testnet to Calimero, you need to send the tokens to the `ft_connector` contract on NEAR. This involves a single transaction that locks the tokens to the FT Connector contract. The bridge service and relayer verify the token locking on NEAR and mint wrapped tokens on the Calimero shard.
 
 :::caution
-When locking FTs on source side FT Connector you **MUST** do it through **ft_transfer_call**. If you try to do it through ** ft_transfer ** tokens will be **LOST**.
+When locking FTs on the source side FT Connector, make sure to use `ft_transfer_call` instead of `ft_transfer`. Using `ft_transfer` will result in the loss of tokens.
 :::
 
-### CLI command
+### CLI Command
 
-Example of locking fungible tokens on NEAR testnet with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/FAGjdTYkHJ2bdWP9CRznzxj7kB3KXRfNDw3hsdUGdFZX):
-``` bash
+Here is an example of locking fungible tokens on NEAR Testnet:
+
+```bash
 near call wrap.testnet ft_transfer_call --args '{"receiver_id":"ft_connector.cali99.dev.calimero.testnet","amount":"12345","msg":""}' --accountId igi.testnet --depositYocto 1 --gas 3000000000000
 ```
 
-### JS
+### JavaScript
 
-For a fully working example check out this repo: https://github.com/calimero-is-near/calimero-examples/tree/master/bridging-fts
+You can use the following JavaScript snippet as an example:
 
-Here is a short snippet:
-
-``` js
-const callFtTransferCallOnSource: FunctionCallOptions = {
+```javascript
+const callFtTransferCallOnSource = {
   contractId: 'wrap.testnet',
   methodName: 'ft_transfer_call',
   args: {
@@ -40,82 +35,76 @@ const callFtTransferCallOnSource: FunctionCallOptions = {
     amount: amount,
     msg: 'testnet',
   },
-  attachedDeposit: new big.BN('1'),
-  gas: new big.BN(MAX_GAS_LIMIT),
+  attachedDeposit: new BN('1'),
+  gas: new BN(MAX_GAS_LIMIT),
 };
 
 const transferTokensTx = await senderAccount.functionCall(callFtTransferCallOnSource);
 ```
 
-## Wrapped tokens naming
+## Wrapped Token Naming
 
-When a token is bridged it is created as a deployer sub-account. For example, if we have FT with the name `wrap.testnet` on the source side and the shard name is `cali99` then the wrapped/bridged token name is `wrap.ft_deployer.cali99.calimero.testnet`.
-
-This will work as expected when the bridged token name is not longer than 64 characters (this is a Near protocol requirement). Now let's imagine we want to bridge the token with the name `cali_ft.testnet` and our shard name is `my-extremely-long-shard-name` than our bridged token name would be `cali_ft.ft_deployer.my-extremely-long-shard-name.calimero.testnet`.
-Since this name is 65 characters long its name will be determined by calculating the SHA256 hash of the 65-character name and only the first characters of the hash will be used so that the bridged token name is exactly 64 characters long.
-
-In this example SHA256 of `cali_ft.ft_deployer.my-extremely-long-shard-name.calimero.testnet` is `58aff6667559339001150b5453d8becd9100331207b3c42fa67a33039363a885` so the bridged token name is `58aff6.ft_deployer.my-extremely-long-shard-name.calimero.testnet`.
+When a token is bridged, it is created as a deployer sub-account. The bridged token's name depends on the original token name and the Calimero shard. If the token name exceeds 64 characters, it is hashed using SHA256, and the first characters of the hash are used to create a bridged token name.
 
 ## Withdraw FTs back to NEAR
 
-### Burn FTs on Calimero
-
-If the users want to get the tokens back on the original chain (in this case NEAR testnet), they simply call withdraw on the bridged token on the other chain (in this case Calimero shard) which will essentially burn tokens. The bridge service will be notified via emitted event that a burn happened and try to prove on the ft connector contract on NEAR that a burn happaned on Calimero shard. If proved, tokens are unlocked.
+To retrieve tokens on NEAR Testnet, you need to call the `withdraw` method on the bridged token contract on Calimero. This action burns the tokens on Calimero, and the bridge service verifies the burn event on the FT Connector contract on NEAR. Upon successful verification, the tokens are unlocked on NEAR Testnet.
 
 :::caution
-When withdrawing FTs from the destination side account that is performing the transfer **MUST** be registered (storage deposit paid) on the original FT contract on the source side. Funds will be **LOST** (locked on the connector on the source side) if withdrawing is performed before registration.
-
-**Note:** If this happened to you contact the shard admin.
+Before withdrawing FTs from the destination side, ensure that the account performing the transfer is registered (storage deposit paid) on the original FT contract on the source side. If withdrawing is performed before registration, funds will be lost (locked on the connector on the source side). Contact the shard admin if this happens to you.
 :::
 
-### Helper cli
-For Calimero side create Calimero alias (change `dev` to `staging` for staging and remove it for production):
-```
+### Helper CLI
+
+For Calimero side, create a Calimero alias with the following command (change `dev` to `staging` for staging and remove it for production):
+
+```bash
 alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
 ```
 
-### CLI command
+### CLI Command
 
-Example of withdrawing/burning tokens on Calimero with [transaction on NEAR testnet](https://explorer.testnet.near.org/transactions/5hnG8P52BrGVeuPR37nHvHz2SKtQabDKyC2yuQmfe34C):
+Here is an example of withdrawing/burning tokens on Calimero:
+
+```bash
+calimero cali99-calimero-testnet call wrap.ft_deployer.cali99.calimero.testnet
+
+ withdraw --args '{"amount":"345"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
 ```
-calimero cali99-calimero-testnet call wrap.ft_deployer.cali99.calimero.testnet withdraw --args '{"amount":"345"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
-```
 
-### JS
+### JavaScript
 
-For a fully working example check out this repo: https://github.com/calimero-is-near/calimero-examples/tree/master/bridging-fts
+You can use the following JavaScript snippet as an example:
 
-Here is a short snippet:
-
-``` js
-const callWithdrawOnCalimero: FunctionCallOptions = {
+```javascript
+const callWithdrawOnCalimero = {
   contractId: 'wrap.ft_deployer.cali99.calimero.testnet',
   methodName: 'withdraw',
   args: {
     amount: amount,
   },
-  attachedDeposit: new big.BN('1'),
-  gas: new big.BN(MAX_GAS_LIMIT),
+  attachedDeposit: new BN('1'),
+  gas: new BN(MAX_GAS_LIMIT),
 };
 
 const withdrawTokensTx = await senderAccount.functionCall(callWithdrawOnCalimero);
 ```
 
-### Recap
+## Recap
 
-We have transferred wrap fungible tokens from NEAR testnet to a Calimero shard called cali99. We did this by locking the wNEAR coins on the source ft_connector contract. This will emit an event that the tokens were locked. The tesntet to calimero relayer will pick up this event and relay a block from Near testnet to Calimero shard. Also, the bridge service will pick up this event and try to prove on Calimero that the locking of tokens actually happened on Near testnet. If proved, wNEAR will be minted on Calimero.
-Also, we have witdrawn wNEAR back to Near testnet. We did this by calling withdraw on the FT token contract on Calimero, which will essentially burn the requested amount of tokens. Once this happens the Calimero to Testnet relayer will be notified about the burn event, and will relay a block from Calimero to testnet. Also, the bridge service will pick up this event and try to prove on Testnet that the amount was burnt on Calimero. If proved, the tokens are released back on the Near testnet.
+By following the steps above, you have successfully transferred wrap fungible tokens from NEAR Testnet to the Calimero shard named `cali99`. The tokens were locked in the source `ft_connector` contract, and the bridge service and relayer verified the locking on NEAR Testnet. As a result, wrapped tokens (`wNEAR`) were minted on Calimero. To withdraw tokens back to NEAR Testnet, you can call the `withdraw` method on the bridged token contract on Calimero, which will burn the requested amount of tokens. The bridge service verifies the burn event and releases the tokens back on NEAR Testnet.
 
-## Checking for FT balance
+## Checking FT Balance
 
-Here are the CLI commands to read fungible token balanace on both NEAR and Calimero:
+To check the fungible token balance on NEAR, use the following CLI command:
 
-NEAR:
-``` bash
+```bash
 near view wrap.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
 ```
 
-Calimero:
-``` bash
+To check the fungible token balance on Calimero, use the following CLI command:
+
+```bash
 calimero cali99-calimero-testnet view wrap.ft_deployer.cali99.calimero.testnet ft_balance_of --args '{"account_id":"igi.testnet"}'
 ```
+
