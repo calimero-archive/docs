@@ -3,104 +3,71 @@ title: Bridge permissions management
 sidebar_position: 2
 ---
 
-In order to use the Calimero bridge (transfer FTs, NFTs, or make cross-shard calls) it is needed to set up permissions properly.
-Permissions are managed on a connector basis and at the beginning, all connectors are denied for all accounts. For each connector
-permissions are managed on both sides, on Near (for bridging from Near to Calimero) and on Calimero (for bridging from Calimero to Near).
+To effectively utilize the Calimero bridge for token transfers, including FTs, NFTs, and cross-shard calls, it is crucial to set up permissions properly. Permissions are managed on a connector basis, and initially, all connectors are denied for all accounts. Here's an overview of how permissions are managed for each type of connector:
 
-When using the Calimero bridge:
-- calling `ft_transfer_call` on FT contract for bridging FTs
-- calling `nft_transfer_call` on the NFT contract for bridging NFTs
-- calling `cross_call` through another contract for using cross-shard calls (using Calimero bridge)
+## FT Connector Permissions
 
-Methods mentioned here (`ft_transfer_call`, `nft_transfer_call`, and `cross_call`) when called check if a call has correct permissions for a given call. If that call is denied bridging will not happen.
+When deploying FT Bridge contracts, all FT bridging is denied by default in both directions. To allow bridging from NEAR to Calimero, you need to add a regex rule on the source side (NEAR) that permits the desired Account ID to bridge FTs to the destination side (Calimero). The transaction for adding a rule on the FT connector's source side needs to be signed by the FT connector on the same side.
 
-### FT Connector Permissions
+For example, let's say you want to bridge FT `usdn.testnet` with Account ID `john.testnet` from NEAR to Calimero. You can add a regex rule to allow this bridging. Here are some examples of how to set the rule:
+- `john\.testnet`: Only `john.testnet` can bridge FTs with this rule (e.g., `doe.john.testnet` cannot bridge FTs)
+- `.*john\.testnet`: Any account ending with `john.testnet` can bridge FTs
+- `.*\.john\.testnet`: Any sub-account of `john.testnet` can bridge FTs
+- `.*john.*`: Any account containing `john` in its ID can bridge FTs
+- `.*\.testnet`: Any Testnet account can bridge FTs
 
-When all FT Bridge contracts are deployed all FT bridging will be denied (in both directions). Now if we want to allow bridging from Near to Calimero we need to add
-a regex rule on the source side (in this example on the Near side) that will allow the wanted Account ID to bridge FTs to the destination side (in this example Calimero). When a rule is added for the FT connector on one side that transaction needs to be signed by the FT connector on the same side.
+When the `ft_on_transfer` method is called on the FT connector (as a result of the `ft_transfer_call` call on an FT contract), it checks if the original account has bridging permissions. An account has bridging permissions if it matches any allow rule. If it doesn't match any rule, it is denied for bridging.
 
-Let us assume we want to bridge FT `usdn.testnet` with Account ID `john.testnet` from Near to Calimero. To allow this bridging we need to add a regex rule that will match the Account ID (`john.testnet`), some examples of how to do this:
-- `john\.testnet` -> Only `john.testnet` can bridge FTs with this rule (Account `doe.john.testnet` can not bridge FTs)
-- `.*john\.testnet` -> Every Account that ends with `john.testnet` can bridge FTs
--  `.*\.john\.testnet` -> Every Account that is sub-account of `john.testnet` can bridge FTs
-- `.*john.*` -> Every Account that has `john` anywhere in the ID can bridge FTs
-- `.*\.testnet` -> Every Testnet Account can bridge FTs
+Keep in mind that when adding an allow rule for the FT connector, any Account ID matching at least one allow rule can bridge assets.
 
-Finally, when the FT connectors method `ft_on_transfer` (as a result of the `ft_transfer_call` call on some FT contract) is called it checks if the original account has bridging permissions.
-Any given account has bridging permissions if it matches any allow rule, otherwise, it is denied for bridging.
+## NFT Connector Permissions
 
-When adding allow rule for the FT connector we always need to keep in mind that every Account ID that matches at least one allow rule can bridge assets.
+NFT connector permissions are managed in a similar way to FT connectors. Initially, all accounts are denied for bridging NFTs. With the NFT connectors' key from the destination side, regex rules can be added, and transactions are signed accordingly. When the `nft_on_transfer` method is called on the NFT connector (as a result of the `nft_transfer_call` call on an NFT contract), it checks if the original account has bridging permissions. The Account ID needs to match at least one NFT allow rule on that side.
 
-### NFT Connector Permissions
+## Cross Shard Call (XSC) Connector Permissions
 
-NFT connector permissions are managed in the same manner as FT connectors. In the beginning, all accounts are denied for bridging NFTs.
-With NFT connectors key from destination side add regex rule transactions are signed. Finally, when the NFT connector method `nft_on_transfer`
-(as a result of the `nft_transfer_call` call on some NFT contract) is called it checks if the original account has bridging permissions (Account ID needs to match at least 1 NFT allow rule on that side).
+XSC permissions are more granular due to the sensitivity of Cross Shard Calls. Permissions for XSC are managed separately for NEAR and Calimero sides, similar to FT and NFT permissions.
 
-### Cross Shard Call Connector Permissions
+XSC permissions consist of two parts: an account allow list (similar to FT and NFT) and a deny list of account-contract pairs. Here's how XSC permissions are managed:
 
-XSC permissions are a bit more granular because of the Cross Shard Calls delicacy. Here we will first explain why we decided to add a more complex permissions management mechanism for XSC than for FTs and NFTs.
-Since Calimero is a private sharding solution it is crucial to preserve wanted customer privacy. Smart contracts often have public getter methods that expose the current contract state and privacy could be
-violated if anyone from a public network (Near) could fetch information stored in contracts on the private shard.
+- Initially, all accounts are denied from calling any smart contract on the other side.
+- To make a cross-shard call, an account on the NEAR side (e.g., Account ID `john.testnet`) needs to pass both the allow list and the deny list checks.
+- The account must match at least one allow regex rule for XSC.
+- Additionally, the account-contract pair should not match any deny regex rule pair to be allowed to make a cross-shard call.
 
-XSC permissions are managed separately for Near and Calimero sides, in the same way as earlier explained for FT permissions and NFT permissions.
+For example, let's consider the following rules:
+- Allow list: [`.*apple.*
 
-XSC permissions have 2 parts: account allow list (same mechanism as FT and NFT) and deny list of pairs of accounts and contracts.
-The flow of XSC permissions management:
-- At the beginning, all accounts are denied for calling any smart contract on the other side
-- When Near side Account ID `john.testnet` wants to call a method on contract `game.myshard.calimero.testnet` on the Calimero side it needs to pass both checks on allow list and deny list
-- First Account ID `john.testnet` needs to match at least 1 allow regex rule for XSC (same as before for FT and NFT)
-- Additionally, the Account ID and Contract ID pair should not match any of the deny regex pair rules to be allowed to make a cross-shard call.
+`, `.*banana.*`] (any account containing `apple` or `banana`)
+- Deny list (pairs of contract regex rule and account regex rule): [(`.*secret.*`, `.*`)] (no account can call any smart contract with `secret` in its name)
 
-Let us look at one example if we have the following regex rules defined:
-- Allow list: [`.*apple.*`, `.*banana.*`] -> every account that has `apple` or `banana` will pass the first check
-- Deny list (list of pairs of contract regex rule and account regex rule): [(`.*secret.*`, `.*`)] -> no account can call any smart contract that has `secret` in its name
+Now, let's examine some XSC examples:
+- Account ID `orange.testnet` calls `contract.calimero.testnet`: This call is denied because it doesn't pass the allow list check (no matching allow regex rule for `orange.testnet`).
+- Account ID `one.apple.testnet` calls `contract.calimero.testnet`: This call is allowed. It passes the allow list check (matches `.*apple.*`) and doesn't match any rule pair from the deny list (e.g., `contract.calimero.testnet` doesn't match `.*secret.*`).
+- Account ID `one.apple.testnet` calls `secret.contract.calimero.testnet`: This call is denied. It passes the allow list check (matches `.*apple.*`), but it matches a deny list rule pair (`secret.contract.calimero.testnet` matches `.*secret.*`, and `one.apple.testnet` matches `.*`).
 
-Now let's look at the following examples of using XSC:
-- Account ID `orange.testnet` calls `contract.calimero.testnet` -> this call is denied because it does not pass the first check (there is no allow regex rule that matches this Account ID)
-- Account ID `one.apple.testnet` calls `contract.calimero.testnet` -> this call is allowed, it passes the first check (matches `.*apple.*` rule) and does not match any rule pair from deny list (`contract.calimero.testnet` does not match `.*secret.*`)
-- Account ID `one.apple.testnet` calls `secret.contract.calimero.testnet` -> this call is denied, it passes the first check (matches `.*apple.*` rule) but also matches one check in the deny list (`secret.contract.calimero.testnet` matches `.*secret.*` and `one.apple.testnet` matches `.*`)
+If you prefer to manage XSC permissions in the same way as FT and NFT permissions, you can simply avoid using the deny list.
 
-If you wish to manage XSC permissions in the same way as permissions for FT and NFT connectors that can be achieved simply by not using deny list.
+## Bridge Permissions Management
 
-### Bridge Permissions Management
+You can manage bridge permissions through various methods:
 
-Link to the permissions smart contract: <br /> https://github.com/calimero-is-near/bridge-contracts/blob/master/contracts/connector_permissions/src/lib.rs
+1. **Calimero Console UI**: You can use the Calimero Console UI to manage permissions effectively. This provides a user-friendly interface for setting up and modifying bridge permissions.
 
-An important thing to note is that smart contract rule getters return only a subset of rules if there are more rules than:
-- 10 for `get_allow_regex_rules`
-- 20 for `get_regex_account_per_contract_for_xsc`
+2. **Calimero Bridge SDK**: The Calimero Bridge SDK offers a programmatic way to manage bridge permissions. You can utilize the SDK's functions to automate permission management tasks and integrate them into your application.
 
-Rules that are not returned through those getters are still taken into consideration when determining bridging permissions, they can also be removed same as any other rule.
-
-Currently, there are 3 main ways for connector permissions management:
-- Management through the Calimero Console UI
-- Management through the Calimero Bridge SDK
-- Directly through the CLI
+3. **CLI**: Permissions can also be managed directly through the CLI. This method is suitable for users who prefer command-line interactions and want to have more control over the permission management process.
 
 ### Security and Motivation
 
-There are multiple reasons why bridge permissions need to be set properly:
-1. Avoid malicious entities from bridging FTs/NFTs into private shard
-2. Avoid leaking private information through Cross Shard Calls
-3. Avoid paying connectors gas fees on the destination chain for malicious actor's calls
+Setting up bridge permissions properly is essential for several reasons:
 
-Now we will dig deeper into malicious actors' motivation for depleting connectors' funds on the public side (Near).
-When any bridging operation is called, the connector on the destination side initially pays gas fees for those calls. Funds spent
-on the gas are paid by the shard owner. Now we can see that if permissions are not properly set a malicious actor can initiate a large
-number of bridging operations and cause financial harm to the person or organization paying for the shard.
+1. **Preventing Malicious Bridge Usage**: Proper permissions help prevent malicious entities from bridging FTs and NFTs into the private shard. By carefully controlling permissions, you can mitigate potential security risks.
 
-Aside from causing financial harm to the shard owner, there is also a way to come into possession of a small amount of assets paid
-for malicious Cross Shard Calls. Let us look at the following scenario:
-1. There is some Calimero shard named `victim` and XSC permissions are set to allow all (allow rule `.*`) on the Calimero side
-2. An attacker with Account ID `attacker.testnet` gets permissions for interaction with Calimero shard. The attacker can get access to Calimero in a number of ways, including but not limited to: shard being public, being regular member of the shard community, social engineering, and information leaking.
-3. The attacker deploys a smart contract on the Near side called `contract.testnet`, this contract is just a random contract with some method that uses gas
-4. The attacker initiates a large number of Cross Shard Calls from the Calimero side to the Near side for a contract `contract.testnet`
-5. 30% of used gas (gas paid by Cross Shard Connector on the Near side) for method execution goes to `contract.testnet` (account under attacker's control) as a developer incentive. [Link to Near gas documentation](https://docs.near.org/concepts/basics/transactions/gas)
+2. **Protecting Privacy in Cross Shard Calls**: The Calimero private sharding solution aims to preserve customer privacy. By managing XSC permissions, you can ensure that public network users (NEAR) cannot access sensitive information stored in contracts on the private shard.
 
-Because of everything described here (and general security guidelines), it is important to set Bridge permissions as strictly as possible
-without losing any needed bridge functionality.
+3. **Avoiding Unnecessary Gas Fees**: Misconfigured permissions can result in paying gas fees on the destination chain (e.g., NEAR) for calls initiated by malicious actors. By setting strict permissions, you can avoid financial harm caused by excessive bridging operations.
 
-:::caution
-Set Bridge permissions as strictly as possible to remove possible attack vectors (described above).
-:::
+It's crucial to consider the motivation of malicious actors who may attempt to deplete connectors' funds on the public side (NEAR). When a bridging operation is called, the connector on the destination side initially pays gas fees for those calls, which are covered by the shard owner. Improperly set permissions can enable malicious actors to initiate a large number of bridging operations, leading to financial harm for the shard owner.
+
+Additionally, there is a risk of a malicious actor gaining control of a small amount of assets through the gas fees paid for malicious Cross Shard Calls. To exploit this, the attacker would need access to the Calimero shard and deploy a smart contract on NEAR that receives a portion of the gas fees. Properly managing bridge permissions helps mitigate such risks.
