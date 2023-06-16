@@ -3,6 +3,31 @@ title: Connectors Overview
 sidebar_position: 1
 ---
 
-The prover enables us to build a set of contracts for transferring assets from one chain to another. Calimero supports transfering Fungible tokens as well as Non Fungible tokens from one chain to another. Also, via the Calimero bridge cross shard calls can be executed.
 
-In next sections we describe how the Fungible, Nonfungible and Cross shard calls connectors work.
+Connectors play a pivotal role in facilitating the transfer of assets between the NEAR network (Mainnet and Testnet) and the Calimero ecosystem. They provide a seamless bridge for transferring fungible tokens (FTs), and non-fungible tokens (NFTs), and executing cross-shard calls between chains. In this overview, we will introduce the three main connectors within the Calimero ecosystem.
+
+## Fungible Connector
+
+The Fungible Connector facilitates the transfer of fungible tokens (FTs) between the public NEAR chain and the Calimero shard. It enables users to lock an FT token on one chain, mint a wrapped version of the token on the other chain, and later burn the wrapped token to unlock the original token.
+
+:::info
+For more information, please refer to the [Fungible Connector](https://docs.calimero.network/bridge/connectors/fungible_token_connector) page.
+:::
+
+## Non-Fungible Connector
+
+The Non-Fungible Connector facilitates the transfer of non-fungible tokens (NFTs) between the public NEAR chain and the Calimero shard. It streamlines the process of locking an NFT on one chain, minting a wrapped version of the token on the other chain, and subsequently burning the wrapped token to unlock the original NFT. 
+
+:::info
+For more information, please refer to the [Non-Fungible Connector] (https://docs.calimero.network/bridge/connectors/non_fungible_token_connector%20copy) page.
+:::
+
+## Cross Shard Calls Connector
+
+The Cross Shard Calls Connector enables the execution of cross-chain calls between the Calimero and NEAR blockchains. It allows users to call methods on one chain's contracts from another chain, enhancing interoperability and enabling seamless interactions between chains. 
+
+:::info
+For more information, please refer to the [Cross Shard Calls Connector](https://docs.calimero.network/bridge/connectors/cross_shard_contract_call_connector) page.
+:::
+
+By leveraging the Fungible Connector, Non-Fungible Connector, and Cross Shard Calls Connector, users can unlock the full potential of asset transfers and cross-chain interactions within the Calimero ecosystem. These connectors serve as the foundation for building powerful applications and enabling seamless interoperability between different chains.
