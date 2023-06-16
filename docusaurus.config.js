@@ -51,12 +51,13 @@ const config = {
     ({
       colorMode: {
         respectPrefersColorScheme: false,
-        disableSwitch: true,
+        disableSwitch: false,
       },
       navbar: {
         logo: {
           alt: "Calimero Logo",
-          src: "img/logo.svg",
+          src: "img/logo1.svg",
+          srcDark: 'img/logo_dark.svg',
         },
         items: [],
       },
