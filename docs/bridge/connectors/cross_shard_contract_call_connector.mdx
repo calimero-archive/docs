@@ -3,19 +3,19 @@ title: Cross Shard Contract Call Connector
 sidebar_position: 4
 ---
 
-Via the Calimero bridge, cross shard calls can be executed with a callback. Meaning that a contract on Calimero can call into contracts on NEAR and get a callback. Also, contracts on NEAR can call into Calimero contracts and get a callback.
+The Cross Shard Contract Call Connector facilitates cross-shard calls with callbacks through the Calimero bridge. This means that contracts on Calimero can call contracts on NEAR and receive callbacks, and vice versa.
 
-For installing the bridge and all the prerequisties take a look on the section [Running a Bridge](https://docs.calimero.network/bridge/running_a_bridge)
+To install the bridge and fulfill its prerequisites, refer to the [Running a Bridge](https://docs.calimero.network/bridge/running_a_bridge) section.
 
-In this description we assume that a bridge between NEAR Testnet and a Calimero shard are set up.
+Assuming that a bridge between NEAR Testnet and a Calimero shard is set up, follow the steps below to utilize the Cross Shard Contract Call Connector:
 
-# Setting up the xsc_connectors
+## Setting up the xsc_connectors
 
-On the xsc_connector, the owner of the contract needs to set the locker account, which is the xsc_connector contract on the other chain. This info is used to check when proving that a transaction/receipt happend on the other network, that it happened on the corresponding xsc_connector contract.
+On the `xsc_connector`, the contract owner must set the locker account, which corresponds to the `xsc_connector` contract on the other chain. This information is necessary for verifying transactions/receipts that occurred on the other network and ensuring they are associated with the appropriate `xsc_connector` contract.
 
-# Executing a cross shard contract call
+## Executing a cross-shard contract call
 
-In order to execute a call into a contract on another chain, the DAPP needs to make a `cross_call` call on the xsc_connector (shorthand for cross shard connector contract). This is the method on the xsc_connector that needs to be called:
+To execute a call into a contract on another chain, the DApp needs to invoke the `cross_call` method on the `xsc_connector` (shorthand for cross-shard connector contract). Here's the method signature:
 
 ```rust
 pub fn cross_call(
@@ -29,23 +29,23 @@ pub fn cross_call(
 ) 
 ```
 
-`destination_contract_id` is the contract id on the other chain that we intend to make a call on
-`destination_contract_method` is the method we intend to call
-`destination_contract_args` arguments provided to the method, it needs to be a serialized json
-`destination_gas` amount of gas willing to spend on the other network
-`destination_deposit` deposit amount on destination contract
-`source_callback_method` name of the callback method inside the contract from where the cross call is originating
+- `destination_contract_id`: The contract ID on the other chain where the call is intended.
+- `destination_contract_method`: The method to be called on the destination contract.
+- `destination_contract_args`: The arguments provided to the method in serialized JSON format.
+- `destination_gas`: The amount of gas allocated for the call on the other network.
+- `destination_deposit`: The deposit amount for the destination contract.
+- `source_callback_method`: The name of the callback method inside the contract from which the cross-call originates.
 
-When executed, the cross_call will emit a `CALIMERO_EVENT_CROSS_CALL` with all the given input params appended onto the event.
+When the `cross_call` is executed, it emits a `CALIMERO_EVENT_CROSS_CALL` event with all the given input parameters appended to the event.
 
-Once the event is emitted, the indexer will detect this event and populate the message queue. The relayer and the bridge service are subsribed to the message queue to Calimero specific events. Simultaneously, both components receive this event from the message queue. The relayer sends a block from the source chain to the light client contract on the destination chain with the latest light client block. While the bridge service fetches the RPC for the `EXPERIMENTAL_light_client_proof`, it also asks the light client contract for the latest block height it has. With the proof data and the block height it will call the xsc_connector on the other network. Specifically it will call the `cross_call_execute` method. If proven that a cross_call was initiated on the other network, the xsc_connector will execute the given method on the contract on the other chain.
+After the event is emitted, the indexer detects it and populates the message queue. Both the relayer and the bridge service subscribe to Calimero-specific events in the message queue. Simultaneously, both components receive this event from the message queue. The relayer sends a block from the source chain to the light client contract on the destination chain, along with the latest light client block. Meanwhile, the bridge service fetches the RPC for the `EXPERIMENTAL_light_client_proof` and obtains the latest block height from the light client contract. Using the proof data and the block height, the bridge service calls the `xsc_connector` on the other network, specifically the `cross_call_execute` method. If it can be proven that a `cross_call` was initiated on the other network, the `xsc_connector` executes the specified method on the contract on the other chain.
 
-# Callback execution
+## Callback execution
 
-Once the `cross_call_execute` method executed the call on the contract on the other chain a `CALIMERO_EVENT_CROSS_RESPONSE` event will be emitted on that chain.
+Once the `cross_call_execute` method executes the call on the contract on the other chain, a `CALIMERO_EVENT_CROSS_RESPONSE` event is emitted on that chain.
 
-The params appended to the event are the `source_contract_id`, the `source_contract_method` and the `execution_result` that is base64 encoded.
+The event contains the following appended parameters: `source_contract_id`, `source_contract_method`, and the base64-encoded `execution_result`.
 
-Through the bridge service this event will be proven on the originating chain, and the callback arguments are provided to the original smart contract that initiated the cross call.
+Through the bridge service, this event is verified on the originating chain, and the callback arguments are provided to the original smart contract that initiated the cross-call.
 
-With this we have a full circle closed, a contract on chain A called into a contract method on chain B and got a callback with the result from executing the contract method on chain B back on chain A.
+With this process, a full circle is completed: a contract on Chain A calls a method on a contract on Chain B, receives a callback with the result from executing the contract method on Chain B, and brings the result back to Chain A.

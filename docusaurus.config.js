@@ -51,14 +51,20 @@ const config = {
     ({
       colorMode: {
         respectPrefersColorScheme: false,
-        disableSwitch: true,
+        disableSwitch: false,
       },
       navbar: {
         logo: {
           alt: "Calimero Logo",
-          src: "img/logo.svg",
+          src: "img/logo1.svg",
+          srcDark: 'img/logo_dark.svg',
         },
         items: [],
+      },
+      algolia: {
+        appId: 'E4LW6HBI8N',
+        apiKey: '659d02800901a93e6214876d98883225',
+        indexName: 'dev_cal'
       },
       footer: {
         style: "dark",
