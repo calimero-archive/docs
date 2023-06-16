@@ -52,6 +52,7 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: false,
         disableSwitch: false,
+        defaultMode: 'dark',
       },
       navbar: {
         logo: {
