@@ -9,26 +9,30 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #aa70f5;
+  --ifm-color-primary: #6941C6;
   --ifm-color-primary-dark: #a05ff4;
   --ifm-color-primary-darker: #9e5cf4;
   --ifm-color-primary-darkest: #9e5cf4;
   --ifm-color-primary-light: #be91f7;
+  --ifm-link-colr: #6941C6;
   --ifm-color-primary-lighter: #c8a2f9;
   --ifm-color-primary-lightest: #e6d4fc;
   --ifm-font-color-base: #d9d9d9;
-  --ifm-background-color: #171616;
-  --ifm-background-surface-color: #1E1E1E;
+  --ifm-background-color: #fdfdfe;
+  --ifm-background-surface-color: #fdfdfe;
   --ifm-code-font-size: 110%;
+  --ifm-font-color-base: #000;
   --ifm-font-family-base: 'Inter';
 }
 
+/*
 .menu .menu__link {
   color: #b3b1b1;
 }
+*/
 
 .menu .menu__link--active {
-  color: #df76ff;
+  color: #6941C6;
   background-color: #4200741c;
   font-weight: bold;
 }
@@ -48,7 +52,6 @@ code,
 pre {
   font-family: 'JetBrains Mono';
   font-size: 14px;
-  background-color: #160f1c;
 }
 
 p {
@@ -105,5 +108,6 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   --ifm-tabs-color-active: #ffff00;
   --ifm-background-surface-color: #4c4b4b;
   --ifm-code-font-size: 110%;
+  --ifm-font-color-base: #ffffff;
   --ifm-font-family-base: 'Inter';
 }
