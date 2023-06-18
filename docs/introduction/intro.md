@@ -6,7 +6,7 @@ slug: /
 
 # Introduction to Calimero
 
-Calimero is a private shard infrastructure solution which allows you to protect your data while leveraging all the business benefits of open-source blockchains.
+Calimero is a private shard infrastructure solution that allows you to protect your data while leveraging all the business benefits of open-source blockchains.
 
 ## New to Calimero?
 
@@ -21,9 +21,9 @@ Refer to our _Console_ documentation to set up and run your Calimero private sha
 Or go through the [Calimero tutorials](/) to learn how to:
 
 - [How to deploy a voting smart contract Dapp](/docs/tutorial/voting-tutoral.md)
-- [How to bridge FT contract](/docs/tutorial/bridging-ft-token)
+- [How to bridge FT tokens from NEAR to Calimero](/docs/tutorial/bridging-ft-token.md)
 - [Coming Soon - How to bridge NFT contract](/)
-- [Coming Soon - How to bridge cross shard contract](/)
+- [Coming Soon - How to bridge cross-shard contract](/)
 
 ## Continue learning
 
