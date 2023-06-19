@@ -1,5 +1,5 @@
 ---
-title: Bridging Fungible Tokens from NEAR to Calimero Shard
+title: How to bridge FT tokens from NEAR to Calimero
 sidebar_position: 2
 ---
 
