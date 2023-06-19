@@ -3,87 +3,109 @@ title: Using the NEAR CLI
 sidebar_position: 2
 ---
 
-Calimero works with all the NEAR tooling including the NEAR CLI. 
+Calimero works seamlessly with all NEAR tooling, including the NEAR CLI. To get started, follow these steps:
 
-You can install the NEAR CLI using: 
+## Installation
 
-```
+Install the NEAR CLI by running the following command:
+
+```bash
 npm install -g near-cli
 ```
 
-You can always check your current version by running:
+To verify the installation and check the current version, use the following command:
 
-```
-near --version  # version info appears on the last line of output
+```bash
+near --version
 ```
 
-:::tip
-All methods from NEAR CLI are compatible with Calimero Private Shards and the documentation can be found on the official NEAR docs: https://docs.near.org/tools/near-cli.
-:::
+You can find detailed documentation on using the NEAR CLI with Calimero Private Shards on the official NEAR docs: [https://docs.near.org/tools/near-cli](https://docs.near.org/tools/near-cli).
 
 ## Requirements
 
-To use NEAR CLI with Calimero you will need to:
-- generate an Authentication token on the Security page inside the Calimero Console
-- set the custom RPC endpoint for the CLI tool to use from your Dashboard
-- set the API token for the CLI to use
+To use the NEAR CLI with Calimero, you need to meet the following requirements:
+
+- Generate an authentication token on the Security page inside the Calimero Console.
+- Set the custom RPC endpoint for the CLI tool to use from your Dashboard.
+- Set the API token for the CLI to use.
 
 ## Set up the NEAR CLI to access the Shard via CLI
 
-To interact with Calimero shard using `near-cli`, you need to set the token value using **near set-api-key** command. 
+To interact with the Calimero shard using `near-cli`, you need to set the token value using the `near set-api-key` command. Run the following command, replacing `<AUTH_TOKEN>` with your token value:
 
-```
- near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>   
-```
-Replace **<AUTH_TOKEN>** with your token value 
-
-:::note
-The https://rpc.testnet.near.org value is currently ignored by the CLI. However, this issue is fixed and will be released in the next version of the CLI.
-:::
-
-To verify, run the following command
-
-```
-near state <MAIN_ACCOUNT_ID> --nodeUrl https://api.calimero.network/api/v1/shards/<SHARD_ID>/neard-rpc/ --networkId <SHARD_ID>
+```bash
+near set-api-key https://rpc.testnet.near.org <AUTH_TOKEN>
 ```
 
-- Replace **<MAIN_ACCOUNT_ID>** with your shard name + the suffix **calimero.testnet** (`SHARD_NAME.calimero.testnet`)
-- Replace **<SHARD_ID>** with your shard name + the suffix **calimero-testnet** (`SHARD_NAME-calimero-testnet`)
-- Replace the **<SHARD_ID>** in the URL
+Please note that the value `https://rpc.testnet.near.org` is currently ignored by the CLI. However, this issue will be fixed and released in the next version of the CLI.
+
+### Verify the NEAR state
+
+To verify the setup, first set your variables:
+
+```bash
+export MAIN_ACCOUNT_ID="<YOUR_MAIN_ACCOUNT_ID>"
+export SHARD_RPC_URL="<YOUR_SHARD_RPC_URL>"
+export SHARD_ID="<YOUR_SHARD_ID>"
+```
+
+Replace `<YOUR_MAIN_ACCOUNT_ID>` with your actual main account ID on the Calimero shard.
+Replace `<YOUR_SHARD_RPC_URL>` with the URL of the shard's RPC node.
+Replace `<YOUR_SHARD_ID>` with the ID of your Calimero shard.
+
+After exporting these parameters, you can use them in the `near state` command as follows:
+
+```bash
+near state $MAIN_ACCOUNT_ID.calimero.testnet --nodeUrl $SHARD_RPC_URL --networkId $SHARD_ID-calimero-testnet
+```
 
 Here is an example:
 
-```
+```bash
 near state demo.calimero.testnet --nodeUrl https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet
 ```
 
 ## Interacting with the RPC Server URL
 
-The RPC server allows you to communicate directly with the NEAR network. 
+The RPC server allows direct communication with the NEAR network. By default, the NEAR CLI sends requests to the testnet at [https://rpc.testnet.near.org](https://rpc.testnet.near.org).
 
-By default NEAR CLI is sending requests to the testnet [https://rpc.testnet.near.org](https://rpc.testnet.near.org). 
+To interact with the Calimero shard, you need to use the URL of the shard's RPC node: [https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/](https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/).
 
-However, to interact with the shard the user needs to put the URL of the shard RPC node [https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/](https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/)
+### Options
 
-## Options
-Run `near --help` to see all options
+You can run `near --help` to see all available options.
 
-Usage: `near <command> [options]`
+### Alias
 
-## Alias
-To minimize repetitive typing, a shell alias can be defined for using the NEAR CLI with Calimero.
-Here is one suggestion on how to define it for `zsh`:
+To simplify the usage of the NEAR CLI with Calimero, you can define a shell alias. Here's an example for defining an alias in `zsh`:
+
+First, set your variables:
+
+```bash
+export SHARD_RPC_URL="<YOUR_SHARD_RPC_URL>"
+export SHARD_ID="<YOUR_SHARD_ID>"
 ```
+
+Replace `<YOUR_SHARD_RPC_URL>`
+
+ with the RPC URL of your Calimero shard.
+Replace `<YOUR_SHARD_ID>` with your shard name.
+
+Run the command:
+
+```bash
 alias calimero='calimero_wrapper() {
     local command="$1";
     local max_gas="300000000000000";
-    local node_url="<RPC_URL>";
-    local network_id="<SHARD_ID>";
+    local node_url=$SHARD_RPC_URL";
+    local network_id="$SHARD_ID";
     local args=();
 
     if [[ "$command" == "call" ]]; then
-    	args=("$@");
-        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$network_id";
+        args=("$@");
+        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId
+
+ "$network_id";
     else
         args=("$@");
         near "${args[@]}" --nodeUrl "$node_url" --networkId "$network_id";
@@ -91,26 +113,43 @@ alias calimero='calimero_wrapper() {
 }; calimero_wrapper'
 ```
 
-Using the values from this article:
-```
-alias calimero='calimero_wrapper() {
-    local command="$1";
-    local max_gas="300000000000000";
-    local node_url="https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/";
-    local network_id="demo-calimero-testnet";
-    local args=();
+With the alias defined, you can now use the NEAR CLI with Calimero. For example:
 
-    if [[ "$command" == "call" ]]; then
-    	args=("$@");
-        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$network_id";
-    else
-        args=("$@");
-        near "${args[@]}" --nodeUrl "$node_url" --networkId "$network_id";
-    fi
-}; calimero_wrapper'
+```bash
+calimero state demo.calimero.testnet
 ```
 
-Here's the previous example, but this time using the alias:
+Feel free to adjust the alias according to your preferences and requirements.
+
+By following these steps, you can install the NEAR CLI, set up the necessary configuration, and interact with the Calimero shard using the NEAR CLI tool.
+
+
+
+
+
+
+
+
+
+
+
+
+Apologies for the confusion. Here are the parameters that you can export:
+
+```bash
+export MAIN_ACCOUNT_ID="<YOUR_MAIN_ACCOUNT_ID>"
+export SHARD_RPC_URL="<YOUR_SHARD_RPC_URL>"
+export SHARD_ID="<YOUR_SHARD_ID>"
 ```
-$ calimero state demo.calimero.testnet
+
+Replace `<YOUR_MAIN_ACCOUNT_ID>` with your actual main account ID on the Calimero shard.
+Replace `<YOUR_SHARD_RPC_URL>` with the URL of the shard's RPC node.
+Replace `<YOUR_SHARD_ID>` with the ID of your Calimero shard.
+
+After exporting these parameters, you can use them in the `near state` command as follows:
+
+```bash
+near state $MAIN_ACCOUNT_ID --nodeUrl $SHARD_RPC_URL --networkId $SHARD_ID
 ```
+
+By exporting these parameters, you can easily modify and reuse them in your terminal session or scripts.
