@@ -74,12 +74,40 @@ Usage: `near <command> [options]`
 To minimize repetitive typing, a shell alias can be defined for using the NEAR CLI with Calimero.
 Here is one suggestion on how to define it for `zsh`:
 ```
-alias calimero='(){near ${@:1} --nodeUrl <RPC_URL> --networkId <SHARD_ID>;}'
+alias calimero='calimero_wrapper() {
+    local command="$1";
+    local max_gas="300000000000000";
+    local node_url="<RPC_URL>";
+    local network_id="<SHARD_ID>";
+    local args=();
+
+    if [[ "$command" == "call" ]]; then
+    	args=("$@");
+        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$network_id";
+    else
+        args=("$@");
+        near "${args[@]}" --nodeUrl "$node_url" --networkId "$network_id";
+    fi
+}; calimero_wrapper'
 ```
 
 Using the values from this article:
 ```
-alias calimero='(){near ${@:1} --nodeUrl https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/ --networkId demo-calimero-testnet;}'
+alias calimero='calimero_wrapper() {
+    local command="$1";
+    local max_gas="300000000000000";
+    local node_url="https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/";
+    local network_id="demo-calimero-testnet";
+    local args=();
+
+    if [[ "$command" == "call" ]]; then
+    	args=("$@");
+        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$network_id";
+    else
+        args=("$@");
+        near "${args[@]}" --nodeUrl "$node_url" --networkId "$network_id";
+    fi
+}; calimero_wrapper'
 ```
 
 Here's the previous example, but this time using the alias:

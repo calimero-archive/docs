@@ -47,7 +47,19 @@ Wrapped or bridged NFTs are named using the same method as Fungible Tokens (FTs)
 To simplify commands on the Calimero side, you can create a Calimero alias. Run the following command, replacing `dev` with `staging` for staging environments or removing it for production:
 
 ```bash
-alias calimero='function x() { near ${@:2} --nodeUrl https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc --networkId $1;} ; x'
+alias calimero='calimero_wrapper() {
+    local command="$2";
+    local max_gas="300000000000000";
+    local node_url="https://api.dev.calimero.network/api/v1/shards/$1/neard-rpc/";
+    local args=();
+    if [[ "$command" == "call" ]]; then
+    	args=("${@:2}");
+        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$1";
+    else
+        args=("${@:2}");
+        near "${args[@]}" --nodeUrl "$node_url" --networkId "$1";
+    fi
+}; calimero_wrapper'
 ```
 
 ## Bridging NFTs from Calimero to NEAR
