@@ -3,24 +3,16 @@ title: Prerequisite for using the bridge
 sidebar_position: 1
 ---
 
+Before utilizing the bridge for token transfers and cross-shard calls, there are certain prerequisites that need to be fulfilled. Here are the necessary requirements:
 
-1. A Calimero shard needs to be running (in case you want to spin up your own Calimero shard send an [email](mailto:info@calimero.network) or [fill out this form](https://www.calimero.network/contact))
-2. All contracts need to be deployed on both NEAR and Calimero
-3. Relayer from Near to Calimero and a relayer from Calimero to Near need to be running
-4. Bridge service that monitors events in realtime on both Near and Calimero need to be running
+1. **Running Calimero Shard**: Ensure that a Calimero shard is up and running. If you wish to set up your own Calimero shard, you can contact us via [email](mailto:info@calimero.network) or by filling out the [contact form](https://www.calimero.network/contact).
 
-### Prerequisites for bridging FTs/NFTs
+2. **Deployment of Contracts**: Deploy the required contracts on both the NEAR and Calimero chains. These contracts include the light client contract, prover contract, FT connectors, NFT connectors, and cross-shard call connectors.
 
-When an Account is bridging a token (FT or NFT) from the source to the destination chain (for example from Calimero to Near) it should always obtain
-the same Account ID on the destination chain beforehand. Let us show how Bob can lose his tokens if he does not obtain a destination account before bridging.
+3. **Relayers**: Run a relayer from NEAR to Calimero and another relayer from Calimero to NEAR. These relayers are responsible for relaying relevant blocks between the two chains.
 
-Bob has Account ID bob.testnet on the Calimero side and wants to bridge his FTs to the Near side. Bob successfully locks his FTs on the
-FT Connector on the Calimero side. Now Alice observes that Bob is bridging his assets to the Near side and creates bob.testnet Account on
-Near side (Bob did not possess this Account ID on the Near side before bridging). Now Alice gains Bob's bridged FTs and has successfully stolen them. Note that here Alice did not have any information that is not publicly available on Near side, so this problem can not be fixed by properly setting permissions.
-
-If you want to securely bridge assets from the source chain to the destination chain you should **be in possession of the same Account ID on both sides**, and
-if that is not possible for some Account ID you should find another Account ID and obtain that new Account ID on both sides.
+4. **Bridge Service**: The bridge service should be running to monitor events in real-time on both NEAR and Calimero. It ensures the smooth operation of token transfers and cross-shard calls.
 
 :::caution
-When bridging tokens you **MUST** possess the Account ID on the destination side. Assets **CAN** be easily lost if you try to obtain the destination side Account ID after the bridging.
+When bridging tokens, it is **crucial** to possess the Account ID on the destination chain before initiating the bridge. Failure to do so may result in asset loss. Obtain the destination Account ID **prior** to the bridging process.
 :::
