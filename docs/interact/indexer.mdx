@@ -1,94 +1,82 @@
 ---
 title: Indexer API
 sidebar_position: 4
----
 
-### Prerequisites
-You must have an access to the Calimero console to interact with Indexer.
+The Indexer API allows you to interact with the Calimero shard's indexer service to fetch data about accounts, transactions, and other blockchain-related information. Here's a guide on how to use the Indexer API:
 
-### Configuration
+## Prerequisites
+Before using the Indexer API, ensure you have access to the Calimero console.
 
-To be able to call Indexer API you must set few parameters:
-1. Endpoint
-2. Authorization token
+## Configuration
+To make calls to the Indexer API, you need to configure the following parameters:
 
-# Endpoint
-Endpoint is constructed from multiple parts:
-- **networkId**: can be either **testnet** (with suffix: **-calimero-testnet**) or **mainnet** (with suffix:**-calimero**)
-- **shardId**: unique identifier of your shard. Consist of user defined shard name and network suffix. All parts are required.
+### Endpoint
+The API endpoint is constructed using the following parts:
+- `networkId`: This can be either **testnet** (with the suffix: **-calimero-testnet**) or **mainnet** (with the suffix: **-calimero**).
+- `shardId`: This is the unique identifier of your shard and consists of the user-defined shard name and network suffix. All parts are required.
+The endpoint URL is as follows:
+
 ```
 https://api.{{networkId}}.calimero.network/api/v1/shards/{{shardId}}/indexer-graphql/graphql
 ```
-You can find it directly in the [Console](/interact/endpoints).
+You can find the endpoint URL in the [Calimero Console](/interact/endpoints).
 
-### Authorization token
-You must be authorised in order to fetch data. Use existing token or create a new one through the Console UI.
-- Login in Calimero Console.
-- Select the same shard as set in the previous step.
-- Select Security tab from side menu and open Token page.
-- On the Token page find "Create a new token" action and generate a new token.
+### Authorization Token
+Follow the steps provided [here](https://docs.calimero.network/interact/cli#set-up-the-near-cli-to-access-the-shard-via-cli) to generate an auth token for your Calimero shard.
 
-Authorization token must be provided in header:
+The authorization token must be provided in the header of your API request:
+
 ```javascript
 Authorization: {{token}}
 ```
 
-Indexer API schema is available [here](https://github.com/community/community/files/10108266/schema.txt)
+The Indexer API schema is available [here](https://github.com/community/community/files/10108266/schema.txt).
 
-Database structure
+## Example Usage
+Here's an example of how to make a request to the Indexer API using different tools:
 
-![Indexer API DB Image](https://raw.githubusercontent.com/near/near-indexer-for-explorer/master/docs/near-indexer-for-explorer-db.png)
+### Postman
+- **Method:** POST
+- **URL Parameters:**
+  - `networkId`: testnet
+  - `shardId`: test-calimero-testnet (make sure to include the complete shard ID)
 
-### Example:
+  ```
+  https://api.testnet.calimero.network/api/v1/shards/test-calimero-testnet/indexer-graphql/graphql
+  ```
+- **Headers:**
+  - Include the `Authorization` header with the value of the token generated in the previous step.
+- **Body:**
+  - A GraphQL query.
+- **Query:**
+  ```graphql
+  query accounts{
+      allAccounts{
+          totalCount
+      }
+  }
+  ```
+- **Response:**
+  - If the API call is correct, a status 200 will be returned with the response body:
+  ```json
+  {
+      "data": {
+          "allAccounts": {
+              "totalCount": 4
+          }
+      }
+  }
+  ```
 
-**Method:** POST
+### Apollo Studio
+1. Login to [Apollo Studio](https://studio.apollographql.com/) and create a new project.
+2. Open the Explorer and set the following configuration details:
+   - Endpoint URL and authorization token.
+   
+   ![Configuration Details](https://user-images.githubusercontent.com/12198572/214599672-e9103bcc-887c-4d81-b58f-fa76890d7026.png)
 
-**Url parameters**
-networkId: testnet
-shardId: test-calimero-testnet (don’t forget to include complete shard id)
-```
-https://api.testnet.calimero.network/api/v1/shards/test-calimero-testnet/indexer-graphql/graphql
-```
+3. Enter your GraphQL query in the Explorer.
 
-**Headers:**
-Any request to the indexer endpoint must include an `Authorization` header. The value is the token generated in the previous step.
+   ![Query](https://user-images.githubusercontent.com/12198572/214597050-4038db18-bc73-4014-b88b-5e13903fc685.png)
 
-**Body:**
-A GraphQL query
-
-**Query**
-```graphql
-query accounts{
-    allAccounts{
-        totalCount
-    }
-}
-```
-**Response**
-Status 200 is returned if the API call is correct.
-```json
-{
-    "data": {
-        "allAccounts": {
-            "totalCount": 4
-        }
-    }
-}
-```
-
-**Postman**
-<img width="955" alt="Example-indexer-api" src="https://user-images.githubusercontent.com/12198572/204392731-2b682032-ac4b-42b2-94a4-f6f79ee1b8dd.png"/>
-
-<br/><br/>
-
-**Apollo Studio**
-
-Login to https://studio.apollographql.com/ and create a new project.
-Open Explorer and set configuration details as mentioned above:
-- endpoint and authorization token
-
-*** Set Configuration Data ***
-<img width="955" alt="ConfigurationDetails" src="https://user-images.githubusercontent.com/12198572/214599672-e9103bcc-887c-4d81-b58f-fa76890d7026.png"/>
-
-*** Enter Query ***
-<img width="955" alt="Query" src="https://user-images.githubusercontent.com/12198572/214597050-4038db18-bc73-4014-b88b-5e13903fc685.png"/>
+With these examples, you can start using the Indexer API to fetch data from the Calimero shard's indexer service.
