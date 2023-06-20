@@ -14,7 +14,7 @@ npm install -g near-cli
 ```
 
 To verify the installation and check the current version, use the following command:
-
+a
 ```bash
 near --version
 ```
@@ -44,19 +44,17 @@ Please note that the value `https://rpc.testnet.near.org` is currently ignored b
 To verify the setup, first set your variables:
 
 ```bash
-export MAIN_ACCOUNT_ID="<YOUR_MAIN_ACCOUNT_ID>"
 export SHARD_RPC_URL="<YOUR_SHARD_RPC_URL>"
 export SHARD_ID="<YOUR_SHARD_ID>"
 ```
 
-Replace `<YOUR_MAIN_ACCOUNT_ID>` with your actual main account ID on the Calimero shard.
-Replace `<YOUR_SHARD_RPC_URL>` with the URL of the shard's RPC node.
-Replace `<YOUR_SHARD_ID>` with the ID of your Calimero shard.
+Replace `<SHARD_ID>` with your shard name.
+Replace `<SHARD_RPC_URL>` with the URL of the shard's RPC node.
 
 After exporting these parameters, you can use them in the `near state` command as follows:
 
 ```bash
-near state $MAIN_ACCOUNT_ID.calimero.testnet --nodeUrl $SHARD_RPC_URL --networkId $SHARD_ID-calimero-testnet
+near state $SHARD_ID.calimero.testnet --nodeUrl $SHARD_RPC_URL --networkId $SHARD_ID-calimero-testnet
 ```
 
 Here is an example:
@@ -83,15 +81,33 @@ To simplify the usage of the NEAR CLI with Calimero, you can define a shell alia
 alias calimero='calimero_wrapper() {
     local command="$1";
     local max_gas="300000000000000";
-    local node_url=SHARD_RPC_URL";
-    local network_id="SHARD_ID";
+    local node_url="<RPC_URL>";
+    local network_id="<SHARD_ID>";
     local args=();
 
     if [[ "$command" == "call" ]]; then
         args=("$@");
-        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId
+        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$network_id";
+    else
+        args=("$@");
+        near "${args[@]}" --nodeUrl "$node_url" --networkId "$network_id";
+    fi
+}; calimero_wrapper'
+```
 
- "$network_id";
+Using the values from this article:
+
+```bash
+alias calimero='calimero_wrapper() {
+    local command="$1";
+    local max_gas="300000000000000";
+    local node_url="https://api.calimero.network/api/v1/shards/demo-calimero-testnet/neard-rpc/";
+    local network_id="demo-calimero-testnet";
+    local args=();
+
+    if [[ "$command" == "call" ]]; then
+        args=("$@");
+        near "${args[@]}" --gas $max_gas --nodeUrl "$node_url" --networkId "$network_id";
     else
         args=("$@");
         near "${args[@]}" --nodeUrl "$node_url" --networkId "$network_id";
