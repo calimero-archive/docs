@@ -5,6 +5,8 @@ sidebar_position: 1
 
 This tutorial will guide you through the process of deploying a voting smart contract Dapp on the Calimero network.
 
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/cP26c9Da4CA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
 ## Prerequisite
 
 Before you begin, ensure that you have the following prerequisites in place:
