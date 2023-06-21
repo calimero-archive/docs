@@ -7,7 +7,7 @@ The KV (key-value) pair oracle is a Calimero application that allows you to set 
 
 ## Installation
 
-To install Oracle:
+To install an oracle:
 
 1. From the [Console](https://app.calimero.network/dashboard), click on **Marketplace**.
 
