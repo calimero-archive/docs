@@ -5,7 +5,7 @@ sidebar_position: 2
 
 This tutorial will guide you through the process of bridging fungible tokens from the NEAR Testnet to Calimero and withdrawing the tokens back to the NEAR Testnet.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/l-ekSlLTsOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div align="center"><iframe width="560" height="315"  src="https://www.youtube.com/embed/l-ekSlLTsOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 
 ## Prerequisites
 Before you get started, make sure you have the following:
