@@ -19,7 +19,7 @@ To interact with the Calimero SDK, the DApp is developed using Next.js and relie
 
 For first-time sign-ins:
 
-- The sync API is called within the Calimero console wallet API service
+- The sync API is called from the wallet. Here is the flow: **Dapp -> Wallet -> Calimero Console -> Calimero gateway -> Calimero wallet service**
 
 - The wallet API service communicates with the wallet API web service, which in turn executes calls to the RPC endpoint, creating the account associated with the sign-in
 
