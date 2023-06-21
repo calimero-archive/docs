@@ -7,29 +7,28 @@ The KV (key-value) pair oracle is a Calimero application that allows you to set 
 
 ## Installation
 
-To install the oracle:
+To install Oracle:
 
-1. Go to the [Console](https://app.calimero.network/dashboard).
-2. Click on **Marketplace**.
+1. From the [Console](https://app.calimero.network/dashboard), click on **Marketplace**.
 
 <img src={require('@site/static/img/marketplace_oracle.png').default} />
 
-3. Select **Key Value Oracle** from the list.
-4. Enter the name of the contract and click **Install**.
-5. Wait for the installation to complete.
+2. Select **Key Value Oracle** from the available options
+3. Click on the install button to initiate the installation process. Patiently wait for the deployment and initialization to complete.
 
-The contract will be deployed and initialized at the chosen address. The KV Oracle will be listed in the **Oracles** section of the console.
+<img width="1151" alt="Screenshot 2023-06-21 at 10 11 22" src="https://github.com/calimero-is-near/docs/assets/39309699/289e0527-fa3c-4f90-be7d-41f8510732c5"/>
+
+Once installed, access the Oracle section within the Calimero Console. The KV Oracle will be listed in the **Oracles** section of the console.
 
 <img src={require('@site/static/img/oracle_list.png').default} />
 
-
 ## Updating Contract Values
 
-Once a KV Oracle is installed in the shard, you can start storing key-value pairs in the contract. To do this, you need to send a POST request to the endpoint displayed in the oracle details page.
+Once a KV Oracle is installed in the shard, you can start storing key-value pairs in the contract. To do this, you need to send a POST request to the endpoint displayed on the Oracles details page.
 
 To access this page:
 
-1. Go to the **Oracles** section.
+1. From the [Console](https://app.calimero.network/dashboard), click on **Oracles**.
 2. Select the desired oracle.
 
 <img src={require('@site/static/img/oracle_detail.png').default} />
@@ -48,9 +47,7 @@ This will store or update the new key-value in the contract.
 
 ## Accessing Oracle data
 
-After storing key-value pairs in a KV Oracle contract, you can access these values from other contracts within the same shard. To achieve this, you can utilize the `get_value` function provided by the KV Oracle contract.
-
-Here's a step-by-step guide on how to access key-value pairs within the shard from other contracts:
+After storing key-value pairs in a KV Oracle contract, you can access these values from other contracts within the same shard. To achieve this, you can utilize the `get_value` function provided by the KV Oracle contract, as described in the code below:
 
 1. In your contract code, import the necessary dependencies for interacting with the KV Oracle contract:
 
