@@ -14,7 +14,7 @@ To install Oracle:
 <img src={require('@site/static/img/marketplace_oracle.png').default} />
 
 2. Select **Key Value Oracle** from the available options
-3. Click on the install button to initiate the installation process. Patiently wait for the deployment and initialization to complete.
+3. Click on the **Install** button to initiate the installation process. Patiently wait for the deployment and initialization to complete.
 
 <img width="1151" alt="Screenshot 2023-06-21 at 10 11 22" src="https://github.com/calimero-is-near/docs/assets/39309699/289e0527-fa3c-4f90-be7d-41f8510732c5"/>
 
