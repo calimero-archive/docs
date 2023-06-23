@@ -95,7 +95,7 @@ near deploy \
   --initFunction new --initArgs {} \
   --wasmFile target/wasm32-unknown-unknown/release/tic_tac_toe.wasm \
   --nodeUrl "https://api.calimero.network/api/v1/shards/$shard_id-calimero-testnet/neard-rpc/" \
-  --networkId "$new-calimero-testnet"
+  --networkId "$shard_id-calimero-testnet"
 ```
 
 2. Set the SHARD_ID environment variable in your command-line interface:
