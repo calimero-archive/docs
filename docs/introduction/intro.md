@@ -22,8 +22,7 @@ Or go through the [Calimero tutorials](/) to learn how to:
 
 - [How to deploy a voting smart contract Dapp](/docs/tutorial/voting-tutoral.md)
 - [How to bridge FT tokens from NEAR to Calimero](/docs/tutorial/bridging-ft-token.md)
-- [Coming Soon - How to bridge NFT contract](/)
-- [Coming Soon - How to bridge cross-shard contract](/)
+- [Coming Soon - How to bridge cross-shard contract](/docs/tutorial/tic-tac-toe.mdx)
 
 ## Continue learning
 
