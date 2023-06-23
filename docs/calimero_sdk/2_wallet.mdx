@@ -2,7 +2,8 @@
 title: Wallet SDK
 sidebar_position: 2
 ---
-The SDK enables the DApp to connect to a private shard through the NEAR wallet.
+
+The Wallet SDK enables your DApp to connect to Calimero's private shard through the NEAR wallet. Follow the steps below to interact with the Calimero SDK and integrate it into your project.
 
 ## Interacting with the SDK
 
@@ -10,24 +11,25 @@ To interact with the Calimero SDK, the DApp is developed using Next.js and relie
 
 ## Initialize the SDK
 
-- To initialize the Calimero SDK, the authentication token obtained from the Calimero console is inputted, along with the RPC endpoint. 
+- To initialize the Calimero SDK, the authentication token obtained from the Calimero console is inputted, along with the RPC endpoint
 
-- The DApp then invokes functions like `requestSignIn` or `requestSignTransaction`, which redirect users to the NEAR wallet for approval. 
+- The DApp then invokes functions like `requestSignIn` or `requestSignTransaction`, which redirect users to the NEAR wallet for approval 
 
-- Upon approval of the requested action, such as sign-in, the connection to the Calimero shard is established.
+- Upon approval of the requested action, such as sign-in, the connection to the Calimero shard is established
 
 For first-time sign-ins:
 
-- The sync API is called within the Calimero console wallet API service. 
+- The sync API is called from the wallet. Here is the flow: **Dapp -> Wallet -> Calimero Console -> Calimero gateway -> Calimero wallet service**
 
-- The wallet API service communicates with the wallet API web service, which in turn executes calls to the RPC endpoint, creating the account associated with the sign-in. 
+- The wallet API service communicates with the wallet API web service, which in turn executes calls to the RPC endpoint, creating the account associated with the sign-in
 
-- Upon successful synchronization and sign-in, a function key is returned, enabling the DApp to access contract calls and other available functions through the walletConnection object from the `near-api-js` package.
+- Upon successful synchronization and sign-in, a function key is returned, enabling the DApp to access contract calls and other available functions through the walletConnection object from the `near-api-js` package
 
 
 ![](../../static/img/sdk.png)
 
-Once installed you will need to use the `Calimero.isSignedIn()` method to check if user has authorized with Calimero. In the example we render a Login button for the user to click on.
+## Example Usage
+Once you have installed the Calimero SDK, you can use the provided methods to interact with the SDK. The `Calimero.isSignedIn()` method is used to check if auser has authorized with Calimero. In the example, we render a Login button for the user to click on.
 
 ```js
 import React from 'react';
