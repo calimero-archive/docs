@@ -22,7 +22,7 @@ Or go through the [Calimero tutorials](/) to learn how to:
 
 - [How to deploy a voting smart contract Dapp](/docs/tutorial/voting-tutoral.md)
 - [How to bridge FT tokens from NEAR to Calimero](/docs/tutorial/bridging-ft-token.md)
-- [How to build a dApp Tic Tac Toe game on Calimero](/docs/tutorial/tic-tac-toe.mdx)
+- [How to build a Tic Tac Toe game on Calimero](/docs/tutorial/tic-tac-toe.mdx)
 
 ## Continue learning
 
