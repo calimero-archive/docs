@@ -1,6 +1,6 @@
 ---
 title: How to bridge FT tokens from NEAR to Calimero
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 This tutorial will guide you through the process of bridging fungible tokens from the NEAR Testnet to Calimero and withdrawing the tokens back to the NEAR Testnet.
