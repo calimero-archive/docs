@@ -54,6 +54,8 @@ const config = {
         disableSwitch: false,
         defaultMode: 'dark',
       },
+      metadata: [{name: 'calimero', image: 'img/logo_calimero.jpeg'}],
+      image: 'img/logo_calimero.jpeg',
       navbar: {
         logo: {
           alt: "Calimero Logo",
