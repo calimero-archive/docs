@@ -9,7 +9,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/logo_calimero.jpeg",
+  favicon: "img/docs_og.jpg",
   organizationName: "calimero-is-near", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
 
