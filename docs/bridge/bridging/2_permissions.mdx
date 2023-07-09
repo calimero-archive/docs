@@ -36,9 +36,7 @@ XSC permissions consist of two parts: an account allow list (similar to FT and N
 - Additionally, the account-contract pair should not match any deny regex rule pair to be allowed to make a cross-shard call.
 
 For example, let's consider the following rules:
-- Allow list: [`.*apple.*
-
-`, `.*banana.*`] (any account containing `apple` or `banana`)
+- Allow list: [`.*apple.*`, `.*banana.*`] (any account containing `apple` or `banana`)
 - Deny list (pairs of contract regex rule and account regex rule): [(`.*secret.*`, `.*`)] (no account can call any smart contract with `secret` in its name)
 
 Now, let's examine some XSC examples:

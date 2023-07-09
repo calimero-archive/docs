@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
 sidebar_label: Quick Start
+description: Calimero private shard provides security and scalability for your business needs
 slug: /
+image: https://github.com/calimero-is-near/docs/assets/39309699/701bb5e3-fb3e-42b6-8600-4d54e12decd2
 ---
 
 # Introduction to Calimero
