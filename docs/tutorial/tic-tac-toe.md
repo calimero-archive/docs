@@ -5,6 +5,8 @@ sidebar_position: 1
 
 This beginner tutorial will guide you through the process of creating a Tic Tac Toe decentralized application (dApp) using the Calimero network. You'll learn how to set up your environment, build a smart contract, deploy it to the Calimero shard, and interact with the dApp.
 
+<div align="center"><iframe width="560" height="315"  src="https://www.youtube.com/embed/bq7mZ96OJcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
 ## Prerequisites
 
 Before you begin, make sure you have the following prerequisites:
