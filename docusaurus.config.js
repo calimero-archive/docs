@@ -82,7 +82,7 @@ module.exports = {
       additionalLanguages: ['rust', 'java', 'python', 'ruby', 'go', 'toml'],
     },
     hotjar: {
-      applicationId: 'YOUR_HOTJAR_SITE_ID'// Replace this with your actual Hotjar Site ID
+      applicationId: '3582573'// Replace this with your actual Hotjar Site ID
     },
   },
 };
