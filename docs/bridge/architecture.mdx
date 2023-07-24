@@ -37,13 +37,13 @@ The Connector Contracts handle the transfer of specific asset types:
 The Archival Node stores all past transactions, typically spanning a longer time period (e.g., a month or week ago). It serves as a historical record of transaction data.
 
 ### Events Indexer
-An Events indexer is a component that scans the blockchain and reads all events on it. If an event is a Calimero event, it is published to the message queue. After that, the relayer and bridge service read the message queue and perform their jobs on those events.
-
-### Relayer
-The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
+An Events indexer is a component that scans the blockchain and reads all events on it. Events are emitted on connectors and serve as triggers for Near <-> Calimero sync/communication. It could be are LOCK, BURN, DEPLOY, CROSS CALL, CROSS RESPONSE If an event is a Calimero event, it is published to the message queue. After that, the relayer and bridge service read the message queue and perform their jobs on those events.
 
 ### Message Queue
 The Message Queue is used for communication between the events indexer on one side and the bridge and relayer service on the other side.
+
+### Relayer
+The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
 
 ### Bridge Service
 The Bridge Service receives the block where a Calimero event occurred (lock, burn, or cross-shard calls related events).
