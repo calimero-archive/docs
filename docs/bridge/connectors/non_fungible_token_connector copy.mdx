@@ -5,52 +5,52 @@ sidebar_position: 3
 
 The Non-Fungible Token Connector consists of four contracts:
 
-- nft_connector
-- bridge_token_deployer
-- bridge_token
-- permissions_manager
+- nft connector
+- bridge token deployer
+- bridge token
+- permissions manager
 
-All of these contracts need to be installed on both chains.
-
-For instructions on installing the bridge and its prerequisites, refer to the [Running a Bridge](https://docs.calimero.network/bridge/running_a_bridge) section.
-
-Assuming a bridge is already set up between NEAR Testnet and a Calimero shard, the following steps explain the process of bridging NFTs between the two networks.
+Once you install the FT connector on the console, the contracts are automatically installed as well.
 
 ## Setting up the NFT Connectors
 
-On the `nft_connector` contract, the contract owner must set the locker account, which represents the `nft_connector` contract on the other chain. This information is used to verify transactions/receipts on the corresponding `nft_connector` contract of the other network.
+:::info
+`nft connector` is automatically set up when the bridge is installed on the console, requiring no additional actions from users. However, here is how it works from a theoretical point.
+:::
+
+On the `nft connector` contract, the contract owner must set the locker account, which represents the `nft_connector` contract on the other chain. This information is used to verify transactions/receipts on the corresponding `nft_connector` contract of the other network.
 
 ## Bridging NFT from NEAR to Calimero (when the original token is on NEAR)
 
 In blockchain terminology, bridging NFTs from NEAR to Calimero involves locking NFTs on NEAR and minting wrapped NFTs (wNFTs) on Calimero.
 
-1. Call `nft_transfer_call` on the NFT contract on NEAR to lock the NFTs on NEAR:
-   - Users/DApps send NFTs to the `nft_connector` contract on NEAR.
+1. Call `nft transfer call` on the NFT contract on NEAR to lock the NFTs on NEAR:
+   - Users/DApps send NFTs to the `nft connector` contract on NEAR.
 
 2. Call NEAR RPC for transaction status:
    - Retrieve the transaction status, including the receipt with the event indicating the lock operation. This receipt will be used to prove the transaction on Calimero.
 
 3. Call the Calimero light client to get the current height:
-   - Ensure that the `current_height` on the light client contract on Calimero is higher than the block height where the NFTs were locked on the source chain.
+   - Ensure that the `current height` on the light client contract on Calimero is higher than the block height where the NFTs were locked on the source chain.
 
 4. Call NEAR RPC for light client proof:
    - Collect all the proof data from the archival node on NEAR required to validate the successful execution of the transaction.
 
-5. Call `mint()` on the Calimero `nft_connector` contract:
+5. Call `mint()` on the Calimero `nft connector` contract:
    - Perform the following steps:
-     - If this is the first time transferring the NFT, deploy the `bridge_token` on Calimero since wNFT does not exist on Calimero yet.
+     - If this is the first time transferring the NFT, deploy the `bridge token` on Calimero since wNFT does not exist on Calimero yet.
      - Prove the outcome using the proof (fails if the proof is invalid), and mint wNFTs on Calimero.
      - Get the metadata for the wNFT on Calimero. If it's empty, fetch the metadata from NEAR and set it on Calimero.
-     - Map the Calimero NFT contract with the NEAR NFT contract using `map_contract` on the NEAR `nft_connector` contract.
+     - Map the Calimero NFT contract with the NEAR NFT contract using `map contract` on the NEAR `nft connector` contract.
      - Congratulations, the wNFTs now exist on Calimero.
 
 ## Bridging back NFT from Calimero to NEAR (burning the wrapped NFT)
 
 In blockchain terminology, bridging back NFTs from Calimero to NEAR involves burning/withdrawing wNFTs on Calimero and unlocking NFTs on NEAR.
 
-1. Call `view_mapping` on the Calimero `nft_connector` contract to get the name of the wNFT, as the transfer initiator may only know the NFT name on NEAR.
+1. Call `view mapping` on the Calimero `nft connector` contract to get the name of the wNFT, as the transfer initiator may only know the NFT name on NEAR.
 
-2. Call `withdraw` on the wNFT (`bridge_token`) on Calimero:
+2. Call `withdraw` on the wNFT (`bridge token`) on Calimero:
    - This transaction needs to be proven to demonstrate that it actually occurred.
    - The method burns the specified token ID of the wNFT on Calimero
 
@@ -58,18 +58,18 @@ In blockchain terminology, bridging back NFTs from Calimero to NEAR involves bur
    - Retrieve the transaction receipt indicating the burn of the specific wNFT with the given token ID and the recipient on the NEAR side.
 
 4. Call the NEAR light client to get the current height:
-   - Ensure that the `current_height` on the NEAR light client is higher than the block height where the wNFTs were withdrawn on the destination chain.
+   - Ensure that the `current height` on the NEAR light client is higher than the block height where the wNFTs were withdrawn on the destination chain.
 
 5. Call the Calimero RPC for the light client proof.
 
-6. Call `unlock()` on the NEAR `nft_connector` contract with the obtained proof and a valid block height:
+6. Call `unlock()` on the NEAR `nft connector` contract with the obtained proof and a valid block height:
    - Prove the outcome, and if successful, unlock the NFT on NEAR.
 
 7. Congratulations, the NFT is now unlocked on the source network.
 
 ## Bridging between Calimero and NEAR when the original asset is on Calimero
 
-If the original asset exists only on Calimero and not on NEAR, bridging it to NEAR will create a wrapped NFT on NEAR. All the steps from the previous two sections apply but in reverse.
+If the original asset exists only on Calimero and not on NEAR, bridging it to NEAR will create a wrapped NFT on NEAR.  All steps from the previous sections apply, but inversely, as the bridge operates in a bidirectional manner.
 
 ## Automatic bridging
 **All of these steps are automated with the Calimero Bridge service**. The users of Calimero private shards do not need to make all the calls manually. Users/DApps only need to make a `nft_transfer_call` when locking NFTs on a chain, and the bridge service will handle the rest, automatically transferring the wrapped asset to the other chain. Similarly, when someone wants to unlock the funds, they simply need to make a `withdraw` call on the NFT contract, and the bridge service will automatically update all the components. If the tokens were burnt on the starting chain, they will be unlocked on the other side.
