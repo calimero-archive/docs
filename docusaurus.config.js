@@ -29,7 +29,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          routeBasePath: '/',
+          routeBasePath: "/",
           // Please change this to your repo.
           editUrl: "https://github.com/calimero-is-near/docs/edit/master",
         },
@@ -37,7 +37,7 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         gtag: {
-          trackingID: 'G-Z9T67N8YSF',
+          trackingID: "G-Z9T67N8YSF",
           anonymizeIP: true,
         },
       },
@@ -48,41 +48,41 @@ module.exports = {
     colorMode: {
       respectPrefersColorScheme: false,
       disableSwitch: false,
-      defaultMode: 'dark',
+      defaultMode: "dark",
     },
     metadata: [
       {
-        name: 'calimero',
-        image: 'img/docs_og.jpg',
+        name: "calimero",
+        image: "img/docs_og.jpg",
       },
     ],
-    image: 'img/docs_og.jpg',
+    image: "img/docs_og.jpg",
     navbar: {
       logo: {
-        alt: 'Calimero Logo',
-        src: 'img/logo1.svg',
-        srcDark: 'img/logo_dark.svg',
+        alt: "Calimero Logo",
+        src: "img/logo1.svg",
+        srcDark: "img/logo_dark.svg",
       },
       items: [],
     },
     algolia: {
-      appId: 'E4LW6HBI8N',
-      apiKey: '659d02800901a93e6214876d98883225',
-      indexName: 'dev_cal',
+      appId: "E4LW6HBI8N",
+      apiKey: "659d02800901a93e6214876d98883225",
+      indexName: "dev_cal",
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         // Add your footer links here
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Calimero Limited.`,
     },
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: require("prism-react-renderer/themes/dracula"),
       additionalLanguages: ['rust', 'java', 'python', 'ruby', 'go', 'toml'],
     },
     hotjar: {
-      applicationId: '3582573'// Replace this with your actual Hotjar Site ID
+      applicationId: "3582573"// Replace this with your actual Hotjar Site ID
     },
   },
 };
