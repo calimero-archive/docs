@@ -7,15 +7,36 @@ This guide provides step-by-step instructions on how to bridge fungible tokens (
 
 ## Bridging FTs from NEAR to Calimero
 
-To bridge FTs from the NEAR Testnet to Calimero, follow these steps:
+To bridge an FT from NEAR Testnet to Calimero, follow these steps:
 
-### Step 1: Lock Tokens on NEAR
+1. Lock the desired NFT by calling a single transaction to transfer it to the FT Connector contract on NEAR. Ensure that you use the `ft_transfer_call` function instead of `ft_transfer` to prevent token loss.
 
-Send the tokens to the `ft_connector` contract on NEAR Testnet in a single transaction that locks the tokens to the FT Connector contract.
+   Here's an example of locking a fungible token on NEAR Testnet:
 
-### Step 2: Token Verification and Minting
+   ```bash
+   near call ft-test.igi.testnet ft_transfer_call --args '{"receiver_id":"ft_connector.cali99.dev.calimero.testnet", "token_id":"0", "msg":""}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+   ```
 
-The bridge service and relayer will verify the token locking on NEAR Testnet and mint wrapped tokens on the Calimero shard.
+2. Once the token is transferred, the bridge service will be notified and attempt to verify the locking of tokens on NEAR. If the verification is successful, a wrapped token representing the FT will be minted on the Calimero shard.
+
+:::warning
+When locking FTs on the source side NFT Connector, you **MUST** use the `ft_transfer_call` function. If you try to use `ft_transfer`, the tokens will be **LOST**.
+:::
+
+## Withdrawing NFTs back to NEAR
+
+To withdraw a bridged NFT from Calimero back to NEAR, follow these steps:
+
+1. Call the `withdraw` function on the bridged token contract deployed on Calimero.
+   - This action will effectively burn the token on Calimero.
+   - The bridge service will be notified of the burn event and attempt to verify it on the NFT Connector contract on NEAR.
+   - If the verification is successful, the tokens will be unlocked and made available on NEAR Testnet.
+
+   Here's an example of withdrawing/burning the NFT token on Calimero:
+
+   ```bash
+   calimero cali99-calimero-testnet call nft-test_igi.nft_deployer.cali99.calimero.testnet withdraw --args '{"token_id":"0"}' --accountId igi.testnet --depositYocto 1 --gas 300000000000000
+   ```
 
 ## Important Considerations
 
