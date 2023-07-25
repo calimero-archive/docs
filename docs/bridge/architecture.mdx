@@ -5,7 +5,7 @@ sidebar_position: 1
 
 ## Overview
 
-The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between the NEAR public network (Testnet or Mainnet) and the Calimero private shard. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
+The Calimero Bridge handles the transfer of various assets, including fungible and non-fungible tokens, between the NEAR public network (Testnet or Mainnet) and Calimero. It also facilitates cross-shard contract calls, enabling interactions between public and private smart contracts.
 
 ## Workflow Diagram
 
@@ -37,13 +37,14 @@ The Connector Contracts handle the transfer of specific asset types:
 The Archival Node stores all past transactions, typically spanning a longer time period (e.g., a month or week ago). It serves as a historical record of transaction data.
 
 ### Events Indexer
-An Events indexer is a component that scans the blockchain and reads all events on it. If an event is a Calimero event, it is published to the message queue. After that, the relayer and bridge service read the message queue and perform their jobs on those events.
-
-### Relayer
-The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
+The Events Indexer is a crucial component that monitors the blockchain, scanning and capturing all emitted events. These events act as triggers for communication between the Near and Calimero platforms. The events include various types such as LOCK, BURN, DEPLOY, CROSS CALL, and CROSS RESPONSE.
+Once an event is identified as a Calimero event, it is then published to a designated message queue. Subsequently, the relayer and bridge services read the message queue, enabling them to perform their respective tasks based on the received events.
 
 ### Message Queue
 The Message Queue is used for communication between the events indexer on one side and the bridge and relayer service on the other side.
+
+### Relayer
+The Relayer consumes messages from the message queue and relays a new light client block header to the opposite side.
 
 ### Bridge Service
 The Bridge Service receives the block where a Calimero event occurred (lock, burn, or cross-shard calls related events).
