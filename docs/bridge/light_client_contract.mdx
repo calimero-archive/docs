@@ -18,18 +18,27 @@ A notable advantage of the Light Client Contract is its ability to efficiently v
 
 ## Head Update Conditions
 
-The Light Client Contract updates its head based on the information from the `LightClientBlockView` if the following conditions are met:
+The Light Client Contract updates its head based on information from the `LightClientBlockView` when the following conditions are met:
 
-- The height of the block is higher than the height of the current head.
-- The epoch of the block is equal to the `epoch_id` or `next_epoch_id` known for the current head.
-- If the epoch of the block is equal to the `next_epoch_id` of the head, then `next_bps` (next block producers) is not None. Additionally, `approvals_after_next` must contain valid signatures on the `approval_message` from the block producers of the corresponding epoch.
-- The signatures present in `approvals_after_next` correspond to more than two-thirds of the total stake.
-- If `next_bps` is not None, `sha256(borsh(next_bps))` corresponds to the `next_bp_hash` in `inner_lite`.
+1. The block's height is higher than the current head's height.
+2. The epoch of the block matches either the `epoch_id` or `next_epoch_id` known for the current head.
 
-## Considerations for Calimero on NEAR Light Client
+This requirement to relay at least one block per epoch is essential because the `Epoch Id` for epoch number X is derived from the hash of the last block of epoch X-2. Additionally, in the current epoch, there is crucial information about the validators for the next epoch.
 
-For the Calimero on the NEAR light client, there is a limitation due to NEAR's transaction gas limit of 300 Tgas per transaction. Since signature verifications are computationally expensive, performing a large number of signature checks (approximately 50) can exceed this limit and cause transaction failures. However, there is good news on the horizon. [NEP364](https://github.com/near/nearcore/issues/7567) is currently in progress, which aims to add `ed25519_verify` as a precompiled function in the NEAR runtime. Once implemented, this precompiled function will allow the efficient verification of up to 100 validator signatures on every relayed block.
+Furthermore, if the epoch of the block is the same as the `next_epoch_id` of the current head, the following additional checks are performed:
+
+1. Ensure that `next_bps` (next block producers) is not None.
+2. Validate that `approvals_after_next` contains valid signatures on the `approval_message` from the block producers of the corresponding epoch.
+3. Confirm that the signatures in `approvals_after_next` represent more than two-thirds of the total stake.
+
+Finally, if `next_bps` is not None, the contract verifies that `sha256(borsh(next_bps))` corresponds to the `next_bp_hash` in `inner_lite`.
+
+## Considerations for Calimero with NEAR Light Client
+
+When using Calimero with the NEAR light client, one limitation arises due to NEAR's transaction gas limit, set at 300 Tgas per transaction. As signature verifications are computationally intensive, conducting a significant number of such checks (approximately 50) may surpass this limit, resulting in transaction failures.
+
+However, there's promising news on the horizon. Work is underway on [NEP364](https://github.com/near/nearcore/issues/7567), aiming to introduce `ed25519_verify` as a precompiled function in the NEAR runtime. Once implemented, this precompiled function will efficiently verify up to 100 validator signatures on each relayed block.
 
 ## Gas Cost Considerations for NEAR on Calimero Light Client
 
-In contrast, the signature verification cost is not a significant concern for the NEAR on the Calimero light client contract. Native Calimero tokens do not have any monetary value, they are just used as a consensus mechanism. The shard creator has the ability to set up the genesis block in such a way that the gas costs are cheaper, ensuring that the signature verification process remains within acceptable limits. This provides flexibility in managing gas costs for signature verification in the context of NEAR on Calimero.
+In contrast, the signature verification cost is not a significant concern for the NEAR on the Calimero light client contract. Native Calimero tokens do not have any monetary value, they are just used as a consensus mechanism. The shard creator enjoys the freedom to configure the genesis block in a manner that optimizes gas costs, potentially making signature verification more affordable. Additionally, as an advantage, gas can even become free, and the default gas limit of 300 Tgas can be increased if needed. This provides flexibility in managing gas costs for signature verification in the context of NEAR on Calimero.
