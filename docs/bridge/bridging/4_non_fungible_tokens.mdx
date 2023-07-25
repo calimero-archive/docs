@@ -19,7 +19,7 @@ To bridge an NFT from NEAR Testnet to Calimero, follow these steps:
 
 2. Once the token is transferred, the bridge service will be notified and attempt to verify the locking of tokens on NEAR. If the verification is successful, a wrapped token representing the NFT will be minted on the Calimero shard.
 
-:::tip
+:::warning
 When locking NFTs on the source side NFT Connector, you **MUST** use the `nft_transfer_call` function. If you try to use `nft_transfer`, the tokens will be **LOST**.
 :::
 
