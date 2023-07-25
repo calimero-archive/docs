@@ -15,12 +15,12 @@ module.exports = {
 
   plugins: [
     [
-      require.resolve('@docusaurus/plugin-client-redirects'),
+      require.resolve("@docusaurus/plugin-client-redirects"),
       {
         redirects: [],
       },
     ],
-    require.resolve('docusaurus-plugin-hotjar'), 
+    require.resolve("docusaurus-plugin-hotjar"), 
   ],
 
   presets: [
@@ -28,13 +28,13 @@ module.exports = {
       'classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: '/',
           // Please change this to your repo.
-          editUrl: 'https://github.com/calimero-is-near/docs/edit/master',
+          editUrl: "https://github.com/calimero-is-near/docs/edit/master",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
         gtag: {
           trackingID: 'G-Z9T67N8YSF',
