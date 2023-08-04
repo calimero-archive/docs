@@ -1,6 +1,6 @@
 ---
 title: Prover Contract
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 The Prover contract is essential for verifying transactions that occur on the opposite chain (for example, on the Calimero side, if the Prover contract is on the NEAR side). To validate a transaction, the Prover contract needs the Merkle tree root for a specific block height. The Bridge Service handles this process by making an RPC call (EXPERIMENTAL_light_client_proof) to the Archival node. This call retrieves the proof for a particular receipt, which is then passed as an argument to the Prover contract.
