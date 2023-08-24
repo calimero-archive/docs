@@ -5,9 +5,10 @@
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   tutorialSidebar: [
+    'intro',
     {
       type: "category",
-      label: "Home",
+      label: "Get Started",
       collapsible: true,
       collapsed: false,
       items: [

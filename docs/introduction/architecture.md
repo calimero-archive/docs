@@ -1,6 +1,6 @@
 ---
 title: Shard Architecture
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 Shard Architecture refers to a system where a larger blockchain network is divided into smaller, isolated subsets called private shards. These private shards are only accessible to authorized participants who have been granted permission to join. The architecture of a private shard typically includes several components:
