@@ -101,11 +101,11 @@ There are countless use cases, as only the imagination is the limit. To provide 
 
 Refer to our **Console** documentation to set up and run your Calimero private shard in just a few minutes. You will learn how to:
 
-- [Set up your private shard](/docs/getting_started/set_shard.md)
-- [Generate auth tokens](/docs/getting_started/generate_token.md)
-- [Bridge assets between NEAR and Calimero to your private shard](/docs/getting_started/bridge_console.md)
-- [Add users to your private shard](/docs/getting_started/adding_users.md)
-- [Install applications in marketplace](/docs/getting_started/market_place.md)
+- [Set up your private shard](/docs/getting_started/)
+- [Generate auth tokens](/docs/console/custodial.md)
+- [Bridge assets between NEAR and Calimero to your private shard](/docs/console/bridge_console.md)
+- [Add users to your private shard](/docs/console/adding_users.md)
+- [Install applications in marketplace](/docs/console/market_place.md)
 
 Or go through the [Calimero tutorials](/) to learn how to:
 

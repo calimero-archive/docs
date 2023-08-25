@@ -3,13 +3,13 @@ title: Sign up for an account
 sidebar_position: 2
 ---
 
-This documentation will guide you through the process of signing up for an account and logging into the console.
+:::info
+This guide you through the process of signing up for an account and logging into the console.
+:::
 
 ## Console Signup
 
-:::info
-For first time users
-:::
+If you're a first-time user, follow these steps to sign up for an account:
 
 1. Visit the Calimero Network Console website: [https://console.calimero.network](https://app.calimero.network/)
 
@@ -21,7 +21,7 @@ For first time users
 
 <img width="600" alt="Screenshot 2023-08-24 at 23 00 20" src="https://github.com/calimero-is-near/docs/assets/39309699/b1550965-7f7b-4f5a-b04b-5f928f272108"/>
 
-:::info
+:::tip
 Enter a secure and unique password in the "Password" field. Passwords must be at least 8 characters long and include a mix of uppercase, lowercase, numbers, and special characters for security.
 :::
 
@@ -35,9 +35,7 @@ Enter a secure and unique password in the "Password" field. Passwords must be at
 
 ## Console Login
 
-:::info
-For returning users
-:::
+Returning users can follow these steps to log into the Calimero Network Console:
 
 1. After signing up, you can return to the Calimero Network Console website: [https://console.calimero.network](https://console.calimero.network)
 
@@ -51,4 +49,4 @@ For returning users
 
 <img width="712" alt="Screenshot 2023-08-24 at 23 22 11" src="https://github.com/calimero-is-near/docs/assets/39309699/baa4265c-7870-4637-b863-975f660c1128"/>
 
-6. If the provided credentials are correct, you will be successfully logged into the console dashboard, where you can manage your account and access network-related features.
+6. If the provided credentials are correct, you will be successfully logged into the console dashboard
