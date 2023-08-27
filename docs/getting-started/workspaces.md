@@ -78,15 +78,15 @@ Setting up workspaces within your organization allows you to tailor your blockch
 ## Configure Testnet
 
 You'l need tto select the number of
-- validator nodes: They are running the consensus algorithm where threy calcuslate the value of treansations
-- RPC nodes: They allow you to communicare the directly with Calimero Shard
-- Archive rpc nodes: They hold all historical transaction  and state. They allow you to communicare the directly with Calimero Shard
+- validator nodes: They are running the consensus algorithm where they calculate the value of transactions
+- RPC nodes: They allow you to communicate directly with Calimero Shard
+- Archive rpc nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
 - Indexer nodes: They are used for storing hisotircal data
 
 
 <img width="1414" alt="Screenshot 2023-08-24 at 19 47 05" src="https://github.com/calimero-is-near/docs/assets/39309699/663d7f45-7c33-41aa-bfc8-ed023f71b217"/>
 
-Aadd the unique identifier for your chain and description
+Add the unique identifier for your chain and description
 
 <img width="1503" alt="Screenshot 2023-08-24 at 19 50 14" src="https://github.com/calimero-is-near/docs/assets/39309699/1e35b4d6-4b6b-4ea1-883d-c6401bc85f59"/>
 
