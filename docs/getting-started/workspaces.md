@@ -9,7 +9,7 @@ This guide will walk you through the process of creating workspaces within an or
 
 ## Understanding Workspaces
 
-In the Calimero Network Console, a workspace belongs to a single organization. Each workspace represents a distinct environment where you can set up your blockchain projects. Here's a breakdown of the available workspaces:
+In the Calimero Network Console, a workspace belongs to a single organization. Each workspace represents a distinct environment where you can set up your blockchain projects. Workspaces was introduced so that multiple entities can run and validate the same chain. Here's a breakdown of the available workspaces:
 
 - **Developer Workspace**: This workspace is designed for your development needs.
 - **Professional Workspace**: This workspace offers options for mainnet and testnet deployments.
@@ -45,10 +45,10 @@ For a professional workspace with mainnet deployment, follow these steps:
 <img width="1495" alt="Screenshot 2023-08-24 at 19 43 26" src="https://github.com/calimero-is-near/docs/assets/39309699/b80b0bfb-dc36-4339-b658-e6fc6ee74cb9"/>
 
 3. **Configuring Nodes**: Set up the following for your Mainnet workspace:
-- Validator nodes: They are running the consensus algorithm where they calculate the value of transactions
-- RPC nodes: They allow you to communicate directly with Calimero Shard
-- Archive RPC nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
-- Indexer nodes: They are used for storing hisotircal data
+- Validator nodes: They are responsible for producing blocks and the security of the Calimero shard chain.
+- RPC nodes: They allow you to directly query the state of the Calimero shard chain
+- Archive RPC nodes: They hold all historical transaction and state of the Calimero shard chain 
+- Indexer nodes: They are used for storing hisotircal data and provide indexes on top of this data to speed queries
 <img width="1332" alt="Screenshot 2023-08-24 at 19 46 43" src="https://github.com/calimero-is-near/docs/assets/39309699/6d7356ec-9695-4c92-ae24-5a5907d498da"/>
 
 
@@ -68,11 +68,10 @@ For a professional workspace with testnet deployment, follow these steps:
 <img width="1495" alt="Screenshot 2023-08-24 at 19 43 26" src="https://github.com/calimero-is-near/docs/assets/39309699/b80b0bfb-dc36-4339-b658-e6fc6ee74cb9"/>
 
 3. **Configuring Nodes**: Set up the following for your Testnet workspace:
-- Validator nodes: They are running the consensus algorithm where they calculate the value of transactions
-- RPC nodes: They allow you to communicate directly with Calimero Shard
-- Archive RPC nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
-- Indexer nodes: They are used for storing hisotircal data
-
+- Validator nodes: They are responsible for producing blocks and the security of the Calimero shard chain.
+- RPC nodes: They allow you to directly query the state of the Calimero shard chain
+- Archive RPC nodes: They hold all historical transaction and state of the Calimero shard chain 
+- Indexer nodes: They are used for storing hisotircal data and provide indexes on top of this data to speed queries
 
 <img width="1414" alt="Screenshot 2023-08-24 at 19 47 05" src="https://github.com/calimero-is-near/docs/assets/39309699/663d7f45-7c33-41aa-bfc8-ed023f71b217"/>
 
