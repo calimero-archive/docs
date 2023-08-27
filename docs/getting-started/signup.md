@@ -25,13 +25,13 @@ If you're a first-time user, follow these steps to sign up for an account:
 Enter a secure and unique password in the "Password" field. Passwords must be at least 8 characters long and include a mix of uppercase, lowercase, numbers, and special characters for security.
 :::
 
-5. Review and agree to the "Terms and Conditions" by checking the box provided.
+4. Review and agree to the "Terms and Conditions" by checking the box provided.
 
-7. Once you've filled in the required information and agreed to the terms, click the "Sign Up" button.
+5. Once you've filled in the required information and agreed to the terms, click the "Sign Up" button.
 
-8. If all the provided information is valid, you will be successfully registered on the Calimero Network Console.
+6. If all the provided information is valid, you will be successfully registered on the Calimero Network Console.
 
-9. You'll be redirected to the login page where you can now use your newly created account to log in.
+7. You'll be redirected to the login page where you can now use your newly created account to log in.
 
 ## Console Login
 
