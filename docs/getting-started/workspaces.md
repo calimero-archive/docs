@@ -40,12 +40,15 @@ For a professional workspace with mainnet deployment, follow these steps:
 
 1. **Select Workspace Type**: Choose the "Professional Workspace" option.
 
-2. **Mainnet Workspace**: Opt for the "Mainnet" environment if your smart contracts and applications are production-ready.
+2. **Mainnet Workspace**: Select for the "Mainnet" environment if your smart contracts and applications are production-ready.
 
 <img width="1495" alt="Screenshot 2023-08-24 at 19 43 26" src="https://github.com/calimero-is-near/docs/assets/39309699/b80b0bfb-dc36-4339-b658-e6fc6ee74cb9"/>
 
-3. **Configuring Nodes**: Set up the number of validator nodes, RPC nodes, Archive RPC nodes, and Indexer nodes for your mainnet workspace.
-
+3. **Configuring Nodes**: Set up the following for your Mainnet workspace:
+- Validator nodes: They are running the consensus algorithm where they calculate the value of transactions
+- RPC nodes: They allow you to communicate directly with Calimero Shard
+- Archive RPC nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
+- Indexer nodes: They are used for storing hisotircal data
 <img width="1332" alt="Screenshot 2023-08-24 at 19 46 43" src="https://github.com/calimero-is-near/docs/assets/39309699/6d7356ec-9695-4c92-ae24-5a5907d498da"/>
 
 
@@ -64,20 +67,7 @@ For a professional workspace with testnet deployment, follow these steps:
 
 <img width="1495" alt="Screenshot 2023-08-24 at 19 43 26" src="https://github.com/calimero-is-near/docs/assets/39309699/b80b0bfb-dc36-4339-b658-e6fc6ee74cb9"/>
 
-3. **Configuring Nodes**: Set up the number of validator nodes, RPC nodes, Archive RPC nodes, and Indexer nodes for your testnet workspace.
-
-<img width="1414" alt="Screenshot 2023-08-24 at 19 47 05" src="https://github.com/calimero-is-near/docs/assets/39309699/663d7f45-7c33-41aa-bfc8-ed023f71b217"/>
-
-4. **Chain Details**: Provide a unique identifier and description for your testnet chain.
-
-<img width="1508" alt="Screenshot 2023-08-24 at 19 50 28" src="https://github.com/calimero-is-near/docs/assets/39309699/eadef6ef-0452-4026-afde-8d4ebd44098b"/>
-
-Setting up workspaces within your organization allows you to tailor your blockchain environment to suit your specific needs.
-
-
-## Configure Testnet
-
-You'l need to select the number of
+3. **Configuring Nodes**: Set up the following for your Testnet workspace:
 - Validator nodes: They are running the consensus algorithm where they calculate the value of transactions
 - RPC nodes: They allow you to communicate directly with Calimero Shard
 - Archive RPC nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
@@ -92,3 +82,10 @@ Add the unique identifier for your chain and description
 
 <img width="1508" alt="Screenshot 2023-08-24 at 19 50 28" src="https://github.com/calimero-is-near/docs/assets/39309699/eadef6ef-0452-4026-afde-8d4ebd44098b"/>
 
+<img width="1414" alt="Screenshot 2023-08-24 at 19 47 05" src="https://github.com/calimero-is-near/docs/assets/39309699/663d7f45-7c33-41aa-bfc8-ed023f71b217"/>
+
+4. **Chain Details**: Provide a unique identifier and description for your testnet chain.
+
+<img width="1508" alt="Screenshot 2023-08-24 at 19 50 28" src="https://github.com/calimero-is-near/docs/assets/39309699/eadef6ef-0452-4026-afde-8d4ebd44098b"/>
+
+Setting up workspaces within your organization allows you to tailor your blockchain environment to suit your specific needs.
