@@ -77,10 +77,10 @@ Setting up workspaces within your organization allows you to tailor your blockch
 
 ## Configure Testnet
 
-You'l need tto select the number of
-- validator nodes: They are running the consensus algorithm where they calculate the value of transactions
+You'l need to select the number of
+- Validator nodes: They are running the consensus algorithm where they calculate the value of transactions
 - RPC nodes: They allow you to communicate directly with Calimero Shard
-- Archive rpc nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
+- Archive RPC nodes: They hold all historical transaction  and state. They allow you to communicate directly with Calimero Shard
 - Indexer nodes: They are used for storing hisotircal data
 
 
