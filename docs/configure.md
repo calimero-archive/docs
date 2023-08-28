@@ -10,8 +10,6 @@ This guide will help you navigate through the process of managing workspaces, us
 
 ## Viewing and Editing Organization Details
 
-## Viewing and Editing Organization Details
-
 To access and manage your organization's profile, follow these steps:
 
 - Click on the Organization settings icon to access your organization's profile.
