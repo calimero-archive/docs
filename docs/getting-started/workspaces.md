@@ -38,9 +38,9 @@ For a developer workspace, follow these steps:
 
 For a professional workspace with mainnet deployment, follow these steps:
 
-1. **Select Workspace Type**: Choose the "Professional Workspace" option.
+1. **Select Workspace Type**: Choose the **Professional Workspace** option.
 
-2. **Mainnet Workspace**: Select for the "Mainnet" environment if your smart contracts and applications are production-ready.
+2. **Mainnet Workspace**: Select for the **Mainnet** environment if your smart contracts and applications are production-ready.
 
 <img width="1495" alt="Screenshot 2023-08-24 at 19 43 26" src="https://github.com/calimero-is-near/docs/assets/39309699/b80b0bfb-dc36-4339-b658-e6fc6ee74cb9"/>
 
@@ -61,9 +61,9 @@ For a professional workspace with mainnet deployment, follow these steps:
 
 For a professional workspace with testnet deployment, follow these steps:
 
-1. **Select Workspace Type**: Choose the "Professional Workspace" option.
+1. **Select Workspace Type**: Choose the **Professional Workspace** option.
 
-2. **Testnet Workspace**: Opt for the "Testnet" environment if you are in the development, testing, or prototyping phase.
+2. **Testnet Workspace**: Opt for the **Testnet** environment if you are in the development, testing, or prototyping phase.
 
 <img width="1495" alt="Screenshot 2023-08-24 at 19 43 26" src="https://github.com/calimero-is-near/docs/assets/39309699/b80b0bfb-dc36-4339-b658-e6fc6ee74cb9"/>
 

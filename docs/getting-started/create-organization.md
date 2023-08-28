@@ -1,5 +1,5 @@
 ---
-title: Create organization
+title: Create Organization
 sidebar_position: 3
 ---
 
