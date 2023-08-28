@@ -18,7 +18,7 @@ Before you get started, make sure you have the following:
 
 ## Step 1: Install the FT Connector Bridge
 
-Once you are signed into the Calimero console, set up the FT Connector to enable bridging of FT tokens. Follow the steps provided [here](https://docs.calimero.network/getting_started/bridge_console#ft-connector) to install the FT token bridge.
+Once you are signed into the Calimero console, set up the FT Connector to enable bridging of FT tokens. Follow the steps provided [here](/docs/console/bridge_console.md) to install the FT token bridge.
 
 # Step 2: FT Connector Regex
 
@@ -39,7 +39,7 @@ Follow these steps to configure FT Connector regex rules:
 
 Before bridging the FT token, you need to generate a Calimero auth token. This token authenticates and authorizes external applications to communicate with your shard.
 
-Follow the steps provided [here](/docs/getting_started/generate_token.md) to generate an auth token for your Calimero shard.
+Follow the steps provided [here](/docs/console/generate_token.md) to generate an auth token for your Calimero shard.
 
 ## Step 4: Sync NEAR account in Calimero Shard
 

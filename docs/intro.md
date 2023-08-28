@@ -1,9 +1,17 @@
 ---
-sidebar_position: 2
-sidebar_label: What is Calimero?
+sidebar_position: 1
+sidebar_label: Home
+description: Calimero private shard provides security and scalability for your business needs
+slug: /
+image: https://github.com/calimero-is-near/docs/assets/39309699/701bb5e3-fb3e-42b6-8600-4d54e12decd2
 ---
 
 # What is Calimero?
+
+<head>
+ <meta name="google-site-verification" content="qWc3HXwmKaTVz0rgOkphzeV-XayHbQbafzqfXqRnf7w" />
+</head>
+
 
 Calimero is a customizable sidechain built on top of NEAR protocol. It can be viewed as a network of networks. A solution for businesses to access privacy features and enable scaling. Calimero provides you with an infrastructure which shares all the best benefits of NEAR while being enhanced with multiple new features with emphasis on privacy.
 
@@ -88,3 +96,23 @@ There are countless use cases, as only the imagination is the limit. To provide 
 - Learn how to transfer tokens/assets using th [Calimero Bridge](https://docs.calimero.network/bridge/architecture)
 
 - Learn how to use the [Calimero SDKs](https://docs.calimero.network/calimero_sdk/installation) to make smart contract calls
+
+## New to Calimero?
+
+Refer to our **Console** documentation to set up and run your Calimero private shard in just a few minutes. You will learn how to:
+
+- [Set up your private shard](/docs/getting-started/signup.md)
+- [Generate auth tokens](/docs/console/custodial.md)
+- [Bridge assets between NEAR and Calimero to your private shard](/docs/console/bridge_console.md)
+- [Add users to your private shard](/docs/console/adding_users.md)
+- [Install applications in marketplace](/docs/console/market_place.md)
+
+Or go through the [Calimero tutorials](/) to learn how to:
+
+- [How to deploy a voting smart contract Dapp](/docs/tutorial/voting-tutoral.md)
+- [How to bridge FT tokens from NEAR to Calimero](/docs/tutorial/bridging-ft-token.md)
+- [How to build a Tic Tac Toe game on Calimero](/docs/tutorial/tic-tac-toe.md)
+
+## Continue learning
+
+If you have technical questions, reach out via [support@calimero.network](mailto:support@calimero.network) or [https://www.calimero.network/trial](https://www.calimero.network/contact).
