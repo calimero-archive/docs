@@ -55,10 +55,10 @@ You can invite organizations to create a workspace within your organization. Fol
 
 ## Managing Your Workspaces
 
-The Workspace dashboard displays the total number of available workspaces. If you need to create additional workspaces, simply click the **Add New Workspace** option.
-
 :::info
 Only Professional Shards are configurable. Developer Shards are non-configurable.
 :::
+
+The Workspace dashboard displays the total number of available workspaces. If you need to create additional workspaces, simply click the **Add New Workspace** option.
 
 <img width="872" alt="Screenshot 2023-08-28 at 11 37 26" src="https://github.com/calimero-is-near/docs/assets/39309699/e143190f-db40-4dc5-999e-ef422a040093"/>
