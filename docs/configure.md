@@ -1,8 +1,7 @@
 ---
-title: Configure Organization and Workspace
-sidebar_label: Configure Organization and Workspace
+title: Managing Organization and Workspace
+sidebar_label: Managing Organization and Workspace
 sidebar_position: 3
-slug: /home
 ---
 
 :::info
@@ -11,40 +10,55 @@ This guide will help you navigate through the process of managing workspaces, us
 
 ## Viewing and Editing Organization Details
 
-- Select the Organization setting icon to access your organization's profile.
+## Viewing and Editing Organization Details
 
+To access and manage your organization's profile, follow these steps:
+
+- Click on the Organization settings icon to access your organization's profile.
 
 <img width="1156" alt="Screenshot 2023-08-28 at 02 02 02" src="https://github.com/calimero-is-near/docs/assets/39309699/666247a5-597e-40d0-8f41-4a9b6535b031"/>
 
-- Customize the appearance of your organization by choosing an icon color.
+- Customize your organization's appearance by selecting an icon color.
 
-- Update your organization's name and provide a description to help others understand its purpose
+- Update your organization's name and provide a clear description to effectively communicate its purpose.
 
 <img width="1380" alt="Screenshot 2023-08-28 at 01 47 47" src="https://github.com/calimero-is-near/docs/assets/39309699/236d76e3-404e-45ed-b436-6974755eea6c"/>
 
-## Managing Users in Your Organization
-Move to the "Users" section to manage user permissions within your organization.
+## Adding Users to Your Organization
 
-Add users to your organization and define their permissions. You can invite users to create workspaces or participate in shards.
+You can add users to your organization and define their permissions, as well as specify the workspaces they have access to. Follow these steps:
 
-You can grant specific permissions like managing members, inviting users, managing organization details, managing billing information, viewing members, creating new workspaces, and more.
+- Navigate to the **Organization Users** section and click on **Add Users**.
 
-<img width="1294" alt="Screenshot 2023-08-28 at 01 48 43" src="https://github.com/calimero-is-near/docs/assets/39309699/c4aa2c44-0171-4985-bc8e-b6442fa0d8c2"/>
+<img width="1399" alt="Screenshot 2023-08-28 at 11 19 01" src="https://github.com/calimero-is-near/docs/assets/39309699/703a2f5c-dfc4-4e5e-a8f6-d7bfab71222c"/>
 
-The "Invite user to calimero organization" option allows you to invite users by providing their email addresses.
+- Provide the user's email, specify their roles and permissions. You can grant specific permissions, such as managing members, inviting users, managing organization details, handling billing information, viewing members, creating new workspaces, and more.
 
-Define user permissions based on their role within your organization. Select the appropriate permissions for each user, such as managing members, organization details, billing information, and more.
+<img width="1000" alt="Screenshot 2023-08-28 at 01 50 09" src="https://github.com/calimero-is-near/docs/assets/39309699/529ec44a-d034-440d-bb81-3efeba1b9460"/>
+
+- Choose the workspace you want to invite the user to and click on **Invite**.
+
+<img width="900" alt="Screenshot 2023-08-28 at 11 24 55" src="https://github.com/calimero-is-near/docs/assets/39309699/58c01ab4-bf0a-4778-a802-f62cc3930f45"/>
+
+## Inviting Organizations to Participate in a Shard
+
+You can invite organizations to create a workspace within your organization. Follow these steps:
+
+- Navigate to the **Organization Users** section and click on **Invite Organization**.
+
+<img width="1389" alt="Screenshot 2023-08-28 at 11 28 53" src="https://github.com/calimero-is-near/docs/assets/39309699/aac37143-2234-40f7-ad18-2e64a3e8707e"/>
+
+- Add the email of the organization you want to invite and choose the available chain you want them to participate in.
+
+<img width="875" alt="Screenshot 2023-08-28 at 11 28 31" src="https://github.com/calimero-is-near/docs/assets/39309699/b6cf7bca-c1c5-417b-b60f-bb4be286814a"/>
 
 
-<img width="582" alt="Screenshot 2023-08-28 at 01 50 09" src="https://github.com/calimero-is-near/docs/assets/39309699/529ec44a-d034-440d-bb81-3efeba1b9460"/>
+## Managing Your Workspaces
 
+The Workspace dashboard displays the total number of available workspaces. If you need to create additional workspaces, simply click the **Add New Workspace** option.
 
-### Managing Workspaces
+:::info
+Only Professional Shards are configurable. Developer Shards are non-configurable.
+:::
 
- The dashboard displays the total number of workspaces available. Currently, you have 4 workspaces.
-
-- **Add New Workspace**: If you need to create additional workspaces, you can click the "Add New Workspace" option.
-
-Please note that only Professional Shards are configurable. Developer Shards are non-configurable.
-
-<img width="871" alt="Screenshot 2023-08-28 at 01 50 55" src="https://github.com/calimero-is-near/docs/assets/39309699/eace475d-283d-42e1-95a8-c5ad56d4c043"/>
+<img width="872" alt="Screenshot 2023-08-28 at 11 37 26" src="https://github.com/calimero-is-near/docs/assets/39309699/e143190f-db40-4dc5-999e-ef422a040093"/>
