@@ -11,7 +11,7 @@ This beginner tutorial will guide you through the process of creating a Tic Tac 
 
 Before you begin, make sure you have the following prerequisites:
 
-- Set up your [Calimero private shard](https://docs.calimero.network/getting_started/set_shard).
+- Set up your [Calimero private shard](/docs/getting-started/signup.md).
 - Install a code editor like [VSCode](https://code.visualstudio.com/download).
 - Install the [NEAR CLI](https://docs.near.org/tools/near-cli#setup) tool.
 - Install [Node.js and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your machine.
@@ -42,7 +42,7 @@ Once the compilation is complete, you'll find the compiled `.wasm` file of the c
 
 Before deploying the Tic Tac Toe game, you need to generate a Calimero auth token. This token will authenticate and authorize external applications to communicate with your shard.
 
-Follow the steps provided [here](/docs/getting_started/generate_token.md) to generate an auth token for your Calimero shard.
+Follow the steps provided [here](/docs/console/generate_token.md) to generate an auth token for your Calimero shard.
 
 ## Step 3: Set up the NEAR CLI
 
@@ -81,9 +81,9 @@ Take note of the **account_id**, **private_key**, and **public_key** values from
 
 ## Step 5: Create a Sub Account
 
-Create a sub account that will be used to deploy the previously built contract. This sub account should be created from the [Custodial account](https://docs.calimero.network/getting_started/custodial#create-custodial-account) in the Calimero Console, and the public key obtained from the generated keypair should be added to the sub account.
+Create a sub account that will be used to deploy the previously built contract. This sub account should be created from the [Custodial account](https://docs.calimero.network/console/custodial#create-custodial-account) in the Calimero Console, and the public key obtained from the generated keypair should be added to the sub account.
 
-Follow the steps [here](https://docs.calimero.network/getting_started/custodial#custodial-account) to set up the sub account and add the public key.
+Follow the steps [here](https://docs.calimero.network/console/custodial#custodial-account) to set up the sub account and add the public key.
 
 ## Step 6: Deploy Your NEAR Contract
 
