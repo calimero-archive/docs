@@ -1,10 +1,10 @@
 ---
-title: Cloud Connect
-sidebar_position: 2
+title: Set up Cloud Connect for your Cluster
+sidebar_position: 3
 ---
 
 :::info
-This guide will walk you through the process of setting up Cloud Connect, a powerful feature that allows you to take control of your infrastructure within Calimero.
+This step is essential if you plan to self-host the shard. If you're not self-hosting, you can skip this step and proceed directly to creating organizations and workspaces.
 :::
 
 ## What is Cloud Connect?
@@ -16,11 +16,7 @@ With Cloud Connect, you can:
 - Seamlessly connect these clusters to your private chain and workspace.
 - Maintain complete control over your data.
 
-:::info
-This step is essential if you plan to self-host the shard. If you're not self-hosting, you can skip this step and proceed directly to creating organizations and workspaces.
-:::
-
-## Connect your Cloud Cluster
+## Set up Cloud Connect for your Cluster
 
 Follow these steps to set up Cloud Connect for your cluster:
 
@@ -31,7 +27,6 @@ Follow these steps to set up Cloud Connect for your cluster:
 2. Choose your preferred cloud provider from the available options. Calimero supports various cloud providers, such as AWS and GCP.
 
 <img width="1492" alt="Screenshot 2023-08-24 at 10 41 09" src="https://github.com/calimero-is-near/docs/assets/39309699/26050920-b77b-4143-9f24-a471a3c6c3eb"/>
-
 
 3. After selecting your cloud provider, you'll need to connect your cloud to Calimero by: 
 
