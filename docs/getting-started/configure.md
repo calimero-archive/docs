@@ -1,7 +1,7 @@
 ---
 title: Managing Organization and Workspace
 sidebar_label: Managing Organization and Workspace
-sidebar_position: 3
+sidebar_position: 6
 ---
 
 :::info

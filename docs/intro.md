@@ -13,15 +13,22 @@ image: https://github.com/calimero-is-near/docs/assets/39309699/701bb5e3-fb3e-42
 </head>
 
 
-Calimero is a customizable sidechain built on top of NEAR protocol. It can be viewed as a network of networks. A solution for businesses to access privacy features and enable scaling. Calimero provides you with an infrastructure which shares all the best benefits of NEAR while being enhanced with multiple new features with emphasis on privacy.
+Calimero is a customizable sidechain built on top of NEAR protocol. It can be viewed as a network of networks. A solution for businesses to access privacy features and enable scaling. Calimero provides you with an infrastructure which shares all the best benefits of NEAR while being enhanced with multiple new features with emphasis on privacy. 
 
 Calimero enables you to:
 
 - Spin off your own private shards (think of a shard as a small private blockchain network that you own)
-
 - Communicate between your shards and other networks, or between multiple shards (even if the shards are owned by different companies)
 
-## What is Calimero private shard?
+
+## Calimero Open Web
+
+Calimero is at the forefront of building a more user-centric web: the Open Web. Our goal? To give users, communities, and businesses the tools they need to truly own and control their data. Think of it as having the convenience of popular software services, but hosted by you, where your data stays yours.
+
+We've leveraged the power of the NEAR Protocol and the Blockchain Operating System (BOS) to create this platform. With Calimero, you get a private space online where you're in control.  It comes equipped with a range of open-source apps that you can customize and manage according to your needs. They offer the familiarity of the software services you're accustomed to, but with enhanced benefits like security and true ownership. Calimero and the Open Web offer a pathway to this new era of digital ownership. Dive into a digital realm where privacy isn't a luxury—it’s a right. 
+
+
+## Calimero private shard
 
 Calimero private shards are independent networks and do not share validators, execution and state storage. NEAR Protocol is a blockchain that has been built from the ground up to be high-performant, incredibly secure, and infinitely scalable all while supporting sustainability and Calimero shards share all the benefits.
 
@@ -31,7 +38,7 @@ Calimero shards support three main modes of operation:
 
 - Permissioned Private Calimero Shard owned by a consortium
 
-- Public Calimero Shard owned by a community
+- Community Calimero Shard owned by a community
 
 Calimero shards can support up to 200k transactions per second, but a standard one shard deployment has the throughput of 5k transactions per second.
 
