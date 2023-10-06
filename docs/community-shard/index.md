@@ -41,6 +41,3 @@ To become part of the community shard ecosystem, companies are required to:
 - Believe in the idea of the Open Web and be open to experiments.
 - Be an active company in the NEAR ecosystem.
 - Create a Calimero account (takes about one minute to create).
-- Have a GCP/AWS account (the validator will be deployed by Calimero under your account).
-
-Join us in shaping the future of Open Web applications, where collaboration, inclusivity, and innovation thrive. The Community Shard is your platform to make a difference, and we welcome you to be a part of this exciting journey!
