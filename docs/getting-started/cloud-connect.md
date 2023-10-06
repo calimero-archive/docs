@@ -1,6 +1,6 @@
 ---
 title: Set up Cloud Connect for your Cluster
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 :::info
@@ -44,8 +44,6 @@ Once completed, your cloud will be successfully connected.
 <img width="1492" alt="Screenshot 2023-08-24 at 10 41 09" src="https://github.com/calimero-is-near/docs/assets/39309699/8d2b3afb-d182-477f-9234-d34ac0c36448"/>
 
 5. Once you've configured the cluster settings, proceed to create the cluster. Calimero will initiate the cluster creation process.
-
-<img width="1492" alt="Screenshot 2023-08-24 at 10 41 09" src="https://github.com/calimero-is-near/docs/assets/39309699/a42294ec-aa73-4738-8e92-3f24e3543c6"/>
 
 Your cluster will be created successfully, and you can now create organizations and workspaces within it.
 
