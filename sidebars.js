@@ -19,10 +19,6 @@ const sidebars = {
       ],
     },
     {
-      type: "doc",
-      id: "configure",
-    },
-    {
       type: "category",
       label: "Console",
       collapsible: true,
