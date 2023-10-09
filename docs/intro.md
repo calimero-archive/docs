@@ -21,12 +21,15 @@ Calimero enables you to:
 - Communicate between your shards and other networks, or between multiple shards (even if the shards are owned by different companies)
 
 
-## Calimero Open Web
+## Calimero X Open Web
 
 Calimero is at the forefront of building a more user-centric web: the Open Web. Our goal? To give users, communities, and businesses the tools they need to truly own and control their data. Think of it as having the convenience of popular software services, but hosted by you, where your data stays yours.
 
 We've leveraged the power of the NEAR Protocol and the Blockchain Operating System (BOS) to create this platform. With Calimero, you get a private space online where you're in control.  It comes equipped with a range of open-source apps that you can customize and manage according to your needs. They offer the familiarity of the software services you're accustomed to, but with enhanced benefits like security and true ownership. Calimero and the Open Web offer a pathway to this new era of digital ownership. Dive into a digital realm where privacy isn't a luxury—it’s a right. 
 
+## Calimero X BOS
+
+The integration of BOS and Calimero accelerates front-end development for both projects. Calimero's private blockchain characteristics ensure data security and ownership. Users can enjoy advanced functionalities, leading to an enhanced Web3 experience.
 
 ## Calimero private shard
 
