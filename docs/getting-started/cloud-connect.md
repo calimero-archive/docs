@@ -16,6 +16,19 @@ With Cloud Connect, you can:
 - Seamlessly connect these clusters to your private chain and workspace.
 - Maintain complete control over your data.
 
+## Prerequisite
+
+For those planning to utilize Google Cloud Platform (GCP) with Calimero's Cloud Connect:
+
+- Install the gcloud command-line tool. This tool provides the primary command-line interface to Google Cloud Platform. For installation instructions, follow the [official Google documentation](https://cloud.google.com/sdk/docs/install).
+
+- To confirm the installation and setup, run the following command:
+  
+```bash
+gcloud projects list
+```
+This command should list your GCP projects, ensuring your `gcloud` installation and setup are successful.
+
 ## Set up Cloud Connect for your Cluster
 
 Follow these steps to set up Cloud Connect for your cluster:
