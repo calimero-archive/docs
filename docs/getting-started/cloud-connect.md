@@ -1,10 +1,10 @@
 ---
 title: Set up Cloud Connect for your Cluster
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 :::info
-This step is essential if you plan to self-host the shard. If you're using Calimero hosted cluster, you can skip this step and proceed directly to creating organizations and workspaces.
+This step is essential if you plan to self-host the shard. If you're using Calimero hosted cluster, you can skip this step and proceed directly to creating your [workspaces](https://docs.calimero.network/getting-started/workspaces).
 :::
 
 ## What is Cloud Connect?
