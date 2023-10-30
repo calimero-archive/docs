@@ -96,7 +96,7 @@ Once completed, your cloud will be successfully connected.
 
 <img width="1256" alt="3-cluster-name" src="https://github.com/calimero-is-near/docs/assets/39309699/8ad0c12f-f692-4217-8cbd-063e43f9de5c"/>
 
-5. Once you've configured the cluster settings, proceed to create the cluster. Calimero will initiate the cluster creation process. Your cluster will be created successfully, and you can now create organizations and workspaces within it.
+5. Once you've configured the cluster settings, proceed to create the cluster. Calimero will initiate the cluster creation process. Your cluster will be created successfully, and you can now create workspaces within it.
 
 <img width="1498" alt="5-cloud connected" src="https://github.com/calimero-is-near/docs/assets/39309699/a2d6affa-80e5-4183-a460-83c06edbcaa1"/>
 
