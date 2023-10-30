@@ -12,7 +12,7 @@ Cloud Connect is a feature within Calimero that empowers users to manage their i
 
 With Cloud Connect, you can:
 
-- Utilize your own AWS/GCP account credentials to create Kubernetes (k8s) clusters.
+- Utilize your own GCP account credentials to create Kubernetes (k8s) clusters.
 - Seamlessly connect these clusters to your private chain and workspace.
 - Maintain complete control over your data.
 
