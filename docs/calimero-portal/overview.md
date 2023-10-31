@@ -5,10 +5,9 @@ sidebar_position: 1
 slug: /calimero-portal
 ---
 
- 
-Calimero Portal leverages the NEAR Protocol and the Blockchain Operating System (BOS) to provide users with a secure and customizable online environment. It places control, privacy, and true ownership of digital assets at the forefront while adhering to the principles of the Open Web. 
+Calimero Portal is crafted to simplify various business operations, such as chatting, managing tasks, sharing documents, and creating forms. It achieves this by using the NEAR Protocol and the Blockchain Operating System (BOS) to offer users a safe and adaptable online platform. Our platform emphasizes giving you control, ensuring your privacy, and ensuring your full ownership of digital assets, all while adhering to the principles of the Open Web.
 
-With its support for open-source apps, enhanced security, and the Community Shard feature, Calimero Portal paves the way for a new era of digital ownership and fosters a vibrant and inclusive online community.
+Calimero Portal supports open-source applications, enhances security, and features the Community Shard, all of which work together to usher in a new era of digital ownership and promote an engaging and inclusive online community.
 
 ## Key features 
 
