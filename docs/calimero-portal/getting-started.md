@@ -82,6 +82,7 @@ A Progressive Web Application (PWA) allows you to install the Calimero Portal on
 1. Open the [Calimero Portal](https://portal.calimero.network) on your mobile device's browser
 2. On the browser options:
    - **For Android (Chrome)**: Tap on the three vertical dots (menu) > select **Install Appp**.
+   <img width="357" alt="Screenshot 2023-10-31 at 08 02 50" src="https://github.com/calimero-is-near/docs/assets/39309699/df89fe17-2da9-4af9-8658-3db1edc0db95"/>
    - **For iOS (Safari)**: Tap the share icon at the bottom > select **Add to Home Screen**.
 4. You will see a prompt to add the application; confirm it.
 5. The Calimero Portal app icon will now appear on your device's home screen, allowing you to access it just like any other app.

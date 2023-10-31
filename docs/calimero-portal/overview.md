@@ -5,31 +5,51 @@ sidebar_position: 1
 slug: /calimero-portal
 ---
 
-We've leveraged the power of the NEAR Protocol and the Blockchain Operating System (BOS) to create this  Calimero portal.  With Calimero, you get a private space online where you're in control.  It comes equipped with a range of open-source apps that you can customize and manage according to your needs. They offer the familiarity of the software services you're accustomed to, but with enhanced benefits like security and true ownership. Calimero and the Open Web offer a pathway to this new era of digital ownership. Dive into a digital realm where privacy isn't a luxury—it’s a right. 
+ 
+Calimero Portal leverages the NEAR Protocol and the Blockchain Operating System (BOS) to provide users with a secure and customizable online environment. It places control, privacy, and true ownership of digital assets at the forefront while adhering to the principles of the Open Web. 
 
-## Our Vision
+With its support for open-source apps, enhanced security, and the Community Shard feature, Calimero Portal paves the way for a new era of digital ownership and fosters a vibrant and inclusive online community.
 
-The Community Shard was developed with a specific intent: to champion the growth of Open Web applications, not to compete with public BOS. Certain applications, like chats or HR systems, are optimized for a private setting, and Calimero provides that environment.
+## Key features 
 
-## How the Community Shard Operate
-The Community Shard stand out due to the following reasons: 
+Below are the features and functionalities of Calimero Portal
 
-### Collective Ownership
+### 1. Privacy and Control
 
-Community shards operate on a unique model of collective ownership. Multiple companies come together to co-own and jointly maintain these shards. 
+Calimero Portal prioritizes user privacy and control. Users have the ability to manage and maintain their private online space, ensuring that their personal data and digital activities remain under their control.
 
-### Inclusive Accessibility
+### 2. Open-Source Apps
 
-Community shards are intentionally designed to be fully accessible to the public. They are open to a wide array of users, including members of the Beta Tester group. This open-door policy fosters inclusivity and actively nurtures the development of public communities. Users are welcome to participate in public discussions, interact with one another, and conduct transactions without any financial barriers.
+The platform offers a diverse range of open-source applications, allowing users to tailor their online experience to their specific preferences. These applications are customizable and can be integrated seamlessly into the Calimero environment.
 
-### Decentralized Data Hosting
+### 3. Enhanced Security
 
-Participating companies can host data required for their community shard applications. Each company's contribution to data hosting collectively support the shard's integrity and reliability.
+Calimero Portal places a strong emphasis on security. It incorporates advanced security features to safeguard user data and ensure a secure online experience.
 
-### Tailored Flexibility
+### 4. True Ownership
 
-Calimero acknowledges that diverse communities possess unique needs and preferences. As a result, the system offers tailored flexibility for communities that aspire to have their dedicated community shards. This customization empowers communities to curate an environment that aligns precisely with their specific requirements.
+Users on Calimero Portal enjoy true ownership of their digital assets. This means that they have full control over their digital property and are not subject to third-party restrictions.
 
-### Seamless Data Migration
+### 5. Community Shard
 
-A standout advantage of community shards is the seamless data migration feature. As long as at least one entity within the shard operates with honesty and transparency, users can confidently migrate their data from old shards to new ones. This feature ensures data continuity and minimizes disruptions during transitions.
+The Community Shard feature within Calimero Portal is designed to support the development and utilization of BOS components and Open Web applications. It operates on the principles of collective ownership and inclusive accessibility.
+
+### 6. Collective Ownership
+
+Community Shards operate on a collective ownership model, where multiple entities or individuals share ownership and responsibility for maintaining them. This fosters collaboration and cooperation within the Calimero ecosystem.
+
+### 7. Inclusive Accessibility
+
+Community Shards are accessible to the public, promoting inclusivity and allowing a wide range of users to benefit from the features and applications hosted within them.
+
+### 8. Decentralized Data Hosting
+
+Companies can host data for their community shard applications. This decentralized approach enhances data integrity and reliability while distributing the responsibility for data hosting across the community.
+
+### 9. Tailored Flexibility
+
+Calimero Portal offers a high degree of customization to cater to diverse community needs. Users can tailor their experience to align with their specific requirements and preferences.
+
+### 10. Seamless Data Migration
+
+Users have the option to migrate their data from old shards to new ones with minimal disruption. This feature ensures a smooth transition when necessary.
