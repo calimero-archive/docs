@@ -1,6 +1,6 @@
 ---
 title: Calimero Portal Access
-sidebar_label: Getting Started
+sidebar_label: Accessing the portal
 sidebar_position: 2
 ---
 
