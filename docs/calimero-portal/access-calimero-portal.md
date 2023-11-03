@@ -9,10 +9,9 @@ This guide will walk you through the process of setting up and connecting your a
 
 <img width="788" alt="calimero-Calimero-portal" src="https://github.com/calimero-is-near/docs/assets/39309699/6052b80c-5f67-41f7-a3c3-0769812d19e6"/>
 
-
 ## Prerequisite
 
-Ensure you have the following ready before you sign u prerequisites for accessing the Calimero Portal listed out:
+Ensure you have the following ready before you access the Calimero Portal :
 
 1. **MyNearWallet**: You should have a MyNearWallet, as it's the only compatible wallet during the beta phase.
 
@@ -60,16 +59,16 @@ If you already signed in to your MyNearWallet, you can skip this.
 
 - Return to the [Calimero Portal](https://portal.calimero.network) and click on **Sign In > Continue with wallet > Select your signed wallet**.
 
-- Then click **Next** to grant permission for the Calimero dapp to access your NEAR account.
+- Then click **Next** to grant permission for the Calimero Dapp to access your NEAR account.
 
 <img width="788" alt="calimero-Calimero-portal" src="https://github.com/calimero-is-near/docs/assets/39309699/b30cbeeb-87d0-4546-aeee-db1ffa544cff"/>
 
-- Click on **Connect** to sync your NEAR account to the Calimero dapp to enable it execute methods on the Calimero dapp on behalf of your NEAR account.
+- Click on **Connect** to sync your NEAR account to the Calimero Dapp to enable it to execute methods on the Calimero Dapp on behalf of your NEAR account.
 
 <img width="788" alt="calimero-Calimero-portal" src="https://github.com/calimero-is-near/docs/assets/39309699/a7164179-29a4-4df3-9191-3749dad16847"/>
 
 ## Application Selection
-Once connected, select the specific application you wish to sign into. For example to sign up for the Calimero Chat, choose Chat from the dropdown menu and then click Join.
+Once connected, select the specific application you wish to sign into. For example, to sign up for the Calimero Chat, choose Chat from the dropdown menu and then click Join.
 
 <img width="252" alt="Screenshot 2023-10-06 at 00 30 41" src="https://github.com/calimero-is-near/docs/assets/39309699/4e20624e-3882-4709-ba5b-12dc84735bb1"/>
 
