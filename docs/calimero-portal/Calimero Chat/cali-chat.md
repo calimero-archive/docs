@@ -10,8 +10,7 @@ This is our beta release, and we are continuously adding new features to enhance
 
 Calimero Chat is a versatile, decentralized chat application on the Open Web designed to enhance your communication experience. With features like image sharing, mentions, organized channels, and profile customization, you're in for a richer chat experience.
 
-
-<img width="100%" alt="Screenshot 2023-11-01 at 16 17 18" src="https://github.com/calimero-is-near/docs/assets/39309699/3aed044a-74bc-4341-a37a-24f601773af6"/>
+<img width="1497" alt="Screenshot 2023-11-03 at 10 13 43" src="https://github.com/calimero-is-near/docs/assets/39309699/59eb0b75-1c67-4722-9546-30be4af2ac7b"/>
 
 ## Navigating the Interface
 
@@ -33,8 +32,7 @@ Syncing Profile Picture with near.social:
 2. Look to the left side to find the **Sidebar**.
 3. In the sidebar, you will see a list of channels and direct conversations.
 
-<img width="50%" alt="Screenshot 2023-11-01 at 14 36 20" src="https://github.com/calimero-is-near/docs/assets/39309699/dc7b7311-7e58-47e5-b0f0-7c17777d29d5"/>
-
+<img width="877" alt="Screenshot 2023-11-03 at 10 14 37" src="https://github.com/calimero-is-near/docs/assets/39309699/a37d3cb9-7e1b-437b-92ea-59cf34ad2a29"/>
 
 ### Creating a New Channel:
 
