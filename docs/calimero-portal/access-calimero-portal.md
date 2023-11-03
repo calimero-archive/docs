@@ -69,7 +69,7 @@ If you already signed in to your MyNearWallet, you can skip this.
 <img width="788" alt="calimero-Calimero-portal" src="https://github.com/calimero-is-near/docs/assets/39309699/a7164179-29a4-4df3-9191-3749dad16847"/>
 
 ## Application Selection
-Once connected, select the specific application you wish to sign into. To access the Calimero Mero application, choose Chat from the dropdown menu and then click Join.
+Once connected, select the specific application you wish to sign into. For example to sign up for the Calimero Chat, choose Chat from the dropdown menu and then click Join.
 
 <img width="252" alt="Screenshot 2023-10-06 at 00 30 41" src="https://github.com/calimero-is-near/docs/assets/39309699/4e20624e-3882-4709-ba5b-12dc84735bb1"/>
 
@@ -78,7 +78,6 @@ Each application requires separate sign-in access. Signing in to one application
 :::
 
 ## Sync Your NEAR Account with the Calimero Private Shard
-
 
 For the application you want to sign into, 
 
