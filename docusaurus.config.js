@@ -1,6 +1,6 @@
 // docusaurus.config.js
 
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   title: "Calimero Documentation",
@@ -20,12 +20,12 @@ module.exports = {
         redirects: [],
       },
     ],
-    require.resolve("docusaurus-plugin-hotjar"), 
+    require.resolve("docusaurus-plugin-hotjar"),
   ],
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
@@ -49,6 +49,14 @@ module.exports = {
       respectPrefersColorScheme: false,
       disableSwitch: false,
       defaultMode: "dark",
+    },
+    announcementBar: {
+      id: "id-deprecation",
+      content:
+        '**⚠️ This documentation has been deprecated. Please visit our <a href="https://www.calimero.network/"> website</a> to access the latest and most up-to-date version of the documentation.  ⚠️ **',
+      backgroundColor: "#ff0000",
+      textColor: "#FFFF00",
+      isCloseable: false,
     },
     metadata: [
       {
@@ -79,10 +87,10 @@ module.exports = {
     },
     prism: {
       theme: require("prism-react-renderer/themes/dracula"),
-      additionalLanguages: ['rust', 'java', 'python', 'ruby', 'go', 'toml'],
+      additionalLanguages: ["rust", "java", "python", "ruby", "go", "toml"],
     },
     hotjar: {
-      applicationId: "3582573"// Replace this with your actual Hotjar Site ID
+      applicationId: "3582573", // Replace this with your actual Hotjar Site ID
     },
   },
 };
