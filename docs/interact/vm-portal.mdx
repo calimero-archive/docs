@@ -3,7 +3,6 @@ title: VM Methods and Chat Components
 sidebar_position: 4
 ---
 
-
 Calimero Virtual Machine (VM) methods enable one to interact with smart contracts on the Calimero platform. These methods provide synchronous and asynchronous capabilities, Function Access Key (FAK) management, and more.
 
 ## Connecting Shard to the VM
@@ -16,7 +15,6 @@ Calimero Virtual Machine (VM) methods enable one to interact with smart contract
 - NEXT_PUBLIC_WALLET_URL=`https://mnw-calimero-staging-testnet.netlify.app/`
 
 Below is the provided information formatted as a Markdown document with a title and description, and the credentials formatted as a JSON object within a code block:
-
 
 ## Root account credentials
 
@@ -40,11 +38,13 @@ Be cautious with sensitive information such as private keys. It's generally not 
 
 **Usage:** This method allows for a synchronous call to a view method on a smart contract on the Calimero platform.
 
-**Required arguments:** 
+**Required arguments:**
+
 - `contractName` (String)
 - `methodName` (String)
 
-**Optional arguments:** 
+**Optional arguments:**
+
 - `args` (Array)
 - `blockId/finality` (String or Number)
 - `subscribe` (Boolean)
@@ -56,11 +56,13 @@ Be cautious with sensitive information such as private keys. It's generally not 
 
 **Usage:** Asynchronous calls to view methods on a smart contract on the Calimero platform.
 
-**Required arguments:** 
+**Required arguments:**
+
 - `contractName` (String)
 - `methodName` (String)
 
-**Optional arguments:** 
+**Optional arguments:**
+
 - `args` (Array)
 - `blockId/finality` (String or Number)
 
@@ -70,35 +72,45 @@ Be cautious with sensitive information such as private keys. It's generally not 
 
 **Usage:** This method is used to request a Function Access Key (FAK) for a specific contract on the Calimero platform.
 
-**Required argument:** 
+**Required argument:**
+
 - `contractName` (String)
 
-**Example:** 
+**Example:**
+
 ```javascript
-Near.requestCalimeroFak('example-contract').then((res) => console.log('Function Access Key:', res));
+Near.requestCalimeroFak("example-contract").then((res) =>
+  console.log("Function Access Key:", res)
+);
 ```
 
 ### Near.hasValidCalimeroFak
 
 **Usage:** Checks whether a FAK is valid for a specific contract on the Calimero platform.
 
-**Required argument:** 
+**Required argument:**
+
 - `contractName` (String)
 
-**Example:** 
+**Example:**
+
 ```javascript
-Near.hasValidCalimeroFak('example-contract').then((isValid) => console.log('Is FAK valid?:', isValid));
+Near.hasValidCalimeroFak("example-contract").then((isValid) =>
+  console.log("Is FAK valid?:", isValid)
+);
 ```
 
 ### Calimero.fakCall / Near.fakCalimeroCall
 
 **Usage:** Make a call to a smart contract using a FAK for authentication on the Calimero platform.
 
-**Required arguments:** 
+**Required arguments:**
+
 - `contractName` (String)
 - `methodName` (String)
 
-**Optional arguments:** 
+**Optional arguments:**
+
 - `args` (Object)
 - `gas` (String, defaults to "300Tg")
 - `deposit` (String, defaults to "0")
@@ -109,11 +121,13 @@ Near.hasValidCalimeroFak('example-contract').then((isValid) => console.log('Is F
 
 **Usage:** Sign a transaction using a FAK on the Calimero platform.
 
-**Required arguments:** 
+**Required arguments:**
+
 - `contractName` (String)
 - `methodName` (String)
 
-**Optional arguments:** 
+**Optional arguments:**
+
 - `args` (Object)
 - `gas` (String, defaults to "300Tg")
 - `deposit` (String, defaults to "0")
@@ -124,7 +138,8 @@ Near.hasValidCalimeroFak('example-contract').then((isValid) => console.log('Is F
 
 **Usage:** Sign a message with a FAK to provide proof of possession on the Calimero platform.
 
-**Required arguments:** 
+**Required arguments:**
+
 - `contractName` (String)
 - `message` (String or Object)
 
@@ -139,6 +154,7 @@ In addition to Calimero methods, we have a set of chat components that can enhan
 **Description:** VirtualizedChat is a React component designed for efficient rendering of large lists of chat messages. It virtualizes the message list, rendering only the messages currently visible to the user.
 
 **Props:**
+
 - `loadInitialMessages` (Function)
 - `loadPrevMessages` (Function)
 - `incomingMessages` (Array)
@@ -150,10 +166,13 @@ In addition to Calimero methods, we have a set of chat components that can enhan
 - `style` (Object)
 
 **Usage Example:**
+
 ```jsx
 <VirtualizedChat
   loadInitialMessages={() => api.fetchMessages({ chatId, limit: 20 })}
-  loadPrevMessages={(lastMessageId) => api.fetchMessages({ chatId, beforeId: lastMessageId, limit: 20 })}
+  loadPrevMessages={(lastMessageId) =>
+    api.fetchMessages({ chatId, beforeId: lastMessageId, limit: 20 })
+  }
   incomingMessages={incomingMessages}
   updatedMessages={updatedMessages}
   onItemNewItemRender={readMessage}
@@ -169,6 +188,7 @@ In addition to Calimero methods, we have a set of chat components that can enhan
 **Description:** Create a custom message renderer with handling for reactions, deletions, editing, and other interactions.
 
 **Parameters:**
+
 - `params` (Object)
   - `handleReaction` (Function)
   - `canDeleteMessage` (Boolean)
@@ -180,16 +200,25 @@ In addition to Calimero methods, we have a set of chat components that can enhan
   - `isThread` (Boolean)
 
 **Usage Example:**
+
 ```javascript
 const messageRenderer = createMessageRenderer({
-  handleReaction: (messageId, reaction) => { /* Handle reaction */ },
+  handleReaction: (messageId, reaction) => {
+    /* Handle reaction */
+  },
   canDeleteMessage: isOwnerOrModerator,
   canEditMessage: isOwner,
-  deleteMessage: (messageId) => { /* Delete message */ },
-  getIconFromCache: (iconId) => { /* Get icon */ },
-  accountId: 'user123',
-  setThread: (threadId) => { /* Set thread */ },
-  isThread: false
+  deleteMessage: (messageId) => {
+    /* Delete message */
+  },
+  getIconFromCache: (iconId) => {
+    /* Get icon */
+  },
+  accountId: "user123",
+  setThread: (threadId) => {
+    /* Set thread */
+  },
+  isThread: false,
 });
 ```
 
@@ -198,6 +227,7 @@ const messageRenderer = createMessageRenderer({
 **Description:** MarkdownEditor is a React component that provides a rich text editor for markdown content, with support for inserting emojis and sanitizing pasted HTML content.
 
 **Props:**
+
 - `selectedEmoji` (String)
 - `value` (String)
 - `setValue` (Function)
@@ -205,11 +235,13 @@ const messageRenderer = createMessageRenderer({
 - `handleMessageSent` (Function)
 
 **Behavior:**
+
 - Emojis are appended to the content when selected.
 - Pasted HTML content is sanitized to prevent security vulnerabilities.
 - Pressing Enter without holding Shift triggers the `handleMessageSent` function, which can be used to send messages.
 
 **Usage Example:**
+
 ```jsx
 <MarkdownEditor
   setValue={setMessage}
@@ -228,7 +260,9 @@ Login: `calimero.near/widget/Calimero.Common.Login.index`
 **Description:** The Login component is a React-based blockchain-stored component that facilitates user authentication processes within an application. This component provides various authentication-related methods and integrates with a backend that interacts with the Near blockchain for user authentication, joining, and member retrieval.
 
 **Usage Example:**
+
 ```javascript
+{% raw %}
 const MyComponent = ({ contract, onAppJoin, onAppJoined, ping, setLoggedIn
 
 , context }) => {
@@ -274,4 +308,5 @@ const MyComponent = ({ contract, onAppJoin, onAppJoined, ping, setLoggedIn
     />
   );
 };
+{% endraw %}
 ```
